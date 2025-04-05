@@ -13,6 +13,7 @@ import Training from "@/components/training"
 import About from "@/components/about"
 import Contact from "@/components/contact"
 import Careers from "@/components/careers"
+import Hire from "@/components/hire"
 
 export default function App() {
   return (
@@ -37,6 +38,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/hire" element={<Hire />} />
           </Routes>
         </main>
         <Footer />

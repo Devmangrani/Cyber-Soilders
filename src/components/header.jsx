@@ -38,6 +38,9 @@ export default function Header() {
           <Link to="/careers" className="text-sm font-medium transition-colors hover:text-primary">
             Careers
           </Link>
+          <Link to="/hire" className="text-sm font-medium transition-colors hover:text-primary">
+            Hire
+          </Link>
           <Link to="/contact">
             <Button>Contact Us</Button>
           </Link>
@@ -102,6 +105,13 @@ export default function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               Careers
+            </Link>
+            <Link
+              to="/hire"
+              className="block text-sm font-medium transition-colors hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Hire
             </Link>
             <Link
               to="/contact"
