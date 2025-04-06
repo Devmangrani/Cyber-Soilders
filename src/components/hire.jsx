@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { 
@@ -21,7 +21,31 @@ import {
   Building,
   User,
   Code,
-  Lock
+  Lock,
+  Brain,
+  ShieldCheck,
+  Cloud,
+  Network,
+  Activity,
+  BarChart,
+  Cpu,
+  Database,
+  Fingerprint,
+  Key,
+  Laptop,
+  LineChart,
+  Monitor,
+  Server,
+  Settings,
+  ShieldAlert,
+  Terminal,
+  Timer,
+  TrendingUp,
+  Wifi,
+  Workflow,
+  FileText,
+  Rocket,
+  Calendar
 } from "lucide-react"
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -132,6 +156,8 @@ const teamMembers = [
 ]
 
 export default function Hire() {
+  const { scrollYProgress } = useScroll()
+  const [isLoading, setIsLoading] = useState(true)
   const [scrollY, setScrollY] = useState(0)
   const [isCounterStarted, setIsCounterStarted] = useState(false)
   const [counterValues, setCounterValues] = useState({})
@@ -161,6 +187,10 @@ export default function Hire() {
   // Refs for intersection observer animations
   const sectionRefs = useRef([])
   
+  // Background animation values
+  const backgroundY = useTransform(scrollYProgress, [0, 1], [0, -100])
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.8])
+
   // Add to service refs
   const addToServiceRefs = (el, index) => {
     if (el) {
@@ -292,6 +322,51 @@ export default function Hire() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  useEffect(() => {
+    // Simulate loading state
+    const timer = setTimeout(() => setIsLoading(false), 1000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    // Create animated background elements
+    const container = containerRef.current
+    if (!container) return
+
+    const createParticle = () => {
+      const particle = document.createElement('div')
+      particle.className = 'absolute w-1 h-1 bg-primary/20 rounded-full'
+      particle.style.left = `${Math.random() * 100}%`
+      particle.style.top = `${Math.random() * 100}%`
+      container.appendChild(particle)
+
+      gsap.to(particle, {
+        duration: Math.random() * 20 + 10,
+        x: 'random(-100, 100)',
+        y: 'random(-100, 100)',
+        opacity: 'random(0.1, 0.3)',
+        scale: 'random(0.5, 2)',
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+      })
+    }
+
+    // Create multiple particles
+    for (let i = 0; i < 50; i++) {
+      createParticle()
+    }
+
+    return () => {
+      // Cleanup
+      while (container.firstChild) {
+        container.removeChild(container.firstChild)
+      }
+    }
+  }, [])
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -324,10 +399,18 @@ export default function Hire() {
   }
 
   return (
-    <main className="flex-1" ref={containerRef}>
-      {/* NextJS-style background animation */}
-      <NextjsBackground />
-      <div className="flex flex-col min-h-screen">
+    <main className="relative min-h-screen bg-black overflow-hidden">
+      {/* Animated Background */}
+      <div 
+        ref={containerRef}
+        className="fixed inset-0 z-0"
+        style={{
+          background: 'radial-gradient(circle at center, rgba(17, 24, 39, 0.5) 0%, rgba(0, 0, 0, 1) 100%)'
+        }}
+      />
+
+      {/* Content */}
+      <div className="relative z-10">
         {/* Hero Section */}
         <section 
           ref={heroRef}
@@ -368,15 +451,394 @@ export default function Hire() {
           </div>
         </section>
 
-        {/* Features Section */}
+        {/* Services Section */}
+        <section className="relative py-20 overflow-hidden">
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"
+            style={{ y: backgroundY, opacity }}
+          />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-16">
+              <motion.h3 
+                className="text-3xl md:text-4xl font-bold text-white mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                Hire Cybersecurity Professionals with Relevant Experience and Skills
+              </motion.h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <ShieldCheck className="w-6 h-6 text-primary" />,
+                  title: "Swift Threat Mitigation",
+                  description: "Hire cybersecurity expert for advanced threat detection, minimizing response times and securing your systems faster."
+                },
+                {
+                  icon: <DollarSign className="w-6 h-6 text-primary" />,
+                  title: "Security Made Affordable",
+                  description: "Our security pros optimize security posture to protect your data without inflating operational costs."
+                },
+                {
+                  icon: <Shield className="w-6 h-6 text-primary" />,
+                  title: "100% System Integrity",
+                  description: "Worried about vulnerabilities? Our experts will fortify your infrastructure, eliminating potential threats and ensuring secure operations."
+                },
+                {
+                  icon: <Activity className="w-6 h-6 text-primary" />,
+                  title: "Real-Time Protection",
+                  description: "With continuous monitoring and rapid incident response, we keep your business secure with solutions deployed in minutes."
+                },
+                {
+                  icon: <Server className="w-6 h-6 text-primary" />,
+                  title: "24/7 Security Backup",
+                  description: "Hire information security expert and relax, as automated backup systems ensure business continuity 24/7."
+                },
+                {
+                  icon: <TrendingUp className="w-6 h-6 text-primary" />,
+                  title: "Security Milestones",
+                  description: "We promote cross-department collaboration, turning your security goals into achieved milestones, all while minimizing risks."
+                }
+              ].map((service, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 hover:bg-gray-700/50 transition-all duration-300 border border-gray-700/50 hover:border-primary/50"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.02, y: -5 }}
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                      {service.icon}
+                    </div>
+                    <h4 className="text-xl font-semibold text-white">{service.title}</h4>
+                  </div>
+                  <p className="text-gray-300">{service.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
+        {/* Skills Section */}
+        <section className="relative py-20 overflow-hidden">
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5"
+            style={{ y: backgroundY, opacity }}
+          />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-16">
+              {[
+                { icon: <Timer className="w-6 h-6 text-primary" />, text: "23+ Years of Experience" },
+                { icon: <Workflow className="w-6 h-6 text-primary" />, text: "High Reusability Factor" },
+                { icon: <Brain className="w-6 h-6 text-primary" />, text: "Top 1% Global Talent" },
+                { icon: <BarChart className="w-6 h-6 text-primary" />, text: "95% Satisfaction Rate" },
+                { icon: <Lock className="w-6 h-6 text-primary" />, text: "NDA-Protected Assets" },
+                { icon: <LineChart className="w-6 h-6 text-primary" />, text: "50% Less Acquisition Cost" }
+              ].map((skill, index) => (
+                <motion.div
+                  key={index}
+                  className="text-center bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg border border-gray-700/50"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    {skill.icon}
+                  </div>
+                  <h6 className="text-xl font-semibold text-white">{skill.text}</h6>
+                </motion.div>
+              ))}
+            </div>
+            <motion.div 
+              className="text-center mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-8">
+                Top-notch Security Pros Are Within Your Reach. Hire them Today!
+              </h3>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg">
+                  <span className="flex items-center gap-2">
+                    Start Hiring <ArrowRight className="w-5 h-5" />
+                  </span>
+                </Button>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
 
-        {/* Team Section */}
+        {/* Easy Steps Section */}
+        <section className="relative py-20 overflow-hidden">
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"
+            style={{ y: backgroundY, opacity }}
+          />
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-3xl font-bold text-white mb-4">
+                Keeping It Simple: Our 3-Step Hiring Process
+              </h4>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  step: "Step 01",
+                  time: "In 1-2 Days",
+                  description: "Get pre-vetted CVs",
+                  icon: <FileText className="w-6 h-6 text-primary" />
+                },
+                {
+                  step: "Step 02",
+                  time: "In 2-4 Days",
+                  description: "Interview Shortlisted Candidates",
+                  icon: <Users className="w-6 h-6 text-primary" />
+                },
+                {
+                  step: "Step 03",
+                  time: "In 4-5 Days",
+                  description: "Your Project Starts",
+                  icon: <Rocket className="w-6 h-6 text-primary" />
+                }
+              ].map((step, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 text-center border border-gray-700/50"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                >
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    {step.icon}
+                  </div>
+                  <span className="text-primary font-semibold block mb-2">{step.step}</span>
+                  <div className="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full inline-block mb-4">
+                    {step.time}
+                  </div>
+                  <p className="text-white">{step.description}</p>
+                </motion.div>
+              ))}
+            </div>
+            <motion.div 
+              className="text-center mt-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg">
+                  <span className="flex items-center gap-2">
+                    Ask For CVs <FileText className="w-5 h-5" />
+                  </span>
+                </Button>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
 
+        {/* Developer Services Section */}
+        <section className="relative py-20 overflow-hidden">
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5"
+            style={{ y: backgroundY, opacity }}
+          />
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Advanced Capabilities Our Cybersecurity Experts Bring to Your Project
+              </h3>
+            </motion.div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <ul className="space-y-6">
+                  {[
+                    {
+                      icon: <Cpu className="w-6 h-6 text-primary" />,
+                      title: "AI/ML Automation-led security"
+                    },
+                    {
+                      icon: <Activity className="w-6 h-6 text-primary" />,
+                      title: "Behavior Analytics"
+                    },
+                    {
+                      icon: <Monitor className="w-6 h-6 text-primary" />,
+                      title: "EDR (Endpoint Detection & Response)"
+                    },
+                    {
+                      icon: <Cloud className="w-6 h-6 text-primary" />,
+                      title: "Cloud Security"
+                    }
+                  ].map((item, index) => (
+                    <motion.li
+                      key={index}
+                      className="flex items-center bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-gray-700/50"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      whileHover={{ x: 5 }}
+                    >
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                        {item.icon}
+                      </div>
+                      <h5 className="text-xl font-semibold text-white">{item.title}</h5>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+              <motion.div 
+                className="flex justify-center"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="relative">
+                  <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
+                  <div className="relative bg-gray-800/50 backdrop-blur-sm p-8 rounded-lg border border-gray-700/50">
+                    <Terminal className="w-24 h-24 text-primary" />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Hiring Models Section */}
+        <section className="relative py-20 overflow-hidden">
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"
+            style={{ y: backgroundY, opacity }}
+          />
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                'Fast' Meets 'Flexible': Our Hiring Models
+              </h2>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Part-Time Model",
+                  items: [
+                    "Best for short, focused projects",
+                    "Pay only for hours worked",
+                    "Flexible working hours",
+                    "Task-specific billing"
+                  ],
+                  icon: <Clock className="w-6 h-6 text-primary" />
+                },
+                {
+                  title: "Full-Time Model",
+                  items: [
+                    "160 hours of assured work",
+                    "Receive Monthly billing",
+                    "Transparent, consistent pricing",
+                    "Fully manage your team as needed"
+                  ],
+                  icon: <Calendar className="w-6 h-6 text-primary" />
+                },
+                {
+                  title: "Hourly-Time Model",
+                  items: [
+                    "Adjustable/flexible hours",
+                    "Scale your team on-the-go",
+                    "Dedicated support for changing needs",
+                    "Pay for hours worked"
+                  ],
+                  icon: <Timer className="w-6 h-6 text-primary" />
+                }
+              ].map((model, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                >
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    {model.icon}
+                  </div>
+                  <h5 className="text-xl font-semibold text-white mb-4">{model.title}</h5>
+                  <ul className="space-y-3">
+                    {model.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-center text-gray-300">
+                        <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Contact Form */}
-
+        <section className="relative py-20 overflow-hidden">
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"
+            style={{ y: backgroundY, opacity }}
+          />
+          <div className="container mx-auto px-4 relative z-10">
+            {/* ... rest of the contact form content ... */}
+          </div>
+        </section>
       </div>
+
+      {/* Loading Animation */}
+      {isLoading && (
+        <motion.div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          <motion.div
+            className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+          />
+        </motion.div>
+      )}
     </main>
   )
 } 
