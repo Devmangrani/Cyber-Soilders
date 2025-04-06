@@ -146,51 +146,54 @@ export default function Contact() {
                   </p>
                 </div>
                 <div className="space-y-6">
-                  <div 
-                    className="flex items-start gap-4 p-4 rounded-lg border border-gray-200 dark:border-gray-100 hover:border-primary/30 hover:shadow-md transition-all duration-300 group hover:-translate-y-1"
-                  >
-                    <div className="p-3 rounded-lg bg-blue-100 text-primary group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300">
-                      <Mail className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-blue-100 group-hover:text-blue-600 transition-colors duration-300">Email</h3>
-                      <p className="text-muted-foreground">info@cybersoldiers.in</p>
-                      {/* <div className="mt-2 flex items-center text-primary opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                        <span className="mr-2 text-sm">Send email</span>
-                        <ArrowRight className="h-4 w-4" />
-                      </div> */}
+                <div 
+                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-200 dark:border-gray-100 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 to-indigo-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                  <div className="p-3 rounded-lg bg-blue-100 text-primary group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 relative z-10">
+                    <Mail className="h-6 w-6" />
+                  </div>
+                  <div className="relative z-10">
+                    <h3 className="font-semibold text-blue-100 group-hover:text-blue-600 transition-colors duration-300">Email</h3>
+                    <p className="text-muted-foreground">info@cybersoldiers.in</p>
+                    <div className="mt-2 flex items-center text-primary opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                      <span className="mr-2 text-sm text-gray-100">Send email</span>
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </div>
                   </div>
-                  <div 
-                    className="flex items-start gap-4 p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-primary/30 hover:shadow-md transition-all duration-300 group hover:-translate-y-1"
-                  >
-                    <div className="p-3 rounded-lg bg-blue-100 text-primary group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300">
-                      <Phone className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-blue-100 group-hover:text-blue-600 transition-colors duration-300">Phone</h3>
-                      <p className="text-muted-foreground">+91-78143-21156 </p>
-                      {/* <div className="mt-2 flex items-center text-primary opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                        <span className="mr-2 text-sm">Call now</span>
-                        <ArrowRight className="h-4 w-4" />
-                      </div> */}
+                </div>
+                <div 
+                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-200 dark:border-gray-800 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                  <div className="p-3 rounded-lg bg-blue-100 text-primary group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 relative z-10">
+                    <Phone className="h-6 w-6" />
+                  </div>
+                  <div className="relative z-10">
+                    <h3 className="font-semibold text-blue-100 group-hover:text-blue-600 transition-colors duration-300">Phone</h3>
+                    <p className="text-muted-foreground">+91-78143-21156</p>
+                    <div className="mt-2 flex items-center text-primary opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                      <span className="mr-2 text-sm text-gray-100">Call now</span>
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </div>
                   </div>
-                  <div 
-                    className="flex items-start gap-4 p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-primary/30 hover:shadow-md transition-all duration-300 group hover:-translate-y-1"
-                  >
-                    <div className="p-3 rounded-lg bg-blue-100 text-primary group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300">
-                      <MapPin className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-blue-100 group-hover:text-blue-600 transition-colors duration-300">Location</h3>
-                      <p className="text-muted-foreground">123 Cyber Street, Digital City, DC 12345</p>
-                      {/* <div className="mt-2 flex items-center text-primary opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                        <span className="mr-2 text-sm">Get directions</span>
-                        <ArrowRight className="h-4 w-4" />
-                      </div> */}
+                </div>
+                <div 
+                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-200 dark:border-gray-800 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/30 to-teal-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                  <div className="p-3 rounded-lg bg-blue-100 text-primary group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 relative z-10">
+                    <MapPin className="h-6 w-6" />
+                  </div>
+                  <div className="relative z-10">
+                    <h3 className="font-semibold text-blue-100 group-hover:text-blue-600 transition-colors duration-300">Location</h3>
+                    <p className="text-muted-foreground">123 Cyber Street, Digital City, DC 12345</p>
+                    <div className="mt-2 flex items-center text-gray-100 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                      <span className="mr-2 text-sm">Get directions</span>
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </div>
                   </div>
+                </div>
                 </div>
                 {/* <div 
                   className="p-6 rounded-lg border border-red-200 dark:border-red-800 bg-gradient-to-br from-white to-red-50 dark:from-black dark:to-red-950 hover:shadow-lg transition-all duration-500 group hover:-translate-y-1 relative overflow-hidden"
@@ -278,12 +281,11 @@ export default function Contact() {
                     />
                   </div>
                   <Button className="w-full group relative overflow-hidden">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-indigo-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                     <span className="relative z-10 flex items-center">
                       Send Message
                       <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 duration-300" />
                     </span>
-                    <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300"></div>
-                    <div className="absolute right-full top-0 h-full w-full bg-primary/0 group-hover:bg-primary/20 group-hover:right-0 transition-all duration-500"></div>
                   </Button>
                 </form>
               </div>

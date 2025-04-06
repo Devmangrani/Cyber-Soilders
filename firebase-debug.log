@@ -1,0 +1,108 @@
+[debug] [2025-04-06T17:54:40.753Z] ----------------------------------------------------------------------
+[debug] [2025-04-06T17:54:40.755Z] Command:       /home/skand/.nvm/versions/node/v22.9.0/bin/node /home/skand/.nvm/versions/node/v22.9.0/bin/firebase init hosting
+[debug] [2025-04-06T17:54:40.755Z] CLI Version:   14.1.0
+[debug] [2025-04-06T17:54:40.755Z] Platform:      linux
+[debug] [2025-04-06T17:54:40.756Z] Node Version:  v22.9.0
+[debug] [2025-04-06T17:54:40.756Z] Time:          Sun Apr 06 2025 23:24:40 GMT+0530 (India Standard Time)
+[debug] [2025-04-06T17:54:40.756Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-04-06T17:54:40.761Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-06T17:54:40.761Z] > authorizing via signed-in user (skandvarma2004@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/skand/Cyber-Soilders
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2025-04-06T17:55:08.975Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:08.975Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:08.976Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2025-04-06T17:55:08.976Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"cyber-soldiers","name":"cyber-soldiers"}
+[debug] [2025-04-06T17:55:11.841Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 200
+[debug] [2025-04-06T17:55:11.841Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"name":"operations/create_project.global.6539098865504838686"}
+[debug] [2025-04-06T17:55:11.842Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:11.842Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:11.842Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.6539098865504838686 [none]
+[debug] [2025-04-06T17:55:13.911Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.6539098865504838686 200
+[debug] [2025-04-06T17:55:13.911Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.6539098865504838686 {"name":"operations/create_project.global.6539098865504838686","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true,"ready":true},"done":true,"response":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.Project","projectNumber":"1028896825043","projectId":"cyber-soldiers","lifecycleState":"ACTIVE","name":"cyber-soldiers","createTime":"2025-04-06T17:55:11.576043Z"}}
+[debug] [2025-04-06T17:55:13.912Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:13.912Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:13.913Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/cyber-soldiers:addFirebase [none]
+[debug] [2025-04-06T17:55:17.461Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/cyber-soldiers:addFirebase 200
+[debug] [2025-04-06T17:55:17.462Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/cyber-soldiers:addFirebase {"name":"operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz"}
+[debug] [2025-04-06T17:55:17.462Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:17.462Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:17.462Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz [none]
+[debug] [2025-04-06T17:55:18.532Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz 200
+[debug] [2025-04-06T17:55:18.532Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz {"name":"operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz"}
+[debug] [2025-04-06T17:55:19.033Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2025-04-06T17:55:19.033Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:19.034Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:19.034Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz [none]
+[debug] [2025-04-06T17:55:20.111Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz 200
+[debug] [2025-04-06T17:55:20.111Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz {"name":"operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz"}
+[debug] [2025-04-06T17:55:21.112Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2025-04-06T17:55:21.112Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:21.113Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:21.113Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz [none]
+[debug] [2025-04-06T17:55:22.442Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz 200
+[debug] [2025-04-06T17:55:22.442Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz {"name":"operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz"}
+[debug] [2025-04-06T17:55:24.443Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2025-04-06T17:55:24.443Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:24.443Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:24.443Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz [none]
+[debug] [2025-04-06T17:55:25.360Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz 200
+[debug] [2025-04-06T17:55:25.360Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz {"name":"operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz"}
+[debug] [2025-04-06T17:55:29.360Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2025-04-06T17:55:29.361Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:29.361Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:29.361Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz [none]
+[debug] [2025-04-06T17:55:30.478Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz 200
+[debug] [2025-04-06T17:55:30.478Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz {"name":"operations/workflows/OGU4NmYwNDAtOWQ3Ni00ODkwLWE1OTYtNGU0MjMzYzdkYTYz","done":true,"response":{"@type":"type.googleapis.com/google.firebase.service.v1beta1.FirebaseProject","projectId":"cyber-soldiers","projectNumber":"1028896825043","displayName":"cyber-soldiers","name":"projects/cyber-soldiers","resources":{"hostingSite":"cyber-soldiers"}}}
+[info] 
+[info] 🎉🎉🎉 Your Firebase project is ready! 🎉🎉🎉
+[info] 
+[info] Project information:
+[info]    - Project ID: cyber-soldiers
+[info]    - Project Name: cyber-soldiers
+[info] 
+[info] Firebase console is available at
+[info] https://console.firebase.google.com/project/cyber-soldiers/overview
+[info] i  Using project cyber-soldiers (cyber-soldiers) 
+[info] 
+=== Hosting Setup
+[debug] [2025-04-06T17:55:30.484Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:30.484Z] Checked if tokens are valid: true, expires at: 1743965580453
+[debug] [2025-04-06T17:55:30.484Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/cyber-soldiers [none]
+[debug] [2025-04-06T17:55:31.616Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/cyber-soldiers 200
+[debug] [2025-04-06T17:55:31.616Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/cyber-soldiers {"projectId":"cyber-soldiers","projectNumber":"1028896825043","displayName":"cyber-soldiers","name":"projects/cyber-soldiers","resources":{"hostingSite":"cyber-soldiers"},"state":"ACTIVE","etag":"1_9c423428-4bef-4e73-acf6-fd4854c43411"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2025-04-06T17:55:47.485Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2025-04-06T17:55:47.687Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2025-04-06T17:55:47.687Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"11.6.0","browserURL":"https://www.gstatic.com/firebasejs/11.6.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/11.6.0/firebase.tgz"},"live":{"version":"11.6","browserURL":"https://www.gstatic.com/firebasejs/live/11.6/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/11.6/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/11.6.0/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/11.6.0/firebase-auth/cordova.js","auth/web-extension":"https://www.gstatic.com/firebasejs/11.6.0/firebase-auth/web-extension.js","functions":"https://www.gstatic.com/firebasejs/11.6.0/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/11.6.0/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/11.6.0/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/11.6.0/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/11.6.0/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/11.6.0/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/11.6.0/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js","vertexai":"https://www.gstatic.com/firebasejs/11.6.0/firebase-vertexai.js","data-connect":"https://www.gstatic.com/firebasejs/11.6.0/firebase-data-connect.js","firestore.memory":"https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.memory.js"}}
+[info] ✔  Wrote n/index.html 
+[info] 
+[info] i  Detected a .git folder at /home/skand/Cyber-Soilders 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=991096638&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
