@@ -163,7 +163,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div 
-                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-200 dark:border-gray-800 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-200 dark:border-gray-850 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <div className="p-3 rounded-lg bg-blue-100 text-primary group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 relative z-10">
