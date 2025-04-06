@@ -247,30 +247,33 @@ export default function Hire() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="relative group overflow-hidden rounded-lg border bg-white/80 dark:bg-gray-800 backdrop-blur-sm p-6 hover:shadow-lg transition-all duration-300"
+                    className="relative overflow-hidden rounded-lg border bg-white dark:bg-gray-800 p-6 shadow-sm hover:shadow-md transition-shadow"
                   >
-                    <div className="flex flex-col space-y-4">
-                      <div className="p-2 w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 flex items-center justify-center">
+                    <div className="flex items-center gap-3">
+                      <div className="text-blue-600 dark:text-blue-400 p-3 rounded-full w-14 h-14 bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
                         {service.icon}
                       </div>
-                      <h3 className="font-semibold text-xl text-gray-900 dark:text-white">{service.title}</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">{service.description}</p>
-                      <div className="space-y-2">
-                        <div className="flex items-center text-sm text-gray-700 dark:text-gray-200">
-                          <DollarSign className="h-4 w-4 mr-2 text-blue-600 dark:text-blue-400" />
-                          {service.rate}
-                        </div>
-                        <div className="flex items-center text-sm text-gray-700 dark:text-gray-200">
-                          <Clock className="h-4 w-4 mr-2 text-blue-600 dark:text-blue-400" />
-                          {service.duration}
-                        </div>
-                        <div className="flex items-center text-sm text-gray-700 dark:text-gray-200">
-                          <Shield className="h-4 w-4 mr-2 text-blue-600 dark:text-blue-400" />
-                          {service.expertise}
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">{service.title}</h3>
+                        <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                          <div className="flex items-center gap-2">
+                            <div className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                            {service.duration}
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <div className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                            {service.expertise}
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-blue-600 dark:bg-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                    <p className="text-gray-600 dark:text-gray-300 mt-4">{service.description}</p>
+                    <div className="mt-4 flex items-center justify-between">
+                      <span className="text-blue-600 dark:text-blue-400 font-medium">{service.rate}</span>
+                      <Button variant="outline" className="text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20">
+                        Learn More <ChevronRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -284,43 +287,29 @@ export default function Hire() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-800"
+          className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-900"
         >
           <div className="container px-4 md:px-6 max-w-[800px] mx-auto">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="grid gap-8"
-            >
-              <div className="text-center space-y-4">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-gray-900 dark:text-white">Get Started</h2>
-                <p className="text-gray-600 dark:text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Fill out the form below and we'll get back to you within 24 hours.
-                </p>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <motion.div
-                  initial={{ x: -50, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="grid gap-4 sm:grid-cols-2"
-                >
+            <div className="flex flex-col items-center text-center space-y-6">
+              <h2 className="text-3xl font-bold tracking-tighter text-gray-900 dark:text-white">Get Started</h2>
+              <p className="text-gray-600 dark:text-gray-300 max-w-[600px]">
+                Fill out the form below and we'll get back to you within 24 hours.
+              </p>
+              <form onSubmit={handleSubmit} className="w-full space-y-6">
+                <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                    <label htmlFor="name" className="text-sm font-medium text-gray-900 dark:text-gray-100">Name</label>
                     <Input
                       id="name"
                       placeholder="Your name"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                      className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+                      className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                    <label htmlFor="email" className="text-sm font-medium text-gray-900 dark:text-gray-100">Email</label>
                     <Input
                       id="email"
                       type="email"
@@ -328,92 +317,32 @@ export default function Hire() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                      className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+                      className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                     />
                   </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ x: 50, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 }}
-                  className="grid gap-4 sm:grid-cols-2"
-                >
-                  <div className="space-y-2">
-                    <label htmlFor="company" className="text-sm font-medium text-gray-900 dark:text-white">Company</label>
-                    <Input
-                      id="company"
-                      placeholder="Your company"
-                      required
-                      value={formData.company}
-                      onChange={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))}
-                      className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="service" className="text-sm font-medium text-gray-900 dark:text-white">Service Needed</label>
-                    <select
-                      id="service"
-                      className="w-full px-3 py-2 border rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
-                      required
-                      value={formData.service}
-                      onChange={(e) => setFormData(prev => ({ ...prev, service: e.target.value }))}
-                    >
-                      <option value="">Select a service</option>
-                      {services.map(service => (
-                        <option key={service.title} value={service.title}>
-                          {service.title}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 }}
-                  className="space-y-2"
-                >
-                  <label htmlFor="message" className="text-sm font-medium text-gray-900 dark:text-white">Message</label>
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium text-gray-900 dark:text-gray-100">Message</label>
                   <textarea
                     id="message"
-                    className="w-full min-h-[100px] px-3 py-2 border rounded-md resize-y bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+                    className="w-full min-h-[100px] px-3 py-2 border rounded-md resize-y bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700"
                     placeholder="Tell us about your needs"
                     required
                     value={formData.message}
                     onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                   />
-                </motion.div>
-
-                <motion.div
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 }}
-                  className="flex justify-end"
-                >
+                </div>
+                <div className="flex justify-end">
                   <Button
                     type="submit"
-                    className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white"
+                    className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? (
-                      <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                        className="mr-2 h-4 w-4 border-2 border-white border-t-transparent rounded-full"
-                      />
-                    ) : (
-                      <Send className="mr-2 h-4 w-4" />
-                    )}
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
-                </motion.div>
+                </div>
               </form>
-            </motion.div>
+            </div>
           </div>
         </motion.section>
 
