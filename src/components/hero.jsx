@@ -228,7 +228,7 @@ export default function Hero() {
               className="flex items-center justify-center bg-black/80 dark:bg-white/10 rounded-lg px-6 py-3 space-x-4"
             >
               <Terminal className="h-5 w-5 text-primary" />
-              <code className="font-mono text-sm text-primary">get-cyber.soldiers@latest</code>
+              <code className="font-mono text-sm text-primary">get-cyber.soldiers</code>
               <motion.span
                 animate={{ opacity: [0, 1, 0] }}
                 transition={{ duration: 1, repeat: Infinity }}
