@@ -989,7 +989,7 @@ export default function Training() {
                         {trainer.expertise.map((skill, i) => (
                           <span 
                             key={i} 
-                            className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs font-medium"
+                            className="px-3 py-1 bg-gray-100 dark:bg-gray-200 rounded-full text-xs font-medium"
                           >
                             {skill}
                           </span>
@@ -998,11 +998,11 @@ export default function Training() {
                     </div>
                     
                     <div className="w-full pt-4 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
-                      <div className="flex items-center gap-1">
-                        <GraduationCap className="w-4 h-4 text-primary" />
+                      <div className="flex items-center gap-1 text-gray-100">
+                        <GraduationCap className="w-4 h-4 text-gray-100" />
                         <span className="text-sm text-gray-100">{trainer.courses}+ Courses</span>
                       </div>
-                      <Button variant="outline" size="sm" className="relative group group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                      <Button variant="outline" size="sm" className="relative group group-hover:bg-gray-100 group-hover:text-white transition-colors duration-300">
                         <div className="absolute -inset-1 bg-gradient-to-r from-pink-500/50 to-rose-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                         <span className="relative z-10">View Profile</span>
                       </Button>
