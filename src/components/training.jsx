@@ -16,6 +16,11 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import NextjsBackground from './NextjsBackground'
+// Import partner logos
+import ECCouncilLogo from '../Ec_Council_Logo.png'
+import IITPravartakLogo from '../Pravartak_logo.png'
+import IITMadrasLogo from '../IIT_Madras_Logo.png'
+
 
 // Register GSAP plugins
 if (typeof window !== 'undefined') {
@@ -280,17 +285,17 @@ export default function Training() {
         }, "-=0.2")
 
         // Animate category filters
-        gsap.from(".category-filter", {
-          y: 20,
-          opacity: 0,
-          duration: 0.4,
-          stagger: 0.1,
-          ease: "power1.out",
-          scrollTrigger: {
-            trigger: coursesRef.current,
-            start: "top 80%"
-          }
-        })
+        // gsap.from(".category-filter", {
+        //   y: 20,
+        //   opacity: 0,
+        //   duration: 0.4,
+        //   stagger: 0.1,
+        //   ease: "power1.out",
+        //   scrollTrigger: {
+        //     trigger: coursesRef.current,
+        //     start: "top 80%"
+        //   }
+        // })
         
         // Animate floating elements
         const particles = document.querySelectorAll('.floating-particle')
@@ -332,7 +337,7 @@ export default function Training() {
         // Partner section animation
         ScrollTrigger.create({
           trigger: partnerRef.current,
-          start: "top 80%",
+          start: "top 100%",
           onEnter: () => {
             gsap.fromTo(".partner-title", 
               { y: 30, opacity: 0 },
@@ -355,7 +360,7 @@ export default function Training() {
         // Courses section animation
         ScrollTrigger.create({
           trigger: coursesRef.current,
-          start: "top 80%",
+          start: "top 90%",
           onEnter: () => {
             gsap.fromTo(".courses-title", 
               { y: 30, opacity: 0 },
@@ -377,7 +382,7 @@ export default function Training() {
                   y: 0, 
                   opacity: 1, 
                   duration: 0.7,
-                  delay: 0.1 + (index * 0.15),
+                  delay: 0.01 + (index * 0.15),
                   ease: "power2.out",
                   onComplete: () => {
                     if (index === 0 && !isCounterStarted) {
@@ -421,7 +426,7 @@ export default function Training() {
                   y: 0, 
                   opacity: 1, 
                   duration: 0.7,
-                  delay: 0.1 + (index * 0.15),
+                  delay: 0.01 + (index * 0.15),
                   ease: "power2.out"
                 }
               )
@@ -455,7 +460,7 @@ export default function Training() {
                   y: 0, 
                   opacity: 1, 
                   duration: 0.7,
-                  delay: 0.1 + (index * 0.15),
+                  delay: 0.01 + (index * 0.15),
                   ease: "power2.out"
                 }
               )
@@ -744,7 +749,7 @@ export default function Training() {
                         height="100"
                         decoding="async"
                         className="object-contain transition-transform duration-500 group-hover:scale-105"
-                        src="/placeholder.svg?height=100&width=300"
+                        src={IITMadrasLogo}
                       />
                     </div>
                   </div>
@@ -760,7 +765,7 @@ export default function Training() {
                         height="100"
                         decoding="async"
                         className="object-contain transition-transform duration-500 group-hover:scale-105"
-                        src="/placeholder.svg?height=100&width=300"
+                        src={IITPravartakLogo}
                       />
                     </div>
                   </div>
@@ -776,7 +781,7 @@ export default function Training() {
                         height="100"
                         decoding="async"
                         className="object-contain transition-transform duration-500 group-hover:scale-105"
-                        src="/placeholder.svg?height=100&width=300"
+                        src={ECCouncilLogo}
                       />
                     </div>
                   </div>
@@ -843,7 +848,7 @@ export default function Training() {
                   <div className="absolute right-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/60 to-blue-500/60 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-bottom"></div>
                   <div className="relative z-10 p-6 space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="text-primary p-3 rounded-full w-14 h-14 bg-gray-100 dark:bg-gray-700 flex items-center justify-center group-hover:bg-gray-200 dark:group-hover:bg-gray-600 group-hover:scale-110 transition-all duration-500">
+                      <div className="text-gray-100 p-3 rounded-full w-14 h-14 bg-gray-100 dark:bg-gray-700 flex items-center justify-center group-hover:bg-gray-100 dark:group-hover:bg-gray-600 group-hover:scale-110 transition-all duration-500">
                         {course.icon}
                       </div>
                       <div>
@@ -928,7 +933,7 @@ export default function Training() {
                         className="object-contain w-full h-full"
                       />
                     </div>
-                    <h3 className="font-bold text-lg">{platform.name}</h3>
+                    <h3 className="font-bold text-lg text-gray-100">{platform.name}</h3>
                     <p className="text-gray-100 text-sm">{platform.description}</p>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -975,8 +980,8 @@ export default function Training() {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h3 className="text-xl font-bold mb-1">{trainer.name}</h3>
-                    <p className="text-primary font-medium mb-2">{trainer.title}</p>
+                    <h3 className="text-xl font-bold mb-1 text-gray-100">{trainer.name}</h3>
+                    <p className="text-gray-100 font-medium mb-2">{trainer.title}</p>
                     <p className="text-gray-100 mb-4">{trainer.experience}</p>
                     
                     <div className="mb-4">
@@ -995,7 +1000,7 @@ export default function Training() {
                     <div className="w-full pt-4 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
                       <div className="flex items-center gap-1">
                         <GraduationCap className="w-4 h-4 text-primary" />
-                        <span className="text-sm">{trainer.courses}+ Courses</span>
+                        <span className="text-sm text-gray-100">{trainer.courses}+ Courses</span>
                       </div>
                       <Button variant="outline" size="sm" className="relative group group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                         <div className="absolute -inset-1 bg-gradient-to-r from-pink-500/50 to-rose-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
