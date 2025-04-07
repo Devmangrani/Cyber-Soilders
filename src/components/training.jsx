@@ -804,94 +804,6 @@ export default function Training() {
           </div>
         </section>
 
-        {/* Partner Section */}
-        <section 
-          ref={partnerRef}
-          className="w-full py-12 md:py-24 bg-black relative overflow-hidden"
-        >
-          {/* Animated background elements */}
-          <div className="absolute right-1/4 top-1/3 -z-10 h-96 w-96 rounded-full bg-gradient-to-b from-blue-500/10 to-green-500/10 blur-3xl parallax-slow"></div>
-          <div className="absolute left-0 bottom-1/4 -z-10 h-96 w-96 rounded-full bg-gradient-to-tr from-green-500/10 to-blue-500/10 blur-3xl parallax-fast"></div>
-          
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
-            <div className="flex flex-col items-center text-center space-y-6">
-              <div className="space-y-4">
-                <div className="overflow-hidden">
-                  <h2 className="partner-title text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Our Knowledge Partners</h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                  {/* IIT Madras */}
-                  <div className="partner-logo relative group">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                    <div className="relative z-10 flex items-center justify-center p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
-                      <img
-                        alt="IIT Madras Logo"
-                        loading="lazy"
-                        width="300"
-                        height="100"
-                        decoding="async"
-                        className="object-contain transition-transform duration-500 group-hover:scale-105"
-                        src={IITMadrasLogo}
-                      />
-                    </div>
-                  </div>
-                  
-                  {/* IIT Pravartak */}
-                  <div className="partner-logo relative group">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-cyan-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                    <div className="relative z-10 flex items-center justify-center p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
-                      <img
-                        alt="IIT Pravartak Logo"
-                        loading="lazy"
-                        width="300"
-                        height="100"
-                        decoding="async"
-                        className="object-contain transition-transform duration-500 group-hover:scale-105"
-                        src={IITPravartakLogo}
-                      />
-                    </div>
-                  </div>
-                  
-                  {/* EC Council */}
-                  <div className="partner-logo relative group">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-green-500/50 to-emerald-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                    <div className="relative z-10 flex items-center justify-center p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
-                      <img
-                        alt="EC Council Logo"
-                        loading="lazy"
-                        width="300"
-                        height="100"
-                        decoding="async"
-                        className="object-contain transition-transform duration-500 group-hover:scale-105"
-                        src={ECCouncilLogo}
-                      />
-                    </div>
-                  </div>
-                </div>
-                {/* <div className="partner-logo relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                  <div className="relative z-10 flex items-center justify-center p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
-                    <img
-                      alt="IIT Madras Logo"
-                      loading="lazy"
-                      width="300"
-                      height="100"
-                      decoding="async"
-                      className="object-contain transition-transform duration-500 group-hover:scale-105"
-                      src="/placeholder.svg?height=100&width=300"
-                    />
-                  </div>
-                </div> */}
-                <div className="overflow-hidden">
-                  <p className="partner-description text-xl text-muted-foreground max-w-[800px] mx-auto">
-                    Our esteemed knowledge partners bring world-class expertise and research to our cybersecurity training programs.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Courses Section */}
         <section 
           ref={coursesRef}
@@ -976,6 +888,94 @@ export default function Training() {
                   <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-primary/10 rounded-full transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Partner Section */}
+        <section 
+          ref={partnerRef}
+          className="w-full py-12 md:py-24 bg-black relative overflow-hidden"
+        >
+          {/* Animated background elements */}
+          <div className="absolute right-1/4 top-1/3 -z-10 h-96 w-96 rounded-full bg-gradient-to-b from-blue-500/10 to-green-500/10 blur-3xl parallax-slow"></div>
+          <div className="absolute left-0 bottom-1/4 -z-10 h-96 w-96 rounded-full bg-gradient-to-tr from-green-500/10 to-blue-500/10 blur-3xl parallax-fast"></div>
+          
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+            <div className="flex flex-col items-center text-center space-y-6">
+              <div className="space-y-4">
+                <div className="overflow-hidden">
+                  <h2 className="partner-title text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Our Knowledge Partners</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                  {/* IIT Madras */}
+                  <div className="partner-logo relative group">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                    <div className="relative z-10 flex items-center justify-center p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
+                      <img
+                        alt="IIT Madras Logo"
+                        loading="lazy"
+                        width="300"
+                        height="100"
+                        decoding="async"
+                        className="object-contain transition-transform duration-500 group-hover:scale-105"
+                        src={IITMadrasLogo}
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* IIT Pravartak */}
+                  <div className="partner-logo relative group">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-cyan-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                    <div className="relative z-10 flex items-center justify-center p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
+                      <img
+                        alt="IIT Pravartak Logo"
+                        loading="lazy"
+                        width="300"
+                        height="100"
+                        decoding="async"
+                        className="object-contain transition-transform duration-500 group-hover:scale-105"
+                        src={IITPravartakLogo}
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* EC Council */}
+                  <div className="partner-logo relative group">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-green-500/50 to-emerald-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                    <div className="relative z-10 flex items-center justify-center p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
+                      <img
+                        alt="EC Council Logo"
+                        loading="lazy"
+                        width="300"
+                        height="100"
+                        decoding="async"
+                        className="object-contain transition-transform duration-500 group-hover:scale-105"
+                        src={ECCouncilLogo}
+                      />
+                    </div>
+                  </div>
+                </div>
+                {/* <div className="partner-logo relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                  <div className="relative z-10 flex items-center justify-center p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
+                    <img
+                      alt="IIT Madras Logo"
+                      loading="lazy"
+                      width="300"
+                      height="100"
+                      decoding="async"
+                      className="object-contain transition-transform duration-500 group-hover:scale-105"
+                      src="/placeholder.svg?height=100&width=300"
+                    />
+                  </div>
+                </div> */}
+                <div className="overflow-hidden">
+                  <p className="partner-description text-xl text-muted-foreground max-w-[800px] mx-auto">
+                    Our esteemed knowledge partners bring world-class expertise and research to our cybersecurity training programs.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
