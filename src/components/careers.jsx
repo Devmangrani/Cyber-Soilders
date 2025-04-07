@@ -256,82 +256,145 @@ export default function Careers() {
   return (
     <main className="flex-1" ref={containerRef}>
       <div className="flex flex-col min-h-screen">
-        {/* Hero Section */}
-        <section 
-          ref={(el) => {
-            addToRefs(el);
-            heroRef.current = el;
-          }}
-          className="relative w-full py-16 md:py-28 lg:py-32 bg-white dark:bg-black opacity-0 translate-y-4 duration-700 ease-out"
-          id="hero-section"
-        >
-          <div 
-            ref={gridRef}
-            className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"
-          ></div>
-          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-black to-transparent"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
-          
-          {/* Animated background elements from training.jsx */}
-          <div className="absolute -z-10 top-0 left-1/3 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl parallax-slow"></div>
-          <div className="absolute -z-10 bottom-0 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl parallax-fast"></div>
-          
-          {/* Animated particles */}
-          <div className="absolute -z-10 inset-0">
-            <div className="floating-particle absolute top-1/4 left-1/5 size-2 rounded-full bg-blue-500/30"></div>
-            <div className="floating-particle absolute top-3/4 left-2/3 size-3 rounded-full bg-purple-500/30"></div>
-            <div className="floating-particle absolute top-1/3 left-3/4 size-2 rounded-full bg-green-500/30"></div>
-            <div className="floating-particle absolute top-2/3 left-1/4 size-2 rounded-full bg-yellow-500/30"></div>
-            <div className="floating-particle absolute top-1/2 left-1/2 size-1 rounded-full bg-red-500/30"></div>
+        
+    {/* Hero Section */}
+    <section 
+      ref={(el) => {
+        addToRefs(el);
+        heroRef.current = el;
+      }}
+      className="relative w-full py-16 md:py-28 lg:py-32 bg-white dark:bg-black opacity-0 translate-y-4 duration-700 ease-out"
+      id="hero-section"
+    >
+      {/* Grid background */}
+      <div 
+        ref={gridRef}
+        className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"
+      ></div>
+      
+      {/* Grid animations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="animate-grid-trace-horizontal absolute h-[1px] w-full top-1/4 bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+        <div className="animate-grid-trace-horizontal absolute h-[1px] w-full top-2/4 bg-gradient-to-r from-transparent via-primary/20 to-transparent" style={{ animationDelay: '1.5s' }}></div>
+        <div className="animate-grid-trace-horizontal absolute h-[1px] w-full top-3/4 bg-gradient-to-r from-transparent via-primary/20 to-transparent" style={{ animationDelay: '0.7s' }}></div>
+        
+        <div className="animate-grid-trace-vertical absolute w-[1px] h-full left-1/4 bg-gradient-to-b from-transparent via-primary/20 to-transparent"></div>
+        <div className="animate-grid-trace-vertical absolute w-[1px] h-full left-2/4 bg-gradient-to-b from-transparent via-primary/20 to-transparent" style={{ animationDelay: '1.2s' }}></div>
+        <div className="animate-grid-trace-vertical absolute w-[1px] h-full left-3/4 bg-gradient-to-b from-transparent via-primary/20 to-transparent" style={{ animationDelay: '0.4s' }}></div>
+        
+        {/* Grid intersection pulses */}
+        <div className="animate-grid-intersection-pulse absolute top-1/4 left-1/4 size-2 -ml-1 -mt-1 rounded-full bg-primary/40"></div>
+        <div className="animate-grid-intersection-pulse absolute top-1/4 left-2/4 size-2 -ml-1 -mt-1 rounded-full bg-primary/40" style={{ animationDelay: '0.7s' }}></div>
+        <div className="animate-grid-intersection-pulse absolute top-2/4 left-1/4 size-2 -ml-1 -mt-1 rounded-full bg-primary/40" style={{ animationDelay: '1.1s' }}></div>
+        <div className="animate-grid-intersection-pulse absolute top-2/4 left-3/4 size-2 -ml-1 -mt-1 rounded-full bg-primary/40" style={{ animationDelay: '1.5s' }}></div>
+        <div className="animate-grid-intersection-pulse absolute top-3/4 left-2/4 size-2 -ml-1 -mt-1 rounded-full bg-primary/40" style={{ animationDelay: '0.3s' }}></div>
+
+        {/* Scan line */}
+        <div className="animate-scan-line absolute w-full h-[2px] bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"></div>
+      </div>
+      
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-black to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
+      
+      {/* Animated background elements */}
+      <div className="absolute -z-10 top-0 left-1/3 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl parallax-slow animate-pulse-very-slow"></div>
+      <div className="absolute -z-10 bottom-0 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl parallax-fast animate-pulse-slow"></div>
+      <div className="absolute -z-10 top-1/4 right-1/3 w-72 h-72 rounded-full bg-gradient-to-tr from-green-500/10 to-purple-500/10 blur-3xl parallax-medium animate-pulse-very-slow"></div>
+      
+      {/* Animated particles */}
+      <div className="absolute -z-10 inset-0">
+        <div className="floating-particle floating-particle-slow absolute top-1/4 left-1/5 size-2 rounded-full bg-blue-500/30"></div>
+        <div className="floating-particle floating-particle-fast absolute top-3/4 left-2/3 size-3 rounded-full bg-purple-500/30"></div>
+        <div className="floating-particle floating-particle-slow absolute top-1/3 left-3/4 size-2 rounded-full bg-green-500/30"></div>
+        <div className="floating-particle floating-particle-fast absolute top-2/3 left-1/4 size-2 rounded-full bg-yellow-500/30"></div>
+        <div className="floating-particle floating-particle-slow absolute top-1/2 left-1/2 size-1 rounded-full bg-red-500/30"></div>
+        <div className="floating-particle floating-particle-fast absolute top-1/5 right-1/3 size-2 rounded-full bg-cyan-500/30"></div>
+        <div className="floating-particle floating-particle-slow absolute bottom-1/4 right-1/5 size-3 rounded-full bg-indigo-500/30"></div>
+      </div>
+      
+      {/* Sliding elements */}
+      <div className="absolute left-0 right-0 top-0 h-12 overflow-hidden">
+        <div className="animate-slide-right-infinite flex items-center gap-8 opacity-20">
+          {Array(10).fill(0).map((_, i) => (
+            <Shield key={i} className="h-6 w-6 text-blue-500" />
+          ))}
+        </div>
+      </div>
+      <div className="absolute left-0 right-0 bottom-0 h-12 overflow-hidden">
+        <div className="animate-slide-right-infinite flex items-center gap-8 opacity-20" style={{ animationDelay: '2s' }}>
+          {Array(10).fill(0).map((_, i) => (
+            <Target key={i} className="h-6 w-6 text-purple-500" />
+          ))}
+        </div>
+      </div>
+      
+      <div className="container relative z-10 px-4 md:px-6 max-w-[1200px] mx-auto">
+        <div className="flex flex-col items-center text-center space-y-4">
+          <div className="hero-element inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-gray-100 text-sm font-medium animate-bounce-subtle group relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 animate-shimmer"></div>
+            <Shield className="mr-2 h-4 w-4 animate-pulse-slow" />
+            <span>Join Our Elite Team</span>
+            <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300 transform origin-left group-hover:scale-x-100"></div>
           </div>
           
-          <div className="container relative z-10 px-4 md:px-6 max-w-[1200px] mx-auto">
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="hero-element inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-gray-100 text-sm font-medium animate-bounce-subtle">
-                <Shield className="mr-2 h-4 w-4" />
-                Join Our Elite Team
-              </div>
-              <div className="overflow-hidden">
-                <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">
-                  Become a Cyber.Soldier
-                </h1>
-              </div>
-              <div className="overflow-hidden pt-2">
-                <p className="hero-element text-xl text-muted-foreground max-w-[600px]">
-                  Join our mission to protect the digital world. We're looking for talented individuals who want to make a difference.
-                </p>
-              </div>
+          <div className="overflow-hidden">
+            <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 animate-gradient">
+              Become a Cyber.Soldier
+            </h1>
+          </div>
+          
+          <div className="overflow-hidden pt-2 relative">
+            <p className="hero-element text-xl text-muted-foreground max-w-[600px]">
+              Join our mission to protect the digital world. We're looking for talented individuals who want to make a difference.
+            </p>
+            <div className="absolute bottom-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
 
-              {/* Animated stats */}
-              <div id="stats-section" ref={addToRefs} className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-12 pt-8 w-full max-w-3xl">
-                <div className="flex flex-col items-center hero-element">
-                  <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">
-                    {counterValues['positions-filled'] || "100+"}
-                  </div>
-                  <div className="text-sm text-muted-foreground">Positions Filled</div>
+          {/* Animated stats with grid-node-blink animation */}
+          <div id="stats-section" ref={addToRefs} className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-12 pt-8 w-full max-w-3xl relative">
+            <div className="absolute inset-0 grid grid-cols-2 sm:grid-cols-4 gap-6 pointer-events-none">
+              {Array(8).fill(0).map((_, i) => (
+                <div key={i} className="flex items-center justify-center">
+                  <div className="animate-grid-node-blink size-2 rounded-full bg-primary/40" style={{ animationDelay: `${i * 0.2}s` }}></div>
                 </div>
-                <div className="flex flex-col items-center hero-element">
-                  <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">
-                    {counterValues['applications'] || "500+"}
-                  </div>
-                  <div className="text-sm text-muted-foreground">Applications</div>
-                </div>
-                <div className="flex flex-col items-center hero-element">
-                  <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">
-                    {counterValues['satisfaction'] || "98%"}
-                  </div>
-                  <div className="text-sm text-muted-foreground">Team Satisfaction</div>
-                </div>
-                <div className="flex flex-col items-center hero-element">
-                  <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">
-                    {counterValues['countries'] || "25+"}
-                  </div>
-                  <div className="text-sm text-muted-foreground">Countries</div>
-                </div>
+              ))}
+            </div>
+            
+            <div className="flex flex-col items-center hero-element group relative">
+              <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 animate-pulse-slow">
+                {counterValues['positions-filled'] || "100+"}
               </div>
+              <div className="text-sm text-muted-foreground">Positions Filled</div>
+              <div className="absolute -inset-4 border border-primary/0 group-hover:border-primary/20 rounded-lg transition-colors duration-300"></div>
+            </div>
+            
+            <div className="flex flex-col items-center hero-element group relative">
+              <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 animate-pulse-slow">
+                {counterValues['applications'] || "500+"}
+              </div>
+              <div className="text-sm text-muted-foreground">Applications</div>
+              <div className="absolute -inset-4 border border-primary/0 group-hover:border-primary/20 rounded-lg transition-colors duration-300"></div>
+            </div>
+            
+            <div className="flex flex-col items-center hero-element group relative">
+              <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 animate-pulse-slow">
+                {counterValues['satisfaction'] || "98%"}
+              </div>
+              <div className="text-sm text-muted-foreground">Team Satisfaction</div>
+              <div className="absolute -inset-4 border border-primary/0 group-hover:border-primary/20 rounded-lg transition-colors duration-300"></div>
+            </div>
+            
+            <div className="flex flex-col items-center hero-element group relative">
+              <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 animate-pulse-slow">
+                {counterValues['countries'] || "25+"}
+              </div>
+              <div className="text-sm text-muted-foreground">Countries</div>
+              <div className="absolute -inset-4 border border-primary/0 group-hover:border-primary/20 rounded-lg transition-colors duration-300"></div>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
         {/* Mission Section */}
         <section 
@@ -745,6 +808,284 @@ export default function Careers() {
     .cta-glow {
       animation: cta-pulse 4s ease-in-out infinite;
     }
+
+    // new animations
+
+    .animate-in {
+      animation: animateIn 0.8s ease forwards;
+    }
+    
+    @keyframes animateIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    
+    .parallax-slow {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .parallax-medium {
+      animation: float 8s ease-in-out 0.5s infinite;
+    }
+    
+    .parallax-fast {
+      animation: float 7s ease-in-out 1s infinite;
+    }
+    
+    @keyframes pulse-slow {
+      0% {
+        opacity: 0.4;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+      }
+      100% {
+        opacity: 0.4;
+        transform: scale(1);
+      }
+    }
+    
+    .animate-pulse-slow {
+      animation: pulse-slow 4s ease-in-out infinite;
+    }
+    
+    @keyframes pulse-very-slow {
+      0% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+      }
+      100% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+    }
+    
+    .animate-pulse-very-slow {
+      animation: pulse-very-slow 8s ease-in-out infinite;
+    }
+    
+    @keyframes bounce-subtle {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+    
+    .animate-bounce-subtle {
+      animation: bounce-subtle 3s ease-in-out infinite;
+    }
+    
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fade-in {
+      animation: fade-in 0.8s forwards;
+    }
+    
+    @keyframes floating-particle-slow {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(10px, 10px);
+      }
+      50% {
+        transform: translate(5px, -10px);
+      }
+      75% {
+        transform: translate(-10px, 5px);
+      }
+    }
+    
+    .floating-particle-slow {
+      animation: floating-particle-slow 15s ease-in-out infinite;
+    }
+    
+    @keyframes floating-particle-fast {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(15px, 15px);
+      }
+      50% {
+        transform: translate(10px, -15px);
+      }
+      75% {
+        transform: translate(-15px, 10px);
+      }
+    }
+    
+    .floating-particle-fast {
+      animation: floating-particle-fast 10s ease-in-out infinite;
+    }
+    
+    @keyframes scan-line {
+      0% {
+        top: -5%;
+      }
+      100% {
+        top: 105%;
+      }
+    }
+    
+    .animate-scan-line {
+      animation: scan-line 10s linear infinite;
+    }
+    
+    @keyframes slide-right-infinite {
+      0% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+    
+    .animate-slide-right-infinite {
+      animation: slide-right-infinite 20s linear infinite;
+    }
+    
+    @keyframes grid-node-blink {
+      0%, 100% {
+        opacity: 0.1;
+        transform: scale(0.8);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+    
+    .animate-grid-node-blink {
+      animation: grid-node-blink 4s ease-in-out infinite;
+    }
+    
+    @keyframes grid-trace-horizontal {
+      0% {
+        left: -100%;
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        left: 100%;
+        opacity: 0;
+      }
+    }
+    
+    .animate-grid-trace-horizontal {
+      animation: grid-trace-horizontal 8s ease-in-out infinite;
+      position: absolute;
+      left: -100%;
+    }
+    
+    @keyframes grid-trace-vertical {
+      0% {
+        top: -100%;
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        top: 100%;
+        opacity: 0;
+      }
+    }
+    
+    .animate-grid-trace-vertical {
+      animation: grid-trace-vertical 8s ease-in-out infinite;
+      position: absolute;
+      top: -100%;
+    }
+    
+    @keyframes grid-intersection-pulse {
+      0%, 100% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.5);
+      }
+    }
+    
+    .animate-grid-intersection-pulse {
+      animation: grid-intersection-pulse 3s ease-in-out infinite;
+    }
+    
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+    
+    .animate-shimmer {
+      animation: shimmer 3s infinite;
+    }
+    
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+    .animate-gradient {
+      background-size: 200% 200%;
+      animation: gradientShift 3s ease infinite;
+    }
+
   `}</style>
   </main>
   )
