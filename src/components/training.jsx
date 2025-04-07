@@ -624,28 +624,95 @@ export default function Training() {
       {/* NextJS-style background animation */}
       <NextjsBackground />
       <div className="flex flex-col min-h-screen">
-        {/* Hero Section */}
+        {/* Hero Section with Enhanced Visual Elements */}
         <section 
           ref={heroRef}
           className="relative w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-black to-gray-900"
         >
+          {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
           <div 
             ref={gridRef}
-            className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"
-          ></div>
+            className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
+          >
+            {/* Grid node glow effects */}
+            <div className="grid-node absolute h-2 w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink" style={{animationDelay: '0.5s'}}></div>
+            <div className="grid-node absolute h-2 w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink" style={{animationDelay: '1.2s'}}></div>
+            <div className="grid-node absolute h-2 w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink" style={{animationDelay: '2.7s'}}></div>
+            <div className="grid-node absolute h-2 w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink" style={{animationDelay: '1.8s'}}></div>
+            <div className="grid-node absolute h-2 w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink" style={{animationDelay: '3.5s'}}></div>
+            
+            {/* Grid line trace effects */}
+            <div className="grid-trace absolute h-[1px] w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal" style={{animationDelay: '0.5s'}}></div>
+            <div className="grid-trace absolute h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical" style={{animationDelay: '1.2s'}}></div>
+            <div className="grid-trace absolute h-[1px] w-[150px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal" style={{animationDelay: '2.7s'}}></div>
+            <div className="grid-trace absolute h-[1px] w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal" style={{animationDelay: '1.8s'}}></div>
+            <div className="grid-trace absolute h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical" style={{animationDelay: '3.5s'}}></div>
+            
+            {/* Neon intersection highlights */}
+            <div className="grid-intersection absolute h-3 w-3 rounded-full bg-blue-500/20 blur-[5px] top-[24%] left-[48%] animate-grid-intersection-pulse" style={{animationDelay: '4.5s'}}></div>
+            <div className="grid-intersection absolute h-3 w-3 rounded-full bg-purple-500/20 blur-[5px] top-[36%] left-[60%] animate-grid-intersection-pulse" style={{animationDelay: '2.3s'}}></div>
+            <div className="grid-intersection absolute h-3 w-3 rounded-full bg-teal-500/20 blur-[5px] top-[56%] left-[32%] animate-grid-intersection-pulse" style={{animationDelay: '6.2s'}}></div>
+          </div>
+          
+          {/* Radial gradient overlay */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
           
-          {/* Enhanced animated background elements */}
+          {/* Enhanced animated background elements with more variety */}
           <div className="absolute -z-10 top-0 left-1/3 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl parallax-slow"></div>
           <div className="absolute -z-10 bottom-0 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl parallax-fast"></div>
+          <div className="absolute -z-10 top-1/4 right-1/3 w-80 h-80 rounded-full bg-gradient-to-tr from-pink-500/10 to-violet-500/10 blur-3xl parallax-medium"></div>
           
-          {/* Animated particles */}
+          {/* Enhanced animated particles with more variety */}
           <div className="absolute -z-10 inset-0">
+            {/* Original particles */}
             <div className="floating-particle absolute top-1/4 left-1/5 size-2 rounded-full bg-blue-500/30"></div>
             <div className="floating-particle absolute top-3/4 left-2/3 size-3 rounded-full bg-purple-500/30"></div>
             <div className="floating-particle absolute top-1/3 left-3/4 size-2 rounded-full bg-green-500/30"></div>
             <div className="floating-particle absolute top-2/3 left-1/4 size-2 rounded-full bg-yellow-500/30"></div>
             <div className="floating-particle absolute top-1/2 left-1/2 size-1 rounded-full bg-red-500/30"></div>
+            
+            {/* Additional particles with different sizes and colors */}
+            <div className="floating-particle-slow absolute top-1/6 left-2/5 size-1 rounded-full bg-teal-500/40"></div>
+            <div className="floating-particle-slow absolute top-4/5 left-1/6 size-3 rounded-full bg-indigo-500/20"></div>
+            <div className="floating-particle-slow absolute top-1/5 left-4/5 size-2 rounded-full bg-amber-500/30"></div>
+            <div className="floating-particle-fast absolute top-3/5 left-3/5 size-1 rounded-full bg-pink-500/30"></div>
+            <div className="floating-particle-fast absolute top-2/5 left-1/3 size-2 rounded-full bg-cyan-500/20"></div>
+          </div>
+          
+          {/* Subtle animated lines */}
+          <div className="absolute -z-10 inset-0 overflow-hidden opacity-30">
+            <div className="animate-pulse-slow absolute top-[10%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+            <div className="animate-pulse-slow absolute top-[30%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" style={{animationDelay: '1s'}}></div>
+            <div className="animate-pulse-slow absolute top-[70%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-teal-500/50 to-transparent" style={{animationDelay: '2s'}}></div>
+            
+            <div className="animate-pulse-slow absolute top-0 left-[20%] w-[1px] h-full bg-gradient-to-b from-transparent via-blue-500/50 to-transparent" style={{animationDelay: '0.5s'}}></div>
+            <div className="animate-pulse-slow absolute top-0 left-[80%] w-[1px] h-full bg-gradient-to-b from-transparent via-purple-500/50 to-transparent" style={{animationDelay: '1.5s'}}></div>
+          </div>
+          
+          {/* Digital circuit-like pattern overlay */}
+          <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="circuit-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                  <path d="M20 20 L80 20 L80 80 L20 80 Z" fill="none" stroke="white" strokeWidth="0.5" />
+                  <path d="M50 0 L50 20 M0 50 L20 50 M80 50 L100 50 M50 80 L50 100" fill="none" stroke="white" strokeWidth="0.5" />
+                  <circle cx="50" cy="50" r="3" fill="white" />
+                  <circle cx="20" cy="20" r="2" fill="white" />
+                  <circle cx="80" cy="20" r="2" fill="white" />
+                  <circle cx="20" cy="80" r="2" fill="white" />
+                  <circle cx="80" cy="80" r="2" fill="white" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#circuit-pattern)" className="animate-pulse-very-slow" />
+            </svg>
+          </div>
+          
+          {/* Subtle diagonal lines overlay */}
+          <div className="absolute inset-0 -z-10 opacity-5 pointer-events-none bg-[linear-gradient(45deg,transparent_44%,#ffffff_47%,#ffffff_53%,transparent_56%)] bg-[length:20px_20px]"></div>
+          
+          {/* Scan line effect */}
+          <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+            <div className="scan-line w-full h-[2px] bg-blue-500/10 animate-scan-line"></div>
           </div>
           
           <div className="container relative px-4 md:px-6 max-w-[1200px] mx-auto">
@@ -679,18 +746,33 @@ export default function Training() {
               </div>
             </div>
 
-            {/* Key metrics based on sketch */}
+            {/* Key metrics with enhanced animations */}
             <div className="mt-16 grid grid-cols-3 gap-8">
-              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10">
-                <div className="text-4xl font-bold text-gray-100 mb-1">2000+</div>
+              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent group-hover:animate-slide-right-infinite"></div>
+                <div className="text-4xl font-bold text-gray-100 mb-1 relative">
+                  <span className="animate-pulse-slow inline-block">2000+</span>
+                  <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+                </div>
                 <div className="text-gray-500 dark:text-gray-400">Learners</div>
               </div>
-              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10">
-                <div className="text-4xl font-bold text-gray-100 mb-1">10+</div>
+              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent group-hover:animate-slide-right-infinite" style={{animationDelay: '0.2s'}}></div>
+                <div className="text-4xl font-bold text-gray-100 mb-1 relative">
+                  <span className="animate-pulse-slow inline-block" style={{animationDelay: '0.3s'}}>10+</span>
+                  <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+                </div>
                 <div className="text-gray-500 dark:text-gray-400">Countries</div>
               </div>
-              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10">
-                <div className="text-4xl font-bold text-gray-100 mb-1">10+</div>
+              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-teal-500/50 to-transparent group-hover:animate-slide-right-infinite" style={{animationDelay: '0.4s'}}></div>
+                <div className="text-4xl font-bold text-gray-100 mb-1 relative">
+                  <span className="animate-pulse-slow inline-block" style={{animationDelay: '0.6s'}}>10+</span>
+                  <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-teal-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+                </div>
                 <div className="text-gray-500 dark:text-gray-400">Organizations</div>
               </div>
             </div>
@@ -1345,6 +1427,128 @@ export default function Training() {
           border-radius: inherit;
           border: 2px solid currentColor;
           animation: ripple 1.5s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+        }
+
+        @keyframes slide-right-infinite {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+        
+        .animate-slide-right-infinite {
+          animation: slide-right-infinite 3s linear infinite;
+        }
+        
+        @keyframes scan-line {
+          0% {
+            transform: translateY(-100%);
+          }
+          100% {
+            transform: translateY(100vh);
+          }
+        }
+        
+        .animate-scan-line {
+          animation: scan-line 10s linear infinite;
+        }
+        
+        .floating-particle-slow {
+          animation: float 8s ease-in-out infinite;
+        }
+        
+        .floating-particle-fast {
+          animation: float 4s ease-in-out infinite;
+        }
+        
+        .parallax-medium {
+          will-change: transform;
+        }
+        
+        .animate-pulse-very-slow {
+          animation: pulse-very-slow 10s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse-very-slow {
+          0%, 100% {
+            opacity: 0.05;
+          }
+          50% {
+            opacity: 0.15;
+          }
+        }
+        
+        /* Grid animation keyframes */
+        @keyframes grid-node-blink {
+          0%, 100% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 0.8;
+          }
+        }
+        
+        .animate-grid-node-blink {
+          animation: grid-node-blink 4s ease-in-out infinite;
+        }
+        
+        @keyframes grid-trace-horizontal {
+          0% {
+            transform: translateX(-100%) scaleX(0.7);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(100%) scaleX(0.7);
+            opacity: 0;
+          }
+        }
+        
+        .animate-grid-trace-horizontal {
+          animation: grid-trace-horizontal 8s ease-in-out infinite;
+        }
+        
+        @keyframes grid-trace-vertical {
+          0% {
+            transform: translateY(-100%) scaleY(0.7);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(100%) scaleY(0.7);
+            opacity: 0;
+          }
+        }
+        
+        .animate-grid-trace-vertical {
+          animation: grid-trace-vertical 8s ease-in-out infinite;
+        }
+        
+        @keyframes grid-intersection-pulse {
+          0%, 100% {
+            transform: scale(0.5);
+            opacity: 0.2;
+          }
+          50% {
+            transform: scale(1.2);
+            opacity: 0.6;
+          }
+        }
+        
+        .animate-grid-intersection-pulse {
+          animation: grid-intersection-pulse 6s ease-in-out infinite;
         }
       `}</style>
     </main>

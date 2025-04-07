@@ -248,32 +248,102 @@ export default function About() {
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        className="relative w-full py-16 md:py-28 lg:py-36 bg-white dark:bg-black"
+        className="relative w-full py-16 md:py-28 lg:py-36 bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-gray-900"
       >
-        {/* Enhanced animated grid background */}
+        {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
         <div 
           ref={gridRef}
-          className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] transition-all duration-1000"
+          className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
         >
-          {/* Dynamic floating particles */}
-          <div className="absolute particle size-2 rounded-full bg-blue-500/20 top-1/4 left-1/4"></div>
-          <div className="absolute particle size-3 rounded-full bg-purple-500/20 top-1/3 right-1/3"></div>
-          <div className="absolute particle size-4 rounded-full bg-green-500/20 bottom-1/4 right-1/4"></div>
-          <div className="absolute particle size-2 rounded-full bg-yellow-500/20 bottom-1/3 left-1/5"></div>
-          <div className="absolute particle size-3 rounded-full bg-red-500/20 top-2/5 right-1/5"></div>
-          <div className="absolute particle size-2 rounded-full bg-indigo-500/20 bottom-2/5 left-1/3"></div>
+          {/* Grid node glow effects */}
+          <div className="grid-node absolute h-2 w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink" style={{animationDelay: '0.5s'}}></div>
+          <div className="grid-node absolute h-2 w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink" style={{animationDelay: '1.2s'}}></div>
+          <div className="grid-node absolute h-2 w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink" style={{animationDelay: '2.7s'}}></div>
+          <div className="grid-node absolute h-2 w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink" style={{animationDelay: '1.8s'}}></div>
+          <div className="grid-node absolute h-2 w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink" style={{animationDelay: '3.5s'}}></div>
+          
+          {/* Grid line trace effects */}
+          <div className="grid-trace absolute h-[1px] w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal" style={{animationDelay: '0.5s'}}></div>
+          <div className="grid-trace absolute h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical" style={{animationDelay: '1.2s'}}></div>
+          <div className="grid-trace absolute h-[1px] w-[150px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal" style={{animationDelay: '2.7s'}}></div>
+          <div className="grid-trace absolute h-[1px] w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal" style={{animationDelay: '1.8s'}}></div>
+          <div className="grid-trace absolute h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical" style={{animationDelay: '3.5s'}}></div>
+          
+          {/* Neon intersection highlights */}
+          <div className="grid-intersection absolute h-3 w-3 rounded-full bg-blue-500/20 blur-[5px] top-[24%] left-[48%] animate-grid-intersection-pulse" style={{animationDelay: '4.5s'}}></div>
+          <div className="grid-intersection absolute h-3 w-3 rounded-full bg-purple-500/20 blur-[5px] top-[36%] left-[60%] animate-grid-intersection-pulse" style={{animationDelay: '2.3s'}}></div>
+          <div className="grid-intersection absolute h-3 w-3 rounded-full bg-teal-500/20 blur-[5px] top-[56%] left-[32%] animate-grid-intersection-pulse" style={{animationDelay: '6.2s'}}></div>
+        </div>
+        
+        {/* Radial gradient overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
+        
+        {/* Enhanced animated background elements with more variety */}
+        <div className="absolute -z-10 top-0 left-1/3 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl parallax-slow"></div>
+        <div className="absolute -z-10 bottom-0 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl parallax-fast"></div>
+        <div className="absolute -z-10 top-1/4 right-1/3 w-80 h-80 rounded-full bg-gradient-to-tr from-pink-500/10 to-violet-500/10 blur-3xl parallax-medium"></div>
+        
+        {/* Enhanced animated particles with more variety */}
+        <div className="absolute -z-10 inset-0">
+          {/* Original particles */}
+          <div className="floating-particle absolute top-1/4 left-1/5 size-2 rounded-full bg-blue-500/30"></div>
+          <div className="floating-particle absolute top-3/4 left-2/3 size-3 rounded-full bg-purple-500/30"></div>
+          <div className="floating-particle absolute top-1/3 left-3/4 size-2 rounded-full bg-green-500/30"></div>
+          <div className="floating-particle absolute top-2/3 left-1/4 size-2 rounded-full bg-yellow-500/30"></div>
+          <div className="floating-particle absolute top-1/2 left-1/2 size-1 rounded-full bg-red-500/30"></div>
+          
+          {/* Additional particles with different sizes and colors */}
+          <div className="floating-particle-slow absolute top-1/6 left-2/5 size-1 rounded-full bg-teal-500/40"></div>
+          <div className="floating-particle-slow absolute top-4/5 left-1/6 size-3 rounded-full bg-indigo-500/20"></div>
+          <div className="floating-particle-slow absolute top-1/5 left-4/5 size-2 rounded-full bg-amber-500/30"></div>
+          <div className="floating-particle-fast absolute top-3/5 left-3/5 size-1 rounded-full bg-pink-500/30"></div>
+          <div className="floating-particle-fast absolute top-2/5 left-1/3 size-2 rounded-full bg-cyan-500/20"></div>
+        </div>
+        
+        {/* Subtle animated lines */}
+        <div className="absolute -z-10 inset-0 overflow-hidden opacity-30">
+          <div className="animate-pulse-slow absolute top-[10%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+          <div className="animate-pulse-slow absolute top-[30%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" style={{animationDelay: '1s'}}></div>
+          <div className="animate-pulse-slow absolute top-[70%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-teal-500/50 to-transparent" style={{animationDelay: '2s'}}></div>
+          
+          <div className="animate-pulse-slow absolute top-0 left-[20%] w-[1px] h-full bg-gradient-to-b from-transparent via-blue-500/50 to-transparent" style={{animationDelay: '0.5s'}}></div>
+          <div className="animate-pulse-slow absolute top-0 left-[80%] w-[1px] h-full bg-gradient-to-b from-transparent via-purple-500/50 to-transparent" style={{animationDelay: '1.5s'}}></div>
+        </div>
+        
+        {/* Digital circuit-like pattern overlay */}
+        <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="circuit-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                <path d="M20 20 L80 20 L80 80 L20 80 Z" fill="none" stroke="white" strokeWidth="0.5" />
+                <path d="M50 0 L50 20 M0 50 L20 50 M80 50 L100 50 M50 80 L50 100" fill="none" stroke="white" strokeWidth="0.5" />
+                <circle cx="50" cy="50" r="3" fill="white" />
+                <circle cx="20" cy="20" r="2" fill="white" />
+                <circle cx="80" cy="20" r="2" fill="white" />
+                <circle cx="20" cy="80" r="2" fill="white" />
+                <circle cx="80" cy="80" r="2" fill="white" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#circuit-pattern)" className="animate-pulse-very-slow" />
+          </svg>
+        </div>
+        
+        {/* Subtle diagonal lines overlay */}
+        <div className="absolute inset-0 -z-10 opacity-5 pointer-events-none bg-[linear-gradient(45deg,transparent_44%,#ffffff_47%,#ffffff_53%,transparent_56%)] bg-[length:20px_20px]"></div>
+        
+        {/* Scan line effect */}
+        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+          <div className="scan-line w-full h-[2px] bg-blue-500/10 animate-scan-line"></div>
         </div>
         
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-black to-transparent z-[1]"></div>
         
-        {/* Animated gradient orbs with parallax effect */}
-        <div className="absolute -z-10 top-0 left-1/3 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl parallax-bg-slow"></div>
-        <div className="absolute -z-10 bottom-0 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/20 to-green-500/20 blur-3xl parallax-bg-fast"></div>
-        
         <div className="container relative z-10 px-4 md:px-6 mx-auto max-w-5xl">
           <div className="flex flex-col items-center text-center space-y-4">
-            <div className="inline-block rounded-lg bg-gray-100 bg-gray-100 px-3 py-1 text-sm mb-6 animate-pulse border border-gray-200 dark:border-blue-800/50 shadow-sm">
-              About Us
+            <div className="overflow-hidden">
+              <div className="hero-badge inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-primary text-sm font-medium">
+                About Us
+              </div>
             </div>
             <div className="overflow-hidden">
               <h1 className="hero-title text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">
@@ -281,28 +351,48 @@ export default function About() {
               </h1>
             </div>
             <div className="overflow-hidden pt-2">
-              <p className="hero-title mt-6 text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-[800px]">
+              <p className="hero-description mt-6 text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-[800px]">
                 Leading the way in cyber security products, services, and training.
               </p>
             </div>
             
-            {/* Animated stats */}
+            {/* Animated stats with enhanced styling from training.jsx */}
             <div className="hero-stats grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 w-full max-w-3xl">
-              <div className="hero-stat flex flex-col items-center">
-                <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">15+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
+              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent group-hover:animate-slide-right-infinite"></div>
+                <div className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-1 relative">
+                  <span className="animate-pulse-slow inline-block">15+</span>
+                  <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+                </div>
+                <div className="text-gray-500 dark:text-gray-400">Years Experience</div>
               </div>
-              <div className="hero-stat flex flex-col items-center">
-                <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">10+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Countries</div>
+              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent group-hover:animate-slide-right-infinite" style={{animationDelay: '0.2s'}}></div>
+                <div className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-1 relative">
+                  <span className="animate-pulse-slow inline-block" style={{animationDelay: '0.3s'}}>10+</span>
+                  <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+                </div>
+                <div className="text-gray-500 dark:text-gray-400">Countries</div>
               </div>
-              <div className="hero-stat flex flex-col items-center">
-                <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">2000+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Learners</div>
+              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-teal-500/50 to-transparent group-hover:animate-slide-right-infinite" style={{animationDelay: '0.4s'}}></div>
+                <div className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-1 relative">
+                  <span className="animate-pulse-slow inline-block" style={{animationDelay: '0.6s'}}>2000+</span>
+                  <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-teal-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+                </div>
+                <div className="text-gray-500 dark:text-gray-400">Learners</div>
               </div>
-              <div className="hero-stat flex flex-col items-center">
-                <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">97%</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Satisfaction</div>
+              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent group-hover:animate-slide-right-infinite" style={{animationDelay: '0.6s'}}></div>
+                <div className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-1 relative">
+                  <span className="animate-pulse-slow inline-block" style={{animationDelay: '0.9s'}}>97%</span>
+                  <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+                </div>
+                <div className="text-gray-500 dark:text-gray-400">Satisfaction</div>
               </div>
             </div>
           </div>
@@ -561,6 +651,192 @@ export default function About() {
         
         .particle {
           animation: float 8s ease-in-out infinite;
+        }
+
+        .animate-in {
+          animation: animateIn 0.8s ease forwards;
+        }
+        
+        @keyframes animateIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-float-delayed {
+          animation: float 6s ease-in-out 2s infinite;
+        }
+        
+        .animate-float-reverse {
+          animation: float 6s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-pulse-slow {
+          animation: pulseSlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulseSlow {
+          0%, 100% {
+            opacity: 0.5;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+        
+        .animate-pulse-very-slow {
+          animation: pulse-very-slow 10s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse-very-slow {
+          0%, 100% {
+            opacity: 0.05;
+          }
+          50% {
+            opacity: 0.15;
+          }
+        }
+        
+        .floating-particle, .particle {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-particle-slow {
+          animation: float 8s ease-in-out infinite;
+        }
+        
+        .floating-particle-fast {
+          animation: float 4s ease-in-out infinite;
+        }
+        
+        .parallax-slow, .parallax-bg-slow {
+          will-change: transform;
+        }
+        
+        .parallax-medium {
+          will-change: transform;
+        }
+        
+        .parallax-fast, .parallax-bg-fast {
+          will-change: transform;
+        }
+        
+        @keyframes slide-right-infinite {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+        
+        .animate-slide-right-infinite {
+          animation: slide-right-infinite 3s linear infinite;
+        }
+        
+        @keyframes scan-line {
+          0% {
+            transform: translateY(-100%);
+          }
+          100% {
+            transform: translateY(100vh);
+          }
+        }
+        
+        .animate-scan-line {
+          animation: scan-line 10s linear infinite;
+        }
+        
+        /* Grid animation keyframes */
+        @keyframes grid-node-blink {
+          0%, 100% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 0.8;
+          }
+        }
+        
+        .animate-grid-node-blink {
+          animation: grid-node-blink 4s ease-in-out infinite;
+        }
+        
+        @keyframes grid-trace-horizontal {
+          0% {
+            transform: translateX(-100%) scaleX(0.7);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(100%) scaleX(0.7);
+            opacity: 0;
+          }
+        }
+        
+        .animate-grid-trace-horizontal {
+          animation: grid-trace-horizontal 8s ease-in-out infinite;
+        }
+        
+        @keyframes grid-trace-vertical {
+          0% {
+            transform: translateY(-100%) scaleY(0.7);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(100%) scaleY(0.7);
+            opacity: 0;
+          }
+        }
+        
+        .animate-grid-trace-vertical {
+          animation: grid-trace-vertical 8s ease-in-out infinite;
+        }
+        
+        @keyframes grid-intersection-pulse {
+          0%, 100% {
+            transform: scale(0.5);
+            opacity: 0.2;
+          }
+          50% {
+            transform: scale(1.2);
+            opacity: 0.6;
+          }
+        }
+        
+        .animate-grid-intersection-pulse {
+          animation: grid-intersection-pulse 6s ease-in-out infinite;
         }
       `}</style>
     </main>
