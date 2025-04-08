@@ -18,6 +18,12 @@ import {
   Cloud,
   X,
 } from "lucide-react"
+import asset1  from "../asset1.jpeg"
+import asset2 from "../asset2.jpeg"
+import asset3 from "../asset3.jpeg"
+import testimonial1 from "../AcmeCorp1.png"
+import testimonial2 from "../TechGiant2.jpeg"
+import testimonial3 from "../SecureBank.png"
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -322,7 +328,7 @@ export default function CyberFramework() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-50"></div>
                 <img
-                  src={`/placeholder.svg?height=300&width=500&text=Cyber+Security+Image+${item}`}
+                    src={`${item === 1 ? asset1 : item === 2 ? asset2 : asset3}`}
                   alt={`Cyber Security Image ${item}`}
                   className="w-full h-full object-cover opacity-70 mix-blend-overlay"
                 />
@@ -394,7 +400,7 @@ export default function CyberFramework() {
                   <div className="relative z-10 flex flex-col h-full">
                     <div className="mb-4">
                       <img
-                        src={testimonial.logo || "/placeholder.svg"}
+                        src={`${index === 0 ? testimonial1 : index === 1 ? testimonial2 : testimonial3}`}
                         alt={`${testimonial.name} logo`}
                         className="h-16 w-16 object-contain"
                       />

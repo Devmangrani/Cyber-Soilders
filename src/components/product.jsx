@@ -7,7 +7,11 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { Link } from "react-router-dom"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
+import CyberSecurityTraining  from "../CyberSecurityTraining.jpeg"
+import AdvancedTrainingEnvironment from "../AdvancedTrainingEnvironment.jpg"
+import RealTimeAttackSimulation from "../istockphoto-1435605327-612x612.jpg"
+import ComprehensiveAnalytics from "../ComprehensiveAnalytics.png"
+import IIT_Madras_Logo from "../IIT_Madras_Logo.png"
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
 
@@ -43,19 +47,19 @@ export default function Product() {
 
   const slides = [
     {
-      image: "/placeholder.svg?height=600&width=800",
+      image: AdvancedTrainingEnvironment,
       title: "Advanced Training Environment",
       description: "Our state-of-the-art cyber range simulates real-world attack scenarios for hands-on training.",
       stats: { value: "1000+", label: "Scenarios" },
     },
     {
-      image: "/placeholder.svg?height=600&width=800",
+      image: RealTimeAttackSimulation,
       title: "Real-time Attack Simulation",
       description: "Experience realistic cyber attacks in a controlled environment.",
       stats: { value: "24/7", label: "Monitoring" },
     },
     {
-      image: "/placeholder.svg?height=600&width=800",
+      image: ComprehensiveAnalytics,
       title: "Comprehensive Analytics",
       description: "Get detailed insights into your team's performance and security posture.",
       stats: { value: "100%", label: "Accuracy" },
@@ -400,7 +404,7 @@ export default function Product() {
                 className="relative aspect-video bg-muted rounded-xl overflow-hidden shadow-lg"
               >
                 <img
-                  src="/placeholder.svg?height=400&width=600"
+                  src={CyberSecurityTraining}
                   alt="Cyber Security Training"
                   className="w-full h-full object-cover"
                 />
@@ -568,7 +572,7 @@ export default function Product() {
                   }}
                 />
                 <div className="relative z-10 flex items-center justify-center w-32 h-32 mx-auto rounded-full bg-gray-100 dark:bg-gray-700">
-                  <span className="text-2xl font-bold">IIT M</span>
+                  <img src={IIT_Madras_Logo} alt="IIT Madras Logo" className="w-32 h-32" />
                 </div>
               </motion.div>
 
