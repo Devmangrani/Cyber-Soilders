@@ -27,7 +27,7 @@ export default function App() {
                 <Hero />
                 <Features />
                 <Technology />
-                <InstantFeedback />
+                {/* <InstantFeedback /> */}
                 <Showcases />
               </>
             } />
