@@ -13,6 +13,13 @@ import {
   ArrowRight
 } from "lucide-react"
 
+import CISPPLogo from "../CISSP.png"
+import CISALogo from "../CISA.png"
+import CISMLogo from "../CISM.png"
+import CRISCLogo from "../CRISC.png"
+import CEHLogo from "../CEH.png"
+import CompTIALogo from "../CompTIA.png"
+
 // Array of cybersecurity-related image URLs
 const cyberImages = [
   "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=640&h=360&fit=crop", // Hacker with code
@@ -29,12 +36,36 @@ const cyberImages = [
 
 // Certification logos as shown in sketch
 const certifications = [
-  { name: "CISSP", logo: "/placeholder.svg?height=100&width=100" },
-  { name: "CISM", logo: "/placeholder.svg?height=100&width=100" },
-  { name: "CISA", logo: "/placeholder.svg?height=100&width=100" },
-  { name: "CRISC", logo: "/placeholder.svg?height=100&width=100" },
-  { name: "CEH", logo: "/placeholder.svg?height=100&width=100" },
-  { name: "CompTIA Security+", logo: "/placeholder.svg?height=100&width=100" },
+  { 
+    name: "CISSP", 
+    logo: CISPPLogo,
+    altText: "CISSP - Certified Information Systems Security Professional"
+  },
+  { 
+    name: "CISM", 
+    logo: CISMLogo,
+    altText: "CISM - Certified Information Security Manager"
+  },
+  { 
+    name: "CISA", 
+    logo: CISALogo,
+    altText: "CISA - Certified Information Systems Auditor"
+  },
+  { 
+    name: "CRISC", 
+    logo: CRISCLogo,
+    altText: "CRISC - Certified in Risk and Information Systems Control"
+  },
+  { 
+    name: "CEH", 
+    logo: CEHLogo,
+    altText: "CEH - Certified Ethical Hacker"
+  },
+  { 
+    name: "CompTIA Security+", 
+    logo: CompTIALogo,
+    altText: "CompTIA Security+"
+  }
 ];
 
 const videos = [
@@ -461,7 +492,7 @@ export default function Resources() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-cyan-300/10 to-blue-400/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
                   
                   <div className="flex flex-col items-center text-center space-y-3 relative z-10">
-                    <div className="w-16 h-16 mb-2">
+                    <div className="w-20 h-20 mb-2">
                       <img
                         src={cert.logo}
                         alt={cert.name}
