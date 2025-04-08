@@ -1,13 +1,25 @@
 // import Image from "next/image"
-import { useEffect, useRef, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Terminal, Shield, ArrowRight, ChevronRight } from "lucide-react"
-import { Link } from "react-router-dom"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Terminal,
+  Shield,
+  ArrowRight,
+  ChevronRight,
+  GraduationCap,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { motion, useScroll, useTransform } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   // Refs for intersection observer animations
   const sectionRef = useRef(null);
+  const gridRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [counterValues, setCounterValues] = useState({});
   const [isCounterStarted, setIsCounterStarted] = useState(false);
@@ -17,34 +29,55 @@ export default function Hero() {
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 200], [1, 0]);
 
+  // Add GSAP animation for grid
+  useEffect(() => {
+    if (gridRef.current) {
+      gsap.to(gridRef.current, {
+        backgroundSize: "30px 30px",
+        opacity: 0.7,
+        duration: 1,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "bottom center",
+          scrub: 0.5,
+        },
+      });
+    }
+  }, []);
+
   // Counter animation
   const animateCounter = (targetValue, id) => {
     let startValue = 0;
     const duration = 2000;
     const startTime = Date.now();
-    const isPercentage = typeof targetValue === 'string' && targetValue.includes('%');
-    const numericValue = parseInt(isPercentage ? targetValue.replace(/\D/g, '') : targetValue);
-    
+    const isPercentage =
+      typeof targetValue === "string" && targetValue.includes("%");
+    const numericValue = parseInt(
+      isPercentage ? targetValue.replace(/\D/g, "") : targetValue
+    );
+
     const updateCounter = () => {
       const currentTime = Date.now();
       const elapsedTime = currentTime - startTime;
-      
+
       if (elapsedTime < duration) {
         const progress = elapsedTime / duration;
         const currentValue = Math.floor(progress * numericValue);
-        setCounterValues(prev => ({
+        setCounterValues((prev) => ({
           ...prev,
-          [id]: isPercentage ? `${currentValue}%` : currentValue
+          [id]: isPercentage ? `${currentValue}%` : currentValue,
         }));
         requestAnimationFrame(updateCounter);
       } else {
-        setCounterValues(prev => ({
+        setCounterValues((prev) => ({
           ...prev,
-          [id]: targetValue
+          [id]: targetValue,
         }));
       }
     };
-    
+
     requestAnimationFrame(updateCounter);
   };
 
@@ -75,14 +108,77 @@ export default function Hero() {
   }, [isCounterStarted]);
 
   return (
-    <section ref={sectionRef} className="w-full min-h-screen relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="w-full min-h-screen relative overflow-hidden bg-gradient-to-b from-black to-gray-900"
+    >
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"
-          style={{ y, opacity }}
-        />
+        {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
+        <div
+          ref={gridRef}
+          className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
+        >
+          {/* Grid node glow effects */}
+          <div
+            className="grid-node absolute h-2 w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
+            style={{ animationDelay: "0.5s" }}
+          ></div>
+          <div
+            className="grid-node absolute h-2 w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
+            style={{ animationDelay: "1.2s" }}
+          ></div>
+          <div
+            className="grid-node absolute h-2 w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
+            style={{ animationDelay: "2.7s" }}
+          ></div>
+          <div
+            className="grid-node absolute h-2 w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
+            style={{ animationDelay: "1.8s" }}
+          ></div>
+          <div
+            className="grid-node absolute h-2 w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
+            style={{ animationDelay: "3.5s" }}
+          ></div>
+
+          {/* Grid line trace effects */}
+          <div
+            className="grid-trace absolute h-[1px] w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
+            style={{ animationDelay: "0.5s" }}
+          ></div>
+          <div
+            className="grid-trace absolute h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
+            style={{ animationDelay: "1.2s" }}
+          ></div>
+          <div
+            className="grid-trace absolute h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
+            style={{ animationDelay: "2.7s" }}
+          ></div>
+          <div
+            className="grid-trace absolute h-[1px] w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
+            style={{ animationDelay: "1.8s" }}
+          ></div>
+          <div
+            className="grid-trace absolute h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
+            style={{ animationDelay: "3.5s" }}
+          ></div>
+
+          {/* Neon intersection highlights */}
+          <div
+            className="grid-intersection absolute h-3 w-3 rounded-full bg-blue-500/20 blur-[5px] top-[24%] left-[48%] animate-grid-intersection-pulse"
+            style={{ animationDelay: "4.5s" }}
+          ></div>
+          <div
+            className="grid-intersection absolute h-3 w-3 rounded-full bg-purple-500/20 blur-[5px] top-[36%] left-[60%] animate-grid-intersection-pulse"
+            style={{ animationDelay: "2.3s" }}
+          ></div>
+          <div
+            className="grid-intersection absolute h-3 w-3 rounded-full bg-teal-500/20 blur-[5px] top-[56%] left-[32%] animate-grid-intersection-pulse"
+            style={{ animationDelay: "6.2s" }}
+          ></div>
+        </div>
+
+        {/* Radial gradient overlay */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
       </div>
 
@@ -121,7 +217,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium"
+            className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-primary text-sm font-medium"
           >
             <Shield className="mr-2 h-4 w-4" />
             Cyber Security Excellence
@@ -134,17 +230,22 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-4 max-w-[980px]"
           >
-            <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-primary to-gray-600 dark:from-gray-100 dark:via-primary dark:to-gray-400">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
               Defending your Digital Frontiers
             </h1>
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-xl md:text-2xl text-muted-foreground max-w-[700px] mx-auto"
+              className="text-xl md:text-2xl text-gray-400 max-w-[700px] mx-auto"
             >
-              Used by some of the reputed organisations, Cyber.soldiers empowers you with
-              <span className="font-semibold text-foreground"> high-quality Cyber Services & Skilling </span>
+              Used by some of the reputed organisations, Cyber.soldiers empowers
+              you with
+              <span className="font-semibold text-gray-300">
+                {" "}
+                high-quality Cyber Services & Skilling{" "}
+              </span>
               with the power of ecosystem.
             </motion.p>
           </motion.div>
@@ -157,22 +258,43 @@ export default function Hero() {
             className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-12 w-full max-w-3xl"
           >
             {[
-              { id: "clients", label: "Global Clients", value: counterValues.clients || "500+" },
-              { id: "satisfaction", label: "Client Satisfaction", value: `${counterValues.satisfaction || "98"}%` },
-              { id: "countries", label: "Countries", value: `${counterValues.countries || "25"}+` },
-              { id: "experts", label: "Security Experts", value: `${counterValues.experts || "100"}+` },
+              {
+                id: "clients",
+                label: "Global Clients",
+                value: counterValues.clients || "500+",
+              },
+              {
+                id: "satisfaction",
+                label: "Client Satisfaction",
+                value: `${counterValues.satisfaction || "98"}%`,
+              },
+              {
+                id: "countries",
+                label: "Countries",
+                value: `${counterValues.countries || "25"}+`,
+              },
+              {
+                id: "experts",
+                label: "Security Experts",
+                value: `${counterValues.experts || "100"}+`,
+              },
             ].map((stat, index) => (
               <motion.div
                 key={stat.id}
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                className="flex flex-col items-center"
+                className="flex flex-col items-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden"
               >
-                <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent group-hover:animate-slide-right-infinite"></div>
+                <div className="text-4xl font-bold text-gray-100 mb-1 relative animate-pulse-slow">
                   {stat.value}
+                  <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                 </div>
-                <div className="text-sm text-muted-foreground mt-2">{stat.label}</div>
+                <div className="text-gray-500 dark:text-gray-400">
+                  {stat.label}
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -182,36 +304,24 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
-            className="flex flex-col sm:flex-row gap-4 mt-8"
+            className="flex flex-wrap justify-center gap-2 mt-8"
           >
             {[
-              { to: "/product", label: "Product", variant: "default" },
-              { to: "/services", label: "Services", variant: "outline" },
-              { to: "/training", label: "Training", variant: "default" },
+              { to: "/product", label: "Product", icon: <Shield className="h-4 w-4 mr-1" /> },
+              { to: "/services", label: "Services", icon: <ArrowRight className="h-4 w-4 mr-1" /> },
+              { to: "/training", label: "Training", icon: <GraduationCap className="h-4 w-4 mr-1" /> },
             ].map((button, index) => (
               <Link key={button.to} to={button.to}>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <Button
+                  variant="outline"
+                  className={`category-filter relative group flex items-center px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 hover:bg-white/10 transition-all duration-300`}
                 >
-                  <Button
-                    size="lg"
-                    variant={button.variant}
-                    className={`group relative overflow-hidden ${
-                      button.variant === "default"
-                        ? "bg-primary hover:bg-primary/90"
-                        : "border-primary/20 hover:border-primary/40"
-                    }`}
-                  >
-                    <span className="relative z-10">{button.label}</span>
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0"
-                      initial={{ x: "-100%" }}
-                      whileHover={{ x: "100%" }}
-                      transition={{ duration: 0.75, ease: "easeInOut" }}
-                    />
-                  </Button>
-                </motion.div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                  <span className="relative z-10 flex items-center text-gray-100">
+                    {button.icon}
+                    {button.label}
+                  </span>
+                </Button>
               </Link>
             ))}
           </motion.div>
@@ -227,12 +337,14 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               className="flex items-center justify-center bg-black/80 dark:bg-white/10 rounded-lg px-6 py-3 space-x-4"
             >
-              <Terminal className="h-5 w-5 text-primary" />
-              <code className="font-mono text-sm text-primary">get-cyber.soldiers</code>
+              <Terminal className="h-5 w-5 text-gray-100" />
+              <code className="font-mono text-sm text-gray-100">
+                get-cyber.soldiers@latest
+              </code>
               <motion.span
                 animate={{ opacity: [0, 1, 0] }}
                 transition={{ duration: 1, repeat: Infinity }}
-                className="text-primary"
+                className="text-gray-100"
               >
                 |
               </motion.span>
@@ -242,28 +354,109 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-50"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
           className="flex flex-col items-center"
         >
-          <div className="text-sm text-muted-foreground mb-2">Scroll to explore</div>
-          <div className="w-6 h-10 border-2 border-primary/20 rounded-full p-1">
+          <div className="text-sm text-white font-medium mb-2">Scroll to explore</div>
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full p-1 relative overflow-hidden">
             <motion.div
               animate={{ y: [0, 16, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-2 h-2 bg-primary rounded-full"
+              className="w-2 h-2 bg-white rounded-full"
+            />
+            <motion.div
+              className="absolute inset-0 bg-white/10"
+              animate={{ 
+                opacity: [0.1, 0.3, 0.1],
+                scale: [1, 1.1, 1]
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
             />
           </div>
         </motion.div>
-      </motion.div>
+      </motion.div> */}
+
+      {/* Animation styles */}
+      <style>{`
+        /* Grid animation keyframes */
+        @keyframes grid-node-blink {
+          0%, 100% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 0.8;
+          }
+        }
+        
+        .animate-grid-node-blink {
+          animation: grid-node-blink 4s ease-in-out infinite;
+        }
+        
+        @keyframes grid-trace-horizontal {
+          0% {
+            transform: translateX(-100%) scaleX(0.7);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(100%) scaleX(0.7);
+            opacity: 0;
+          }
+        }
+        
+        .animate-grid-trace-horizontal {
+          animation: grid-trace-horizontal 8s ease-in-out infinite;
+        }
+        
+        @keyframes grid-trace-vertical {
+          0% {
+            transform: translateY(-100%) scaleY(0.7);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(100%) scaleY(0.7);
+            opacity: 0;
+          }
+        }
+        
+        .animate-grid-trace-vertical {
+          animation: grid-trace-vertical 8s ease-in-out infinite;
+        }
+        
+        @keyframes grid-intersection-pulse {
+          0%, 100% {
+            transform: scale(0.5);
+            opacity: 0.2;
+          }
+          50% {
+            transform: scale(1.2);
+            opacity: 0.6;
+          }
+        }
+        
+        .animate-grid-intersection-pulse {
+          animation: grid-intersection-pulse 6s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 }
-

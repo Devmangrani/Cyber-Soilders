@@ -59,6 +59,7 @@ export default function Features() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeFeature, setActiveFeature] = useState(null);
   const { scrollY } = useScroll();
+  const gridRef = useRef(null);
 
   // Parallax effects
   const y = useTransform(scrollY, [0, 1000], [0, 200]);
@@ -109,42 +110,40 @@ export default function Features() {
   };
 
   return (
-    <section ref={containerRef} className="w-full py-20 md:py-32 relative overflow-hidden bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-black">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-        <motion.div
-          style={{ y, opacity }}
-          className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"
-        />
+    <section ref={containerRef} className="w-full py-8 bg-gray-900">
+      {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
+      <div 
+        ref={gridRef}
+        className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
+      >
+        {/* Grid node glow effects */}
+        <div className="grid-node absolute h-2 w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink" style={{animationDelay: '0.5s'}}></div>
+        <div className="grid-node absolute h-2 w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink" style={{animationDelay: '1.2s'}}></div>
+        <div className="grid-node absolute h-2 w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink" style={{animationDelay: '2.7s'}}></div>
+        <div className="grid-node absolute h-2 w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink" style={{animationDelay: '1.8s'}}></div>
+        <div className="grid-node absolute h-2 w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink" style={{animationDelay: '3.5s'}}></div>
+        
+        {/* Grid line trace effects */}
+        <div className="grid-trace absolute h-[1px] w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal" style={{animationDelay: '0.5s'}}></div>
+        <div className="grid-trace absolute h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical" style={{animationDelay: '1.2s'}}></div>
+        <div className="grid-trace absolute h-[1px] w-[150px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal" style={{animationDelay: '2.7s'}}></div>
+        <div className="grid-trace absolute h-[1px] w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal" style={{animationDelay: '1.8s'}}></div>
+        <div className="grid-trace absolute h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical" style={{animationDelay: '3.5s'}}></div>
       </div>
 
-      {/* Floating Orbs */}
-      <motion.div
-        className="absolute -z-10 top-1/4 right-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-primary/20 to-blue-500/20 blur-3xl"
-        animate={{
-          y: [0, -50, 0],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute -z-10 bottom-1/4 left-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-primary/10 blur-3xl"
-        animate={{
-          y: [0, 50, 0],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-      />
+      {/* Enhanced animated background elements */}
+      <div className="absolute -z-10 top-0 left-1/3 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl parallax-slow"></div>
+      <div className="absolute -z-10 bottom-0 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl parallax-fast"></div>
+      <div className="absolute -z-10 top-1/4 right-1/3 w-80 h-80 rounded-full bg-gradient-to-tr from-pink-500/10 to-violet-500/10 blur-3xl parallax-medium"></div>
+
+      {/* Enhanced animated particles */}
+      <div className="absolute -z-10 inset-0">
+        <div className="floating-particle absolute top-1/4 left-1/5 size-2 rounded-full bg-blue-500/30"></div>
+        <div className="floating-particle absolute top-3/4 left-2/3 size-3 rounded-full bg-purple-500/30"></div>
+        <div className="floating-particle absolute top-1/3 left-3/4 size-2 rounded-full bg-green-500/30"></div>
+        <div className="floating-particle absolute top-2/3 left-1/4 size-2 rounded-full bg-yellow-500/30"></div>
+        <div className="floating-particle absolute top-1/2 left-1/2 size-1 rounded-full bg-red-500/30"></div>
+      </div>
 
       {/* Content */}
       <div className="container px-4 md:px-6 max-w-[1400px] mx-auto relative z-10">
@@ -168,9 +167,9 @@ export default function Features() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl md:text-5xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-primary to-gray-600 dark:from-gray-100 dark:via-primary dark:to-gray-400 mb-4"
+            className="thero-title text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-600"
           >
-            Comprehensive Security Solutions
+            Why Cyber Soldiers?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -182,12 +181,12 @@ export default function Features() {
           </motion.p>
         </motion.div>
 
-        {/* Features Grid */}
+        {/* Features Grid - Updated to 3 cards per row */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10"
         >
           {features.map((feature, index) => (
             <motion.div
@@ -196,29 +195,29 @@ export default function Features() {
               whileHover={{ scale: 1.02, translateY: -5 }}
               onHoverStart={() => setActiveFeature(index)}
               onHoverEnd={() => setActiveFeature(null)}
-              className="group relative p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-gray-200/10 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {/* Feature Content */}
               <div className="relative z-10">
                 <motion.div
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.1 }}
-                  className="mb-4 p-3 inline-flex items-center justify-center rounded-lg bg-primary/10 text-primary"
+                  className="mb-4 p-3 inline-flex items-center justify-center rounded-lg bg-primary/10 text-white"
                 >
                   {feature.icon}
                 </motion.div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold mb-2 text-gray-100">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-muted-foreground mb-4 text-gray-400">
                   {feature.description}
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <span className="text-2xl font-bold text-primary">
+                    <span className="text-2xl font-bold  text-gray-500">
                       {feature.stats.value}
                     </span>
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-sm text-muted-foreground text-gray-400">
                       {feature.stats.label}
                     </span>
                   </div>
@@ -280,7 +279,7 @@ export default function Features() {
           transition={{ duration: 1.5, repeat: Infinity }}
           className="flex flex-col items-center"
         >
-          <div className="text-sm text-muted-foreground mb-2">Discover More</div>
+          {/* <div className="text-sm text-muted-foreground mb-2">Discover More</div> */}
           <div className="w-6 h-10 border-2 border-primary/20 rounded-full p-1">
             <motion.div
               animate={{ y: [0, 16, 0] }}
