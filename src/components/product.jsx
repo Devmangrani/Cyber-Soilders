@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useRef, useEffect } from "react"
 import { ChevronLeft, ChevronRight, Play, Shield, Zap, Users, Target, ArrowRight, Star, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -7,7 +9,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 // Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Product() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -35,29 +37,29 @@ export default function Product() {
           end: "bottom center",
           scrub: 0.5,
         },
-      });
+      })
     }
-  }, []);
+  }, [])
 
   const slides = [
     {
       image: "/placeholder.svg?height=600&width=800",
       title: "Advanced Training Environment",
       description: "Our state-of-the-art cyber range simulates real-world attack scenarios for hands-on training.",
-      stats: { value: "1000+", label: "Scenarios" }
+      stats: { value: "1000+", label: "Scenarios" },
     },
     {
       image: "/placeholder.svg?height=600&width=800",
       title: "Real-time Attack Simulation",
       description: "Experience realistic cyber attacks in a controlled environment.",
-      stats: { value: "24/7", label: "Monitoring" }
+      stats: { value: "24/7", label: "Monitoring" },
     },
     {
       image: "/placeholder.svg?height=600&width=800",
       title: "Comprehensive Analytics",
       description: "Get detailed insights into your team's performance and security posture.",
-      stats: { value: "100%", label: "Accuracy" }
-    }
+      stats: { value: "100%", label: "Accuracy" },
+    },
   ]
 
   const features = [
@@ -65,26 +67,26 @@ export default function Product() {
       icon: <Shield className="h-8 w-8" />,
       title: "Advanced Security",
       description: "State-of-the-art protection against evolving cyber threats",
-      color: "text-blue-500"
+      color: "text-blue-500",
     },
     {
       icon: <Zap className="h-8 w-8" />,
       title: "Real-time Monitoring",
       description: "Instant detection and response to security incidents",
-      color: "text-yellow-500"
+      color: "text-yellow-500",
     },
     {
       icon: <Users className="h-8 w-8" />,
       title: "Team Collaboration",
       description: "Seamless coordination between security teams",
-      color: "text-green-500"
+      color: "text-green-500",
     },
     {
       icon: <Target className="h-8 w-8" />,
       title: "Precision Training",
       description: "Targeted exercises for specific security scenarios",
-      color: "text-red-500"
-    }
+      color: "text-red-500",
+    },
   ]
 
   useEffect(() => {
@@ -94,7 +96,7 @@ export default function Product() {
           setIsVisible(true)
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     )
 
     if (containerRef.current) {
@@ -178,7 +180,7 @@ export default function Product() {
             }}
             transition={{
               duration: 8,
-              repeat: Infinity,
+              repeat: Number.POSITIVE_INFINITY,
               ease: "easeInOut",
             }}
           />
@@ -190,14 +192,14 @@ export default function Product() {
             }}
             transition={{
               duration: 10,
-              repeat: Infinity,
+              repeat: Number.POSITIVE_INFINITY,
               ease: "easeInOut",
               delay: 1,
             }}
           />
 
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10 py-20 md:py-32">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -274,14 +276,14 @@ export default function Product() {
                       <motion.div
                         className="ml-2 h-5 w-5"
                         initial={{ scale: 1 }}
-                        animate={{ 
+                        animate={{
                           scale: [1, 1.1, 1],
-                          rotate: [0, 5, 0]
+                          rotate: [0, 5, 0],
                         }}
                         transition={{
                           duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut"
+                          repeat: Number.POSITIVE_INFINITY,
+                          ease: "easeInOut",
                         }}
                       >
                         <svg
@@ -379,60 +381,87 @@ export default function Product() {
           `}</style>
         </section>
 
-        {/* Features Grid */}
-        <section className="w-full py-20 md:py-32 bg-white dark:bg-black relative overflow-hidden">
-          <motion.div
-            initial="hidden"
-            animate={isVisible ? "visible" : "hidden"}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.2
-                }
-              }
-            }}
-            className="container px-4 md:px-6 max-w-[1200px] mx-auto"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0 }
-                  }}
-                  whileHover={{ scale: 1.02, y: -5 }}
-                  onHoverStart={() => setHoveredFeature(index)}
-                  onHoverEnd={() => setHoveredFeature(null)}
-                  className="group relative p-6 rounded-xl border bg-card hover:shadow-xl transition-all duration-300"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className={`${feature.color} mb-4`}
-                  >
-                    {feature.icon}
-                  </motion.div>
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                    {feature.title}
-                  </h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
+        <section className="w-full py-16 md:py-24 bg-white dark:bg-gray-950 relative overflow-hidden">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl font-bold tracking-tighter mb-12 text-center text-gray-300"
+            >
+              Cyber Security Training & Services
+            </motion.h2>
 
-                  {/* Hover Effect Background */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    initial={false}
-                    animate={{
-                      background: hoveredFeature === index
-                        ? "linear-gradient(to bottom right, rgba(var(--primary), 0.1), rgba(var(--primary), 0.2))"
-                        : "linear-gradient(to bottom right, rgba(var(--primary), 0), rgba(var(--primary), 0.1))"
-                    }}
-                  />
-                </motion.div>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="relative aspect-video bg-muted rounded-xl overflow-hidden shadow-lg"
+              >
+                <img
+                  src="/placeholder.svg?height=400&width=600"
+                  alt="Cyber Security Training"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex flex-col justify-center space-y-4"
+              >
+                <h3 className="text-2xl font-bold text-gray-300">Cyber Security Training</h3>
+                <p className="text-muted-foreground">
+                  Allows cyber security professionals develop hands-on skills & earn certification.
+                </p>
+                <Link to="/training">
+                  <Button variant="outline" className="group mt-4">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
+              </motion.div>
             </div>
-          </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mt-16"
+            >
+              <h3 className="text-2xl font-bold mb-8">Other Services</h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  { title: "Incident Response", icon: <Shield className="h-5 w-5" /> },
+                  { title: "Red Team Vs Blue Team Exercise", icon: <Users className="h-5 w-5" /> },
+                  { title: "Security Awareness Training", icon: <Target className="h-5 w-5" /> },
+                  { title: "DevSecOps Integration", icon: <Zap className="h-5 w-5" /> },
+                  { title: "Capture The Flag", icon: <Award className="h-5 w-5" /> },
+                  { title: "Cybersecurity Skill Assessment", icon: <Star className="h-5 w-5" /> },
+                  { title: "IoT & Critical Infrastructure Security", icon: <Shield className="h-5 w-5" /> },
+                  { title: "Penetration Testing Practice", icon: <Target className="h-5 w-5" /> },
+                  { title: "Continuous Cybersecurity Improvement", icon: <Zap className="h-5 w-5" /> },
+                ].map((service, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    whileHover={{ scale: 1.02, y: -5 }}
+                    className="group p-4 rounded-lg border bg-card hover:shadow-md transition-all duration-300"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className="text-primary">{service.icon}</div>
+                      <h4 className="font-medium group-hover:text-primary transition-colors">{service.title}</h4>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </section>
 
         {/* Gallery Section */}
@@ -442,131 +471,64 @@ export default function Product() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl font-bold tracking-tighter mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-primary to-gray-600 dark:from-gray-100 dark:via-primary dark:to-gray-400"
+              className="text-3xl font-bold tracking-tighter mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-600"
             >
               Interactive Training Environment
             </motion.h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="relative aspect-video bg-muted rounded-xl overflow-hidden shadow-2xl"
-              >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentSlide}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="absolute inset-0"
-                  >
-                    <img
-                      alt={slides[currentSlide].title}
-                      className="object-cover w-full h-full"
-                      src={slides[currentSlide].image}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-                  </motion.div>
-                </AnimatePresence>
-
-                <div className="absolute inset-0 flex items-center justify-between p-4">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <Button 
-                      variant="outline" 
-                      size="icon" 
-                      className="h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background/90"
-                      onClick={() => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))}
-                    >
-                      <ChevronLeft className="h-6 w-6" />
-                    </Button>
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <Button 
-                      variant="outline" 
-                      size="icon" 
-                      className="h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background/90"
-                      onClick={() => setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))}
-                    >
-                      <ChevronRight className="h-6 w-6" />
-                    </Button>
-                  </motion.div>
-                </div>
-
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <motion.div
-                    key={currentSlide}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="flex items-center justify-between"
-                  >
-                    <div className="text-white">
-                      <div className="text-2xl font-bold mb-2">{slides[currentSlide].stats.value}</div>
-                      <div className="text-sm opacity-80">{slides[currentSlide].stats.label}</div>
-                    </div>
-                    <div className="flex gap-1">
-                      {slides.map((_, index) => (
-                        <button
-                          key={index}
-                          className={`w-2 h-2 rounded-full transition-colors ${
-                            index === currentSlide ? "bg-primary" : "bg-primary/30"
-                          }`}
-                          onClick={() => setCurrentSlide(index)}
-                        />
-                      ))}
-                    </div>
-                  </motion.div>
-                </div>
-              </motion.div>
-
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-6"
-              >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentSlide}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <h3 className="text-2xl font-bold mb-4">{slides[currentSlide].title}</h3>
-                    <p className="text-muted-foreground text-lg">{slides[currentSlide].description}</p>
-                  </motion.div>
-                </AnimatePresence>
-
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {slides.map((slide, index) => (
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="pt-4"
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg group"
+                  whileHover={{ 
+                    scale: 1.02,
+                    transition: { duration: 0.2 }
+                  }}
                 >
-                  <Button className="group relative overflow-hidden">
-                    <span className="relative z-10 flex items-center">
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </span>
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0"
-                      initial={{ x: "-100%" }}
-                      whileHover={{ x: "100%" }}
-                      transition={{ duration: 0.75, ease: "easeInOut" }}
+                  <div className="relative aspect-video overflow-hidden">
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110"
                     />
-                  </Button>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-40" />
+                    <div className="absolute bottom-4 left-4">
+                      <div className="text-white transform transition-all duration-300 group-hover:translate-y-[-8px]">
+                        <div className="text-2xl font-bold transition-colors duration-300 group-hover:text-primary">{slide.stats.value}</div>
+                        <div className="text-sm opacity-80 transition-all duration-300 group-hover:opacity-100">{slide.stats.label}</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="p-6 flex flex-col h-full">
+                    <div className="flex-1 space-y-4 mb-6">
+                      <h3 className="text-xl font-bold transform transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary">{slide.title}</h3>
+                      <p className="text-muted-foreground transition-all duration-300 group-hover:opacity-90">{slide.description}</p>
+                    </div>
+                    <motion.div 
+                      whileHover={{ scale: 1.05 }} 
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Button className="w-full relative overflow-hidden bg-transparent border-2 border-primary hover:bg-primary/10 transition-all duration-300">
+                        <span className="relative z-10 flex items-center justify-center group-hover:text-primary">
+                          Learn More
+                          <ArrowRight className="ml-2 h-4 w-4 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-110" />
+                        </span>
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0"
+                          initial={{ x: "-100%" }}
+                          whileHover={{ x: "100%" }}
+                          transition={{ duration: 1, ease: "easeInOut" }}
+                        />
+                      </Button>
+                    </motion.div>
+                  </div>
                 </motion.div>
-              </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -574,27 +536,17 @@ export default function Product() {
         {/* Partner Section */}
         <section className="w-full py-20 md:py-32 bg-white dark:bg-black">
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="flex flex-col items-center text-center space-y-8"
             >
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium"
-              >
-                <Star className="mr-2 h-4 w-4" />
-                Knowledge Partner
-              </motion.div>
-
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-primary to-gray-600 dark:from-gray-100 dark:via-primary dark:to-gray-400"
+                className="text-3xl font-bold tracking-tighter"
               >
                 Our Knowledge Partner
               </motion.h2>
@@ -611,17 +563,13 @@ export default function Product() {
                   }}
                   transition={{
                     duration: 3,
-                    repeat: Infinity,
+                    repeat: Number.POSITIVE_INFINITY,
                     ease: "linear",
                   }}
                 />
-                <img
-                  alt="IIT Madras Logo"
-                  width="300"
-                  height="100"
-                  className="relative z-10 object-contain"
-                  src="/placeholder.svg?height=100&width=300"
-                />
+                <div className="relative z-10 flex items-center justify-center w-32 h-32 mx-auto rounded-full bg-gray-100 dark:bg-gray-700">
+                  <span className="text-2xl font-bold">IIT M</span>
+                </div>
               </motion.div>
 
               <motion.p
@@ -633,11 +581,7 @@ export default function Product() {
                 IIT Madras brings world-class expertise and research to our cybersecurity solutions.
               </motion.p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-              >
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <Button variant="outline" className="group">
                   Learn More About Partnership
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -646,7 +590,8 @@ export default function Product() {
             </motion.div>
           </div>
         </section>
+
       </div>
     </main>
   )
-} 
+}
