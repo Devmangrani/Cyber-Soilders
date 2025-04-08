@@ -14,10 +14,12 @@ import About from "@/components/about"
 import Contact from "@/components/contact"
 import Careers from "@/components/careers"
 import Hire from "@/components/hire"
+import ScrollToTop from "@/components/scroll-to-top"
 
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-1">
