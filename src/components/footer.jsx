@@ -31,7 +31,7 @@ export default function Footer() {
             </div>
             <div className="mt-6">
               <p className="text-sm">2025</p>
-              <p className="text-sm font-medium text-gray-100">@CyberSystem</p>
+              <p className="text-sm font-medium text-gray-100">@CyberSoldiers</p>
               <div className="flex space-x-2 mt-4">
                 <a href="#" className="text-xs px-3 py-1 border text-gray-100 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900">LinkedIn</a>
                 <a href="#" className="text-xs px-3 py-1 border text-gray-100 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900">YouTube</a>
@@ -51,7 +51,7 @@ export default function Footer() {
               <div className="w-6 h-6 rounded-full border flex items-center justify-center mr-2">
                 <span className="text-xs text-gray-100">C</span>
               </div>
-              <span className="text-sm">email</span>
+              <span className="text-sm text-gray-100">email</span>
             </div>
             
             <div className="mt-6">
