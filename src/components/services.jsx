@@ -1,6 +1,18 @@
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import CyberSecurityServices from "../CyberSecurityServices.jpeg"
+import networksecurity from "../networksecurity.png"
+import cloudsecurity from "../cloudsecurity.webp"
+import applicationsecurity from "../applicationsecurity.jpg"
+import endpointprotection from "../endpointsecurity.webp"
+import identityaccess from "../identityandaccessmanagement.avif"
+import dataprotection from "../dataprotection.webp"
+import ManagedSOC from "../soc.jpg"
+import Vulnerability from "../Vulnerability&PenetrationTesting.jpg"
+import RiskAssessment from "../risk.webp"
+import AuditCompliance from "../AuditCompliance.webp"
+
 import { ArrowRight, Shield, Zap, Users, Target, Lock, Cloud, Database, Key, Network, Bug, FileCheck, AlertTriangle, Star, ChevronRight } from "lucide-react"
 
 export default function Services() {
@@ -22,7 +34,7 @@ export default function Services() {
       id: "Managed SOC",
       title: "Managed SOC",
       description: "Our 24/7 Security Operations Center provides continuous monitoring, threat detection, and incident response to protect your organization from evolving cyber threats. Staffed by experienced security analysts using cutting-edge technology, our Managed SOC delivers enterprise-grade security without the overhead of building and maintaining your own security operations center.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: ManagedSOC,
       icon: <Shield className="h-8 w-8" />,
       features: ["24/7 Monitoring", "Threat Detection", "Incident Response", "Real-time Alerts"],
       color: "text-blue-500"
@@ -31,7 +43,7 @@ export default function Services() {
       id: "Vulnerability & Penetration Testing",
       title: "Vulnerability & Penetration Testing",
       description: "Comprehensive security assessment services that identify and address vulnerabilities in your systems, applications, and infrastructure. Our expert team conducts thorough penetration testing to ensure your organization's security posture is robust and resilient.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: Vulnerability,
       icon: <Bug className="h-8 w-8" />,
       features: ["System Assessment", "Application Testing", "Infrastructure Analysis", "Security Reports"],
       color: "text-red-500"
@@ -40,7 +52,7 @@ export default function Services() {
       id: "Risk Assessment ",
       title: "Risk Assessment",
       description: "Detailed risk analysis and compliance auditing services to help your organization meet regulatory requirements and industry standards. We provide actionable insights and recommendations to strengthen your security framework.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: RiskAssessment,
       icon: <FileCheck className="h-8 w-8" />,
       features: ["Risk Analysis", "Compliance Auditing", "Policy Review", "Security Framework"],
       color: "text-green-500"
@@ -49,7 +61,7 @@ export default function Services() {
       id: "Audit Compliance",
       title: "Audit Compliance",
       description: "Rapid and effective incident response services to help your organization recover from security incidents. Our team provides immediate support, investigation, and remediation to minimize impact and prevent future occurrences.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: AuditCompliance,
       icon: <AlertTriangle className="h-8 w-8" />,
       features: ["Rapid Response", "Investigation", "Remediation", "Prevention"],
       color: "text-yellow-500"
@@ -59,37 +71,37 @@ export default function Services() {
   const securityCards = [
     {
       title: "Network Security",
-      image: "/placeholder.svg?height=300&width=400",
+      image: networksecurity,
       icon: <Network className="h-6 w-6" />,
       stats: { value: "99.9%", label: "Uptime" }
     },
     {
       title: "Cloud Security",
-      image: "/placeholder.svg?height=300&width=400",
+      image: cloudsecurity,
       icon: <Cloud className="h-6 w-6" />,
       stats: { value: "24/7", label: "Monitoring" }
     },
     {
       title: "Application Security",
-      image: "/placeholder.svg?height=300&width=400",
+      image: applicationsecurity,
       icon: <Lock className="h-6 w-6" />,
       stats: { value: "100%", label: "Coverage" }
     },
     {
       title: "Endpoint Protection",
-      image: "/placeholder.svg?height=300&width=400",
+      image: endpointprotection,
       icon: <Target className="h-6 w-6" />,
       stats: { value: "500+", label: "Endpoints" }
     },
     {
       title: "Identity & Access Management",
-      image: "/placeholder.svg?height=300&width=400",
+      image: identityaccess,
       icon: <Key className="h-6 w-6" />,
       stats: { value: "2FA", label: "Enabled" }
     },
     {
       title: "Data Protection",
-      image: "/placeholder.svg?height=300&width=400",
+      image: dataprotection,
       icon: <Database className="h-6 w-6" />,
       stats: { value: "256bit", label: "Encryption" }
     }
@@ -284,7 +296,7 @@ export default function Services() {
                 className="relative w-full max-w-[500px] aspect-video rounded-xl overflow-hidden shadow-2xl"
               >
                 <img
-                  src="/placeholder.svg?height=400&width=600"
+                  src={CyberSecurityServices}
                   alt="Security Services"
                   className="object-cover w-full h-full"
                 />
