@@ -418,22 +418,94 @@ export default function Hire() {
         >
           <div 
             ref={gridRef}
-            className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"
-          ></div>
+            className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
+          >
+            {/* Grid node glow effects */}
+            <div
+              className="grid-node absolute h-2 w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
+              style={{ animationDelay: "0.5s" }}
+            ></div>
+            <div
+              className="grid-node absolute h-2 w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
+              style={{ animationDelay: "1.2s" }}
+            ></div>
+            <div
+              className="grid-node absolute h-2 w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
+              style={{ animationDelay: "2.7s" }}
+            ></div>
+            <div
+              className="grid-node absolute h-2 w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
+              style={{ animationDelay: "1.8s" }}
+            ></div>
+            <div
+              className="grid-node absolute h-2 w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
+              style={{ animationDelay: "3.5s" }}
+            ></div>
+
+            {/* Grid line trace effects */}
+            <div
+              className="grid-trace absolute h-[1px] w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
+              style={{ animationDelay: "0.5s" }}
+            ></div>
+            <div
+              className="grid-trace absolute h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
+              style={{ animationDelay: "1.2s" }}
+            ></div>
+            <div
+              className="grid-trace absolute h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
+              style={{ animationDelay: "2.7s" }}
+            ></div>
+            <div
+              className="grid-trace absolute h-[1px] w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
+              style={{ animationDelay: "1.8s" }}
+            ></div>
+            <div
+              className="grid-trace absolute h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
+              style={{ animationDelay: "3.5s" }}
+            ></div>
+
+            {/* Neon intersection highlights */}
+            <div
+              className="grid-intersection absolute h-3 w-3 rounded-full bg-blue-500/20 blur-[5px] top-[24%] left-[48%] animate-grid-intersection-pulse"
+              style={{ animationDelay: "4.5s" }}
+            ></div>
+            <div
+              className="grid-intersection absolute h-3 w-3 rounded-full bg-purple-500/20 blur-[5px] top-[36%] left-[60%] animate-grid-intersection-pulse"
+              style={{ animationDelay: "2.3s" }}
+            ></div>
+            <div
+              className="grid-intersection absolute h-3 w-3 rounded-full bg-teal-500/20 blur-[5px] top-[56%] left-[32%] animate-grid-intersection-pulse"
+              style={{ animationDelay: "6.2s" }}
+            ></div>
+          </div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
           
-          {/* Enhanced animated background elements */}
-          <div className="absolute -z-10 top-0 left-1/3 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl parallax-slow"></div>
-          <div className="absolute -z-10 bottom-0 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl parallax-fast"></div>
-          
-          {/* Animated particles */}
-          <div className="absolute -z-10 inset-0">
-            <div className="floating-particle absolute top-1/4 left-1/5 size-2 rounded-full bg-blue-500/30"></div>
-            <div className="floating-particle absolute top-3/4 left-2/3 size-3 rounded-full bg-purple-500/30"></div>
-            <div className="floating-particle absolute top-1/3 left-3/4 size-2 rounded-full bg-green-500/30"></div>
-            <div className="floating-particle absolute top-2/3 left-1/4 size-2 rounded-full bg-yellow-500/30"></div>
-            <div className="floating-particle absolute top-1/2 left-1/2 size-1 rounded-full bg-red-500/30"></div>
-          </div>
+          {/* Floating Orbs */}
+          <motion.div
+            className="absolute -z-10 top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl"
+            animate={{
+              y: [0, -50, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute -z-10 bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl"
+            animate={{
+              y: [0, 50, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
           
           <div className="container relative px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="flex flex-col items-center text-center space-y-4">
@@ -469,35 +541,35 @@ export default function Hire() {
                 Hire Cybersecurity Professionals with Relevant Experience and Skills
               </motion.h3>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
               {[
                 {
-                  icon: <ShieldCheck className="w-6 h-6 text-primary" />,
+                  icon: <ShieldCheck className="w-6 h-6 text-primary text-white" />,
                   title: "Swift Threat Mitigation",
                   description: "Hire cybersecurity expert for advanced threat detection, minimizing response times and securing your systems faster."
                 },
                 {
-                  icon: <DollarSign className="w-6 h-6 text-primary" />,
+                  icon: <DollarSign className="w-6 h-6 text-primary text-white" />,
                   title: "Security Made Affordable",
                   description: "Our security pros optimize security posture to protect your data without inflating operational costs."
                 },
                 {
-                  icon: <Shield className="w-6 h-6 text-primary" />,
+                  icon: <Shield className="w-6 h-6 text-primary text-white" />,
                   title: "100% System Integrity",
                   description: "Worried about vulnerabilities? Our experts will fortify your infrastructure, eliminating potential threats and ensuring secure operations."
                 },
                 {
-                  icon: <Activity className="w-6 h-6 text-primary" />,
+                  icon: <Activity className="w-6 h-6 text-primary text-white    " />,
                   title: "Real-Time Protection",
                   description: "With continuous monitoring and rapid incident response, we keep your business secure with solutions deployed in minutes."
                 },
                 {
-                  icon: <Server className="w-6 h-6 text-primary" />,
+                  icon: <Server className="w-6 h-6 text-primary text-white" />,
                   title: "24/7 Security Backup",
                   description: "Hire information security expert and relax, as automated backup systems ensure business continuity 24/7."
                 },
                 {
-                  icon: <TrendingUp className="w-6 h-6 text-primary" />,
+                  icon: <TrendingUp className="w-6 h-6 text-primary text-white" />,
                   title: "Security Milestones",
                   description: "We promote cross-department collaboration, turning your security goals into achieved milestones, all while minimizing risks."
                 }
@@ -524,7 +596,7 @@ export default function Hire() {
           </div>
         </section>
 
-        {/* Skills Section */}
+        {/* Skills Section
         <section className="relative py-20 overflow-hidden">
           <motion.div 
             className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5"
@@ -578,7 +650,7 @@ export default function Hire() {
               </motion.div>
             </motion.div>
           </div>
-        </section>
+        </section> */}
 
         {/* Easy Steps Section */}
         <section className="relative py-20 overflow-hidden">
@@ -598,41 +670,41 @@ export default function Hire() {
                 Keeping It Simple: Our 3-Step Hiring Process
               </h4>
             </motion.div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
               {[
                 {
                   step: "Step 01",
                   time: "In 1-2 Days",
                   description: "Get pre-vetted CVs",
-                  icon: <FileText className="w-6 h-6 text-primary" />
+                  icon: <FileText className="w-6 h-6 text-primary text-white" />
                 },
                 {
                   step: "Step 02",
                   time: "In 2-4 Days",
                   description: "Interview Shortlisted Candidates",
-                  icon: <Users className="w-6 h-6 text-primary" />
+                  icon: <Users className="w-6 h-6 text-primary text-white" />
                 },
                 {
                   step: "Step 03",
                   time: "In 4-5 Days",
                   description: "Your Project Starts",
-                  icon: <Rocket className="w-6 h-6 text-primary" />
+                  icon: <Rocket className="w-6 h-6 text-primary text-white" />
                 }
               ].map((step, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 text-center border border-gray-700/50"
+                  className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 text-center border border-gray-700/50 text-white"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4 text-white">
                     {step.icon}
                   </div>
-                  <span className="text-primary font-semibold block mb-2">{step.step}</span>
-                  <div className="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full inline-block mb-4">
+                  <span className="text-primary font-semibold block mb-2 text-white">{step.step}</span>
+                  <div className="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full inline-block mb-4 text-white">
                     {step.time}
                   </div>
                   <p className="text-white">{step.description}</p>
@@ -661,7 +733,7 @@ export default function Hire() {
         </section>
 
         {/* Developer Services Section */}
-        <section className="relative py-20 overflow-hidden">
+        {/* <section className="relative py-20 overflow-hidden ">
           <motion.div 
             className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5"
             style={{ y: backgroundY, opacity }}
@@ -732,10 +804,10 @@ export default function Hire() {
               </motion.div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Hiring Models Section */}
-        <section className="relative py-20 overflow-hidden">
+        {/* <section className="relative py-20 overflow-hidden ">
           <motion.div 
             className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"
             style={{ y: backgroundY, opacity }}
@@ -752,7 +824,7 @@ export default function Hire() {
                 'Fast' Meets 'Flexible': Our Hiring Models
               </h2>
             </motion.div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
               {[
                 {
                   title: "Part-Time Model",
@@ -787,14 +859,14 @@ export default function Hire() {
               ].map((model, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50"
+                  className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50 "
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-white ">
                     {model.icon}
                   </div>
                   <h5 className="text-xl font-semibold text-white mb-4">{model.title}</h5>
@@ -810,7 +882,7 @@ export default function Hire() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Contact Form */}
         <section className="relative py-20 overflow-hidden">
@@ -839,6 +911,80 @@ export default function Hire() {
           />
         </motion.div>
       )}
+
+      {/* Animation styles */}
+      <style>{`
+        /* Grid animation keyframes */
+        @keyframes grid-node-blink {
+          0%, 100% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 0.8;
+          }
+        }
+        
+        .animate-grid-node-blink {
+          animation: grid-node-blink 4s ease-in-out infinite;
+        }
+        
+        @keyframes grid-trace-horizontal {
+          0% {
+            transform: translateX(-100%) scaleX(0.7);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(100%) scaleX(0.7);
+            opacity: 0;
+          }
+        }
+        
+        .animate-grid-trace-horizontal {
+          animation: grid-trace-horizontal 8s ease-in-out infinite;
+        }
+        
+        @keyframes grid-trace-vertical {
+          0% {
+            transform: translateY(-100%) scaleY(0.7);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(100%) scaleY(0.7);
+            opacity: 0;
+          }
+        }
+        
+        .animate-grid-trace-vertical {
+          animation: grid-trace-vertical 8s ease-in-out infinite;
+        }
+        
+        @keyframes grid-intersection-pulse {
+          0%, 100% {
+            transform: scale(0.5);
+            opacity: 0.2;
+          }
+          50% {
+            transform: scale(1.2);
+            opacity: 0.6;
+          }
+        }
+        
+        .animate-grid-intersection-pulse {
+          animation: grid-intersection-pulse 6s ease-in-out infinite;
+        }
+      `}</style>
     </main>
   )
 } 
