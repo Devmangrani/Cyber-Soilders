@@ -304,36 +304,24 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
-            className="flex flex-col sm:flex-row gap-4 mt-8"
+            className="flex flex-wrap justify-center gap-2 mt-8"
           >
             {[
-              { to: "/product", label: "Product", variant: "default" },
-              { to: "/services", label: "Services", variant: "outline" },
-              { to: "/training", label: "Training", variant: "default" },
+              { to: "/product", label: "Product", icon: <Shield className="h-4 w-4 mr-1" /> },
+              { to: "/services", label: "Services", icon: <ArrowRight className="h-4 w-4 mr-1" /> },
+              { to: "/training", label: "Training", icon: <GraduationCap className="h-4 w-4 mr-1" /> },
             ].map((button, index) => (
               <Link key={button.to} to={button.to}>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <Button
+                  variant="outline"
+                  className={`category-filter relative group flex items-center px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 hover:bg-white/10 transition-all duration-300`}
                 >
-                  <Button
-                    size="lg"
-                    variant={button.variant}
-                    className={`group relative overflow-hidden ${
-                      button.variant === "default"
-                        ? "bg-primary hover:bg-primary/90"
-                        : "border-primary/20 hover:border-primary/40"
-                    }`}
-                  >
-                    <span className="relative z-10">{button.label}</span>
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0"
-                      initial={{ x: "-100%" }}
-                      whileHover={{ x: "100%" }}
-                      transition={{ duration: 0.75, ease: "easeInOut" }}
-                    />
-                  </Button>
-                </motion.div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                  <span className="relative z-10 flex items-center text-gray-100">
+                    {button.icon}
+                    {button.label}
+                  </span>
+                </Button>
               </Link>
             ))}
           </motion.div>
