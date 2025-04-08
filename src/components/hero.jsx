@@ -339,7 +339,7 @@ export default function Hero() {
             >
               <Terminal className="h-5 w-5 text-gray-100" />
               <code className="font-mono text-sm text-gray-100">
-                get-cyber.soldiers@
+                get-cyber.soldiers@latest
               </code>
               <motion.span
                 animate={{ opacity: [0, 1, 0] }}
