@@ -23,7 +23,7 @@ export default function Footer() {
           {/* Second column with the "CyberSystem Labs" section */}
           <div>
             <div className="border p-3 rounded-md mb-4">
-              <p className="text-sm font-medium text-gray-100">Cyber System Labs</p>
+              <p className="text-sm font-medium text-gray-100">CyberSoldiers Labs</p>
             </div>
             <div className="flex space-x-2 mt-4">
               <a href="#" className="text-xs px-3 py-1 border rounded-md text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-900">CompanyPlan</a>
