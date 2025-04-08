@@ -19,6 +19,7 @@ import CISMLogo from "../CISM.png"
 import CRISCLogo from "../CRISC.png"
 import CEHLogo from "../CEH.png"
 import CompTIALogo from "../CompTIA.png"
+import FutureOfCyberSecurity from "../soc.jpg"  
 
 // Array of cybersecurity-related image URLs
 const cyberImages = [
@@ -138,7 +139,7 @@ const videos = [
     title: "Future of Cyber Security",
     description: "Emerging trends and technologies shaping the future of cyber security.",
     icon: <Award className="h-6 w-6" />,
-    coverImage: cyberImages[9]
+    coverImage: FutureOfCyberSecurity
   }
 ]
 
