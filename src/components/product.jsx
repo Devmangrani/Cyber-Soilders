@@ -68,25 +68,25 @@ export default function Product() {
 
   const features = [
     {
-      icon: <Shield className="h-8 w-8" />,
+      icon: <Shield className="h-8 w-8 text-blue-500" />,
       title: "Advanced Security",
       description: "State-of-the-art protection against evolving cyber threats",
       color: "text-blue-500",
     },
     {
-      icon: <Zap className="h-8 w-8" />,
+      icon: <Zap className="h-8 w-8 text-yellow-500" />,
       title: "Real-time Monitoring",
       description: "Instant detection and response to security incidents",
       color: "text-yellow-500",
     },
     {
-      icon: <Users className="h-8 w-8" />,
+      icon: <Users className="h-8 w-8 text-green-500" />,
       title: "Team Collaboration",
       description: "Seamless coordination between security teams",
       color: "text-green-500",
     },
     {
-      icon: <Target className="h-8 w-8" />,
+      icon: <Target className="h-8 w-8 text-red-500" />,
       title: "Precision Training",
       description: "Targeted exercises for specific security scenarios",
       color: "text-red-500",
@@ -439,15 +439,15 @@ export default function Product() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
-                  { title: "Incident Response", icon: <Shield className="h-5 w-5" /> },
-                  { title: "Red Team Vs Blue Team Exercise", icon: <Users className="h-5 w-5" /> },
-                  { title: "Security Awareness Training", icon: <Target className="h-5 w-5" /> },
-                  { title: "DevSecOps Integration", icon: <Zap className="h-5 w-5" /> },
-                  { title: "Capture The Flag", icon: <Award className="h-5 w-5" /> },
-                  { title: "Cybersecurity Skill Assessment", icon: <Star className="h-5 w-5" /> },
-                  { title: "IoT & Critical Infrastructure Security", icon: <Shield className="h-5 w-5" /> },
-                  { title: "Penetration Testing Practice", icon: <Target className="h-5 w-5" /> },
-                  { title: "Continuous Cybersecurity Improvement", icon: <Zap className="h-5 w-5" /> },
+                  { title: "Incident Response", icon: <Shield className="h-5 w-5 text-blue-500" /> },
+                  { title: "Red Team Vs Blue Team Exercise", icon: <Users className="h-5 w-5 text-green-500" /> },
+                  { title: "Security Awareness Training", icon: <Target className="h-5 w-5 text-red-500" /> },
+                  { title: "DevSecOps Integration", icon: <Zap className="h-5 w-5 text-yellow-500" /> },
+                  { title: "Capture The Flag", icon: <Award className="h-5 w-5 text-purple-500" /> },
+                  { title: "Cybersecurity Skill Assessment", icon: <Star className="h-5 w-5 text-cyan-500" /> },
+                  { title: "IoT & Critical Infrastructure Security", icon: <Shield className="h-5 w-5 text-indigo-500" /> },
+                  { title: "Penetration Testing Practice", icon: <Target className="h-5 w-5 text-pink-500" /> },
+                  { title: "Continuous Cybersecurity Improvement", icon: <Zap className="h-5 w-5 text-orange-500" /> },
                 ].map((service, index) => (
                   <motion.div
                     key={index}
@@ -455,11 +455,15 @@ export default function Product() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                     whileHover={{ scale: 1.02, y: -5 }}
-                    className="group p-4 rounded-lg border bg-card hover:shadow-md transition-all duration-300"
+                    className="group relative p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300"
                   >
-                    <div className="flex items-center space-x-3">
-                      <div className="text-primary">{service.icon}</div>
-                      <h4 className="font-medium group-hover:text-primary transition-colors">{service.title}</h4>
+                    {/* Gradient hover effect */}
+                    <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                    <div className="relative z-10 flex items-center space-x-3">
+                      <div className="p-2 rounded-lg bg-primary/10">
+                        {service.icon}
+                      </div>
+                      <h4 className="font-medium group-hover:text-primary transition-colors text-gray-300">{service.title}</h4>
                     </div>
                   </motion.div>
                 ))}
