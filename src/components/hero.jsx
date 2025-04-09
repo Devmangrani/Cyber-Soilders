@@ -29,6 +29,10 @@ export default function Hero() {
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 200], [1, 0]);
 
+  // State for typing animation
+  const [typedText, setTypedText] = useState("");
+  const fullText = "gget-cyber.soldiers@latest";
+
   // Add GSAP animation for grid
   useEffect(() => {
     if (gridRef.current) {
@@ -106,6 +110,21 @@ export default function Hero() {
       }
     };
   }, [isCounterStarted]);
+
+  useEffect(() => {
+    setTypedText(""); // Reset typedText to ensure it starts fresh
+    let index = 0;
+    const typingInterval = setInterval(() => {
+      if (index < fullText.length) {
+        setTypedText((prev) => prev + fullText.charAt(index));
+        index++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 100); // Adjust the speed of typing here
+
+    return () => clearInterval(typingInterval);
+  }, []); // Empty dependency array to run only on mount
 
   return (
     <section
@@ -339,15 +358,15 @@ export default function Hero() {
             >
               <Terminal className="h-5 w-5 text-gray-100" />
               <code className="font-mono text-sm text-gray-100">
-                get-cyber.soldiers@latest123
+                {typedText}
+                <motion.span
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{ duration: 1, repeat: Infinity }}
+                  className="text-gray-100"
+                >
+                  |
+                </motion.span>
               </code>
-              <motion.span
-                animate={{ opacity: [0, 1, 0] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                className="text-gray-100"
-              >
-                |
-              </motion.span>
             </motion.div>
           </motion.div>
         </div>
