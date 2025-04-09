@@ -243,7 +243,7 @@ export default function Technology() {
                       scale: activeTech === index ? [1, 1.2, 1] : 1
                     }}
                     transition={{ duration: 0.5 }}
-                    className="h-2 w-2 rounded-full bg-white/50"
+                    // className="h-2 w-2 rounded-full bg-white/50"
                   />
                 </div>
               </div>
