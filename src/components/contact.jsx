@@ -93,7 +93,7 @@ export default function Contact() {
         </div>
         
         {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-black to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent"></div>
         
         {/* Radial gradient overlay */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
@@ -163,7 +163,7 @@ export default function Contact() {
               Secure Communication Channel
             </div>
             <div className="overflow-hidden">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 animate-slide-up">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 animate-slide-up">
                 Contact Cyber.Soldiers
               </h1>
             </div>
@@ -220,7 +220,7 @@ export default function Contact() {
         {/* Contact Form Section */}
         <section 
           ref={addToRefs} 
-          className="w-full py-16 md:py-24 bg-white dark:bg-black opacity-0 translate-y-4 duration-700 ease-out relative overflow-hidden"
+          className="w-full py-16 md:py-24 bg-black opacity-0 translate-y-4 duration-700 ease-out relative overflow-hidden"
         >
           {/* Animated background elements */}
           <div className="absolute right-0 top-1/4 -z-10 h-96 w-96 rounded-full bg-gradient-to-b from-blue-500/10 to-purple-500/10 blur-3xl animate-float"></div>
@@ -238,17 +238,17 @@ export default function Contact() {
               {/* Contact Information */}
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-2 animate-bounce-subtle">
+                  <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm mb-2 animate-bounce-subtle">
                     Get In Touch
                   </div>
-                  <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Command Center</h2>
+                  <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400">Command Center</h2>
                   <p className="text-muted-foreground">
                     Our team of cybersecurity experts is ready to assist you 24/7.
                   </p>
                 </div>
                 <div className="space-y-6">
                 <div 
-                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-200 dark:border-gray-100 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-100 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 to-indigo-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <div className="p-3 rounded-lg bg-blue-100 text-primary group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 relative z-10">
@@ -264,7 +264,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div 
-                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-200 dark:border-gray-850 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-850 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <div className="p-3 rounded-lg bg-blue-100 text-primary group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 relative z-10">
@@ -280,7 +280,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div 
-                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-200 dark:border-gray-800 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-800 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/30 to-teal-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <div className="p-3 rounded-lg bg-blue-100 text-primary group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 relative z-10">
@@ -321,13 +321,13 @@ export default function Contact() {
 
               {/* Contact Form */}
               <div 
-                className={`space-y-6 p-6 rounded-lg border border-gray-200 dark:border-gray-800 ${isFormFocused ? 'ring-2 ring-primary/50 border-primary/30 shadow-lg' : 'hover:border-primary/30 hover:shadow-md'} transition-all duration-500`}
+                className={`space-y-6 p-6 rounded-lg border border-gray-800 ${isFormFocused ? 'ring-2 ring-primary/50 border-primary/30 shadow-lg' : 'hover:border-primary/30 hover:shadow-md'} transition-all duration-500`}
               >
                 <div className="space-y-4">
-                  <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-2 animate-bounce-subtle">
+                  <div className="inline-block rounded-lg bg-gray-100  px-3 py-1 text-sm mb-2 animate-bounce-subtle">
                     Message Us
                   </div>
-                  <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Send Message</h2>
+                  <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 ">Send Message</h2>
                   <p className="text-muted-foreground">
                     Fill out the form below and we'll get back to you as soon as possible.
                   </p>
@@ -397,7 +397,7 @@ export default function Contact() {
         {/* Map Section */}
         <section 
           ref={addToRefs} 
-          className="w-full py-12 md:py-24 bg-gray-50 dark:bg-gray-900 opacity-0 translate-y-4 duration-700 ease-out relative overflow-hidden"
+          className="w-full py-12 md:py-24 bg-gray-900 opacity-0 translate-y-4 duration-700 ease-out relative overflow-hidden"
         >
           {/* Animated background gradient */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(var(--primary),0.05),transparent_50%)]"></div>
@@ -405,14 +405,14 @@ export default function Contact() {
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="space-y-8">
               <div className="text-center">
-                <div className="inline-block rounded-lg bg-gray-800 dark:bg-gray-100 px-3 py-1 text-sm mb-6 animate-bounce-subtle">
+                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm mb-6 animate-bounce-subtle">
                   Visit Us
                 </div>
-                <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Command Center Location</h2>
+                <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400">Command Center Location</h2>
                 <p className="text-muted-foreground mt-2">Visit our headquarters for face-to-face consultation</p>
               </div>
               <div 
-                className="aspect-video rounded-lg overflow-hidden border-2 border-gray-200 dark:border-gray-800 hover:border-primary/30 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group"
+                className="aspect-video rounded-lg overflow-hidden border-2 border-gray-800 hover:border-primary/30 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group"
                 style={{transform: `perspective(2000px) rotateY(${scrollY * 0.005}deg) rotateX(${scrollY * -0.005}deg)`}}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"></div>

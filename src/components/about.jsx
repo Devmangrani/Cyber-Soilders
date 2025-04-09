@@ -248,7 +248,7 @@ export default function About() {
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        className="relative w-full py-16 md:py-28 lg:py-36 bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-gray-900"
+        className="relative w-full py-16 md:py-28 lg:py-36 bg-gradient-to-b  from-black to-gray-900"
       >
         {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
         <div 
@@ -336,7 +336,7 @@ export default function About() {
           <div className="scan-line w-full h-[2px] bg-blue-500/10 animate-scan-line"></div>
         </div>
         
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-black to-transparent z-[1]"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black  to-transparent z-[1]"></div>
         
         <div className="container relative z-10 px-4 md:px-6 mx-auto max-w-5xl">
           <div className="flex flex-col items-center text-center space-y-4">
@@ -346,12 +346,12 @@ export default function About() {
               </div>
             </div>
             <div className="overflow-hidden">
-              <h1 className="hero-title text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">
+              <h1 className="hero-title text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400">
                 About Cyber.Soldiers
               </h1>
             </div>
             <div className="overflow-hidden pt-2">
-              <p className="hero-description mt-6 text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-[800px]">
+              <p className="hero-description mt-6 text-xl md:text-2xl text-gray-400 max-w-[800px]">
                 Leading the way in cyber security products, services, and training.
               </p>
             </div>
@@ -361,38 +361,38 @@ export default function About() {
               <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent group-hover:animate-slide-right-infinite"></div>
-                <div className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-1 relative">
+                <div className="text-4xl font-bold text-gray-100 mb-1 relative">
                   <span className="animate-pulse-slow inline-block">15+</span>
                   <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                 </div>
-                <div className="text-gray-500 dark:text-gray-400">Years Experience</div>
+                <div className="text-gray-400">Years Experience</div>
               </div>
               <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent group-hover:animate-slide-right-infinite" style={{animationDelay: '0.2s'}}></div>
-                <div className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-1 relative">
+                <div className="text-4xl font-bold text-gray-100 mb-1 relative">
                   <span className="animate-pulse-slow inline-block" style={{animationDelay: '0.3s'}}>10+</span>
                   <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                 </div>
-                <div className="text-gray-500 dark:text-gray-400">Countries</div>
+                <div className="text-gray-400">Countries</div>
               </div>
               <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-teal-500/50 to-transparent group-hover:animate-slide-right-infinite" style={{animationDelay: '0.4s'}}></div>
-                <div className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-1 relative">
+                <div className="text-4xl font-bold text-gray-100 mb-1 relative">
                   <span className="animate-pulse-slow inline-block" style={{animationDelay: '0.6s'}}>2000+</span>
                   <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-teal-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                 </div>
-                <div className="text-gray-500 dark:text-gray-400">Learners</div>
+                <div className="text-gray-400">Learners</div>
               </div>
               <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent group-hover:animate-slide-right-infinite" style={{animationDelay: '0.6s'}}></div>
-                <div className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-1 relative">
+                <div className="text-4xl font-bold text-gray-100 mb-1 relative">
                   <span className="animate-pulse-slow inline-block" style={{animationDelay: '0.9s'}}>97%</span>
                   <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                 </div>
-                <div className="text-gray-500 dark:text-gray-400">Satisfaction</div>
+                <div className="text-gray-400">Satisfaction</div>
               </div>
             </div>
           </div>
@@ -407,44 +407,44 @@ export default function About() {
         <div className="container px-4 md:px-6 mx-auto max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div 
-              className="mission-card group p-6 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-black hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-lg transition-all duration-500 hover:-translate-y-1"
+              className="mission-card group p-6 rounded-lg border border-gray-800 bg-black hover:border-gray-700 hover:shadow-lg transition-all duration-500 hover:-translate-y-1"
               style={{opacity: 0, transform: 'translateY(20px)'}}
             >
-              <div className="size-16 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-50 dark:group-hover:bg-blue-950 transition-all duration-500 relative overflow-hidden">
+              <div className="size-16 rounded-full bg-gray-900 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-950 transition-all duration-500 relative overflow-hidden">
                 <span className="text-2xl font-bold relative z-10">01</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-500/0 group-hover:from-blue-500/10 group-hover:to-blue-500/30 transition-all duration-500"></div>
               </div>
-              <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-100">Our Aim</h2>
-              <p className="text-gray-600 dark:text-gray-400">To empower organizations with cutting-edge cybersecurity products, expert services, and industry-leading skilling programs.</p>
-              <div className="mt-6 flex items-center text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+              <h2 className="text-2xl font-bold mb-4 text-gray-100 group-hover:text-blue-400 transition-colors duration-100">Our Aim</h2>
+              <p className="text-gray-400">To empower organizations with cutting-edge cybersecurity products, expert services, and industry-leading skilling programs.</p>
+              <div className="mt-6 flex items-center text-blue-400 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
                 <span className="mr-2">Learn more</span>
                 <ArrowRight className="h-4 w-4" />
               </div>
             </div>
             <div 
-              className="mission-card group p-6 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-black hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-lg transition-all duration-500 hover:-translate-y-1"
+              className="mission-card group p-6 rounded-lg border border-gray-800 bg-black hover:border-gray-700  hover:shadow-lg transition-all duration-500 hover:-translate-y-1"
             >
-              <div className="size-16 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-50 dark:group-hover:bg-blue-950 transition-all duration-500 relative overflow-hidden">
+              <div className="size-16 rounded-full bg-gray-900 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-950 transition-all duration-500 relative overflow-hidden">
                 <span className="text-2xl font-bold relative z-10">02</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-500/0 group-hover:from-blue-500/10 group-hover:to-blue-500/30 transition-all duration-500"></div>
               </div>
-              <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">Our Mission</h2>
-              <p className="text-gray-600 dark:text-gray-400">To strengthen cyber resilience, mitigate risks, and build a safer digital future.</p>
-              <div className="mt-6 flex items-center text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+              <h2 className="text-2xl font-bold mb-4 text-gray-100 group-hover:text-blue-400 transition-colors duration-300">Our Mission</h2>
+              <p className="text-gray-400">To strengthen cyber resilience, mitigate risks, and build a safer digital future.</p>
+              <div className="mt-6 flex items-center text-blue-400 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
                 <span className="mr-2">Learn more</span>
                 <ArrowRight className="h-4 w-4" />
               </div>
             </div>
             <div 
-              className="mission-card group p-6 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-black hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-lg transition-all duration-500 hover:-translate-y-1"
+              className="mission-card group p-6 rounded-lg border border-gray-800 bg-black hover:border-gray-700 hover:shadow-lg transition-all duration-500 hover:-translate-y-1"
             >
-              <div className="size-16 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-50 dark:group-hover:bg-blue-950 transition-all duration-500 relative overflow-hidden">
+              <div className="size-16 rounded-full bg-gray-900 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-950 transition-all duration-500 relative overflow-hidden">
                 <span className="text-2xl font-bold relative z-10">03</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-500/0 group-hover:from-blue-500/10 group-hover:to-blue-500/30 transition-all duration-500"></div>
               </div>
-              <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">Our Vision</h2>
-              <p className="text-gray-600 dark:text-gray-400">To be among the global leaders in Cyber Security, driving innovation and excellence.</p>
-              <div className="mt-6 flex items-center text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+              <h2 className="text-2xl font-bold mb-4 text-gray-100 group-hover:text-blue-400 transition-colors duration-300">Our Vision</h2>
+              <p className="text-gray-400">To be among the global leaders in Cyber Security, driving innovation and excellence.</p>
+              <div className="mt-6 flex items-center text-blue-400 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
                 <span className="mr-2">Learn more</span>
                 <ArrowRight className="h-4 w-4" />
               </div>
@@ -456,7 +456,7 @@ export default function About() {
       {/* Values Section */}
       <section 
         ref={valuesRef} 
-        className="w-full py-16 md:py-24 relative overflow-hidden bg-white dark:bg-black"
+        className="w-full py-16 md:py-24 relative overflow-hidden bg-black"
       >
         {/* Animated background elements - reduced opacity */}
         <div className="absolute right-1/4 top-1/3 -z-10 h-96 w-96 rounded-full bg-gradient-to-b from-blue-500/5 to-green-500/5 blur-3xl"></div>
@@ -470,27 +470,27 @@ export default function About() {
         
         <div className="container px-4 md:px-6 mx-auto max-w-5xl relative z-10">
           <div className="flex flex-col items-center text-center space-y-4 mb-16">
-            <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+            <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm mb-6 border border-gray-700 shadow-sm">
               Core Principles
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100">Our Values</h2>
-            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-[600px]">The principles that guide everything we do at Cyber.Soldiers.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-100">Our Values</h2>
+            <p className="text-xl text-gray-300 max-w-[600px]">The principles that guide everything we do at Cyber.Soldiers.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <div
                 key={value.title}
                 style={{opacity: 0, transform: 'translateY(20px)'}}
-                className="value-card group p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-lg transition-all duration-500 hover:-translate-y-1"
+                className="value-card group p-6 rounded-lg border border-gray-700 bg-gray-900 hover:border-gray-600 hover:shadow-lg transition-all duration-500 hover:-translate-y-1"
               >
-                <div className="mb-6 p-3 size-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-blue-500 dark:text-blue-400 group-hover:bg-blue-50 dark:group-hover:bg-blue-900 group-hover:scale-110 transition-all duration-500 relative overflow-hidden">
+                <div className="mb-6 p-3 size-12 rounded-full bg-gray-800 flex items-center justify-center text-blue-400 group-hover:bg-blue-900 group-hover:scale-110 transition-all duration-500 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-blue-500/0 group-hover:from-blue-500/10 group-hover:to-blue-500/30 transition-all duration-500"></div>
                   <div className="relative z-10">{value.icon}</div>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{value.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{value.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-gray-100 group-hover:text-blue-400 transition-colors duration-300">{value.title}</h3>
+                <p className="text-gray-300">{value.description}</p>
                 
-                <div className="mt-6 flex items-center text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+                <div className="mt-6 flex items-center text-blue-400 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
                   <span className="mr-2">Learn more</span>
                   <ArrowRight className="h-4 w-4" />
                 </div>
@@ -503,7 +503,7 @@ export default function About() {
       {/* Founder Journey Section */}
       <section 
         ref={founderRef} 
-        className="w-full py-16 md:py-24 bg-gray-50 dark:bg-gray-950 relative overflow-hidden"
+        className="w-full py-16 md:py-24 bg-gray-950 relative overflow-hidden"
       >
         {/* Enhanced animated background elements */}
         <div className="absolute right-0 top-1/4 -z-10 h-96 w-96 rounded-full bg-gradient-to-b from-blue-500/20 to-purple-500/20 blur-3xl parallax-bg-slow"></div>
@@ -519,21 +519,21 @@ export default function About() {
         
         <div className="container px-4 md:px-6 mx-auto max-w-5xl">
           <div className="flex flex-col items-center text-center space-y-4 mb-16">
-            <div className="inline-block rounded-lg bg-gray-100 bg-gray-100 px-3 py-1 text-sm mb-6 animate-pulse border border-gray-100 dark:border-blue-800/50 shadow-sm">
+            <div className="inline-block rounded-lg bg-gray-100 bg-gray-100 px-3 py-1 text-sm mb-6 animate-pulse border border-blue-800/50 shadow-sm">
               Leadership
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Our Journey</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-[600px]">The journey of innovation and excellence in cyber security.</p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-gray-200">Our Journey</h2>
+            <p className="text-xl text-gray-400 max-w-[600px]">The journey of innovation and excellence in cyber security.</p>
           </div>
           
           {/* Journey Timeline with enhanced animation */}
           <div className="mb-16">
             <h3 className="text-2xl font-bold mb-10 flex items-center">
               <span className="mr-2">Founder's Journey</span>
-              <div className="h-px flex-1 bg-gradient-to-r from-gray-200 to-transparent dark:from-gray-800"></div>
+              <div className="h-px flex-1 bg-gradient-to-r from-gray-200 from-gray-800"></div>
             </h3>
             <div className="relative">
-              <div className="absolute left-0 md:left-[50%] top-0 bottom-0 w-0.5 bg-gradient-to-b from-gray-200 via-blue-400 to-gray-200 dark:from-gray-800 dark:via-blue-500 dark:to-gray-800 transform md:translate-x-[-50%]"></div>
+              <div className="absolute left-0 md:left-[50%] top-0 bottom-0 w-0.5 bg-gradient-to-b from-gray-200 via-blue-500 to-gray-800   transform md:translate-x-[-50%]"></div>
               <div className="space-y-16">
                 {timeline.map((item, index) => (
                   <div
@@ -543,26 +543,26 @@ export default function About() {
                     className={`relative flex flex-col ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 group timeline-item`}
                 style={{opacity: 0, transform: index % 2 === 0 ? 'translateX(30px)' : 'translateX(-30px)'}}
                   >
-                    <div className="absolute left-0 md:left-[50%] w-4 h-4 rounded-full bg-gray-200 dark:bg-gray-800 transform translate-x-[-50%] z-10 group-hover:bg-blue-500 dark:group-hover:bg-blue-400 transition-all duration-300"></div>
-                    <div className={`ml-8 md:ml-0 md:w-[45%] p-6 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-black hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-xl transition-all duration-500 ${activeTimelineIndex === index ? 'ring-2 ring-blue-500 dark:ring-blue-400 scale-105 shadow-lg' : ''} group-hover:translate-y-[-8px]`}>
-                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50/0 to-blue-50/0 dark:from-blue-900/0 dark:to-blue-900/0 group-hover:from-blue-50/50 dark:group-hover:from-blue-900/10 transition-all duration-500 rounded-lg"></div>
+                    <div className="absolute left-0 md:left-[50%] w-4 h-4 rounded-full bg-gray-800 transform translate-x-[-50%] z-10 group-hover:bg-blue-400 transition-all duration-300"></div>
+                    <div className={`ml-8 md:ml-0 md:w-[45%] p-6 rounded-lg border border-gray-800 bg-black hover:border-blue-800 hover:shadow-xl transition-all duration-500 ${activeTimelineIndex === index ? 'ring-2 ring-blue-400 scale-105 shadow-lg' : ''} group-hover:translate-y-[-8px]`}>
+                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/0 to-blue-900/0  group-hover:from-blue-900/10  transition-all duration-500 rounded-lg"></div>
                       
                       <div className="flex items-center gap-2 mb-4">
-                        <span className="text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-2.5 py-1 rounded-full">{item.year}</span>
-                        <div className="h-px flex-1 bg-gradient-to-r from-gray-200 to-transparent dark:from-gray-700"></div>
+                        <span className="text-sm font-medium bg-gray-800  text-gray-100  px-2.5 py-1 rounded-full">{item.year}</span>
+                        <div className="h-px flex-1 bg-gradient-to-r from-gray-700 to-transparent "></div>
                       </div>
                       <div className="flex justify-between items-start mb-3">
-                        <h4 className="font-bold text-lg text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors duration-300">{item.title}</h4>
+                        <h4 className="font-bold text-lg text-gray-100  group-hover:text-blue-600 transition-colors duration-300">{item.title}</h4>
                         {item.stat && (
                           <div className="flex flex-col items-end">
-                            <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                            <div className="text-2xl font-bold text-blue-400 ">
                               {counterValues[`timeline-${index}`] || item.stat}
                             </div>
-                            <div className="text-xs text-gray-500 dark:text-gray-400">{item.statLabel}</div>
+                            <div className="text-xs text-gray-400 ">{item.statLabel}</div>
                           </div>
                         )}
                       </div>
-                      <p className="text-gray-600 dark:text-gray-400 relative z-10">{item.description}</p>
+                      <p className="text-gray-400  relative z-10">{item.description}</p>
                     </div>
                     <div className="hidden md:block md:w-[45%]"></div>
                   </div>
@@ -574,7 +574,7 @@ export default function About() {
           {/* Founder Image with enhanced animation */}
           <div className="flex flex-col items-center">
             <div 
-              className="founder-image aspect-square relative rounded-full overflow-hidden border-4 border-gray-200 dark:border-gray-800 mx-auto max-w-[250px] group hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-500"
+              className="founder-image aspect-square relative rounded-full overflow-hidden border-4 border-gray-800 0 mx-auto max-w-[250px] group hover:border-blue-400  transition-all duration-500"
               style={{opacity: 0, transform: 'scale(0.9)'}}>
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/30 group-hover:to-purple-500/30 transition-all duration-500 z-10"></div>
               <img
@@ -591,9 +591,9 @@ export default function About() {
             </div>
             <div className="text-center mt-6">
               <h3 className="text-2xl font-bold">Saurabh Agrawal</h3>
-              <p className="text-gray-600 dark:text-gray-400">Founder & CEO</p>
+              <p className="text-gray-400 ">Founder & CEO</p>
             </div>
-            <p className="text-center text-gray-600 dark:text-gray-400 mt-3 max-w-md">
+            <p className="text-center text-gray-400  mt-3 max-w-md">
               With over 15 years of experience in cyber security, Saurabh has led the way in developing innovative solutions to complex security challenges.
             </p>
           </div>

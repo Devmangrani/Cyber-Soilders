@@ -20,7 +20,7 @@ import NextjsBackground from './NextjsBackground'
 import ECCouncilLogo from '../Ec_Council_Logo.png'
 import IITPravartakLogo from '../Pravartak_logo.png'
 import IITMadrasLogo from '../IIT_Madras_Logo.png'
-
+import CyberSecurityTraining from '../CyberSecurityServices.jpeg'
 
 // Register GSAP plugins
 if (typeof window !== 'undefined') {
@@ -725,7 +725,7 @@ export default function Training() {
                   </div>
                 </div>
                 <div className="overflow-hidden">
-                  <h1 className="hero-title text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-600">
+                  <h1 className="hero-title text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-600 dark:from-gray-100 dark:to-gray-600">
                     Cyber Security Training
                   </h1>
                 </div>
@@ -1099,7 +1099,7 @@ export default function Training() {
         {/* Benefits Section */}
         <section 
           ref={benefitsRef}
-          className="w-full py-12 md:py-24 bg-white dark:bg-black relative overflow-hidden"
+          className="w-full py-12 md:py-24 bg-black relative overflow-hidden"
         >
           <div className="absolute inset-0 -z-10">
             <div className="floating-particle absolute top-1/5 left-1/4 size-2 rounded-full bg-blue-500/30"></div>
@@ -1110,7 +1110,7 @@ export default function Training() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="space-y-6">
                 <div className="overflow-hidden">
-                  <h2 className="benefits-title text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Why Choose Our Training?</h2>
+                  <h2 className="benefits-title text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-600 dark:from-gray-100 dark:to-gray-400">Why Choose Our Training?</h2>
                 </div>
                 <div className="overflow-hidden">
                   <p className="benefits-description text-xl text-muted-foreground">
@@ -1145,7 +1145,7 @@ export default function Training() {
                   loading="lazy"
                   decoding="async"
                   className="relative z-10 object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-                  src="/placeholder.svg?height=600&width=600"
+                  src={CyberSecurityTraining}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-transparent">
                   <div className="absolute bottom-6 left-6 right-6">

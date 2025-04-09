@@ -385,7 +385,7 @@ export default function Product() {
           `}</style>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-white dark:bg-gray-950 relative overflow-hidden">
+        <section className="w-full py-16 md:py-24 bg-gray-950 relative overflow-hidden">
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -469,7 +469,7 @@ export default function Product() {
         </section>
 
         {/* Gallery Section */}
-        <section className="w-full py-20 md:py-32 bg-gray-50 dark:bg-gray-900">
+        <section className="w-full py-20 md:py-32 bg-gray-900">
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -538,13 +538,13 @@ export default function Product() {
         </section>
 
         {/* Partner Section */}
-        <section className="w-full py-20 md:py-32 bg-white dark:bg-black">
+        <section className="w-full py-20 md:py-32 bg-black">
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col items-center text-center space-y-8"
+              className="flex flex-col items-center text-center space-y-8 text-white"
             >
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -558,7 +558,7 @@ export default function Product() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
-                className="relative p-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden"
+                className="relative p-8 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden"
               >
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5"
@@ -571,7 +571,7 @@ export default function Product() {
                     ease: "linear",
                   }}
                 />
-                <div className="relative z-10 flex items-center justify-center w-32 h-32 mx-auto rounded-full bg-gray-100 dark:bg-gray-700">
+                <div className="relative z-10 flex items-center justify-center w-32 h-32 mx-auto rounded-full bg-gray-700">
                   <img src={IIT_Madras_Logo} alt="IIT Madras Logo" className="w-32 h-32" />
                 </div>
               </motion.div>
@@ -586,7 +586,7 @@ export default function Product() {
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <Button variant="outline" className="group">
+                <Button >
                   Learn More About Partnership
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>

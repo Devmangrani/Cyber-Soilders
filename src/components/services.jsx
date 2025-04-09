@@ -387,7 +387,7 @@ export default function Services() {
         <section 
           ref={addToRefs}
           id="stats-section" 
-          className="w-full py-20 md:py-32 bg-white dark:bg-black relative overflow-hidden opacity-0 translate-y-4 duration-700 ease-out"
+          className="w-full py-20 md:py-32 bg-black relative overflow-hidden opacity-0 translate-y-4 duration-700 ease-out"
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
           
@@ -398,7 +398,7 @@ export default function Services() {
               transition={{ duration: 0.5 }}
               className="text-center mb-16"
             >
-              <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-800 px-3 py-1 text-sm mb-6 animate-bounce-subtle text-white">
+              <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm mb-6 animate-bounce-subtle text-white">
                 Our Services
               </div>
               <h2 className="text-3xl font-bold tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-primary to-gray-600 dark:from-gray-100 dark:via-primary dark:to-gray-400 text-white">
@@ -478,7 +478,7 @@ export default function Services() {
         {/* Services Selection Section */}
         <section 
           ref={addToRefs}
-          className="w-full py-20 md:py-32 bg-gray-50 dark:bg-gray-900 relative overflow-hidden opacity-0 translate-y-4 duration-700 ease-out"
+          className="w-full py-20 md:py-32 bg-gray-900 relative overflow-hidden opacity-0 translate-y-4 duration-700 ease-out"
         >
           {/* Background gradient and particles */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
@@ -495,7 +495,7 @@ export default function Services() {
               transition={{ duration: 0.5 }}
               className="text-center mb-16"
             >
-              <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-800 px-3 py-1 text-sm mb-6 animate-bounce-subtle text-white">
+              <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm mb-6 animate-bounce-subtle text-white">
                 Tailored Solutions
               </div>
               <h2 className="text-3xl font-bold tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-primary to-gray-600 dark:from-gray-100 dark:via-primary dark:to-gray-400 text-white">

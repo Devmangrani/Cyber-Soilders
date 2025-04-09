@@ -2,7 +2,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-white dark:bg-black">
+    <footer className="border-t bg-black">
       <div className="container mx-auto max-w-[1200px] px-4 py-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* First column with main navigation links */}

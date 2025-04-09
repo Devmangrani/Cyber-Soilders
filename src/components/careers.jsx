@@ -263,7 +263,7 @@ export default function Careers() {
         addToRefs(el);
         heroRef.current = el;
       }}
-      className="relative w-full py-16 md:py-28 lg:py-32 bg-white dark:bg-black opacity-0 translate-y-4 duration-700 ease-out"
+      className="relative w-full py-16 md:py-28 lg:py-32 bg-black opacity-0 translate-y-4 duration-700 ease-out"
       id="hero-section"
     >
       {/* Grid background */}
@@ -293,7 +293,7 @@ export default function Careers() {
         <div className="animate-scan-line absolute w-full h-[2px] bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"></div>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-black to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
       
       {/* Animated background elements */}
@@ -338,7 +338,7 @@ export default function Careers() {
           </div>
           
           <div className="overflow-hidden">
-            <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 animate-gradient">
+            <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 animate-gradient">
               Become a Cyber.Soldier
             </h1>
           </div>
@@ -402,15 +402,15 @@ export default function Careers() {
             addToRefs(el);
             missionRef.current = el;
           }}
-          className="w-full py-12 md:py-24 bg-white dark:bg-black opacity-0 translate-y-4 duration-700 ease-out"
+          className="w-full py-12 md:py-24 bg-black opacity-0 translate-y-4 duration-700 ease-out"
         >
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="space-y-6">
-                <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-2 animate-bounce-subtle">
+                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm mb-2 animate-bounce-subtle">
                   Our Purpose
                 </div>
-                <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Ready to Join Our Mission?</h2>
+                <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400">Ready to Join Our Mission?</h2>
                 <p className="text-xl text-muted-foreground">
                   At Cyber.Soldiers, we're not just building a company - we're building a movement. Our mission is to create a safer digital world by developing the next generation of cybersecurity professionals.
                 </p>
@@ -458,7 +458,7 @@ export default function Careers() {
             addToRefs(el);
             benefitsRef.current = el;
           }}
-          className="w-full py-12 md:py-24 bg-gray-50 dark:bg-gray-900 opacity-0 translate-y-4 duration-700 ease-out relative overflow-hidden"
+          className="w-full py-12 md:py-24 bg-gray-900 opacity-0 translate-y-4 duration-700 ease-out relative overflow-hidden"
         >
           {/* Animated background elements */}
           <div className="absolute right-0 top-1/4 -z-10 h-96 w-96 rounded-full bg-gradient-to-b from-blue-500/20 to-purple-500/20 blur-3xl parallax-slow"></div>
@@ -474,10 +474,10 @@ export default function Careers() {
           
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="text-center mb-12">
-              <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-6 animate-bounce-subtle">
+              <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm mb-6 animate-bounce-subtle">
                 Benefits
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 mb-4">Why Join Us?</h2>
+              <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 mb-4">Why Join Us?</h2>
               <p className="text-xl text-muted-foreground max-w-[600px] mx-auto">
                 We offer more than just a job - we offer a career path with purpose.
               </p>
@@ -493,7 +493,7 @@ export default function Careers() {
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-purple-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <div className="relative z-10">
-                    <div className="mb-6 p-3 size-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-primary group-hover:bg-primary/10 group-hover:scale-110 transition-all duration-500 relative overflow-hidden">
+                    <div className="mb-6 p-3 size-12 rounded-full bg-gray-800  flex items-center justify-center text-primary group-hover:bg-primary/10 group-hover:scale-110 transition-all duration-500 relative overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-primary/0 group-hover:from-blue-400 group-hover:to-primary/30 transition-all duration-500"></div>
                       <div className="relative z-10">{benefit.icon}</div>
                     </div>
@@ -521,14 +521,14 @@ export default function Careers() {
             addToRefs(el);
             positionsRef.current = el;
           }}
-          className="w-full py-12 md:py-24 bg-white dark:bg-black opacity-0 translate-y-4 duration-700 ease-out"
+          className="w-full py-12 md:py-24 bg-black opacity-0 translate-y-4 duration-700 ease-out"
         >
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="text-center mb-12">
-              <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-6 animate-bounce-subtle">
+              <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm mb-6 animate-bounce-subtle">
                 Opportunities
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 mb-4">Open Positions</h2>
+              <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400  mb-4">Open Positions</h2>
               <p className="text-xl text-muted-foreground max-w-[600px] mx-auto">
                 Join our elite team of cybersecurity professionals
               </p>
@@ -545,7 +545,7 @@ export default function Careers() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-green-500/30 to-teal-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <div className="relative z-10">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="p-2 rounded-full bg-gray-100 dark:bg-gray-100 text-primary group-hover:bg-gray-300 group-hover:scale-110 transition-all duration-300">{position.icon}</div>
+                      <div className="p-2 rounded-full bg-gray-100  text-primary group-hover:bg-gray-300 group-hover:scale-110 transition-all duration-300">{position.icon}</div>
                       <div>
                         <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-300">{position.title}</h3>
                         <p className="text-sm text-muted-foreground">{position.department}</p>
@@ -590,7 +590,7 @@ export default function Careers() {
       addToRefs(el);
       ctaRef.current = el;
     }}
-    className="w-full py-12 md:py-24 bg-gray-50 dark:bg-gray-900 opacity-0 translate-y-4 duration-700 ease-out relative overflow-hidden"
+    className="w-full py-12 md:py-24 bg-gray-900  opacity-0 translate-y-4 duration-700 ease-out relative overflow-hidden"
   >
     {/* Animated background gradient */}
     <div className="absolute -z-10 top-1/2 left-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-primary/30 to-purple-500/30 blur-3xl cta-glow"></div>
@@ -598,10 +598,10 @@ export default function Careers() {
     
     <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
       <div className="flex flex-col items-center text-center space-y-6">
-        <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-2 animate-bounce-subtle">
+        <div className="inline-block rounded-lg bg-gray-100  px-3 py-1 text-sm mb-2 animate-bounce-subtle">
           Join Us Today
         </div>
-        <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Ready to Join Our Mission?</h2>
+        <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400">Ready to Join Our Mission?</h2>
         <p className="text-xl text-muted-foreground max-w-[600px]">
           Take the first step towards a rewarding career in cybersecurity.
         </p>
