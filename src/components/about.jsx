@@ -402,49 +402,48 @@ export default function About() {
       {/* Mission Section */}
       <section 
         ref={missionRef} 
-        className="w-full py-16 md:py-24"
+        className="w-full py-16 md:py-24 bg-gradient-to-b from-black to-gray-900"
       >
         <div className="container px-4 md:px-6 mx-auto max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div 
-              className="mission-card group p-6 rounded-lg border border-gray-800 bg-black hover:border-gray-700 hover:shadow-lg transition-all duration-500 hover:-translate-y-1"
-              style={{opacity: 0, transform: 'translateY(20px)'}}
+              className="mission-card group p-6 rounded-lg border border-gray-800 bg-black hover:border-gray-700 transition-all duration-500"
             >
-              <div className="size-16 rounded-full bg-gray-900 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-950 transition-all duration-500 relative overflow-hidden">
+              <div className="size-16 rounded-full bg-gray-900 flex items-center justify-center mb-6 relative overflow-hidden">
                 <span className="text-2xl font-bold relative z-10">01</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-500/0 group-hover:from-blue-500/10 group-hover:to-blue-500/30 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-500/0 transition-all duration-500"></div>
               </div>
-              <h2 className="text-2xl font-bold mb-4 text-gray-100 group-hover:text-blue-400 transition-colors duration-100">Our Aim</h2>
+              <h2 className="text-2xl font-bold mb-4 text-gray-100 transition-colors duration-100">Our Aim</h2>
               <p className="text-gray-400">To empower organizations with cutting-edge cybersecurity products, expert services, and industry-leading skilling programs.</p>
-              <div className="mt-6 flex items-center text-blue-400 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+              <div className="mt-6 flex items-center text-blue-400 transform translate-x-4 transition-all duration-300">
                 <span className="mr-2">Learn more</span>
                 <ArrowRight className="h-4 w-4" />
               </div>
             </div>
             <div 
-              className="mission-card group p-6 rounded-lg border border-gray-800 bg-black hover:border-gray-700  hover:shadow-lg transition-all duration-500 hover:-translate-y-1"
+              className="mission-card group p-6 rounded-lg border border-gray-800 bg-black hover:border-gray-700 transition-all duration-500"
             >
-              <div className="size-16 rounded-full bg-gray-900 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-950 transition-all duration-500 relative overflow-hidden">
+              <div className="size-16 rounded-full bg-gray-900 flex items-center justify-center mb-6 relative overflow-hidden">
                 <span className="text-2xl font-bold relative z-10">02</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-500/0 group-hover:from-blue-500/10 group-hover:to-blue-500/30 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-500/0 transition-all duration-500"></div>
               </div>
-              <h2 className="text-2xl font-bold mb-4 text-gray-100 group-hover:text-blue-400 transition-colors duration-300">Our Mission</h2>
+              <h2 className="text-2xl font-bold mb-4 text-gray-100 transition-colors duration-300">Our Mission</h2>
               <p className="text-gray-400">To strengthen cyber resilience, mitigate risks, and build a safer digital future.</p>
-              <div className="mt-6 flex items-center text-blue-400 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+              <div className="mt-6 flex items-center text-blue-400 transform translate-x-4 transition-all duration-300">
                 <span className="mr-2">Learn more</span>
                 <ArrowRight className="h-4 w-4" />
               </div>
             </div>
             <div 
-              className="mission-card group p-6 rounded-lg border border-gray-800 bg-black hover:border-gray-700 hover:shadow-lg transition-all duration-500 hover:-translate-y-1"
+              className="mission-card group p-6 rounded-lg border border-gray-800 bg-black hover:border-gray-700 transition-all duration-500"
             >
-              <div className="size-16 rounded-full bg-gray-900 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-950 transition-all duration-500 relative overflow-hidden">
+              <div className="size-16 rounded-full bg-gray-900 flex items-center justify-center mb-6 relative overflow-hidden">
                 <span className="text-2xl font-bold relative z-10">03</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-500/0 group-hover:from-blue-500/10 group-hover:to-blue-500/30 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-500/0 transition-all duration-500"></div>
               </div>
-              <h2 className="text-2xl font-bold mb-4 text-gray-100 group-hover:text-blue-400 transition-colors duration-300">Our Vision</h2>
+              <h2 className="text-2xl font-bold mb-4 text-gray-100 transition-colors duration-300">Our Vision</h2>
               <p className="text-gray-400">To be among the global leaders in Cyber Security, driving innovation and excellence.</p>
-              <div className="mt-6 flex items-center text-blue-400 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+              <div className="mt-6 flex items-center text-blue-400 transform translate-x-4 transition-all duration-300">
                 <span className="mr-2">Learn more</span>
                 <ArrowRight className="h-4 w-4" />
               </div>
