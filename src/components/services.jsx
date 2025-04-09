@@ -41,7 +41,7 @@ export default function Services() {
     },
     {
       id: "Vulnerability & Penetration Testing",
-      title: "Vulnerability & Penetration Testing",
+      title: "Vulnerability & Testing",
       description: "Comprehensive security assessment services that identify and address vulnerabilities in your systems, applications, and infrastructure. Our expert team conducts thorough penetration testing to ensure your organization's security posture is robust and resilient.",
       image: Vulnerability,
       icon: <Bug className="h-8 w-8" />,
@@ -506,18 +506,17 @@ export default function Services() {
               </p>
             </motion.div>
 
-            <div className="flex flex-nowrap gap-4 mb-12 justify-center overflow-x-auto pb-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 justify-center">
               {services.map((service, index) => (
                 <motion.div
                   key={service.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="flex-shrink-0"
                 >
                   <Button
                     variant={selectedService === service.id ? "default" : "outline"}
-                    className={`h-auto py-3 px-6 text-base group relative overflow-hidden whitespace-nowrap min-w-[200px] ${
+                    className={`h-auto py-3 px-3 sm:px-6 w-full text-base group relative overflow-hidden ${
                       selectedService === service.id 
                         ? "bg-primary text-white" 
                         : "bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10"
@@ -525,14 +524,14 @@ export default function Services() {
                     onClick={() => setSelectedService(service.id)}
                   >
                     <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                    <span className="relative z-10 flex items-center text-white">
+                    <span className="relative z-10 flex items-center justify-center text-white">
                       <motion.div
                         whileHover={{ rotate: 12 }}
                         className={service.color}
                       >
                         {service.icon}
                       </motion.div>
-                      <span className="ml-2">{service.title}</span>
+                      <span className="sm:inline hidden ml-2 text-gray-300">{service.title}</span>
                     </span>
                   </Button>
                 </motion.div>
@@ -563,7 +562,7 @@ export default function Services() {
                     >
                       {services.find(s => s.id === selectedService)?.icon}
                     </motion.div>
-                    <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-primary to-gray-600 dark:from-gray-100 dark:via-primary dark:to-gray-400">
+                    <h3 className="text-2xl font-bold bg-clip-text  bg-gradient-to-r from-gray-900 via-primary to-gray-600 dark:from-gray-100 dark:via-primary dark:to-gray-400 text-gray-300">
                       {services.find(s => s.id === selectedService)?.title}
                     </h3>
                   </motion.div>
