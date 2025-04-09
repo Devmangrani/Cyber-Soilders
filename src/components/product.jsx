@@ -118,7 +118,7 @@ export default function Product() {
     <main className="flex-1" ref={containerRef}>
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
-        <section className="relative w-full min-h-screen bg-gradient-to-b from-black to-gray-900 overflow-hidden">
+        <section className="relative w-full min-h-[90vh] bg-gradient-to-b from-black to-gray-900 overflow-hidden">
           {/* Background Elements */}
           <div className="absolute inset-0">
             {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
@@ -202,7 +202,7 @@ export default function Product() {
             }}
           />
 
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10 py-20 md:py-32">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10 py-12 md:py-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -385,7 +385,7 @@ export default function Product() {
           `}</style>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-gray-950 relative overflow-hidden">
+        <section className="w-full py-10 md:py-16 bg-gray-950 relative overflow-hidden">
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -475,7 +475,7 @@ export default function Product() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl font-bold tracking-tighter mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-600"
+              className="text-3xl font-bold tracking-tighter mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-600 "
             >
               Interactive Training Environment
             </motion.h2>
@@ -487,7 +487,7 @@ export default function Product() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg group"
+                  className="bg-gray-800 rounded-xl overflow-hidden shadow-lg group"
                   whileHover={{ 
                     scale: 1.02,
                     transition: { duration: 0.2 }
@@ -497,20 +497,20 @@ export default function Product() {
                     <img
                       src={slide.image}
                       alt={slide.title}
-                      className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110"
+                      className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110 "
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-40" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-40 " />
                     <div className="absolute bottom-4 left-4">
                       <div className="text-white transform transition-all duration-300 group-hover:translate-y-[-8px]">
-                        <div className="text-2xl font-bold transition-colors duration-300 group-hover:text-primary">{slide.stats.value}</div>
-                        <div className="text-sm opacity-80 transition-all duration-300 group-hover:opacity-100">{slide.stats.label}</div>
+                        <div className="text-2xl font-bold transition-colors duration-300 group-hover:text-primary ">{slide.stats.value}</div>
+                        <div className="text-sm opacity-80 transition-all duration-300 group-hover:opacity-100 t">{slide.stats.label}</div>
                       </div>
                     </div>
                   </div>
                   
                   <div className="p-6 flex flex-col h-full">
                     <div className="flex-1 space-y-4 mb-6">
-                      <h3 className="text-xl font-bold transform transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary">{slide.title}</h3>
+                      <h3 className="text-xl font-bold transform transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary text-gray-300">{slide.title}</h3>
                       <p className="text-muted-foreground transition-all duration-300 group-hover:opacity-90">{slide.description}</p>
                     </div>
                     <motion.div 
