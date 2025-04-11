@@ -1,88 +1,93 @@
-import { Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react"
+import { Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-black">
-      <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 md:px-8 py-8 sm:py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-          {/* First column with main navigation links */}
+    <footer className="bg-black text-white border-t border-gray-700">
+      <div className="container mx-auto max-w-[1400px] px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* First column with logo and app links */}
           <div>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-sm font-medium text-gray-100 hover:text-gray-300 dark:hover:text-white">Notes</a>
-              </li>
-              <li>
-                <a href="#" className="text-sm font-medium text-gray-100 hover:text-gray-300 dark:hover:text-white">Review</a>
-              </li>
-              <li>
-                <a href="#" className="text-sm font-medium text-gray-100 hover:text-gray-300 dark:hover:text-white">Site Map</a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Second column with the "CyberSystem Labs" section */}
-          <div>
-            <div className="border p-3 rounded-md mb-4">
-              <p className="text-sm font-medium text-gray-100">CyberSoldiers Labs</p>
-            </div>
-            <div className="flex flex-wrap gap-2 mt-4">
-              <a href="#" className="text-xs px-3 py-1 border rounded-md text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-900">CompanyPlan</a>
-              <a href="#" className="text-xs px-3 py-1 border rounded-md text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-900">IOS</a>
-            </div>
-            <div className="mt-6">
-              <p className="text-sm">2025</p>
-              <p className="text-sm font-medium text-gray-100">@CyberSoldiers</p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                <a href="#" className="text-xs px-3 py-1 border text-gray-100 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900">LinkedIn</a>
-                <a href="#" className="text-xs px-3 py-1 border text-gray-100 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900">YouTube</a>
-                <a href="#" className="text-xs px-3 py-1 border text-gray-100 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900">Instagram</a>
-                <a href="#" className="text-xs px-3 py-1 border text-gray-100 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900">Twitter</a>
-              </div>
-            </div>
-          </div>
-
-          {/* Third column - empty space */}
-          <div className="hidden md:block"></div>
-
-          {/* Fourth column with contact and subscribe section */}
-          <div>
-            <h3 className="font-semibold mb-3 text-gray-100">Contact Us</h3>
-            <div className="flex items-center mb-4">
-              <div className="w-6 h-6 rounded-full border flex items-center justify-center mr-2">
-                <span className="text-xs text-gray-100">C</span>
-              </div>
-              <span className="text-sm text-gray-100">email</span>
-            </div>
-            
-            <div className="mt-6">
-              <h3 className="font-semibold mb-3 text-gray-100">Subscribe to newsletter</h3>
-              <div className="flex mb-4">
-                <input 
-                  type="email" 
-                  className="border p-2 text-sm w-full rounded-l-md" 
-                  placeholder="Your email" 
+            <img 
+              src="https://d502jbuhuh9wk.cloudfront.net/orgData/63a4480de4b0fa7eb0f4eb95/pages/assets/images/sCUhV63a4480de4b0fa7eb0f4eb95removebgpreview.png" 
+              alt="CyberSoldiers Logo" 
+              className="w-[30%] mb-4"
+            />
+            <p className="text-lg leading-relaxed font-medium mb-6">
+              Accelerate your career with the best Cyber Security Skills & Certification to excel in the industry
+            </p>
+            <div className="flex gap-4">
+              <a href="https://play.google.com/store/apps/details?id=in.cybersoldiers.learners&hl=en_US&gl=US" target="_blank" rel="noopener noreferrer">
+                <img 
+                  src="https://d502jbuhuh9wk.cloudfront.net/orgData/63a4480de4b0fa7eb0f4eb95/pages/assets/images/D5DcPplaystore.png" 
+                  alt="Play Store" 
+                  className="w-[130px]"
                 />
-                <button className="bg-black text-white px-3 text-sm rounded-r-md dark:bg-white dark:text-black">
-                  →
-                </button>
-              </div>
-              
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-sm text-gray-500 hover:text-black dark:hover:text-white">Showcase</a>
-                </li>
-                <li>
-                  <a href="#" className="text-sm text-gray-500 hover:text-black dark:hover:text-white">Tech</a>
-                </li>
-                <li>
-                  <a href="#" className="text-sm text-gray-500 hover:text-black dark:hover:text-white">CMS</a>
-                </li>
-                <li>
-                  <a href="#" className="text-sm text-gray-500 hover:text-black dark:hover:text-white">CDN</a>
-                </li>
-              </ul>
+              </a>
+              <a href="https://apps.apple.com/in/app/cyber-soldiers-academy/id1673428016" target="_blank" rel="noopener noreferrer">
+                <img 
+                  src="https://d502jbuhuh9wk.cloudfront.net/orgData/63a4480de4b0fa7eb0f4eb95/pages/assets/images/FLOijappleapp.png" 
+                  alt="App Store" 
+                  className="w-[130px]"
+                />
+              </a>
             </div>
           </div>
+
+          {/* Second column with company links */}
+          <div className="md:pl-20">
+            <h2 className="text-2xl font-semibold mb-6">Company</h2>
+            <div className="space-y-3">
+              <p><a href="/" className="text-base font-medium hover:text-gray-300">Home</a></p>
+              <p><a href="https://www.cybersoldiers.in/s/store" className="text-base font-medium hover:text-gray-300">Courses</a></p>
+              <p><a href="/termsofuse" className="text-base font-medium hover:text-gray-300">Terms of Use</a></p>
+              <p><a href="/privacypolicy" className="text-base font-medium hover:text-gray-300">Privacy Policy</a></p>
+              <p><a href="/refundpolicy" className="text-base font-medium hover:text-gray-300">Refund Policy</a></p>
+              <p><a href="https://www.cybersoldiers.in/faqs" className="text-base font-medium hover:text-gray-300">FAQs</a></p>
+              <p><a href="https://www.cybersoldiers.in/aboutus" className="text-base font-medium hover:text-gray-300">About Us</a></p>
+              <p><a href="https://www.cybersoldiers.in/contactus" className="text-base font-medium hover:text-gray-300">Contact Us</a></p>
+            </div>
+          </div>
+
+          {/* Third column with contact info and social links */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-6">Contact Us</h2>
+            <div className="space-y-4">
+              <p className="flex items-center text-base font-medium">
+                <span className="mr-4">📞</span>+91-78143-21156
+              </p>
+              <p className="flex items-center text-base font-medium">
+                <span className="mr-4">✉️</span>info@cybersoldiers.in
+              </p>
+              
+              <div className="flex space-x-4 mt-6">
+                <a href="https://www.linkedin.com/company/cybersoldiersacademy/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+                  <Linkedin size={24} />
+                </a>
+                <a href="https://www.facebook.com/MakeIndiaCyberSafe" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+                  <Facebook size={24} />
+                </a>
+                <a href="https://www.instagram.com/cybersoldiers9/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+                  <Instagram size={24} />
+                </a>
+                <a href="https://www.youtube.com/@CyberSoldiersAcademy" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+                  <Youtube size={24} />
+                </a>
+                <a href="https://twitter.com/CyberSoldiers7" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+                  <Twitter size={24} />
+                </a>
+              </div>
+
+              <div className="mt-8">
+                <p className="font-bold">Shlokcent Technologies Pvt Ltd</p>
+                <p className="text-sm mt-2">CIN : U58202MP2023PTC064946</p>
+                <p className="text-sm">GST : 23ABKCS4015P1Z2</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 text-center text-sm">
+          <p>© Copyright 2023 Sklokcent Technologies Pvt Ltd</p>
         </div>
       </div>
     </footer>
