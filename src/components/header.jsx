@@ -15,40 +15,40 @@ export default function Header() {
           <svg viewBox="0 0 180 180" className="h-6 w-6">
             <path d="M 90 0 L 180 180 L 0 180 Z" fill="currentColor"></path>
           </svg>
-          <span className="font-bold">Cyber.Soldiers</span>
+          <span className="font-bold text-sm sm:text-base">Cyber.Soldiers</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-6">
-          <Link to="/product" className="text-sm font-medium transition-colors hover:text-primary">
+        <nav className="hidden lg:flex items-center space-x-4 md:space-x-6">
+          <Link to="/product" className="text-sm font-medium transition-colors hover:text-primary px-2 py-1">
             Product
           </Link>
-          <Link to="/services" className="text-sm font-medium transition-colors hover:text-primary">
+          <Link to="/services" className="text-sm font-medium transition-colors hover:text-primary px-2 py-1">
             Services
           </Link>
-          <Link to="/training" className="text-sm font-medium transition-colors hover:text-primary">
+          <Link to="/training" className="text-sm font-medium transition-colors hover:text-primary px-2 py-1">
             Training
           </Link>
-          <Link to="/resources" className="text-sm font-medium transition-colors hover:text-primary">
+          <Link to="/resources" className="text-sm font-medium transition-colors hover:text-primary px-2 py-1">
             Resources
           </Link>
-          <Link to="/about" className="text-sm font-medium transition-colors hover:text-primary">
+          <Link to="/about" className="text-sm font-medium transition-colors hover:text-primary px-2 py-1">
             About Us
           </Link>
-          <Link to="/careers" className="text-sm font-medium transition-colors hover:text-primary">
+          <Link to="/careers" className="text-sm font-medium transition-colors hover:text-primary px-2 py-1">
             Careers
           </Link>
-          <Link to="/hire" className="text-sm font-medium transition-colors hover:text-primary">
+          <Link to="/hire" className="text-sm font-medium transition-colors hover:text-primary px-2 py-1">
             Hire
           </Link>
           <Link to="/contact">
-            <Button>Contact Us</Button>
+            <Button className="text-sm">Contact Us</Button>
           </Link>
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden"
+          className="lg:hidden p-2 -mr-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -63,59 +63,59 @@ export default function Header() {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="lg:hidden border-t bg-background">
-          <div className="container px-4 py-4 space-y-4">
+          <div className="container px-4 py-4 space-y-3">
             <Link
               to="/product"
-              className="block text-sm font-medium transition-colors hover:text-primary"
+              className="block text-sm font-medium transition-colors hover:text-primary py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Product
             </Link>
             <Link
               to="/services"
-              className="block text-sm font-medium transition-colors hover:text-primary"
+              className="block text-sm font-medium transition-colors hover:text-primary py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Services
             </Link>
             <Link
               to="/training"
-              className="block text-sm font-medium transition-colors hover:text-primary"
+              className="block text-sm font-medium transition-colors hover:text-primary py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Training
             </Link>
             <Link
               to="/resources"
-              className="block text-sm font-medium transition-colors hover:text-primary"
+              className="block text-sm font-medium transition-colors hover:text-primary py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Resources
             </Link>
             <Link
               to="/about"
-              className="block text-sm font-medium transition-colors hover:text-primary"
+              className="block text-sm font-medium transition-colors hover:text-primary py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               About Us
             </Link>
             <Link
               to="/careers"
-              className="block text-sm font-medium transition-colors hover:text-primary"
+              className="block text-sm font-medium transition-colors hover:text-primary py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Careers
             </Link>
             <Link
               to="/hire"
-              className="block text-sm font-medium transition-colors hover:text-primary"
+              className="block text-sm font-medium transition-colors hover:text-primary py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Hire
             </Link>
             <Link
               to="/contact"
-              className="block"
+              className="block pt-2"
               onClick={() => setIsMenuOpen(false)}
             >
               <Button className="w-full">Contact Us</Button>

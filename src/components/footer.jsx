@@ -3,8 +3,8 @@ import { Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react"
 export default function Footer() {
   return (
     <footer className="border-t bg-black">
-      <div className="container mx-auto max-w-[1200px] px-4 py-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 md:px-8 py-8 sm:py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           {/* First column with main navigation links */}
           <div>
             <ul className="space-y-2">
@@ -25,14 +25,14 @@ export default function Footer() {
             <div className="border p-3 rounded-md mb-4">
               <p className="text-sm font-medium text-gray-100">CyberSoldiers Labs</p>
             </div>
-            <div className="flex space-x-2 mt-4">
+            <div className="flex flex-wrap gap-2 mt-4">
               <a href="#" className="text-xs px-3 py-1 border rounded-md text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-900">CompanyPlan</a>
               <a href="#" className="text-xs px-3 py-1 border rounded-md text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-900">IOS</a>
             </div>
             <div className="mt-6">
               <p className="text-sm">2025</p>
               <p className="text-sm font-medium text-gray-100">@CyberSoldiers</p>
-              <div className="flex space-x-2 mt-4">
+              <div className="flex flex-wrap gap-2 mt-4">
                 <a href="#" className="text-xs px-3 py-1 border text-gray-100 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900">LinkedIn</a>
                 <a href="#" className="text-xs px-3 py-1 border text-gray-100 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900">YouTube</a>
                 <a href="#" className="text-xs px-3 py-1 border text-gray-100 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900">Instagram</a>
@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
 
           {/* Third column - empty space */}
-          <div></div>
+          <div className="hidden md:block"></div>
 
           {/* Fourth column with contact and subscribe section */}
           <div>
@@ -57,8 +57,12 @@ export default function Footer() {
             <div className="mt-6">
               <h3 className="font-semibold mb-3 text-gray-100">Subscribe to newsletter</h3>
               <div className="flex mb-4">
-                <input type="email" className="border p-2 text-sm w-full" placeholder="Your email" />
-                <button className="bg-black text-white px-3 text-sm dark:bg-white dark:text-black">
+                <input 
+                  type="email" 
+                  className="border p-2 text-sm w-full rounded-l-md" 
+                  placeholder="Your email" 
+                />
+                <button className="bg-black text-white px-3 text-sm rounded-r-md dark:bg-white dark:text-black">
                   →
                 </button>
               </div>
