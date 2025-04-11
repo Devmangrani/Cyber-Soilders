@@ -229,8 +229,8 @@ export default function Hero() {
       />
 
       {/* Main Content */}
-      <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10 py-20 md:py-32">
-        <div className="flex flex-col items-center space-y-8 text-center">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 max-w-[1920px] relative z-10 py-12 sm:py-16 md:py-20 lg:py-24">
+        <div className="flex flex-col items-center space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-20 text-center">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -247,9 +247,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-4 max-w-[980px]"
+            className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 w-full max-w-[1920px]"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter text-white leading-tight">
               Defending your Digital Frontiers
             </h1>
 
@@ -257,15 +257,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-400 max-w-[700px] mx-auto"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-400 max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] xl:max-w-[900px] mx-auto leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mt-4 sm:mt-6 whitespace-pre-line"
             >
-              Used by some of the reputed organisations, Cyber.soldiers empowers
-              you with
-              <span className="font-semibold text-gray-300">
-                {" "}
-                high-quality Cyber Services & Skilling{" "}
-              </span>
-              with the power of ecosystem.
+              Used by some of the reputed organisations, Cyber.soldiers{'\n'}empowers you with high-quality Cyber Services & Skilling with the power of ecosystem.
             </motion.p>
           </motion.div>
 
@@ -274,7 +268,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-12 w-full max-w-3xl"
+            className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 mt-12 sm:mt-16 md:mt-20 lg:mt-24 w-full max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12"
           >
             {[
               {
@@ -323,7 +317,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
-            className="flex flex-wrap justify-center gap-2 mt-8"
+            className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-8 sm:mt-12 md:mt-16 lg:mt-20 w-full max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12"
           >
             {[
               { to: "/product", label: "Product", icon: <Shield className="h-4 w-4 mr-1" /> },
