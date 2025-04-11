@@ -182,47 +182,47 @@ export default function CyberFramework() {
           ref={gridRef}
           className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
         >
-          {/* Grid node glow effects */}
+          {/* Grid node glow effects - Adjusted for mobile */}
           <div
-            className="grid-node absolute h-2 w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
+            className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
             style={{ animationDelay: "0.5s" }}
           ></div>
           <div
-            className="grid-node absolute h-2 w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
+            className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
             style={{ animationDelay: "1.2s" }}
           ></div>
           <div
-            className="grid-node absolute h-2 w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
+            className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
             style={{ animationDelay: "2.7s" }}
           ></div>
           <div
-            className="grid-node absolute h-2 w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
+            className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
             style={{ animationDelay: "1.8s" }}
           ></div>
           <div
-            className="grid-node absolute h-2 w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
+            className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
             style={{ animationDelay: "3.5s" }}
           ></div>
 
-          {/* Grid line trace effects */}
+          {/* Grid line trace effects - Adjusted for mobile */}
           <div
-            className="grid-trace absolute h-[1px] w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
+            className="grid-trace absolute h-[1px] w-[100px] sm:w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
             style={{ animationDelay: "0.5s" }}
           ></div>
           <div
-            className="grid-trace absolute h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
+            className="grid-trace absolute h-[100px] sm:h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
             style={{ animationDelay: "1.2s" }}
           ></div>
           <div
-            className="grid-trace absolute h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
+            className="grid-trace absolute h-[75px] sm:h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
             style={{ animationDelay: "2.7s" }}
           ></div>
           <div
-            className="grid-trace absolute h-[1px] w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
+            className="grid-trace absolute h-[1px] w-[60px] sm:w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
             style={{ animationDelay: "1.8s" }}
           ></div>
           <div
-            className="grid-trace absolute h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
+            className="grid-trace absolute h-[60px] sm:h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
             style={{ animationDelay: "3.5s" }}
           ></div>
         </div>
@@ -259,106 +259,49 @@ export default function CyberFramework() {
       />
 
       {/* Main Content */}
-      <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10 py-20 md:py-32">
-        <div className="flex flex-col items-center space-y-16">
-          {/* Hero Section */}
-          <div className="flex flex-col items-center space-y-8 text-center">
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-primary text-sm font-medium"
-            >
-              <Shield className="mr-2 h-4 w-4" />
-              Cyber Security Excellence
-            </motion.div>
-
-            {/* Main Title */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="space-y-4 max-w-[980px]"
-            >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
-                Get started in <span className="text-blue-500">Cyber Security</span>
-              </h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="text-xl md:text-2xl text-gray-400 max-w-[700px] mx-auto"
-              >
-                Secure your digital assets with our comprehensive cybersecurity solutions and expert training programs.
-              </motion.p>
-            </motion.div>
-
-            {/* CTA Button with Dialog */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              <button
-                onClick={() => setIsDialogOpen(true)}
-                className="relative group overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-md text-lg font-medium"
-              >
-                <span className="relative z-10 flex items-center">
-                  Enquire Now <ArrowRight className="ml-2 h-5 w-5" />
-                </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              </button>
-            </motion.div>
-          </div>
-
-          {/* Featured Images Section */}
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 max-w-[1920px] relative z-10 py-12 sm:py-16 md:py-20 lg:py-24">
+        <div className="flex flex-col items-center space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-20 text-center">
+          {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full"
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-primary text-sm font-medium"
           >
-            {[1, 2, 3].map((item) => (
-              <motion.div
-                key={item}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                className="relative overflow-hidden rounded-xl aspect-video bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-50"></div>
-                <img
-                    src={`${item === 1 ? asset1 : item === 2 ? asset2 : asset3}`}
-                  alt={`Cyber Security Image ${item}`}
-                  className="w-full h-full object-cover opacity-70 mix-blend-overlay"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white text-xl font-bold">Security Asset {item}</div>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
-              </motion.div>
-            ))}
+            <Shield className="mr-2 h-4 w-4" />
+            Cyber Security Excellence
+          </motion.div>
+
+          {/* Main Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 w-full max-w-[1920px]"
+          >
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter text-white leading-tight">
+              The Framework of Cyber Empowerment
+            </h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-400 max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] xl:max-w-[900px] mx-auto leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mt-4 sm:mt-6 whitespace-pre-line"
+            >
+              Our comprehensive approach to cybersecurity covers all aspects of digital protection, from training to implementation and continuous monitoring.
+            </motion.p>
           </motion.div>
 
           {/* Framework Section */}
           <div ref={frameworkRef} className="w-full">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">The Framework of Cyber Empowerment</h2>
-              <p className="text-gray-400 max-w-3xl mx-auto">
-                Our comprehensive approach to cybersecurity covers all aspects of digital protection, from training to
-                implementation and continuous monitoring.
-              </p>
-            </motion.div>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {frameworkCategories.map((category, index) => (
                 <motion.div
                   key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                   className="relative p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300 group"
                   whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 >
@@ -376,16 +319,18 @@ export default function CyberFramework() {
           </div>
 
           {/* Testimonials Section */}
-          <div ref={testimonialsRef} className="w-full">
+          {/* <div ref={testimonialsRef} className="w-full">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Testimonials</h2>
-              <p className="text-gray-400 max-w-3xl mx-auto">
-                See what our clients have to say about our cybersecurity services and training programs.
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter text-white leading-tight">
+                What Our Clients Say
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-400 max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] xl:max-w-[900px] mx-auto leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mt-4 sm:mt-6">
+                Trusted by leading organizations worldwide
               </p>
             </motion.div>
 
@@ -393,30 +338,31 @@ export default function CyberFramework() {
               {testimonials.map((testimonial, index) => (
                 <motion.div
                   key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                   className="relative p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300 group"
                   whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="mb-4">
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-4 mb-4">
                       <img
-                        src={`${index === 0 ? testimonial1 : index === 1 ? testimonial2 : testimonial3}`}
-                        alt={`${testimonial.name} logo`}
-                        className="h-16 w-16 object-contain"
+                        src={testimonial.logo}
+                        alt={testimonial.name}
+                        className="w-12 h-12 rounded-full object-cover"
                       />
+                      <div>
+                        <h3 className="text-lg font-semibold text-white">{testimonial.name}</h3>
+                        <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                      </div>
                     </div>
-                    <p className="text-gray-300 italic mb-4 flex-grow">"{testimonial.content}"</p>
-                    <div>
-                      <p className="text-white font-semibold">{testimonial.name}</p>
-                      <p className="text-gray-400 text-sm">{testimonial.role}</p>
-                    </div>
+                    <p className="text-gray-400">{testimonial.content}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
-          </div>
-
-
+          </div> */}
         </div>
       </div>
 

@@ -15,6 +15,7 @@ import Contact from "@/components/contact"
 import Careers from "@/components/careers"
 import Hire from "@/components/hire"
 import ScrollToTop from "@/components/scroll-to-top"
+import Testimonials from "@/components/testimonials"
 
 export default function App() {
   return (
@@ -27,10 +28,11 @@ export default function App() {
             <Route path="/" element={
               <>
                 <Hero />
-                <Features />
-                <Technology />
-                {/* <InstantFeedback /> */}
                 <Showcases />
+                <Technology />
+                {/* <Features /> */}
+                <Testimonials />
+                {/* <InstantFeedback /> */}
               </>
             } />
             <Route path="/product" element={<Product />} />

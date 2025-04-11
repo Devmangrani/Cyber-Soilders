@@ -1,108 +1,91 @@
 // import Image from "next/image"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import { motion } from "framer-motion"
 import { Star } from "lucide-react"
+
+const testimonials = [
+  {
+    name: "Sarah Johnson",
+    role: "CTO, TechCorp",
+    content: "Cyber.Soldiers transformed our security infrastructure. Their expertise and proactive approach helped us prevent multiple potential breaches.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+  },
+  {
+    name: "Michael Chen",
+    role: "Security Director, FinTech Solutions",
+    content: "The training programs are exceptional. Our team's security awareness and skills have improved significantly since partnering with Cyber.Soldiers.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+  },
+  {
+    name: "Emily Rodriguez",
+    role: "IT Manager, HealthCare Plus",
+    content: "Their 24/7 monitoring service gives us peace of mind. The team is always responsive and professional in handling security incidents.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+  }
+]
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-background">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">Testimonials</div>
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">What our customers say</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Don't just take our word for it. Here's what our customers have to say about our platform.
-            </p>
-          </div>
-        </div>
-        <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-3">
-          <Card className="border-0 bg-muted/50">
-            <CardContent className="pt-6">
-              <div className="flex gap-0.5">
-                <Star className="h-5 w-5 fill-primary text-primary" />
-                <Star className="h-5 w-5 fill-primary text-primary" />
-                <Star className="h-5 w-5 fill-primary text-primary" />
-                <Star className="h-5 w-5 fill-primary text-primary" />
-                <Star className="h-5 w-5 fill-primary text-primary" />
-              </div>
-              <blockquote className="mt-4 border-l-2 pl-4 italic">
-                "This platform has completely transformed our business operations. The analytics tools are powerful yet
-                easy to use."
-              </blockquote>
-            </CardContent>
-            <CardFooter className="flex items-center gap-4 border-t px-6 py-4">
-              <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                <img
-                  src="/placeholder.svg"
-                  alt="Customer"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div>
-                <p className="text-sm font-medium">Sarah Johnson</p>
-                <p className="text-xs text-muted-foreground">CEO, TechStart</p>
-              </div>
-            </CardFooter>
-          </Card>
+    <section className="w-full py-16 sm:py-20 md:py-24 bg-gradient-to-b from-gray-900 to-black">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-[1200px]">
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 sm:mb-16"
+        >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+            What Our Clients Say
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+            Don't just take our word for it. Here's what our clients have to say about their experience with Cyber.Soldiers.
+          </p>
+        </motion.div>
 
-          <Card className="border-0 bg-muted/50">
-            <CardContent className="pt-6">
-              <div className="flex gap-0.5">
-                <Star className="h-5 w-5 fill-primary text-primary" />
-                <Star className="h-5 w-5 fill-primary text-primary" />
-                <Star className="h-5 w-5 fill-primary text-primary" />
-                <Star className="h-5 w-5 fill-primary text-primary" />
-                <Star className="h-5 w-5 fill-primary text-primary" />
-              </div>
-              <blockquote className="mt-4 border-l-2 pl-4 italic">
-                "The customer support is exceptional. Any time we've had an issue, the team has been quick to respond
-                and resolve it."
-              </blockquote>
-            </CardContent>
-            <CardFooter className="flex items-center gap-4 border-t px-6 py-4">
-              <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                <img
-                  src="/placeholder.svg"
-                  alt="Customer"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div>
-                <p className="text-sm font-medium">Michael Chen</p>
-                <p className="text-xs text-muted-foreground">CTO, GrowthLabs</p>
-              </div>
-            </CardFooter>
-          </Card>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative p-6 sm:p-8 rounded-xl bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300 group"
+            >
+              <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-xl blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 mb-6">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-white/20"
+                  />
+                  <div>
+                    <h3 className="text-white font-semibold text-lg">{testimonial.name}</h3>
+                    <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                  </div>
+                </div>
 
-          <Card className="border-0 bg-muted/50">
-            <CardContent className="pt-6">
-              <div className="flex gap-0.5">
-                <Star className="h-5 w-5 fill-primary text-primary" />
-                <Star className="h-5 w-5 fill-primary text-primary" />
-                <Star className="h-5 w-5 fill-primary text-primary" />
-                <Star className="h-5 w-5 fill-primary text-primary" />
-                <Star className="h-5 w-5 fill-primary text-primary" />
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                  "{testimonial.content}"
+                </p>
               </div>
-              <blockquote className="mt-4 border-l-2 pl-4 italic">
-                "We've seen a 40% increase in productivity since implementing this solution. The ROI has been
-                incredible."
-              </blockquote>
-            </CardContent>
-            <CardFooter className="flex items-center gap-4 border-t px-6 py-4">
-              <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                <img
-                  src="/placeholder.svg"
-                  alt="Customer"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div>
-                <p className="text-sm font-medium">Emily Rodriguez</p>
-                <p className="text-xs text-muted-foreground">COO, Innovate Inc</p>
-              </div>
-            </CardFooter>
-          </Card>
+            </motion.div>
+            
+          ))}
         </div>
+        
       </div>
     </section>
   )

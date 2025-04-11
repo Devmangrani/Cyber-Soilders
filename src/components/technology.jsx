@@ -319,6 +319,25 @@ export default function Technology() {
               </Button>
             </motion.div>
           </motion.div> */}
+           {/* <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="space-y-4 max-w-[980px]"
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
+                Get started in <span className="text-blue-500">Cyber Security</span>
+              </h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="text-xl md:text-2xl text-gray-400 max-w-[700px] mx-auto"
+              >
+                Secure your digital assets with our comprehensive cybersecurity solutions and expert training programs.
+              </motion.p>
+            </motion.div> */}
       </div>
     </section>
   );
