@@ -2,16 +2,56 @@
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import IIT_Madras_Logo from "../IIT_Madras_Logo.png"
+import IITM_Pravartak_Logo from "../IITM_Pravartak_Logo.jpeg"
+import BC_Court_Logo from "../BC_Court_Logo.png"
+import Startup_India_Logo from "../Startup_India_Logo.png"
+import Startup_MP_Logo from "../Startup_MP_Logo.png"
+import MSME_Logo from "../MSME_Logo.png"
+import MCA_Logo from "../MCA_Logo.jpeg"
+import DG_Trust_Logo from "../DG_Trust_Logo.webp"
 
 const affiliations = [
-  "IIT Madrass",
-  "IITM Pravartak",
-  "BC Court",
-  "Startup India",
-  "Startup MP",
-  "MSME",
-  "Ministry of Corporate Affairs",
-  "DG foreign Trust"
+  {
+    name: "IIT Madrass",
+    logo: IIT_Madras_Logo,
+    description: "India's premier technical institute"
+  },
+  {
+    name: "IITM Pravartak",
+    logo: IITM_Pravartak_Logo,
+    description: "Technology Innovation Hub"
+  },
+  {
+    name: "BC Court",
+    logo: BC_Court_Logo,
+    description: "Legal excellence and integrity"
+  },
+  {
+    name: "Startup India",
+    logo: Startup_India_Logo,
+    description: "Empowering Indian startups"
+  },
+  {
+    name: "Startup MP",
+    logo: Startup_MP_Logo,
+    description: "Madhya Pradesh's startup ecosystem"
+  },
+  {
+    name: "MSME",
+    logo: MSME_Logo,
+    description: "Supporting small businesses"
+  },
+  {
+    name: "Ministry of Corporate Affairs",
+    logo: MCA_Logo,
+    description: "Corporate governance and regulation"
+  },
+  {
+    name: "DG foreign Trust",
+    logo: DG_Trust_Logo,
+    description: "International trust and cooperation"
+  }
 ]
 
 export default function Affiliations() {
@@ -53,12 +93,26 @@ export default function Affiliations() {
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
               >
                 <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                <div className="relative z-10 flex items-start gap-4">
+                <div className="relative z-10 flex flex-col items-center gap-4">
                   <div className="">
-                    {/* <span className="text-primary font-bold">{index + 1}</span> */}
+                    {/* <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5"
+                      animate={{
+                        x: ["-100%", "100%"],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Number.POSITIVE_INFINITY,
+                        ease: "linear",
+                      }}
+                    /> */}
+                    <div className="relative z-10 flex items-center justify-center w-32 h-32 mx-auto rounded-full bg-gray-700">
+                      <img src={item.logo} alt={`${item.name} Logo`} className="w-32 h-32 object-contain" />
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                  <div className="text-center">
+                    <h3 className="text-lg font-semibold text-white mb-2">{item.name}</h3>
+                    <p className="text-gray-400 text-sm">{item.description}</p>
                   </div>
                 </div>
               </motion.div>
