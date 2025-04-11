@@ -4,7 +4,9 @@ import { Atom, Box, Zap, ArrowRight, Shield, Code, Server, Database, Cloud, Cpu 
 import { Button } from "@/components/ui/button"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
+import compliance from "../risk.webp"
+import threat from "../asset1.jpeg" 
+import assessment from "../asset2.jpeg"
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -263,81 +265,96 @@ export default function Technology() {
         </motion.div>
 
         {/* Get Started Section */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="relative rounded-3xl overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/5 to-transparent dark:from-primary/10 dark:via-primary/10 rounded-3xl" />
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="relative p-8 md:p-12 rounded-3xl border backdrop-blur-sm"
-          >
-            <h3 className="text-2xl font-bold mb-6">Get started</h3>
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.1
-                  }
-                }
-              }}
-              className="flex flex-wrap gap-2 mb-6"
-            >
-              {["WAFT", "SOC", "Threat Modeling", "Attack Surface", "MFA", "Zero Trust", "IAM"].map((tag) => (
-                <motion.span
-                  key={tag}
-                  variants={{
-                    hidden: { opacity: 0, scale: 0.8 },
-                    visible: { opacity: 1, scale: 1 }
-                  }}
-                  whileHover={{ scale: 1.1 }}
-                  className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary-foreground"
-                >
-                  {tag}
-                </motion.span>
-              ))}
-            </motion.div>
-            <p className="text-muted-foreground mb-8 max-w-[600px]">
-              CyberSoldiers is your ultimate partner in cybersecurity—empowering skill development, resilience building, and compliance assurance. Strengthen your digital infrastructure today with expert solutions from CyberSoldiers.
-            </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="group relative overflow-hidden">
-                <span className="relative z-10">Enquire Now</span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "100%" }}
-                  transition={{ duration: 0.75, ease: "easeInOut" }}
-                />
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </motion.div>
-          </motion.div> */}
-           {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="space-y-4 max-w-[980px]"
-            >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
+        <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10 mt-20">
+          <div className="relative">
+            <div className="absolute left-0 top-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" style={{ '--line-fade-stop': '75%' }}></div>
+            
+            {/* Center Content */}
+            <div className="text-center mb-2">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium mb-4"
+              >
+                <Shield className="mr-2 h-4 w-4" />
+                Cyber Security Excellence
+              </motion.div>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-2"
+              >
                 Get started in <span className="text-blue-500">Cyber Security</span>
-              </h1>
-
+              </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="text-xl md:text-2xl text-gray-400 max-w-[700px] mx-auto"
+                transition={{ delay: 0.4 }}
+                className="text-xl md:text-2xl text-gray-400 max-w-[700px] mx-auto mb-2"
               >
                 Secure your digital assets with our comprehensive cybersecurity solutions and expert training programs.
               </motion.p>
-            </motion.div> */}
+            </div>
+
+            {/* Cards Section */}
+            <div className="flex justify-center -mt-32">
+              <div className="relative w-full lg:w-[800px] h-[800px] flex items-center justify-center">
+                <div className="absolute w-full max-w-[500px] perspective-[2000px]">
+                  {[
+                    {
+                      title: "Security Assessment",
+                      description: "Comprehensive security evaluation and risk analysis for your digital infrastructure.",
+                      gradient: "from-blue-500/20 to-purple-500/20",
+                      rotation: "rotate-[-15deg] translate-x-[-30%] translate-y-[5%]",
+                      image: assessment
+                    },
+                    {
+                      title: "Threat Intelligence",
+                      description: "Real-time threat monitoring and proactive security measures.",
+                      gradient: "from-green-500/20 to-teal-500/20",
+                      rotation: "rotate-[0deg] translate-x-[0%] translate-y-[0%]",
+                      image: threat
+                    },
+                    {
+                      title: "Compliance Solutions",
+                      description: "Ensure regulatory compliance with our comprehensive security frameworks.",
+                      gradient: "from-purple-500/20 to-pink-500/20",
+                      rotation: "rotate-[15deg] translate-x-[30%] translate-y-[-5%]",
+                      image: compliance
+                    }
+                  ].map((card, index) => (
+                    <div
+                      key={card.title}
+                      className={`absolute inset-0 w-full group transition-all duration-300 hover:z-10 ${card.rotation}`}
+                      style={{
+                        transformStyle: 'preserve-3d',
+                        zIndex: index
+                      }}
+                    >
+                      <div className="relative w-full rounded-xl overflow-hidden bg-black/40 backdrop-blur-sm border border-white/10 shadow-2xl transition-transform duration-300 group-hover:scale-105">
+                        <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient} opacity-50 group-hover:opacity-70 transition-opacity duration-300`} />
+                        <div className="relative aspect-[4/3] w-full overflow-hidden">
+                          <img
+                            src={card.image}
+                            alt={card.title}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                        </div>
+                        <div className="relative p-6">
+                          <h3 className="text-xl font-semibold text-white mb-2">{card.title}</h3>
+                          <p className="text-sm text-gray-300">{card.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
