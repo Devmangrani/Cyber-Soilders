@@ -23,7 +23,7 @@ const affiliations = [
     description: "Technology Innovation Hub"
   },
   {
-    name: "BC Court",
+    name: "EC council",
     logo: BC_Court_Logo,
     description: "Legal excellence and integrity"
   },
@@ -48,7 +48,7 @@ const affiliations = [
     description: "Corporate governance and regulation"
   },
   {
-    name: "DG foreign Trust",
+    name: "DG foreign Trade",
     logo: DG_Trust_Logo,
     description: "International trust and cooperation"
   }
