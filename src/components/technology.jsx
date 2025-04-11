@@ -12,21 +12,21 @@ gsap.registerPlugin(ScrollTrigger);
 
 const technologies = [
   {
-    title: "IT",
+    title: "IT Security",
     icon: <Code className="w-6 h-6" />,
     color: "text-blue-500",
     description: "Information Technology solutions for modern enterprises, including network security, cloud infrastructure, and digital transformation.",
     stats: { value: "500+", label: "Projects Delivered" }
   },
   {
-    title: "OT",
+    title: "OT Security",
     icon: <Server className="w-6 h-6" />,
     color: "text-green-500",
     description: "Operational Technology security for industrial control systems, SCADA, and critical infrastructure protection.",
     stats: { value: "100+", label: "Secured Systems" }
   },
   {
-    title: "Quantum",
+    title: "IOT Security",
     icon: <Database className="w-6 h-6" />,
     color: "text-purple-500",
     description: "Next-generation quantum-safe cryptography and security solutions to protect against future quantum computing threats.",
