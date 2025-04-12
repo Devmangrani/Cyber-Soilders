@@ -1,31 +1,126 @@
-"use client"
+"use client";
 
-import { useState, useRef, useEffect } from "react"
-import { ChevronLeft, ChevronRight, Play, Shield, Zap, Users, Target, ArrowRight, Star, Award } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
-import { Link } from "react-router-dom"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import CyberSecurityTraining  from "../CyberSecurityTraining.jpeg"
-import AdvancedTrainingEnvironment from "../AdvancedTrainingEnvironment.jpg"
-import RealTimeAttackSimulation from "../istockphoto-1435605327-612x612.jpg"
-import ComprehensiveAnalytics from "../ComprehensiveAnalytics.png"
-import IIT_Madras_Logo from "../IIT_Madras_Logo.png"
+import { useState, useRef, useEffect } from "react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Play,
+  Shield,
+  Zap,
+  Users,
+  Target,
+  ArrowRight,
+  Star,
+  Award,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { Link } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CyberSecurityTraining from "../CyberSecurityTraining.jpeg";
+import AdvancedTrainingEnvironment from "../AdvancedTrainingEnvironment.jpg";
+import RealTimeAttackSimulation from "../istockphoto-1435605327-612x612.jpg";
+import ComprehensiveAnalytics from "../ComprehensiveAnalytics.png";
+import IIT_Madras_Logo from "../IIT_Madras_Logo.png";
 // Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Product() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
-  const [hoveredFeature, setHoveredFeature] = useState(null)
-  const containerRef = useRef(null)
-  const gridRef = useRef(null)
-  const { scrollY } = useScroll()
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hoveredFeature, setHoveredFeature] = useState(null);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const [slideDirection, setSlideDirection] = useState("right");
+  const containerRef = useRef(null);
+  const gridRef = useRef(null);
+  const carouselRef = useRef(null);
+  const { scrollY } = useScroll();
 
   // Parallax effects
-  const y = useTransform(scrollY, [0, 1000], [0, 200])
-  const opacity = useTransform(scrollY, [0, 300], [1, 0.5])
+  const y = useTransform(scrollY, [0, 1000], [0, 200]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0.5]);
+
+  const [cards, setCards] = useState([
+    {
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-25.png?ssl=1",
+      title: "Build your custom challenge",
+      description: "Tailor scenarios in our cyber range with full control, crafting real-world environments enriched with genuine traffic.",
+    },
+    {
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-26.png?ssl=1",
+      title: "Create a red, blue and purple team",
+      description: "Divide teams for optimal learning; diverse red, blue, and purple team configurations enhance member skills.",
+    },
+    {
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-27.png?ssl=1",
+      title: "Track record of important action",
+      description: "Record and monitor each pivotal candidate step, ensuring comprehensive assessment every time.",
+    },
+    {
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-28.png?ssl=1",
+      title: "Train top level SOC analyst",
+      description: "Equip SOC analysts to vigilantly detect and manage real-world threats with confidence and assurance.",
+    },
+    {
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-29.png?ssl=1",
+      title: "Simulate advanced attack scenarios",
+      description: "Experience complex attack simulations to sharpen defensive and offensive cybersecurity techniques in real time.",
+    },
+    {
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-30.png?ssl=1",
+      title: "Detailed incident reports",
+      description: "Generate comprehensive reports capturing every event, action, and decision during simulated security incidents.",
+    },
+    {
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-31.png?ssl=1",
+      title: "Live performance monitoring",
+      description: "Track team and individual performance through real-time dashboards and analytics for effective feedback.",
+    },
+    {
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-32.png?ssl=1",
+      title: "Hands-on malware analysis",
+      description: "Dive deep into malware behavior and analysis within a controlled, realistic environment to build practical skills.",
+    },
+    {
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-33.png?ssl=1",
+      title: "Scenario-based learning modules",
+      description: "Interactive modules designed around specific threat cases, enhancing investigative and decision-making abilities.",
+    },
+    {
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-34.png?ssl=1",
+      title: "Customizable threat intelligence feeds",
+      description: "Integrate and manage tailored threat feeds for dynamic, data-driven security operations training and response.",
+    },
+  ]);
+
+  // Auto-slide carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handlePrevSlide();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handlePrevSlide = () => {
+    setCards((prevCards) => {
+      const lastCard = prevCards[prevCards.length - 1];
+      return [lastCard, ...prevCards.slice(0, -1)];
+    });
+  };
+
+  const handleNextSlide = () => {
+    setCards((prevCards) => {
+      const firstCard = prevCards[0];
+      return [...prevCards.slice(1), firstCard];
+    });
+  };
 
   // Add GSAP animation for grid
   useEffect(() => {
@@ -41,30 +136,33 @@ export default function Product() {
           end: "bottom center",
           scrub: 0.5,
         },
-      })
+      });
     }
-  }, [])
+  }, []);
 
   const slides = [
     {
       image: AdvancedTrainingEnvironment,
       title: "Advanced Training Environment",
-      description: "Our state-of-the-art cyber range simulates real-world attack scenarios for hands-on training.",
+      description:
+        "Our state-of-the-art cyber range simulates real-world attack scenarios for hands-on training.",
       stats: { value: "1000+", label: "Scenarios" },
     },
     {
       image: RealTimeAttackSimulation,
       title: "Real-time Attack Simulation",
-      description: "Experience realistic cyber attacks in a controlled environment.",
+      description:
+        "Experience realistic cyber attacks in a controlled environment.",
       stats: { value: "24/7", label: "Monitoring" },
     },
     {
       image: ComprehensiveAnalytics,
       title: "Comprehensive Analytics",
-      description: "Get detailed insights into your team's performance and security posture.",
+      description:
+        "Get detailed insights into your team's performance and security posture.",
       stats: { value: "100%", label: "Accuracy" },
     },
-  ]
+  ];
 
   const features = [
     {
@@ -91,28 +189,28 @@ export default function Product() {
       description: "Targeted exercises for specific security scenarios",
       color: "text-red-500",
     },
-  ]
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
     if (containerRef.current) {
-      observer.observe(containerRef.current)
+      observer.observe(containerRef.current);
     }
 
     return () => {
       if (containerRef.current) {
-        observer.unobserve(containerRef.current)
+        observer.unobserve(containerRef.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <main className="flex-1" ref={containerRef}>
@@ -234,7 +332,8 @@ export default function Product() {
                 transition={{ delay: 0.4 }}
                 className="text-xl md:text-2xl text-gray-400 max-w-[700px] mx-auto"
               >
-                Real-world attacks, hands-on training, unmatched Cyber Resilience.
+                Real-world attacks, hands-on training, unmatched Cyber
+                Resilience.
               </motion.p>
 
               <motion.div
@@ -385,90 +484,184 @@ export default function Product() {
           `}</style>
         </section>
 
-        <section className="w-full py-10 md:py-16 bg-gray-950 relative overflow-hidden">
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl font-bold tracking-tighter mb-12 text-center text-gray-300"
-            >
-              Cyber Security Training & Services
-            </motion.h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="relative aspect-video bg-muted rounded-xl overflow-hidden shadow-lg"
-              >
-                <img
-                  src={CyberSecurityTraining}
-                  alt="Cyber Security Training"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="flex flex-col justify-center space-y-4"
-              >
-                <h3 className="text-2xl font-bold text-gray-300">Cyber Security Training</h3>
-                <p className="text-muted-foreground">
-                  Allows cyber security professionals develop hands-on skills & earn certification.
-                </p>
-                <Link to="/training">
-                  <Button variant="outline" className="group mt-4">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-              </motion.div>
+        {/* Build Team, Fight & Learn Together Section */}
+        <section className="relative w-full min-h-[80vh] bg-gradient-to-b from-black to-gray-900 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            {/* Grid background */}
+            <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden">
+              {/* Grid node glow effects */}
+              <div
+                className="grid-node absolute h-2 w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
+                style={{ animationDelay: "0.5s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-2 w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
+                style={{ animationDelay: "1.2s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-2 w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
+                style={{ animationDelay: "2.7s" }}
+              ></div>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mt-16"
-            >
-              <h3 className="text-2xl font-bold mb-8">Other Services</h3>
+            {/* Radial gradient overlay */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
+          </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[
-                  { title: "Incident Response", icon: <Shield className="h-5 w-5 text-blue-500" /> },
-                  { title: "Red Team Vs Blue Team Exercise", icon: <Users className="h-5 w-5 text-green-500" /> },
-                  { title: "Security Awareness Training", icon: <Target className="h-5 w-5 text-red-500" /> },
-                  { title: "DevSecOps Integration", icon: <Zap className="h-5 w-5 text-yellow-500" /> },
-                  { title: "Capture The Flag", icon: <Award className="h-5 w-5 text-purple-500" /> },
-                  { title: "Cybersecurity Skill Assessment", icon: <Star className="h-5 w-5 text-cyan-500" /> },
-                  { title: "IoT & Critical Infrastructure Security", icon: <Shield className="h-5 w-5 text-indigo-500" /> },
-                  { title: "Penetration Testing Practice", icon: <Target className="h-5 w-5 text-pink-500" /> },
-                  { title: "Continuous Cybersecurity Improvement", icon: <Zap className="h-5 w-5 text-orange-500" /> },
-                ].map((service, index) => (
-                  <motion.div
-                    key={index}
+          {/* Floating Orbs */}
+          <motion.div
+            className="absolute -z-10 top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl"
+            animate={{
+              y: [0, -50, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute -z-10 bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl"
+            animate={{
+              y: [0, 50, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
+
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10 py-12 md:py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Image Section */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative aspect-square"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full blur-3xl"></div>
+                <div className="relative z-10 h-full w-full rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src={CyberSecurityTraining}
+                    alt="Cyber Security Training"
+                    className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+              </motion.div>
+
+              {/* Text Content */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="flex flex-col space-y-8"
+              >
+                <div className="space-y-4">
+                  {/* <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                    className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100/5 backdrop-blur-sm text-primary text-sm font-medium border border-gray-200/10"
+                  >
+                    <Shield className="mr-2 h-4 w-4" />
+                    Enterprise-Grade Security Platform
+                  </motion.div> */}
+
+                  <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    className="group relative p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300"
+                    transition={{ delay: 0.4 }}
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white"
                   >
-                    {/* Gradient hover effect */}
-                    <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                    <div className="relative z-10 flex items-center space-x-3">
-                      <div className="p-2 rounded-lg bg-primary/10">
-                        {service.icon}
-                      </div>
-                      <h4 className="font-medium group-hover:text-primary transition-colors text-gray-300">{service.title}</h4>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+                    Build Team, Fight & Learn Together
+                  </motion.h2>
+
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                    className="text-xl text-gray-400 max-w-[600px]"
+                  >
+                    Rangеstorm's Cybеr Rangе Platform pionееrs cybеrsеcurity
+                    training, offеring an advancеd, hands-on еxpеriеncе for
+                    profеssionals to prеparе for complеx thrеats.
+                  </motion.p>
+                </div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                >
+                  {[
+                    "Skill Development",
+                    "Realistic Simulation",
+                    "Safe Environment",
+                    "Team collaboration",
+                    "Scenario Variety",
+                    "Continuous Learning",
+                    "Certification preparation",
+                    "Gamification",
+                    "No impact on business",
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: 0.7 + index * 0.05 }}
+                      className="flex items-center space-x-3 text-gray-300 group"
+                    >
+                      <span className="text-primary group-hover:scale-110 transition-transform text-white">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                      </span>
+                      <span className="group-hover:text-primary transition-colors">
+                        {item}
+                      </span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 }}
+                  className="flex flex-wrap gap-4 mt-8"
+                >
+                  <Link to="/get-started">
+                    <Button
+                      variant="outline"
+                      className="group relative flex items-center px-6 py-3 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 hover:bg-white/10 transition-all duration-300"
+                    >
+                      <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                      <span className="relative z-10 flex items-center text-gray-100">
+                        Get Started
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </Button>
+                  </Link>
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -479,46 +672,125 @@ export default function Product() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl font-bold tracking-tighter mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-600 "
+              className="text-3xl font-bold tracking-tighter mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-600"
             >
               Interactive Training Environment
             </motion.h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {slides.map((slide, index) => (
+              {[
+                {
+                  image: AdvancedTrainingEnvironment,
+                  title: "Advanced Training Environment",
+                  description:
+                    "Our state-of-the-art cyber range simulates real-world attack scenarios for hands-on training.",
+                  stats: { value: "1000+", label: "Scenarios" },
+                  points: [
+                    "Realistic Training",
+                    "Building Expertise",
+                    "Promoting a Security Mindset",
+                  ],
+                },
+                {
+                  image: RealTimeAttackSimulation,
+                  title: "Real-time Attack Simulation",
+                  description:
+                    "Experience realistic cyber attacks in a controlled environment.",
+                  stats: { value: "24/7", label: "Monitoring" },
+                  points: [
+                    "Incident Response Drills",
+                    "Procedure Testing and Optimization",
+                    "Compliance Training",
+                  ],
+                },
+                {
+                  image: ComprehensiveAnalytics,
+                  title: "Comprehensive Analytics",
+                  description:
+                    "Get detailed insights into your team's performance and security posture.",
+                  stats: { value: "100%", label: "Accuracy" },
+                  points: [
+                    "Testing New Technologies",
+                    "Integration with Existing Systems",
+                    "Continuous Learning and Adaptation",
+                  ],
+                },
+              ].map((slide, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-gray-800 rounded-xl overflow-hidden shadow-lg group"
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.02,
-                    transition: { duration: 0.2 }
+                    transition: { duration: 0.2 },
                   }}
                 >
                   <div className="relative aspect-video overflow-hidden">
                     <img
                       src={slide.image}
                       alt={slide.title}
-                      className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110 "
+                      className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-40 " />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-40" />
                     <div className="absolute bottom-4 left-4">
                       <div className="text-white transform transition-all duration-300 group-hover:translate-y-[-8px]">
-                        <div className="text-2xl font-bold transition-colors duration-300 group-hover:text-primary ">{slide.stats.value}</div>
-                        <div className="text-sm opacity-80 transition-all duration-300 group-hover:opacity-100 t">{slide.stats.label}</div>
+                        <div className="text-2xl font-bold transition-colors duration-300 group-hover:text-primary">
+                          {slide.stats.value}
+                        </div>
+                        <div className="text-sm opacity-80 transition-all duration-300 group-hover:opacity-100">
+                          {slide.stats.label}
+                        </div>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="p-6 flex flex-col h-full">
                     <div className="flex-1 space-y-4 mb-6">
-                      <h3 className="text-xl font-bold transform transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary text-gray-300">{slide.title}</h3>
-                      <p className="text-muted-foreground transition-all duration-300 group-hover:opacity-90">{slide.description}</p>
+                      <h3 className="text-xl font-bold transform transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary text-gray-300">
+                        {slide.title}
+                      </h3>
+                      <p className="text-muted-foreground transition-all duration-300 group-hover:opacity-90">
+                        {slide.description}
+                      </p>
+
+                      {/* Points Section */}
+                      <div className="space-y-2 mt-4">
+                        {slide.points.map((point, pointIndex) => (
+                          <motion.div
+                            key={pointIndex}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{
+                              duration: 0.3,
+                              delay: 0.5 + pointIndex * 0.1,
+                            }}
+                            className="flex items-center space-x-2 text-gray-300 group-hover:text-gray-100 transition-colors"
+                          >
+                            <span className="text-primary text-white">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              >
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                              </svg>
+                            </span>
+                            <span>{point}</span>
+                          </motion.div>
+                        ))}
+                      </div>
                     </div>
-                    <motion.div 
-                      whileHover={{ scale: 1.05 }} 
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       <Button className="w-full relative overflow-hidden bg-transparent border-2 border-primary hover:bg-primary/10 transition-all duration-300">
@@ -537,6 +809,163 @@ export default function Product() {
                   </div>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How Rangestorm Works Section */}
+        <section className="relative w-full py-20 md:py-32 bg-gray-900 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden">
+              <div
+                className="grid-node absolute h-2 w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
+                style={{ animationDelay: "0.5s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-2 w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
+                style={{ animationDelay: "1.2s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-2 w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
+                style={{ animationDelay: "2.7s" }}
+              ></div>
+            </div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
+          </div>
+
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Title and Description */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="space-y-6"
+              >
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100/5 backdrop-blur-sm text-primary text-sm font-medium border border-gray-200/10">
+                  <Shield className="mr-2 h-4 w-4" />
+                  Know More
+                </div>
+
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
+                  How <span className="text-primary">Rangestorm®</span> Works
+                </h2>
+
+                <p className="text-xl text-gray-400 max-w-[600px]">
+                  Rangestorm offers a customizable cyber-training platform,
+                  emphasizing real-world scenarios and diverse team formations.
+                  With an integrated LMS, gamified learning, and realistic
+                  traffic generation.
+                </p>
+              </motion.div>
+
+              {/* Right Column - Carousel */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative h-[400px]"
+              >
+                <div className="relative overflow-hidden h-full">
+                  <div 
+                    className="flex h-full"
+                    style={{
+                      transform: `translate3d(${(cards.findIndex(c => c === cards[0])) * 50}%, 0, 0)`,
+                      transition: 'transform 500ms cubic-bezier(0.4, 0, 0.2, 1)',
+                      willChange: 'transform'
+                    }}
+                  >
+                    {cards.map((card, index) => (
+                      <div
+                        key={card.title}
+                        className="flex-shrink-0 w-1/2 px-4"
+                        style={{
+                          opacity: index < 2 ? 1 : 0.3,
+                          transform: `translate3d(0, 0, 0)`,
+                          transition: 'opacity 500ms ease-in-out',
+                          willChange: 'opacity, transform'
+                        }}
+                      >
+                        <div 
+                          className="h-full bg-white rounded-xl overflow-hidden shadow-lg"
+                          style={{
+                            transform: 'translate3d(0, 0, 0)',
+                            backfaceVisibility: 'hidden',
+                            perspective: 1000
+                          }}
+                        >
+                          <div className="relative h-[200px] w-full">
+                            <img
+                              src={card.image}
+                              alt={card.title}
+                              className="w-full h-full object-cover"
+                              style={{
+                                transform: 'translate3d(0, 0, 0)',
+                                backfaceVisibility: 'hidden'
+                              }}
+                            />
+                          </div>
+                          <div className="p-6">
+                            <h3 className="text-xl font-bold text-[#4B2D7F] mb-3">
+                              {card.title}
+                            </h3>
+                            <p className="text-gray-600 text-base leading-relaxed line-clamp-3">
+                              {card.description}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Navigation Arrows with Slick-style transitions */}
+                <button 
+                  onClick={handlePrevSlide}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 p-3 rounded-full bg-[#4B2D7F]/50 hover:bg-[#4B2D7F] transition-all duration-300"
+                  style={{
+                    transform: 'translate3d(0, -50%, 0)',
+                    backfaceVisibility: 'hidden'
+                  }}
+                >
+                  <ChevronLeft className="h-6 w-6 text-white" />
+                </button>
+                <button 
+                  onClick={handleNextSlide}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 p-3 rounded-full bg-[#4B2D7F]/50 hover:bg-[#4B2D7F] transition-all duration-300"
+                  style={{
+                    transform: 'translate3d(0, -50%, 0)',
+                    backfaceVisibility: 'hidden'
+                  }}
+                >
+                  <ChevronRight className="h-6 w-6 text-white" />
+                </button>
+
+                <style jsx>{`
+                  @keyframes slideIn {
+                    from {
+                      transform: translate3d(-100%, 0, 0);
+                      opacity: 0;
+                    }
+                    to {
+                      transform: translate3d(0, 0, 0);
+                      opacity: 1;
+                    }
+                  }
+
+                  @keyframes slideOut {
+                    from {
+                      transform: translate3d(0, 0, 0);
+                      opacity: 1;
+                    }
+                    to {
+                      transform: translate3d(100%, 0, 0);
+                      opacity: 0;
+                    }
+                  }
+                `}</style>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -576,7 +1005,11 @@ export default function Product() {
                   }}
                 />
                 <div className="relative z-10 flex items-center justify-center w-32 h-32 mx-auto rounded-full bg-gray-700">
-                  <img src={IIT_Madras_Logo} alt="IIT Madras Logo" className="w-32 h-32" />
+                  <img
+                    src={IIT_Madras_Logo}
+                    alt="IIT Madras Logo"
+                    className="w-32 h-32"
+                  />
                 </div>
               </motion.div>
 
@@ -586,11 +1019,16 @@ export default function Product() {
                 transition={{ delay: 0.4 }}
                 className="text-xl text-muted-foreground max-w-[600px]"
               >
-                IIT Madras brings world-class expertise and research to our cybersecurity solutions.
+                IIT Madras brings world-class expertise and research to our
+                cybersecurity solutions.
               </motion.p>
 
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <Button >
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <Button>
                   Learn More About Partnership
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
@@ -598,8 +1036,7 @@ export default function Product() {
             </motion.div>
           </div>
         </section>
-
       </div>
     </main>
-  )
+  );
 }
