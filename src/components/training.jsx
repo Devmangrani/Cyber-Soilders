@@ -909,67 +909,53 @@ export default function Training() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                   {/* IIT Madras */}
-                  <div className="partner-logo relative group">
+                  <div className="partner-logo relative group h-[200px] w-full">
                     <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                    <div className="relative z-10 flex items-center justify-center p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
+                    <div className="relative z-10 flex items-center justify-center h-full w-full p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
                       <img
                         alt="IIT Madras Logo"
                         loading="lazy"
                         width="300"
                         height="100"
                         decoding="async"
-                        className="object-contain transition-transform duration-500 group-hover:scale-105"
+                        className="object-contain w-full h-full transition-transform duration-500 group-hover:scale-105"
                         src={IITMadrasLogo}
                       />
                     </div>
                   </div>
                   
                   {/* IIT Pravartak */}
-                  <div className="partner-logo relative group">
+                  <div className="partner-logo relative group h-[200px] w-full">
                     <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-cyan-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                    <div className="relative z-10 flex items-center justify-center p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
+                    <div className="relative z-10 flex items-center justify-center h-full w-full p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
                       <img
                         alt="IIT Pravartak Logo"
                         loading="lazy"
                         width="300"
                         height="100"
                         decoding="async"
-                        className="object-contain transition-transform duration-500 group-hover:scale-105"
+                        className="object-contain w-full h-full transition-transform duration-500 group-hover:scale-105"
                         src={IITPravartakLogo}
                       />
                     </div>
                   </div>
                   
                   {/* EC Council */}
-                  <div className="partner-logo relative group">
+                  <div className="partner-logo relative group h-[200px] w-full">
                     <div className="absolute -inset-1 bg-gradient-to-r from-green-500/50 to-emerald-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                    <div className="relative z-10 flex items-center justify-center p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
+                    <div className="relative z-10 flex items-center justify-center h-full w-full p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
                       <img
                         alt="EC Council Logo"
                         loading="lazy"
                         width="300"
                         height="100"
                         decoding="async"
-                        className="object-contain transition-transform duration-500 group-hover:scale-105"
+                        className="object-contain w-full h-full transition-transform duration-500 group-hover:scale-105"
                         src={ECCouncilLogo}
                       />
                     </div>
                   </div>
                 </div>
-                {/* <div className="partner-logo relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                  <div className="relative z-10 flex items-center justify-center p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
-                    <img
-                      alt="IIT Madras Logo"
-                      loading="lazy"
-                      width="300"
-                      height="100"
-                      decoding="async"
-                      className="object-contain transition-transform duration-500 group-hover:scale-105"
-                      src="/placeholder.svg?height=100&width=300"
-                    />
-                  </div>
-                </div> */}
                 <div className="overflow-hidden">
                   <p className="partner-description text-xl text-muted-foreground max-w-[800px] mx-auto">
                     Our esteemed knowledge partners bring world-class expertise and research to our cybersecurity training programs.

@@ -38,13 +38,13 @@ export default function Footer() {
             <h2 className="text-2xl font-semibold mb-6">Company</h2>
             <div className="space-y-3">
               <p><a href="/" className="text-base font-medium hover:text-gray-300">Home</a></p>
-              <p><a href="https://www.cybersoldiers.in/s/store" className="text-base font-medium hover:text-gray-300">Courses</a></p>
+              <p><a href="/store" className="text-base font-medium hover:text-gray-300">Courses</a></p>
               <p><a href="/termsofuse" className="text-base font-medium hover:text-gray-300">Terms of Use</a></p>
               <p><a href="/privacypolicy" className="text-base font-medium hover:text-gray-300">Privacy Policy</a></p>
               <p><a href="/refundpolicy" className="text-base font-medium hover:text-gray-300">Refund Policy</a></p>
-              <p><a href="https://www.cybersoldiers.in/faqs" className="text-base font-medium hover:text-gray-300">FAQs</a></p>
-              <p><a href="https://www.cybersoldiers.in/aboutus" className="text-base font-medium hover:text-gray-300">About Us</a></p>
-              <p><a href="https://www.cybersoldiers.in/contactus" className="text-base font-medium hover:text-gray-300">Contact Us</a></p>
+              <p><a href="/faqs" className="text-base font-medium hover:text-gray-300">FAQs</a></p>
+              <p><a href="/about" className="text-base font-medium hover:text-gray-300">About Us</a></p>
+              <p><a href="/contact" className="text-base font-medium hover:text-gray-300">Contact Us</a></p>
             </div>
           </div>
 
