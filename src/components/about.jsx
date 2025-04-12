@@ -56,6 +56,60 @@ const timeline = [
   }
 ]
 
+const GridBackground = () => (
+  <div className="absolute inset-0">
+    {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
+    <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden">
+      {/* Grid node glow effects */}
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
+        style={{ animationDelay: "0.5s" }}
+      ></div>
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
+        style={{ animationDelay: "1.2s" }}
+      ></div>
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
+        style={{ animationDelay: "2.7s" }}
+      ></div>
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
+        style={{ animationDelay: "1.8s" }}
+      ></div>
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
+        style={{ animationDelay: "3.5s" }}
+      ></div>
+
+      {/* Grid line trace effects */}
+      <div
+        className="grid-trace absolute h-[1px] w-[100px] sm:w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
+        style={{ animationDelay: "0.5s" }}
+      ></div>
+      <div
+        className="grid-trace absolute h-[100px] sm:h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
+        style={{ animationDelay: "1.2s" }}
+      ></div>
+      <div
+        className="grid-trace absolute h-[75px] sm:h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
+        style={{ animationDelay: "2.7s" }}
+      ></div>
+      <div
+        className="grid-trace absolute h-[1px] w-[60px] sm:w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
+        style={{ animationDelay: "1.8s" }}
+      ></div>
+      <div
+        className="grid-trace absolute h-[60px] sm:h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
+        style={{ animationDelay: "3.5s" }}
+      ></div>
+    </div>
+
+    {/* Radial gradient overlay */}
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
+  </div>
+);
+
 export default function About() {
   // Refs for animations and sections
   const sectionRefs = useRef([]);
@@ -248,7 +302,7 @@ export default function About() {
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        className="relative w-full py-16 md:py-28 lg:py-36 bg-gradient-to-b  from-black to-gray-900"
+        className="w-full py-16 md:py-24 relative overflow-hidden bg-gray-950"
       >
         {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
         <div 
@@ -402,8 +456,9 @@ export default function About() {
       {/* Mission Section */}
       <section 
         ref={missionRef} 
-        className="w-full py-16 md:py-24 bg-gradient-to-b from-black to-gray-900"
+        className="w-full py-16 md:py-24 relative overflow-hidden bg-gray-950"
       >
+        <GridBackground />
         <div className="container px-4 md:px-6 mx-auto max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div 
@@ -415,10 +470,10 @@ export default function About() {
               </div>
               <h2 className="text-2xl font-bold mb-4 text-gray-100 transition-colors duration-100">Our Aim</h2>
               <p className="text-gray-400">To empower organizations with cutting-edge cybersecurity products, expert services, and industry-leading skilling programs.</p>
-              <div className="mt-6 flex items-center text-blue-400 transform translate-x-4 transition-all duration-300">
+              {/* <div className="mt-6 flex items-center text-blue-400 transform translate-x-4 transition-all duration-300">
                 <span className="mr-2">Learn more</span>
                 <ArrowRight className="h-4 w-4" />
-              </div>
+              </div> */}
             </div>
             <div 
               className="mission-card group p-6 rounded-lg border border-gray-800 bg-black hover:border-gray-700 transition-all duration-500"
@@ -429,10 +484,10 @@ export default function About() {
               </div>
               <h2 className="text-2xl font-bold mb-4 text-gray-100 transition-colors duration-300">Our Mission</h2>
               <p className="text-gray-400">To strengthen cyber resilience, mitigate risks, and build a safer digital future.</p>
-              <div className="mt-6 flex items-center text-blue-400 transform translate-x-4 transition-all duration-300">
+              {/* <div className="mt-6 flex items-center text-blue-400 transform translate-x-4 transition-all duration-300">
                 <span className="mr-2">Learn more</span>
                 <ArrowRight className="h-4 w-4" />
-              </div>
+              </div> */}
             </div>
             <div 
               className="mission-card group p-6 rounded-lg border border-gray-800 bg-black hover:border-gray-700 transition-all duration-500"
@@ -443,10 +498,10 @@ export default function About() {
               </div>
               <h2 className="text-2xl font-bold mb-4 text-gray-100 transition-colors duration-300">Our Vision</h2>
               <p className="text-gray-400">To be among the global leaders in Cyber Security, driving innovation and excellence.</p>
-              <div className="mt-6 flex items-center text-blue-400 transform translate-x-4 transition-all duration-300">
+              {/* <div className="mt-6 flex items-center text-blue-400 transform translate-x-4 transition-all duration-300">
                 <span className="mr-2">Learn more</span>
                 <ArrowRight className="h-4 w-4" />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -455,11 +510,9 @@ export default function About() {
       {/* Values Section */}
       <section 
         ref={valuesRef} 
-        className="w-full py-16 md:py-24 relative overflow-hidden bg-black"
+        className="w-full py-16 md:py-24 relative overflow-hidden bg-gray-950"
       >
-        {/* Animated background elements - reduced opacity */}
-        <div className="absolute right-1/4 top-1/3 -z-10 h-96 w-96 rounded-full bg-gradient-to-b from-blue-500/5 to-green-500/5 blur-3xl"></div>
-        <div className="absolute left-0 bottom-1/4 -z-10 h-96 w-96 rounded-full bg-gradient-to-tr from-green-500/5 to-blue-500/5 blur-3xl"></div>
+        <GridBackground />
         
         {/* Animated particles - reduced number and opacity */}
         <div className="absolute inset-0 -z-10">
@@ -504,17 +557,7 @@ export default function About() {
         ref={founderRef} 
         className="w-full py-16 md:py-24 bg-gray-950 relative overflow-hidden"
       >
-        {/* Enhanced animated background elements */}
-        <div className="absolute right-0 top-1/4 -z-10 h-96 w-96 rounded-full bg-gradient-to-b from-blue-500/20 to-purple-500/20 blur-3xl parallax-bg-slow"></div>
-        <div className="absolute left-1/4 bottom-1/4 -z-10 h-64 w-64 rounded-full bg-gradient-to-tr from-purple-500/10 to-blue-500/10 blur-3xl parallax-bg-fast"></div>
-        
-        {/* Animated particles */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute particle top-1/4 left-1/5 size-2 rounded-full bg-blue-500/30"></div>
-          <div className="absolute particle top-3/4 left-2/3 size-3 rounded-full bg-purple-500/30"></div>
-          <div className="absolute particle top-1/3 left-3/4 size-2 rounded-full bg-green-500/30"></div>
-          <div className="absolute particle top-2/3 left-1/4 size-2 rounded-full bg-yellow-500/30"></div>
-        </div>
+        <GridBackground />
         
         <div className="container px-4 md:px-6 mx-auto max-w-5xl">
           <div className="flex flex-col items-center text-center space-y-4 mb-16">
