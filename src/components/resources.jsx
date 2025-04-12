@@ -180,6 +180,60 @@ const resources = [
   },
 ];
 
+const GridBackground = () => (
+  <div className="absolute inset-0">
+    {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
+    <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden">
+      {/* Grid node glow effects */}
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
+        style={{ animationDelay: "0.5s" }}
+      ></div>
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
+        style={{ animationDelay: "1.2s" }}
+      ></div>
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
+        style={{ animationDelay: "2.7s" }}
+      ></div>
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
+        style={{ animationDelay: "1.8s" }}
+      ></div>
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
+        style={{ animationDelay: "3.5s" }}
+      ></div>
+
+      {/* Grid line trace effects */}
+      <div
+        className="grid-trace absolute h-[1px] w-[100px] sm:w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
+        style={{ animationDelay: "0.5s" }}
+      ></div>
+      <div
+        className="grid-trace absolute h-[100px] sm:h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
+        style={{ animationDelay: "1.2s" }}
+      ></div>
+      <div
+        className="grid-trace absolute h-[75px] sm:h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
+        style={{ animationDelay: "2.7s" }}
+      ></div>
+      <div
+        className="grid-trace absolute h-[1px] w-[60px] sm:w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
+        style={{ animationDelay: "1.8s" }}
+      ></div>
+      <div
+        className="grid-trace absolute h-[60px] sm:h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
+        style={{ animationDelay: "3.5s" }}
+      ></div>
+    </div>
+
+    {/* Radial gradient overlay */}
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
+  </div>
+);
+
 export default function Resources() {
   const featuredVideo = videos.find((video) => video.featured);
   const [scrollY, setScrollY] = useState(0);
@@ -236,7 +290,7 @@ export default function Resources() {
         {/* Hero Section with Enhanced Visual Elements */}
         <section
           ref={heroRef}
-          className="relative w-full py-16 md:py-28 lg:py-32 bg-gradient-to-b from-black to-gray-900"
+          className="relative w-full py-16 md:py-28 lg:py-32 bg-gray-900"
         >
           {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
           <div
@@ -493,7 +547,8 @@ export default function Resources() {
         </section>
 
         {/* Featured Video Section */}
-        <section className="w-full py-12 md:py-24 bg-black">
+        <section className="w-full py-12 md:py-24 bg-gray-900 relative">
+          <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="space-y-4 order-2 md:order-1">
@@ -598,7 +653,8 @@ export default function Resources() {
 */}
 
         {/* Certifications Section - Based on sketch */}
-        <section className="w-full py-12 md:py-24 bg-black">
+        <section className="w-full py-12 md:py-24 bg-gray-900 relative">
+          <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="text-center mb-12">
               <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-6">
@@ -638,7 +694,8 @@ export default function Resources() {
         </section>
 
         {/* Video Gallery Section */}
-        <section className="w-full py-12 md:py-24 bg-gray-900">
+        <section className="w-full py-12 md:py-24 bg-gray-900 relative">
+          <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="text-center mb-12">
               <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-6">
@@ -683,10 +740,10 @@ export default function Resources() {
 
                     <div className="p-4 space-y-2 relative z-10">
                       <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-full bg-gray-700 text-primary">
+                        <div className="p-2 rounded-full bg-gray-700 text-gray-100">
                           {video.icon}
                         </div>
-                        <h3 className="text-lg font-bold text-gray-100 group-hover:text-primary transition-colors duration-300">
+                        <h3 className="text-lg font-bold text-gray-100 group-hover:text-gray-100 transition-colors duration-300">
                           {video.title}
                         </h3>
                       </div>
@@ -711,9 +768,8 @@ export default function Resources() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 bg-black relative overflow-hidden">
-          <div className="absolute -z-10 top-1/2 left-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-primary/30 to-purple-500/30 blur-3xl"></div>
-
+        <section className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
+          <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="flex flex-col items-center text-center space-y-6">
               <h2 className="text-3xl font-bold tracking-tighter text-gray-100">
