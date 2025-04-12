@@ -45,6 +45,39 @@ export default function Product() {
   const gridRef = useRef(null);
   const carouselRef = useRef(null);
   const { scrollY } = useScroll();
+  const [activeTab, setActiveTab] = useState(0);
+  const [tabs, setTabs] = useState([
+    {
+      title: "Academia & Education Providers",
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-34.png",
+      content: "High-quality, hands-on experiential education is not yet commoditized. Rangestorm can prove to be a game changer for this sector. Provides hands-on, real time training to learners in varied fields like IT, Cyber Security"
+    },
+    {
+      title: "Critical infrastructure",
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-35.png",
+      content: "Oil & Gas, Aviation, Power and Transportation industries are reliant on IT, networks and connected devices. Therefore the IT teams should always be prepared and stay upto date to take on the Cyber attacks."
+    },
+    {
+      title: "Banking, Finance and Insurance",
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-36.png",
+      content: "More than 200 breach incidents have been reported since 2007 for this segment. Rangestorm hones the skills of IT teams and keeps them updated on latest attack scenarios."
+    },
+    {
+      title: "Government & Health Infrastructure",
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-37.png",
+      content: "This is one of the favorite targets of attackers. Rangestorm helps your team to be proactive, rather than reactive."
+    },
+    {
+      title: "Corporate and Business",
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/zsd.png",
+      content: "With geographically spread facilities and distributed IT/network infrastructure, the attack surface is huge for Business and Corporate enterprises. Rangestorm ensures that SOC team is ready to respond to incoming malicious attacks"
+    },
+    {
+      title: "Military & Law Enforcement",
+      image: "https://i0.wp.com/bhumiitech.com/wp-content/uploads/2023/10/New-Project-38.png",
+      content: "Defense and Law Enforcement agencies possess critical information concerning national security. That's why they face innumerable breach attempts. Rangestorm trains the IT team to create cyber warriors, who can mount an effective defense against real world cyber attacks."
+    }
+  ]);
 
   // Parallax effects
   const y = useTransform(scrollY, [0, 1000], [0, 200]);
@@ -1248,9 +1281,17 @@ export default function Product() {
                 transition={{ duration: 0.5 }}
                 className="space-y-4"
               >
-                <h4 className="text-primary text-lg font-medium">Key Features</h4>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm text-white text-sm font-medium border border-gray-200/10"
+                >
+                  <Shield className="mr-2 h-4 w-4" />
+                  Key Features
+                </motion.div>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
-                  Important features of  Cyber Range<br />
+                  Important features of <span className="text-white">Cyber Range</span>
                 </h2>
               </motion.div>
 
@@ -1339,6 +1380,167 @@ export default function Product() {
                     </div>
                   </div>
                 </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Case Study Section */}
+        <section className="relative w-full min-h-[80vh] bg-gray-900 from-black to-gray-900 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
+            <div
+              ref={gridRef}
+              className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
+            >
+              {/* Grid node glow effects - Adjusted for mobile */}
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
+                style={{ animationDelay: "0.5s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
+                style={{ animationDelay: "1.2s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
+                style={{ animationDelay: "2.7s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
+                style={{ animationDelay: "1.8s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
+                style={{ animationDelay: "3.5s" }}
+              ></div>
+
+              {/* Grid line trace effects - Adjusted for mobile */}
+              <div
+                className="grid-trace absolute h-[1px] w-[100px] sm:w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "0.5s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[100px] sm:h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
+                style={{ animationDelay: "1.2s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[75px] sm:h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "2.7s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[1px] w-[60px] sm:w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "1.8s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[60px] sm:h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
+                style={{ animationDelay: "3.5s" }}
+              ></div>
+            </div>
+
+            {/* Radial gradient overlay */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
+          </div>
+
+          {/* Floating Orbs */}
+          <motion.div
+            className="absolute -z-10 top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl"
+            animate={{
+              y: [0, -50, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute -z-10 bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl"
+            animate={{
+              y: [0, 50, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
+
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 max-w-[1920px] relative z-10 py-12 sm:py-16 md:py-20 lg:py-24">
+            <div className="flex flex-col items-center space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-20 text-center">
+              {/* Section Title */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="space-y-4"
+              >
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm text-white text-sm font-medium border border-gray-200/10"
+                >
+                  <Shield className="mr-2 h-4 w-4" />
+                  Case Study
+                </motion.div>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
+                  <span className="text-white">Cyber Range</span> in your industry
+                </h2>
+              </motion.div>
+
+              {/* Tabs Section */}
+              <div className="w-full max-w-6xl">
+                <div className="flex flex-col md:flex-row gap-8">
+                  {/* Tab Titles */}
+                  <div className="w-full md:w-1/3 space-y-2">
+                    {tabs.map((tab, index) => (
+                      <motion.button
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        onClick={() => setActiveTab(index)}
+                        className={`w-full p-4 text-left rounded-lg transition-all duration-300 ${
+                          activeTab === index
+                            ? "bg-white/10 text-white border-l-4 border-primary"
+                            : "text-gray-400 hover:text-white hover:bg-white/5"
+                        }`}
+                      >
+                        {tab.title}
+                      </motion.button>
+                    ))}
+                  </div>
+
+                  {/* Tab Content */}
+                  <div className="w-full md:w-2/3">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={activeTab}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3 }}
+                        className="relative p-8 rounded-xl bg-white/5 backdrop-blur-sm border border-gray-200/10"
+                      >
+                        <div className="space-y-6">
+                          <img
+                            src={tabs[activeTab].image}
+                            alt={tabs[activeTab].title}
+                            className="w-full h-auto rounded-lg"
+                          />
+                          <p className="text-gray-400 text-center">
+                            {tabs[activeTab].content}
+                          </p>
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
