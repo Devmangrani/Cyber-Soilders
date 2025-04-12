@@ -662,7 +662,7 @@ export default function Product() {
                           <polyline points="22 4 12 14.01 9 11.01"></polyline>
                         </svg>
                       </span>
-                      <span className="group-hover:text-primary transition-colors">
+                      <span className="group-hover:text-gray-100 transition-colors">
                         {item}
                       </span>
                     </motion.div>
