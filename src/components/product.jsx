@@ -152,6 +152,61 @@ export default function Product() {
     });
   };
 
+  // Function to create grid background for sections - Add this near the useEffect hooks
+  const GridBackground = () => (
+    <div className="absolute inset-0">
+      {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
+      <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden">
+        {/* Grid node glow effects */}
+        <div
+          className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
+          style={{ animationDelay: "0.5s" }}
+        ></div>
+        <div
+          className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
+          style={{ animationDelay: "1.2s" }}
+        ></div>
+        <div
+          className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
+          style={{ animationDelay: "2.7s" }}
+        ></div>
+        <div
+          className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
+          style={{ animationDelay: "1.8s" }}
+        ></div>
+        <div
+          className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
+          style={{ animationDelay: "3.5s" }}
+        ></div>
+
+        {/* Grid line trace effects */}
+        <div
+          className="grid-trace absolute h-[1px] w-[100px] sm:w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
+          style={{ animationDelay: "0.5s" }}
+        ></div>
+        <div
+          className="grid-trace absolute h-[100px] sm:h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
+          style={{ animationDelay: "1.2s" }}
+        ></div>
+        <div
+          className="grid-trace absolute h-[75px] sm:h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
+          style={{ animationDelay: "2.7s" }}
+        ></div>
+        <div
+          className="grid-trace absolute h-[1px] w-[60px] sm:w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
+          style={{ animationDelay: "1.8s" }}
+        ></div>
+        <div
+          className="grid-trace absolute h-[60px] sm:h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
+          style={{ animationDelay: "3.5s" }}
+        ></div>
+      </div>
+
+      {/* Radial gradient overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
+    </div>
+  );
+
   const handleNextSlide = () => {
     setCards((prevCards) => {
       const firstCard = prevCards[0];
@@ -180,7 +235,7 @@ export default function Product() {
   const slides = [
     {
       image: AdvancedTrainingEnvironment,
-      title: "Advanced Training Environment",
+      title: "People",
       description:
         "Our state-of-the-art cyber range simulates real-world attack scenarios for hands-on training.",
       stats: { value: "1000+", label: "Scenarios" },
@@ -253,66 +308,13 @@ export default function Product() {
     <main className="flex-1" ref={containerRef}>
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
-        <section className="relative w-full min-h-[90vh] bg-gradient-to-b from-black to-gray-900 overflow-hidden">
-          {/* Background Elements */}
-          <div className="absolute inset-0">
-            {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
-            <div
-              ref={gridRef}
-              className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
-            >
-              {/* Grid node glow effects */}
-              <div
-                className="grid-node absolute h-2 w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
-                style={{ animationDelay: "0.5s" }}
-              ></div>
-              <div
-                className="grid-node absolute h-2 w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
-                style={{ animationDelay: "1.2s" }}
-              ></div>
-              <div
-                className="grid-node absolute h-2 w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
-                style={{ animationDelay: "2.7s" }}
-              ></div>
-              <div
-                className="grid-node absolute h-2 w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
-                style={{ animationDelay: "1.8s" }}
-              ></div>
-              <div
-                className="grid-node absolute h-2 w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
-                style={{ animationDelay: "3.5s" }}
-              ></div>
-
-              {/* Grid line trace effects */}
-              <div
-                className="grid-trace absolute h-[1px] w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
-                style={{ animationDelay: "0.5s" }}
-              ></div>
-              <div
-                className="grid-trace absolute h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
-                style={{ animationDelay: "1.2s" }}
-              ></div>
-              <div
-                className="grid-trace absolute h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
-                style={{ animationDelay: "2.7s" }}
-              ></div>
-              <div
-                className="grid-trace absolute h-[1px] w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
-                style={{ animationDelay: "1.8s" }}
-              ></div>
-              <div
-                className="grid-trace absolute h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
-                style={{ animationDelay: "3.5s" }}
-              ></div>
-            </div>
-
-            {/* Radial gradient overlay */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
-          </div>
+        <section className="relative w-full min-h-[80vh] bg-gradient-to-b from-black to-gray-900 overflow-hidden">
+          {/* Grid Background */}
+          <GridBackground />
 
           {/* Floating Orbs */}
           <motion.div
-            className="absolute -z-10 top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl"
+            className="absolute -z-10 top-1/4 left-1/4 w-64 md:w-96 h-64 md:h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl"
             animate={{
               y: [0, -50, 0],
               scale: [1, 1.1, 1],
@@ -324,7 +326,7 @@ export default function Product() {
             }}
           />
           <motion.div
-            className="absolute -z-10 bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl"
+            className="absolute -z-10 bottom-1/4 right-1/4 w-48 md:w-64 h-48 md:h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl"
             animate={{
               y: [0, 50, 0],
               scale: [1, 1.2, 1],
@@ -337,12 +339,12 @@ export default function Product() {
             }}
           />
 
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10 py-12 md:py-20">
+          <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mx-auto relative z-10 flex items-center justify-center min-h-[80vh]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col items-center text-center space-y-8"
+              className="flex flex-col items-center text-center space-y-6 max-w-5xl py-12"
             >
               <motion.div
                 initial={{ opacity: 0 }}
@@ -377,12 +379,12 @@ export default function Product() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="flex flex-wrap gap-4 justify-center"
+                className="flex flex-wrap gap-4 justify-center mt-6"
               >
                 <Link to="/get-started">
                   <Button
                     variant="outline"
-                    className="category-filter relative group flex items-center px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 hover:bg-white/10 transition-all duration-300"
+                    className="category-filter relative group flex items-center px-6 py-3 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 hover:bg-white/10 transition-all duration-300"
                   >
                     <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                     <span className="relative z-10 flex items-center text-gray-100">
@@ -395,7 +397,7 @@ export default function Product() {
                 <Link to="/demo">
                   <Button
                     variant="outline"
-                    className="category-filter relative group flex items-center px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 hover:bg-white/10 transition-all duration-300"
+                    className="category-filter relative group flex items-center px-6 py-3 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 hover:bg-white/10 transition-all duration-300"
                   >
                     <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                     <span className="relative z-10 flex items-center text-gray-100">
@@ -404,8 +406,15 @@ export default function Product() {
                     </span>
                   </Button>
                 </Link>
+              </motion.div>
 
-                <Link to="/contact" className="w-full flex justify-center mt-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="mt-8"
+              >
+                <Link to="/contact">
                   <Button
                     variant="outline"
                     className="category-filter relative group flex items-center px-6 py-3 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 hover:bg-white/10 transition-all duration-300"
@@ -525,58 +534,7 @@ export default function Product() {
         <section className="relative w-full min-h-[80vh] bg-gray-900 from-black to-gray-900 overflow-hidden">
           {/* Background Elements */}
           <div className="absolute inset-0">
-            {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
-            <div
-              ref={gridRef}
-              className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
-            >
-              {/* Grid node glow effects - Adjusted for mobile */}
-              <div
-                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
-                style={{ animationDelay: "0.5s" }}
-              ></div>
-              <div
-                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
-                style={{ animationDelay: "1.2s" }}
-              ></div>
-              <div
-                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
-                style={{ animationDelay: "2.7s" }}
-              ></div>
-              <div
-                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
-                style={{ animationDelay: "1.8s" }}
-              ></div>
-              <div
-                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
-                style={{ animationDelay: "3.5s" }}
-              ></div>
-
-              {/* Grid line trace effects - Adjusted for mobile */}
-              <div
-                className="grid-trace absolute h-[1px] w-[100px] sm:w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
-                style={{ animationDelay: "0.5s" }}
-              ></div>
-              <div
-                className="grid-trace absolute h-[100px] sm:h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
-                style={{ animationDelay: "1.2s" }}
-              ></div>
-              <div
-                className="grid-trace absolute h-[75px] sm:h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
-                style={{ animationDelay: "2.7s" }}
-              ></div>
-              <div
-                className="grid-trace absolute h-[1px] w-[60px] sm:w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
-                style={{ animationDelay: "1.8s" }}
-              ></div>
-              <div
-                className="grid-trace absolute h-[60px] sm:h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
-                style={{ animationDelay: "3.5s" }}
-              ></div>
-            </div>
-
-            {/* Radial gradient overlay */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
+            <GridBackground />
           </div>
 
           {/* Floating Orbs */}
@@ -736,8 +694,14 @@ export default function Product() {
         </section>
 
         {/* Gallery Section */}
-        <section className="w-full py-20 md:py-32 bg-gray-900">
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+        <section className="relative w-full py-20 md:py-32 bg-gray-900 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            {/* Grid Background */}
+            <GridBackground />
+          </div>
+          
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -751,9 +715,9 @@ export default function Product() {
               {[
                 {
                   image: AdvancedTrainingEnvironment,
-                  title: "Advanced Training Environment",
+                  title: "People",
                   description:
-                    "Our state-of-the-art cyber range simulates real-world attack scenarios for hands-on training.",
+                    "Enhancing Skills and Awareness",
                   stats: { value: "1000+", label: "Scenarios" },
                   points: [
                     "Realistic Training",
@@ -763,9 +727,9 @@ export default function Product() {
                 },
                 {
                   image: RealTimeAttackSimulation,
-                  title: "Real-time Attack Simulation",
+                  title: "Process",
                   description:
-                    "Experience realistic cyber attacks in a controlled environment.",
+                    "Refining Response Strategies",
                   stats: { value: "24/7", label: "Monitoring" },
                   points: [
                     "Incident Response Drills",
@@ -775,9 +739,9 @@ export default function Product() {
                 },
                 {
                   image: ComprehensiveAnalytics,
-                  title: "Comprehensive Analytics",
+                  title: "Technology",
                   description:
-                    "Get detailed insights into your team's performance and security posture.",
+                    "Leveraging Advanced Tools",
                   stats: { value: "100%", label: "Accuracy" },
                   points: [
                     "Testing New Technologies",
@@ -806,7 +770,7 @@ export default function Product() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-40" />
                     <div className="absolute bottom-4 left-4">
                       <div className="text-white transform transition-all duration-300 group-hover:translate-y-[-8px]">
-                        <div className="text-2xl font-bold transition-colors duration-300 group-hover:text-primary">
+                        <div className="text-2xl font-bold transition-colors duration-300 group-hover:text-gray-300">
                           {slide.stats.value}
                         </div>
                         <div className="text-sm opacity-80 transition-all duration-300 group-hover:opacity-100">
@@ -818,7 +782,7 @@ export default function Product() {
 
                   <div className="p-6 flex flex-col h-full">
                     <div className="flex-1 space-y-4 mb-6">
-                      <h3 className="text-xl font-bold transform transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary text-gray-300">
+                      <h3 className="text-xl font-bold transform transition-all duration-300 group-hover:translate-x-1 group-hover:text-gray-100 text-gray-300">
                         {slide.title}
                       </h3>
                       <p className="text-muted-foreground transition-all duration-300 group-hover:opacity-90">
@@ -887,58 +851,7 @@ export default function Product() {
         <section className="relative w-full min-h-[80vh] bg-gray-900 from-black to-gray-900 overflow-hidden">
           {/* Background Elements */}
           <div className="absolute inset-0">
-            {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
-            <div
-              ref={gridRef}
-              className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
-            >
-              {/* Grid node glow effects - Adjusted for mobile */}
-              <div
-                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
-                style={{ animationDelay: "0.5s" }}
-              ></div>
-              <div
-                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
-                style={{ animationDelay: "1.2s" }}
-              ></div>
-              <div
-                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
-                style={{ animationDelay: "2.7s" }}
-              ></div>
-              <div
-                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
-                style={{ animationDelay: "1.8s" }}
-              ></div>
-              <div
-                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
-                style={{ animationDelay: "3.5s" }}
-              ></div>
-
-              {/* Grid line trace effects - Adjusted for mobile */}
-              <div
-                className="grid-trace absolute h-[1px] w-[100px] sm:w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
-                style={{ animationDelay: "0.5s" }}
-              ></div>
-              <div
-                className="grid-trace absolute h-[100px] sm:h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
-                style={{ animationDelay: "1.2s" }}
-              ></div>
-              <div
-                className="grid-trace absolute h-[75px] sm:h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
-                style={{ animationDelay: "2.7s" }}
-              ></div>
-              <div
-                className="grid-trace absolute h-[1px] w-[60px] sm:w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
-                style={{ animationDelay: "1.8s" }}
-              ></div>
-              <div
-                className="grid-trace absolute h-[60px] sm:h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
-                style={{ animationDelay: "3.5s" }}
-              ></div>
-            </div>
-
-            {/* Radial gradient overlay */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
+              <GridBackground />
           </div>
 
           {/* Floating Orbs */}
@@ -1547,7 +1460,12 @@ export default function Product() {
         </section>
 
         {/* Partner Section */}
-        <section className="w-full py-20 md:py-32 bg-black">
+        <section className="relative w-full py-20 md:py-32 bg-gray-900 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            {/* Grid Background */}
+            <GridBackground />
+          </div>
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
