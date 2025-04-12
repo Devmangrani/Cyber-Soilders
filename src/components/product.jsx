@@ -12,6 +12,10 @@ import {
   ArrowRight,
   Star,
   Award,
+  LayoutGrid,
+  BarChart2,
+  Gamepad2,
+  TrafficCone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -1146,6 +1150,196 @@ export default function Product() {
                   }
                 `}</style>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Key Features Section */}
+        <section className="relative w-full min-h-[80vh] bg-gray-900 from-black to-gray-900 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
+            <div
+              ref={gridRef}
+              className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
+            >
+              {/* Grid node glow effects - Adjusted for mobile */}
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
+                style={{ animationDelay: "0.5s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
+                style={{ animationDelay: "1.2s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
+                style={{ animationDelay: "2.7s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
+                style={{ animationDelay: "1.8s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
+                style={{ animationDelay: "3.5s" }}
+              ></div>
+
+              {/* Grid line trace effects - Adjusted for mobile */}
+              <div
+                className="grid-trace absolute h-[1px] w-[100px] sm:w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "0.5s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[100px] sm:h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
+                style={{ animationDelay: "1.2s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[75px] sm:h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "2.7s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[1px] w-[60px] sm:w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "1.8s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[60px] sm:h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
+                style={{ animationDelay: "3.5s" }}
+              ></div>
+            </div>
+
+            {/* Radial gradient overlay */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
+          </div>
+
+          {/* Floating Orbs */}
+          <motion.div
+            className="absolute -z-10 top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl"
+            animate={{
+              y: [0, -50, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute -z-10 bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl"
+            animate={{
+              y: [0, 50, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
+
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 max-w-[1920px] relative z-10 py-12 sm:py-16 md:py-20 lg:py-24">
+            <div className="flex flex-col items-center space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-20 text-center">
+              {/* Section Title */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="space-y-4"
+              >
+                <h4 className="text-primary text-lg font-medium">Key Features</h4>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
+                  Important features of  Cyber Range<br />
+                </h2>
+              </motion.div>
+
+              {/* Features Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
+                {/* Integrated LMS Platform */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="relative p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                  <div className="relative z-10 flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-sm border border-blue-500/20">
+                      <LayoutGrid className="h-6 w-6 text-blue-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Integrated LMS Platform</h3>
+                      <p className="text-gray-400">
+                        Our Rangestorm® has built in learning management system which provide advantage to students to learn and practice directly in a real world. It helps the instructor to know the candidates progress and see if the candidates is working enough to showcase significant growth.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Chart All Actions */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="relative p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                  <div className="relative z-10 flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-500/20">
+                      <BarChart2 className="h-6 w-6 text-purple-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Chart All Actions</h3>
+                      <p className="text-gray-400">
+                        Our record reports will enable instructer to pinpoint the strengths, knowledge, capabilities and weaknesses of their candidates. Record contain the variety of smart reporting and metrics tools to understand and every student at a personal level.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Gamification */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="relative p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                  <div className="relative z-10 flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-500/20">
+                      <Gamepad2 className="h-6 w-6 text-green-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Gamification</h3>
+                      <p className="text-gray-400">
+                        Gamification has a scientific effect on people learning behaviour. It increases learners' engagement, awareness, performance and productivity. Thus, we had decided to put the extensive effort to build the proper gamification in our Rangestorm.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Generate realistic traffic */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="relative p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                  <div className="relative z-10 flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-sm border border-orange-500/20">
+                      <TrafficCone className="h-6 w-6 text-orange-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Generate realistic traffic</h3>
+                      <p className="text-gray-400">
+                        Practising on live machines that mimic real ones isn't sufficient. To bolster candidate confidence, we provide a feature to generate realistic traffic, ensuring scenarios are both authentic and challenging. This approach ensures trainees are well-prepared for real-world cyber situations.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
