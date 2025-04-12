@@ -290,7 +290,7 @@ export default function Resources() {
         {/* Hero Section with Enhanced Visual Elements */}
         <section
           ref={heroRef}
-          className="relative w-full py-16 md:py-28 lg:py-32 bg-gray-900"
+          className="relative w-full py-16 md:py-28 lg:py-32 bg-gray-950"
         >
           {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
           <div
@@ -547,7 +547,7 @@ export default function Resources() {
         </section>
 
         {/* Featured Video Section */}
-        <section className="w-full py-12 md:py-24 bg-gray-900 relative">
+        <section className="w-full py-12 md:py-24 bg-gray-950 relative">
           <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -598,7 +598,7 @@ export default function Resources() {
 
         {/* Resource Categories Section */}
         {/* {/* 
-<section className="w-full py-12 md:py-24 bg-gray-900">
+<section className="w-full py-12 md:py-24 bg-gray-950">
   <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
     <div className="text-center mb-12">
       <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-6">
@@ -653,7 +653,7 @@ export default function Resources() {
 */}
 
         {/* Certifications Section - Based on sketch */}
-        <section className="w-full py-12 md:py-24 bg-gray-900 relative">
+        <section className="w-full py-12 md:py-24 bg-gray-950 relative">
           <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="text-center mb-12">
@@ -694,7 +694,7 @@ export default function Resources() {
         </section>
 
         {/* Video Gallery Section */}
-        <section className="w-full py-12 md:py-24 bg-gray-900 relative">
+        <section className="w-full py-12 md:py-24 bg-gray-950 relative">
           <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="text-center mb-12">
@@ -768,7 +768,7 @@ export default function Resources() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
+        <section className="w-full py-12 md:py-24 bg-gray-950 relative overflow-hidden">
           <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="flex flex-col items-center text-center space-y-6">
