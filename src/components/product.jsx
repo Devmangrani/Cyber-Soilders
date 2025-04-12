@@ -485,28 +485,61 @@ export default function Product() {
         </section>
 
         {/* Build Team, Fight & Learn Together Section */}
-        <section className="relative w-full min-h-[80vh] bg-gradient-to-b from-black to-gray-900 overflow-hidden">
+        <section className="relative w-full min-h-[80vh] bg-gray-900 from-black to-gray-900 overflow-hidden">
           {/* Background Elements */}
           <div className="absolute inset-0">
-            {/* Grid background */}
-            <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden">
-              {/* Grid node glow effects */}
+            {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
+            <div
+              ref={gridRef}
+              className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
+            >
+              {/* Grid node glow effects - Adjusted for mobile */}
               <div
-                className="grid-node absolute h-2 w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
                 style={{ animationDelay: "0.5s" }}
               ></div>
               <div
-                className="grid-node absolute h-2 w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
                 style={{ animationDelay: "1.2s" }}
               ></div>
               <div
-                className="grid-node absolute h-2 w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
                 style={{ animationDelay: "2.7s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
+                style={{ animationDelay: "1.8s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
+                style={{ animationDelay: "3.5s" }}
+              ></div>
+
+              {/* Grid line trace effects - Adjusted for mobile */}
+              <div
+                className="grid-trace absolute h-[1px] w-[100px] sm:w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "0.5s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[100px] sm:h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
+                style={{ animationDelay: "1.2s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[75px] sm:h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "2.7s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[1px] w-[60px] sm:w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "1.8s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[60px] sm:h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
+                style={{ animationDelay: "3.5s" }}
               ></div>
             </div>
 
             {/* Radial gradient overlay */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
           </div>
 
           {/* Floating Orbs */}
@@ -813,51 +846,198 @@ export default function Product() {
           </div>
         </section>
 
-        {/* How Rangestorm Works Section */}
-        <section className="relative w-full py-20 md:py-32 bg-gray-900 overflow-hidden">
+        {/* How Cyber.Soldiers Works Section */}
+        <section className="relative w-full min-h-[80vh] bg-gray-900 from-black to-gray-900 overflow-hidden">
           {/* Background Elements */}
           <div className="absolute inset-0">
-            <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden">
+            {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
+            <div
+              ref={gridRef}
+              className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
+            >
+              {/* Grid node glow effects - Adjusted for mobile */}
               <div
-                className="grid-node absolute h-2 w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
                 style={{ animationDelay: "0.5s" }}
               ></div>
               <div
-                className="grid-node absolute h-2 w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
                 style={{ animationDelay: "1.2s" }}
               ></div>
               <div
-                className="grid-node absolute h-2 w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
                 style={{ animationDelay: "2.7s" }}
               ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
+                style={{ animationDelay: "1.8s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
+                style={{ animationDelay: "3.5s" }}
+              ></div>
+
+              {/* Grid line trace effects - Adjusted for mobile */}
+              <div
+                className="grid-trace absolute h-[1px] w-[100px] sm:w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "0.5s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[100px] sm:h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
+                style={{ animationDelay: "1.2s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[75px] sm:h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "2.7s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[1px] w-[60px] sm:w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "1.8s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[60px] sm:h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
+                style={{ animationDelay: "3.5s" }}
+              ></div>
             </div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
+
+            {/* Radial gradient overlay */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
           </div>
 
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10">
+          {/* Floating Orbs */}
+          <motion.div
+            className="absolute -z-10 top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl"
+            animate={{
+              y: [0, -50, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute -z-10 bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl"
+            animate={{
+              y: [0, 50, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
+
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10 py-12 md:py-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Column - Title and Description */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="space-y-6"
+                className="flex flex-col space-y-8"
               >
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100/5 backdrop-blur-sm text-primary text-sm font-medium border border-gray-200/10">
-                  <Shield className="mr-2 h-4 w-4" />
-                  Know More
+                <div className="space-y-4">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                    className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100/5 backdrop-blur-sm text-primary text-sm font-medium border border-gray-200/10 text-white"
+                  >
+                    <Shield className="mr-2 h-4 w-4 text-white" />
+                    Know More
+                  </motion.div>
+
+                  <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white"
+                  >
+                    How <span className="text-white">Cyber.Soldiers</span> Works
+                  </motion.h2>
+
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                    className="text-xl text-gray-400 max-w-[600px]"
+                  >
+                    Rangestorm offers a customizable cyber-training platform,
+                    emphasizing real-world scenarios and diverse team formations.
+                    With an integrated LMS, gamified learning, and realistic
+                    traffic generation.
+                  </motion.p>
                 </div>
 
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
-                  How <span className="text-primary">Rangestorm®</span> Works
-                </h2>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                >
+                  {[
+                    "Customizable Training",
+                    "Real-world Scenarios",
+                    "Team Formation",
+                    "Integrated LMS",
+                    "Gamified Learning",
+                    "Traffic Generation",
+                    "Performance Analytics",
+                    "Continuous Updates",
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: 0.7 + index * 0.05 }}
+                      className="flex items-center space-x-3 text-gray-300 group"
+                    >
+                      <span className="text-primary group-hover:scale-110 transition-transform text-white">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                      </span>
+                      <span className="group-hover:text-primary transition-colors">
+                        {item}
+                      </span>
+                    </motion.div>
+                  ))}
+                </motion.div>
 
-                <p className="text-xl text-gray-400 max-w-[600px]">
-                  Rangestorm offers a customizable cyber-training platform,
-                  emphasizing real-world scenarios and diverse team formations.
-                  With an integrated LMS, gamified learning, and realistic
-                  traffic generation.
-                </p>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 }}
+                  className="flex flex-wrap gap-4 mt-8"
+                >
+                  <Link to="/get-started">
+                    <Button
+                      variant="outline"
+                      className="group relative flex items-center px-6 py-3 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 hover:bg-white/10 transition-all duration-300"
+                    >
+                      <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                      <span className="relative z-10 flex items-center text-gray-100">
+                        Get Started
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </Button>
+                  </Link>
+                </motion.div>
               </motion.div>
 
               {/* Right Column - Carousel */}
