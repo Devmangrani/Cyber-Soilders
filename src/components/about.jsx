@@ -518,9 +518,9 @@ export default function About() {
         
         <div className="container px-4 md:px-6 mx-auto max-w-5xl">
           <div className="flex flex-col items-center text-center space-y-4 mb-16">
-            <div className="inline-block rounded-lg bg-gray-100 bg-gray-100 px-3 py-1 text-sm mb-6 animate-pulse border border-blue-800/50 shadow-sm">
+            {/* <div className="inline-block rounded-lg bg-gray-100 bg-gray-100 px-3 py-1 text-sm mb-6 animate-pulse border border-blue-800/50 shadow-sm">
               Leadership
-            </div>
+            </div> */}
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-gray-200">Our Journey</h2>
             <p className="text-xl text-gray-400 max-w-[600px]">The journey of innovation and excellence in cyber security.</p>
           </div>

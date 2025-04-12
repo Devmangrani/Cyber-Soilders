@@ -280,6 +280,60 @@ const trainers = [
   }
 ]
 
+const GridBackground = () => (
+  <div className="absolute inset-0">
+    {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
+    <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden">
+      {/* Grid node glow effects */}
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
+        style={{ animationDelay: "0.5s" }}
+      ></div>
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
+        style={{ animationDelay: "1.2s" }}
+      ></div>
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
+        style={{ animationDelay: "2.7s" }}
+      ></div>
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
+        style={{ animationDelay: "1.8s" }}
+      ></div>
+      <div
+        className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
+        style={{ animationDelay: "3.5s" }}
+      ></div>
+
+      {/* Grid line trace effects */}
+      <div
+        className="grid-trace absolute h-[1px] w-[100px] sm:w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
+        style={{ animationDelay: "0.5s" }}
+      ></div>
+      <div
+        className="grid-trace absolute h-[100px] sm:h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
+        style={{ animationDelay: "1.2s" }}
+      ></div>
+      <div
+        className="grid-trace absolute h-[75px] sm:h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
+        style={{ animationDelay: "2.7s" }}
+      ></div>
+      <div
+        className="grid-trace absolute h-[1px] w-[60px] sm:w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
+        style={{ animationDelay: "1.8s" }}
+      ></div>
+      <div
+        className="grid-trace absolute h-[60px] sm:h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
+        style={{ animationDelay: "3.5s" }}
+      ></div>
+    </div>
+
+    {/* Radial gradient overlay */}
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
+  </div>
+);
+
 export default function Training() {
   const [scrollY, setScrollY] = useState(0)
   const [isCounterStarted, setIsCounterStarted] = useState(false)
@@ -929,7 +983,8 @@ export default function Training() {
         </section>
 
         {/* Category Filters Based on Sketch */}
-        <section className="w-full py-12 md:py-16 bg-gray-900">
+        <section className="w-full py-12 md:py-16 bg-gray-900 relative overflow-hidden">
+          <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="text-center mb-8">
               <h3 className="text-2xl text-gray-100 font-semibold mb-6">Select Your Needs</h3>
@@ -1015,10 +1070,8 @@ export default function Training() {
           id="courses-section"
           className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden"
         >
-          {/* Animated background elements */}
-          <div className="absolute right-0 top-1/4 -z-10 h-96 w-96 rounded-full bg-gradient-to-b from-blue-500/20 to-purple-500/20 blur-3xl parallax-slow"></div>
-          <div className="absolute left-1/4 bottom-1/4 -z-10 h-64 w-64 rounded-full bg-gradient-to-tr from-purple-500/10 to-blue-500/10 blur-3xl parallax-fast"></div>
-          
+          <GridBackground />
+
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="text-center mb-12">
               <div className="overflow-hidden">
@@ -1030,7 +1083,7 @@ export default function Training() {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {courses.map((course, index) => (
                 <div
                   key={course.title}
@@ -1098,15 +1151,9 @@ export default function Training() {
         </section>
 
         {/* Partner Section */}
-        <section 
-          ref={partnerRef}
-          className="w-full py-12 md:py-24 bg-black relative overflow-hidden"
-        >
-          {/* Animated background elements */}
-          <div className="absolute right-1/4 top-1/3 -z-10 h-96 w-96 rounded-full bg-gradient-to-b from-blue-500/10 to-green-500/10 blur-3xl parallax-slow"></div>
-          <div className="absolute left-0 bottom-1/4 -z-10 h-96 w-96 rounded-full bg-gradient-to-tr from-green-500/10 to-blue-500/10 blur-3xl parallax-fast"></div>
-          
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+        <section ref={partnerRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
+          <GridBackground />
+          <div className="container px-4 md:px-6 max-w-[1500px] mx-auto">
             <div className="flex flex-col items-center text-center space-y-6">
               <div className="space-y-4">
                 <div className="overflow-hidden">
@@ -1172,14 +1219,10 @@ export default function Training() {
         </section>
 
         {/* Technology Platforms Section - Based on sketch */}
-        <section 
-          ref={platformsRef}
-          className="w-full py-12 md:py-24 bg-black relative overflow-hidden"
-        >
-          <div className="absolute right-1/4 top-1/3 -z-10 h-96 w-96 rounded-full bg-gradient-to-b from-purple-500/10 to-blue-500/10 blur-3xl parallax-slow"></div>
-          <div className="absolute left-0 bottom-1/4 -z-10 h-96 w-96 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl parallax-fast"></div>
+        <section ref={platformsRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
+          <GridBackground />
           
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="container px-4 md:px-6 max-w-[1500px] mx-auto">
             <div className="text-center mb-12">
               <div className="overflow-hidden">
                 <h2 className="platforms-title text-3xl font-bold tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Technology Enabled Platform</h2>
@@ -1217,15 +1260,10 @@ export default function Training() {
         </section>
 
         {/* Trainers Section - Based on sketch */}
-        <section 
-          ref={trainersRef}
-          className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden"
-        >
-          {/* Animated background elements */}
-          <div className="absolute right-0 top-1/4 -z-10 h-96 w-96 rounded-full bg-gradient-to-b from-blue-500/20 to-purple-500/20 blur-3xl parallax-slow"></div>
-          <div className="absolute left-1/4 bottom-1/4 -z-10 h-64 w-64 rounded-full bg-gradient-to-tr from-purple-500/10 to-blue-500/10 blur-3xl parallax-fast"></div>
+        <section ref={trainersRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
+          <GridBackground />
           
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="container px-4 md:px-6 max-w-[1500px] mx-auto">
             <div className="text-center mb-12">
               <div className="overflow-hidden">
                 <h2 className="trainers-title text-3xl font-bold tracking-tighter mb-4 text-gray-100">Trainer Profiles & Availability</h2>
@@ -1288,14 +1326,8 @@ export default function Training() {
         </section>
 
         {/* Benefits Section */}
-        <section 
-          ref={benefitsRef}
-          className="w-full py-12 md:py-24 bg-black relative overflow-hidden"
-        >
-          <div className="absolute inset-0 -z-10">
-            <div className="floating-particle absolute top-1/5 left-1/4 size-2 rounded-full bg-blue-500/30"></div>
-            <div className="floating-particle absolute top-2/3 left-1/2 size-3 rounded-full bg-green-500/30"></div>
-          </div>
+        <section ref={benefitsRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
+          <GridBackground />
           
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
