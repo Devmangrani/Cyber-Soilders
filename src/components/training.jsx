@@ -77,12 +77,161 @@ const benefits = [
 
 // New category filters based on sketch
 const categoryFilters = [
-  { id: "all", label: "All", active: true },
-  { id: "government", label: "For Government", icon: <Building className="h-4 w-4 mr-1" /> },
-  { id: "business", label: "For Business", icon: <Briefcase className="h-4 w-4 mr-1" /> },
-  { id: "academia", label: "For Academia", icon: <AcademiaIcon className="h-4 w-4 mr-1" /> },
-  { id: "individual", label: "For Individual", icon: <User className="h-4 w-4 mr-1" /> }
+  { 
+    id: "all", 
+    label: "All", 
+    active: true, 
+    icon: null,
+    courses: [
+      // Include all courses from all categories
+      { 
+        title: "Cyber Security Fundamentals",
+        description: "Learn the basics of cyber security, including threat detection, prevention, and response strategies.",
+        duration: "8 weeks",
+        icon: <GraduationCap className="h-6 w-6" />
+      },
+      {
+        title: "Advanced Penetration Testing",
+        description: "Master advanced penetration testing techniques and tools used by security professionals.",
+        duration: "12 weeks",
+        icon: <BookOpen className="h-6 w-6" />
+      },
+      {
+        title: "Security Operations Center (SOC)",
+        description: "Comprehensive training on SOC operations, incident response, and threat hunting.",
+        duration: "10 weeks",
+        icon: <Users className="h-6 w-6" />
+      },
+      {
+        title: "Cloud Security Professional",
+        description: "Specialized training in securing cloud infrastructure and applications.",
+        duration: "10 weeks",
+        icon: <Award className="h-6 w-6" />
+      },
+      // Add certification courses
+      { title: "CISSP", description: "Certified Information Systems Security Professional", icon: <Award className="h-6 w-6" /> },
+      { title: "CISM", description: "Certified Information Security Manager", icon: <Award className="h-6 w-6" /> },
+      { title: "CISA", description: "Certified Information Systems Auditor", icon: <Award className="h-6 w-6" /> },
+      { title: "CRISC", description: "Certified in Risk and Information Systems Control", icon: <Award className="h-6 w-6" /> },
+      { title: "CEH", description: "Certified Ethical Hacker", icon: <Award className="h-6 w-6" /> },
+      { title: "CompTIA Security+", description: "Foundation level security certification", icon: <Award className="h-6 w-6" /> },
+      // Add PDF courses
+      { 
+        title: "Cyber Security Training Level 1 (CS-101)",
+        description: "One Day Workshop providing an insight into cyberspace, digital networks, and emerging cybersecurity threats.",
+        duration: "1 day",
+        icon: <GraduationCap className="h-6 w-6" />
+      },
+      { 
+        title: "Cyber Security Training Level 2 (CS-102)",
+        description: "One Week program providing solid understanding of cybersecurity fundamentals, including GRC, OS security, and network basics.",
+        duration: "1 week",
+        icon: <BookOpen className="h-6 w-6" />
+      },
+      { 
+        title: "Cyber Security Training Level 3 (CS-103)",
+        description: "One Month program that equips participants with essential ethical hacking skills and hands-on experience.",
+        duration: "1 month",
+        icon: <Users className="h-6 w-6" />
+      },
+      { 
+        title: "Advanced Cyber Security Certification (CS-104)",
+        description: "Comprehensive six-month course designed for professionals looking to master advanced cybersecurity techniques.",
+        duration: "6 months",
+        icon: <Award className="h-6 w-6" />
+      }
+    ]
+  },
+  { 
+    id: "government", 
+    label: "For Government", 
+    icon: <Building className="h-4 w-4 mr-1" />,
+    courses: [
+      { 
+        title: "Cyber Security Training Level 1 (CS-101)",
+        description: "One Day Workshop providing an insight into cyberspace, digital networks, and emerging cybersecurity threats.",
+        duration: "1 day",
+        icon: <GraduationCap className="h-6 w-6" />
+      },
+      { 
+        title: "Cyber Security Training Level 2 (CS-102)",
+        description: "One Week program providing solid understanding of cybersecurity fundamentals, including GRC, OS security, and network basics.",
+        duration: "1 week",
+        icon: <BookOpen className="h-6 w-6" />
+      },
+      { 
+        title: "Cyber Security Training Level 3 (CS-103)",
+        description: "One Month program that equips participants with essential ethical hacking skills and hands-on experience.",
+        duration: "1 month",
+        icon: <Users className="h-6 w-6" />
+      },
+      { 
+        title: "Advanced Cyber Security Certification (CS-104)",
+        description: "Comprehensive six-month course designed for professionals looking to master advanced cybersecurity techniques.",
+        duration: "6 months",
+        icon: <Award className="h-6 w-6" />
+      }
+    ]
+  },
+  { 
+    id: "business", 
+    label: "For Business", 
+    icon: <Briefcase className="h-4 w-4 mr-1" />,
+    courses: [
+      { title: "CISSP", description: "Certified Information Systems Security Professional", duration: "12 weeks", icon: <Award className="h-6 w-6" /> },
+      { title: "CISM", description: "Certified Information Security Manager", duration: "10 weeks", icon: <Award className="h-6 w-6" /> },
+      { title: "CISA", description: "Certified Information Systems Auditor", duration: "10 weeks", icon: <Award className="h-6 w-6" /> },
+      { title: "CRISC", description: "Certified in Risk and Information Systems Control", duration: "8 weeks", icon: <Award className="h-6 w-6" /> },
+      { title: "CEH", description: "Certified Ethical Hacker", duration: "8 weeks", icon: <Award className="h-6 w-6" /> },
+      { title: "CompTIA Security+", description: "Foundation level security certification", duration: "6 weeks", icon: <Award className="h-6 w-6" /> }
+    ]
+  },
+  { 
+    id: "academia", 
+    label: "For Academia", 
+    icon: <AcademiaIcon className="h-4 w-4 mr-1" />,
+    courses: [
+      { 
+        title: "Cyber Security Training Level 1 (CS-101)",
+        description: "One Day Workshop providing an insight into cyberspace, digital networks, and emerging cybersecurity threats.",
+        duration: "1 day",
+        icon: <GraduationCap className="h-6 w-6" />
+      },
+      { 
+        title: "Cyber Security Training Level 2 (CS-102)",
+        description: "One Week program providing solid understanding of cybersecurity fundamentals, including GRC, OS security, and network basics.",
+        duration: "1 week",
+        icon: <BookOpen className="h-6 w-6" />
+      },
+      { 
+        title: "Cyber Security Training Level 3 (CS-103)",
+        description: "One Month program that equips participants with essential ethical hacking skills and hands-on experience.",
+        duration: "1 month",
+        icon: <Users className="h-6 w-6" />
+      },
+      { 
+        title: "Advanced Cyber Security Certification (CS-104)",
+        description: "Comprehensive six-month course designed for professionals looking to master advanced cybersecurity techniques.",
+        duration: "6 months",
+        icon: <Award className="h-6 w-6" />
+      }
+    ]
+  },
+  { 
+    id: "individual", 
+    label: "For Individual", 
+    icon: <User className="h-4 w-4 mr-1" />,
+    courses: [
+      { title: "CISSP", description: "Certified Information Systems Security Professional", duration: "12 weeks", icon: <Award className="h-6 w-6" /> },
+      { title: "CISM", description: "Certified Information Security Manager", duration: "10 weeks", icon: <Award className="h-6 w-6" /> },
+      { title: "CISA", description: "Certified Information Systems Auditor", duration: "10 weeks", icon: <Award className="h-6 w-6" /> },
+      { title: "CRISC", description: "Certified in Risk and Information Systems Control", duration: "8 weeks", icon: <Award className="h-6 w-6" /> },
+      { title: "CEH", description: "Certified Ethical Hacker", duration: "8 weeks", icon: <Award className="h-6 w-6" /> },
+      { title: "CompTIA Security+", description: "Foundation level security certification", duration: "6 weeks", icon: <Award className="h-6 w-6" /> }
+    ]
+  }
 ]
+
 
 // Training platforms based on sketch
 const platforms = [
@@ -780,13 +929,14 @@ export default function Training() {
         </section>
 
         {/* Category Filters Based on Sketch */}
-        <section className="w-full py-8 bg-gray-900">
+        <section className="w-full py-12 md:py-16 bg-gray-900">
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
-            <div className="text-center mb-6">
-              <h3 className="text-xl text-gray-100 font-semibold mb-4">Select Your Needs</h3>
-              <div className="flex flex-wrap justify-center gap-2">
-                {categoryFilters.map((filter, index) => (
-                                      <Button
+            <div className="text-center mb-8">
+              <h3 className="text-2xl text-gray-100 font-semibold mb-6">Select Your Needs</h3>
+              
+              <div className="flex flex-wrap justify-center gap-4 mb-12">
+                {categoryFilters.map((filter) => (
+                  <Button
                     key={filter.id}
                     variant={selectedCategory === filter.id ? "default" : "outline"}
                     className={`category-filter relative group flex items-center px-4 py-2 ${selectedCategory === filter.id ? 'bg-primary text-white' : ''}`}
@@ -800,6 +950,61 @@ export default function Training() {
                   </Button>
                 ))}
               </div>
+              
+              {/* Display courses for selected category */}
+              {categoryFilters.find(f => f.id === selectedCategory)?.courses && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {categoryFilters.find(f => f.id === selectedCategory).courses.map((course, index) => (
+                    <div 
+                      key={`${selectedCategory}-${course.title}`}
+                      className="relative group bg-card p-6 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      
+                      {/* Border animation */}
+                      <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-blue-500/30 transition-all duration-700"></div>
+                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500/60 to-purple-500/60 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
+                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500/60 to-blue-500/60 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-right"></div>
+                      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/60 to-purple-500/60 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"></div>
+                      <div className="absolute right-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/60 to-blue-500/60 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-bottom"></div>
+                      
+                      <div className="relative z-10 flex flex-col h-full">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="text-gray-100 p-3 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center group-hover:bg-gray-100 dark:group-hover:bg-gray-600 group-hover:scale-110 transition-all duration-500">
+                            {course.icon}
+                          </div>
+                          <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">{course.title}</h3>
+                        </div>
+                        
+                        <p className="text-muted-foreground text-sm mb-4">{course.description}</p>
+                        
+                        {course.duration && (
+                          <div className="text-sm text-muted-foreground mb-4">
+                            <span className="flex items-center gap-2">
+                              <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-slow" />
+                              Duration: {course.duration}
+                            </span>
+                          </div>
+                        )}
+                        
+                        {/* <div className="mt-auto">
+                          <Button variant="outline" size="sm" className="relative group w-full">
+                            <div className="absolute -inset-1 bg-gradient-to-r from-green-500/50 to-cyan-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                            <span className="relative z-10 flex items-center justify-center w-full">
+                              Learn More
+                              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                            </span>
+                          </Button>
+                        </div> */}
+                      </div>
+                      
+                      {/* Animated corner decoration */}
+                      <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/10 rounded-full transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                      <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-primary/10 rounded-full transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </section>
