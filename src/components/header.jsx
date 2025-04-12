@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between px-4 md:px-6 max-w-[1200px] mx-auto">
+      <div className="flex h-16 items-center justify-between px-4 md:px-6 w-full">
         <Link to="/" className="flex items-center space-x-2">
           <img src={logo} alt="Cyber.Soldiers" className="h-6 w-6" />
           <span className="font-bold text-sm sm:text-base">Cyber.Soldiers</span>
@@ -62,7 +62,7 @@ export default function Header() {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="lg:hidden border-t bg-background">
-          <div className="container px-4 py-4 space-y-3">
+          <div className="px-4 py-4 space-y-3">
             <Link
               to="/product"
               className="block text-sm font-medium transition-colors hover:text-primary py-2"

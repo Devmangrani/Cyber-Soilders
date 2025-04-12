@@ -266,67 +266,60 @@ export default function Careers() {
       className="relative w-full py-16 md:py-28 lg:py-32 bg-black opacity-0 translate-y-4 duration-700 ease-out"
       id="hero-section"
     >
-      {/* Grid background */}
+      {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
       <div 
         ref={gridRef}
-        className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"
-      ></div>
-      
-      {/* Grid animations */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="animate-grid-trace-horizontal absolute h-[1px] w-full top-1/4 bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
-        <div className="animate-grid-trace-horizontal absolute h-[1px] w-full top-2/4 bg-gradient-to-r from-transparent via-primary/20 to-transparent" style={{ animationDelay: '1.5s' }}></div>
-        <div className="animate-grid-trace-horizontal absolute h-[1px] w-full top-3/4 bg-gradient-to-r from-transparent via-primary/20 to-transparent" style={{ animationDelay: '0.7s' }}></div>
-        
-        <div className="animate-grid-trace-vertical absolute w-[1px] h-full left-1/4 bg-gradient-to-b from-transparent via-primary/20 to-transparent"></div>
-        <div className="animate-grid-trace-vertical absolute w-[1px] h-full left-2/4 bg-gradient-to-b from-transparent via-primary/20 to-transparent" style={{ animationDelay: '1.2s' }}></div>
-        <div className="animate-grid-trace-vertical absolute w-[1px] h-full left-3/4 bg-gradient-to-b from-transparent via-primary/20 to-transparent" style={{ animationDelay: '0.4s' }}></div>
-        
-        {/* Grid intersection pulses */}
-        <div className="animate-grid-intersection-pulse absolute top-1/4 left-1/4 size-2 -ml-1 -mt-1 rounded-full bg-primary/40"></div>
-        <div className="animate-grid-intersection-pulse absolute top-1/4 left-2/4 size-2 -ml-1 -mt-1 rounded-full bg-primary/40" style={{ animationDelay: '0.7s' }}></div>
-        <div className="animate-grid-intersection-pulse absolute top-2/4 left-1/4 size-2 -ml-1 -mt-1 rounded-full bg-primary/40" style={{ animationDelay: '1.1s' }}></div>
-        <div className="animate-grid-intersection-pulse absolute top-2/4 left-3/4 size-2 -ml-1 -mt-1 rounded-full bg-primary/40" style={{ animationDelay: '1.5s' }}></div>
-        <div className="animate-grid-intersection-pulse absolute top-3/4 left-2/4 size-2 -ml-1 -mt-1 rounded-full bg-primary/40" style={{ animationDelay: '0.3s' }}></div>
+        className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
+      >
+        {/* Grid node glow effects */}
+        <div className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink" style={{ animationDelay: "0.5s" }}></div>
+        <div className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink" style={{ animationDelay: "1.2s" }}></div>
+        <div className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink" style={{ animationDelay: "2.7s" }}></div>
+        <div className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink" style={{ animationDelay: "1.8s" }}></div>
+        <div className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink" style={{ animationDelay: "3.5s" }}></div>
 
-        {/* Scan line */}
-        <div className="animate-scan-line absolute w-full h-[2px] bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"></div>
+        {/* Grid line trace effects */}
+        <div className="grid-trace absolute h-[1px] w-[100px] sm:w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal" style={{ animationDelay: "0.5s" }}></div>
+        <div className="grid-trace absolute h-[100px] sm:h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical" style={{ animationDelay: "1.2s" }}></div>
+        <div className="grid-trace absolute h-[75px] sm:h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal" style={{ animationDelay: "2.7s" }}></div>
+        <div className="grid-trace absolute h-[1px] w-[60px] sm:w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal" style={{ animationDelay: "1.8s" }}></div>
+        <div className="grid-trace absolute h-[60px] sm:h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical" style={{ animationDelay: "3.5s" }}></div>
+
+        {/* Neon intersection highlights */}
+        <div className="grid-intersection absolute h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-blue-500/20 blur-[5px] top-[24%] left-[48%] animate-grid-intersection-pulse" style={{ animationDelay: "4.5s" }}></div>
+        <div className="grid-intersection absolute h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-purple-500/20 blur-[5px] top-[36%] left-[60%] animate-grid-intersection-pulse" style={{ animationDelay: "2.3s" }}></div>
+        <div className="grid-intersection absolute h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-teal-500/20 blur-[5px] top-[56%] left-[32%] animate-grid-intersection-pulse" style={{ animationDelay: "6.2s" }}></div>
       </div>
-      
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent"></div>
+
+      {/* Radial gradient overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
-      
-      {/* Animated background elements */}
-      <div className="absolute -z-10 top-0 left-1/3 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl parallax-slow animate-pulse-very-slow"></div>
-      <div className="absolute -z-10 bottom-0 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl parallax-fast animate-pulse-slow"></div>
-      <div className="absolute -z-10 top-1/4 right-1/3 w-72 h-72 rounded-full bg-gradient-to-tr from-green-500/10 to-purple-500/10 blur-3xl parallax-medium animate-pulse-very-slow"></div>
-      
-      {/* Animated particles */}
-      <div className="absolute -z-10 inset-0">
-        <div className="floating-particle floating-particle-slow absolute top-1/4 left-1/5 size-2 rounded-full bg-blue-500/30"></div>
-        <div className="floating-particle floating-particle-fast absolute top-3/4 left-2/3 size-3 rounded-full bg-purple-500/30"></div>
-        <div className="floating-particle floating-particle-slow absolute top-1/3 left-3/4 size-2 rounded-full bg-green-500/30"></div>
-        <div className="floating-particle floating-particle-fast absolute top-2/3 left-1/4 size-2 rounded-full bg-yellow-500/30"></div>
-        <div className="floating-particle floating-particle-slow absolute top-1/2 left-1/2 size-1 rounded-full bg-red-500/30"></div>
-        <div className="floating-particle floating-particle-fast absolute top-1/5 right-1/3 size-2 rounded-full bg-cyan-500/30"></div>
-        <div className="floating-particle floating-particle-slow absolute bottom-1/4 right-1/5 size-3 rounded-full bg-indigo-500/30"></div>
-      </div>
-      
-      {/* Sliding elements */}
-      <div className="absolute left-0 right-0 top-0 h-12 overflow-hidden">
-        <div className="animate-slide-right-infinite flex items-center gap-8 opacity-20">
-          {Array(10).fill(0).map((_, i) => (
-            <Shield key={i} className="h-6 w-6 text-blue-500" />
-          ))}
-        </div>
-      </div>
-      <div className="absolute left-0 right-0 bottom-0 h-12 overflow-hidden">
-        <div className="animate-slide-right-infinite flex items-center gap-8 opacity-20" style={{ animationDelay: '2s' }}>
-          {Array(10).fill(0).map((_, i) => (
-            <Target key={i} className="h-6 w-6 text-purple-500" />
-          ))}
-        </div>
-      </div>
+
+      {/* Floating Orbs */}
+      <motion.div
+        className="absolute -z-10 top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl"
+        animate={{
+          y: [0, -50, 0],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute -z-10 bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl"
+        animate={{
+          y: [0, 50, 0],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+      />
       
       <div className="container relative z-10 px-4 md:px-6 max-w-[1200px] mx-auto">
         <div className="flex flex-col items-center text-center space-y-4">
@@ -460,17 +453,88 @@ export default function Careers() {
           }}
           className="w-full py-12 md:py-24 bg-gray-900 opacity-0 translate-y-4 duration-700 ease-out relative overflow-hidden"
         >
-          {/* Animated background elements */}
-          <div className="absolute right-0 top-1/4 -z-10 h-96 w-96 rounded-full bg-gradient-to-b from-blue-500/20 to-purple-500/20 blur-3xl parallax-slow"></div>
-          <div className="absolute left-1/4 bottom-1/4 -z-10 h-64 w-64 rounded-full bg-gradient-to-tr from-purple-500/10 to-blue-500/10 blur-3xl parallax-fast"></div>
-          
-          {/* Animated particles */}
-          <div className="absolute inset-0 -z-10">
-            <div className="floating-particle absolute top-1/4 left-1/5 size-2 rounded-full bg-blue-500/30"></div>
-            <div className="floating-particle absolute top-3/4 left-2/3 size-3 rounded-full bg-purple-500/30"></div>
-            <div className="floating-particle absolute top-1/3 left-3/4 size-2 rounded-full bg-green-500/30"></div>
-            <div className="floating-particle absolute top-2/3 left-1/4 size-2 rounded-full bg-yellow-500/30"></div>
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0">
+            {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
+            <div
+              ref={gridRef}
+              className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
+            >
+              {/* Grid node glow effects - Adjusted for mobile */}
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink"
+                style={{ animationDelay: "0.5s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink"
+                style={{ animationDelay: "1.2s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink"
+                style={{ animationDelay: "2.7s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink"
+                style={{ animationDelay: "1.8s" }}
+              ></div>
+              <div
+                className="grid-node absolute h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink"
+                style={{ animationDelay: "3.5s" }}
+              ></div>
+
+              {/* Grid line trace effects - Adjusted for mobile */}
+              <div
+                className="grid-trace absolute h-[1px] w-[100px] sm:w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "0.5s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[100px] sm:h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical"
+                style={{ animationDelay: "1.2s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[75px] sm:h-[150px] w-[1px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "2.7s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[1px] w-[60px] sm:w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal"
+                style={{ animationDelay: "1.8s" }}
+              ></div>
+              <div
+                className="grid-trace absolute h-[60px] sm:h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical"
+                style={{ animationDelay: "3.5s" }}
+              ></div>
+            </div>
+
+            {/* Radial gradient overlay */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
           </div>
+
+          {/* Floating Orbs */}
+          <motion.div
+            className="absolute -z-10 top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl"
+            animate={{
+              y: [0, -50, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute -z-10 bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl"
+            animate={{
+              y: [0, 50, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
           
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="text-center mb-12">
@@ -982,12 +1046,10 @@ export default function Careers() {
     
     @keyframes grid-node-blink {
       0%, 100% {
-        opacity: 0.1;
-        transform: scale(0.8);
+        opacity: 0;
       }
       50% {
-        opacity: 1;
-        transform: scale(1.2);
+        opacity: 0.8;
       }
     }
     
@@ -997,7 +1059,7 @@ export default function Careers() {
     
     @keyframes grid-trace-horizontal {
       0% {
-        left: -100%;
+        transform: translateX(-100%) scaleX(0.7);
         opacity: 0;
       }
       10% {
@@ -1007,20 +1069,18 @@ export default function Careers() {
         opacity: 1;
       }
       100% {
-        left: 100%;
+        transform: translateX(100%) scaleX(0.7);
         opacity: 0;
       }
     }
     
     .animate-grid-trace-horizontal {
       animation: grid-trace-horizontal 8s ease-in-out infinite;
-      position: absolute;
-      left: -100%;
     }
     
     @keyframes grid-trace-vertical {
       0% {
-        top: -100%;
+        transform: translateY(-100%) scaleY(0.7);
         opacity: 0;
       }
       10% {
@@ -1030,30 +1090,28 @@ export default function Careers() {
         opacity: 1;
       }
       100% {
-        top: 100%;
+        transform: translateY(100%) scaleY(0.7);
         opacity: 0;
       }
     }
     
     .animate-grid-trace-vertical {
       animation: grid-trace-vertical 8s ease-in-out infinite;
-      position: absolute;
-      top: -100%;
     }
     
     @keyframes grid-intersection-pulse {
       0%, 100% {
-        opacity: 0;
-        transform: scale(0.8);
+        transform: scale(0.5);
+        opacity: 0.2;
       }
       50% {
-        opacity: 1;
-        transform: scale(1.5);
+        transform: scale(1.2);
+        opacity: 0.6;
       }
     }
     
     .animate-grid-intersection-pulse {
-      animation: grid-intersection-pulse 3s ease-in-out infinite;
+      animation: grid-intersection-pulse 6s ease-in-out infinite;
     }
     
     @keyframes shimmer {
