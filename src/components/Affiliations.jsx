@@ -119,17 +119,17 @@ export default function Affiliations() {
             ))}
           </div>
 
-          <motion.div 
+         {/* { <motion.div 
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ delay: 0.5 }}
             className="mt-8"
           >
-            <Button className="group">
+            {/* <Button className="group">
               Learn More About Our Affiliations
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </motion.div>
+            </Button> 
+          </motion.div> */}
         </motion.div>
       </div>
     </section>
