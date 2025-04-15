@@ -465,7 +465,7 @@ export default function Resources() {
                 </h1>
               </div>
               <div className="overflow-hidden">
-                <p className="hero-description text-xl text-gray-400 max-w-[600px]">
+                <p className="hero-description text-lg text-gray-400 max-w-[600px]">
                   Explore our comprehensive collection of videos, guides, and
                   tools to enhance your cybersecurity knowledge.
                 </p>
@@ -555,10 +555,10 @@ export default function Resources() {
                 <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-2">
                   Featured Video
                 </div>
-                <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400">
+                <h2 className="text-4xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400">
                   {featuredVideo?.title}
                 </h2>
-                <p className="text-xl text-gray-400">
+                <p className="text-lg text-gray-400">
                   {featuredVideo?.description}
                 </p>
                 <div className="pt-4">
@@ -660,10 +660,10 @@ export default function Resources() {
               <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-6">
                 Certification Resources
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 mb-4">
+              <h2 className="text-4xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 mb-4">
                 Industry-Standard Certifications
               </h2>
-              <p className="text-xl text-gray-400 max-w-[600px] mx-auto">
+              <p className="text-lg text-gray-400 max-w-[600px] mx-auto">
                 Resources to help you prepare for top cybersecurity
                 certifications
               </p>
@@ -701,10 +701,10 @@ export default function Resources() {
               <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-6">
                 Video Library
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 mb-4">
+              <h2 className="text-4xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 mb-4">
                 Our Webinars
               </h2>
-              <p className="text-xl text-gray-400 max-w-[600px] mx-auto">
+              <p className="text-lg text-gray-400 max-w-[600px] mx-auto">
                 Browse through our comprehensive collection of cyber security
                 tutorials and guides
               </p>
@@ -772,10 +772,10 @@ export default function Resources() {
           <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="flex flex-col items-center text-center space-y-6">
-              <h2 className="text-3xl font-bold tracking-tighter text-gray-100">
+              <h2 className="text-4xl font-bold tracking-tighter text-gray-100">
                 Ready to Enhance Your Cyber Security Skills?
               </h2>
-              <p className="text-xl text-gray-400 max-w-[600px]">
+              <p className="text-lg text-gray-400 max-w-[600px]">
                 Subscribe to our channel and get access to all our educational
                 content. Join our community of cybersecurity professionals
                 today.

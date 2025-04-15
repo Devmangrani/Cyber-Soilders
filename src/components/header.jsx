@@ -37,9 +37,9 @@ export default function Header() {
           <Link to="/careers" className="text-sm font-medium transition-colors hover:text-primary px-2 py-1">
             Careers
           </Link>
-          <Link to="/hire" className="text-sm font-medium transition-colors hover:text-primary px-2 py-1">
+          {/* <Link to="/hire" className="text-sm font-medium transition-colors hover:text-primary px-2 py-1">
             Hire
-          </Link>
+          </Link> */}
           <Link to="/contact">
             <Button className="text-sm">Contact Us</Button>
           </Link>

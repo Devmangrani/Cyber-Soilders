@@ -400,12 +400,12 @@ export default function About() {
               </div>
             </div>
             <div className="overflow-hidden">
-              <h1 className="hero-title text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400">
+              <h1 className="hero-title text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400">
                 About Cyber.Soldiers
               </h1>
             </div>
             <div className="overflow-hidden pt-2">
-              <p className="hero-description mt-6 text-xl md:text-2xl text-gray-400 max-w-[800px]">
+              <p className="text-base md:text-lg lg:text-xl text-gray-400 max-w-[800px]">
                 Leading the way in cyber security products, services, and training.
               </p>
             </div>

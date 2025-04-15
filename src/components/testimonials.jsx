@@ -38,10 +38,10 @@ export default function Testimonials() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+          <p className="text-base md:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto">
             Don't just take our word for it. Here's what our clients have to say about their experience with Cyber.Soldiers.
           </p>
         </motion.div>

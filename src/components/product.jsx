@@ -369,7 +369,7 @@ export default function Product() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-xl md:text-2xl text-gray-400 max-w-[700px] mx-auto"
+                className="text-base md:text-lg lg:text-xl text-gray-400 max-w-[700px] mx-auto"
               >
                 Real-world attacks, hands-on training, unmatched Cyber
                 Resilience.
@@ -614,7 +614,7 @@ export default function Product() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="text-xl text-gray-400 max-w-[600px]"
+                    className="text-base text-gray-400 max-w-[600px]"
                   >
                     Rangеstorm's Cybеr Rangе Platform pionееrs cybеrsеcurity
                     training, offеring an advancеd, hands-on еxpеriеncе for
@@ -706,7 +706,7 @@ export default function Product() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl font-bold tracking-tighter mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-600"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-600"
             >
               Interactive Training Environment
             </motion.h2>
@@ -914,7 +914,7 @@ export default function Product() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="text-xl text-gray-400 max-w-[600px]"
+                    className="text-base text-gray-400 max-w-[600px]"
                   >
                     Rangestorm offers a customizable cyber-training platform,
                     emphasizing real-world scenarios and diverse team formations.
