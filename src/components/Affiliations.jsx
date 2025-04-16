@@ -1,6 +1,7 @@
 // components/Affiliations.jsx
+import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ArrowLeft, Circle, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import IIT_Madras_Logo from "../IIT_Madras_Logo.png"
 import IITM_Pravartak_Logo from "../IITM_Pravartak_Logo.jpeg"
@@ -13,7 +14,7 @@ import DG_Trust_Logo from "../DG_Trust_Logo.webp"
 
 const affiliations = [
   {
-    name: "IIT Madrass",
+    name: "IIT Madras",
     logo: IIT_Madras_Logo,
     description: "India's premier technical institute"
   },
@@ -23,7 +24,7 @@ const affiliations = [
     description: "Technology Innovation Hub"
   },
   {
-    name: "EC council",
+    name: "EC Council",
     logo: BC_Court_Logo,
     description: "Legal excellence and integrity"
   },
@@ -48,15 +49,52 @@ const affiliations = [
     description: "Corporate governance and regulation"
   },
   {
-    name: "DG foreign Trade",
+    name: "DG Foreign Trade",
     logo: DG_Trust_Logo,
     description: "International trust and cooperation"
   }
 ]
 
 export default function Affiliations() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [autoplay, setAutoplay] = useState(true);
+  const carouselRef = useRef(null);
+  const itemsPerView = { mobile: 1, tablet: 2, desktop: 3 };
+  
+  // Calculate total number of pages
+  const totalPages = Math.ceil(affiliations.length / itemsPerView.desktop);
+  
+  // Handle autoplay
+  useEffect(() => {
+    let interval;
+    
+    if (autoplay) {
+      interval = setInterval(() => {
+        setActiveIndex((prev) => (prev === totalPages - 1 ? 0 : prev + 1));
+      }, 5000);
+    }
+    
+    return () => clearInterval(interval);
+  }, [autoplay, totalPages]);
+  
+  // Handle manual navigation
+  const handlePrev = () => {
+    setAutoplay(false);
+    setActiveIndex((prev) => (prev === 0 ? totalPages - 1 : prev - 1));
+  };
+  
+  const handleNext = () => {
+    setAutoplay(false);
+    setActiveIndex((prev) => (prev === totalPages - 1 ? 0 : prev + 1));
+  };
+  
+  const goToPage = (index) => {
+    setAutoplay(false);
+    setActiveIndex(index);
+  };
+
   return (
-    <section className="w-full py-20 md:py-32 bg-black">
+    <section className="w-full py-20 md:py-32 bg-black overflow-hidden">
       <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -79,57 +117,87 @@ export default function Affiliations() {
             transition={{ delay: 0.4 }}
             className="text-xl text-muted-foreground max-w-[600px]"
           >
-            
+            Partnering with leading organizations to deliver excellence
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-            {affiliations.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                className="relative p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300 group"
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+          {/* Carousel Container */}
+          <div className="w-full relative">
+            {/* Navigation Buttons */}
+            <div className="absolute top-1/2 -left-4 transform -translate-y-1/2 z-20">
+              <button 
+                onClick={handlePrev}
+                className="p-2 bg-black/30 backdrop-blur-sm rounded-full border border-gray-500/20 text-white hover:bg-white/10 transition-all"
               >
-                <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                <div className="relative z-10 flex flex-col items-center gap-4">
-                  <div className="">
-                    {/* <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5"
-                      animate={{
-                        x: ["-100%", "100%"],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "linear",
-                      }}
-                    /> */}
-                    <div className="relative z-10 flex items-center justify-center w-32 h-32 mx-auto rounded-full bg-gray-700">
-                      <img src={item.logo} alt={`${item.name} Logo`} className="w-32 h-32 object-contain" />
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <h3 className="text-lg font-semibold text-white mb-2">{item.name}</h3>
-                    <p className="text-gray-400 text-sm">{item.description}</p>
-                  </div>
+                <ArrowLeft className="h-6 w-6" />
+              </button>
+            </div>
+            
+            <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 z-20">
+              <button 
+                onClick={handleNext}
+                className="p-2 bg-black/30 backdrop-blur-sm rounded-full border border-gray-500/20 text-white hover:bg-white/10 transition-all"
+              >
+                <ArrowRight className="h-6 w-6" />
+              </button>
+            </div>
+            
+            {/* Slider Track */}
+            <div className="overflow-hidden">
+              <motion.div
+                ref={carouselRef}
+                className="flex transition-all duration-500 ease-out"
+                animate={{
+                  x: `calc(-${activeIndex * 100}% / ${totalPages})`
+                }}
+                transition={{
+                  type: "tween",
+                  ease: "easeInOut",
+                  duration: 0.5
+                }}
+              >
+                <div className="flex gap-6 w-full">
+                  {affiliations.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.1 * index }}
+                      className="relative flex-shrink-0 p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300 group w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                      whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                    >
+                      <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                      <div className="relative z-10 flex flex-col items-center gap-4">
+                        <div className="relative z-10 flex items-center justify-center w-32 h-32 mx-auto rounded-full bg-gray-700">
+                          <img src={item.logo} alt={`${item.name} Logo`} className="w-32 h-32 object-contain" />
+                        </div>
+                        <div className="text-center">
+                          <h3 className="text-lg font-semibold text-white mb-2">{item.name}</h3>
+                          <p className="text-gray-400 text-sm">{item.description}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
               </motion.div>
-            ))}
+            </div>
+            
+            {/* Pagination Dots */}
+            <div className="flex justify-center gap-2 mt-8">
+              {Array.from({ length: totalPages }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToPage(index)}
+                  className="transition-all duration-300"
+                >
+                  {activeIndex === index ? (
+                    <CheckCircle2 className="h-5 w-5 text-indigo-500" />
+                  ) : (
+                    <Circle className="h-5 w-5 text-gray-400 hover:text-indigo-400" />
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
-
-         {/* { <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ delay: 0.5 }}
-            className="mt-8"
-          >
-            {/* <Button className="group">
-              Learn More About Our Affiliations
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button> 
-          </motion.div> */}
         </motion.div>
       </div>
     </section>
