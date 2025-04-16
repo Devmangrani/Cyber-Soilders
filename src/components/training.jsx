@@ -938,7 +938,7 @@ export default function Training() {
                   </h1>
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
+                  <p className="hero-description text-xl text-muted-foreground">
                     A comprehensive cyber security training framework for all needs at all levels.
                   </p>
                 </div>

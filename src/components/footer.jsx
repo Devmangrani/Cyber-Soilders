@@ -16,7 +16,7 @@ export default function Footer() {
               Accelerate your career with the best Cyber Security Skills & Certification to excel in the industry
             </p>
             <div className="flex gap-4">
-              <a href="https://play.google.com/store/apps/details?id=in.cybersoldiers.learners&hl=en_US&gl=US" target="_blank" rel="noopener noreferrer">
+              {/* <a href="https://play.google.com/store/apps/details?id=in.cybersoldiers.learners&hl=en_US&gl=US" target="_blank" rel="noopener noreferrer">
                 <img 
                   src="https://d502jbuhuh9wk.cloudfront.net/orgData/63a4480de4b0fa7eb0f4eb95/pages/assets/images/D5DcPplaystore.png" 
                   alt="Play Store" 
@@ -29,7 +29,7 @@ export default function Footer() {
                   alt="App Store" 
                   className="w-[130px]"
                 />
-              </a>
+              </a> */}
             </div>
           </div>
 
