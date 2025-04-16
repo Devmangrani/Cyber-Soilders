@@ -694,7 +694,7 @@ export default function Resources() {
         </section>
 
         {/* Video Gallery Section */}
-        <section className="w-full py-12 md:py-24 bg-gray-950 relative">
+        {/*<section className="w-full py-12 md:py-24 bg-gray-950 relative">
           <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="text-center mb-12">
@@ -720,7 +720,7 @@ export default function Resources() {
                     onMouseLeave={() => setHoveredVideo(null)}
                   >
                     {/* Button-like background animation */}
-                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
+                    {/* <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
 
                     <div className="aspect-video relative">
                       <img
@@ -765,7 +765,7 @@ export default function Resources() {
                 ))}
             </div>
           </div>
-        </section>
+        </section>} */}
 
         {/* CTA Section */}
         <section className="w-full py-12 md:py-24 bg-gray-950 relative overflow-hidden">
