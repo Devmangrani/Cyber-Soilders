@@ -13,7 +13,7 @@ import MCA_Logo from "../MCA_Logo.jpeg"
 import DG_Trust_Logo from "../DG_Trust_Logo.webp"
 
 const GridBackground = () => (
-  <div className="absolute bg-gray-900 inset-0">
+  <div className="absolute inset-0">
     {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
     <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden">
       {/* Grid node glow effects */}
@@ -62,7 +62,7 @@ const GridBackground = () => (
     </div>
 
     {/* Radial gradient overlay */}
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,255,0.1),transparent_50%)]" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
   </div>
 );
 
@@ -148,7 +148,7 @@ export default function Affiliations() {
   };
 
   return (
-    <section className="w-full py-20 md:py-32 bg-black overflow-hidden relative">
+    <section className="w-full py-20 md:py-32 bg-gray-900 overflow-hidden relative">
       <GridBackground />
       <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10">
         <motion.div

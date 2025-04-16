@@ -27,11 +27,11 @@ import {
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import CyberSecurityTraining from "../CyberSecurityTraining.jpeg";
+import CyberSecurityTraining from "../endpointsecurity.webp";
 import AdvancedTrainingEnvironment from "../AdvancedTrainingEnvironment.jpg";
 import RealTimeAttackSimulation from "../istockphoto-1435605327-612x612.jpg";
 import ComprehensiveAnalytics from "../ComprehensiveAnalytics.png";
-import IIT_Madras_Logo from "../IIT_Madras_Logo.png";
+
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
