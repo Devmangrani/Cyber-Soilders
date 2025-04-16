@@ -18,9 +18,11 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import NextjsBackground from './NextjsBackground'
 // Import partner logos
 import ECCouncilLogo from '../Ec_Council_Logo.png'
-import IITPravartakLogo from '../Pravartak_logo.png'
+import IITPravartakLogo from '../IITM_Pravartak_Logo.jpeg'
 import IITMadrasLogo from '../IIT_Madras_Logo.png'
 import CyberSecurityTraining from '../CyberSecurityServices.jpeg'
+import CompTIALogo from '../CompTIA.png'
+
 
 // Register GSAP plugins
 if (typeof window !== 'undefined') {
@@ -1153,13 +1155,13 @@ export default function Training() {
         {/* Partner Section */}
         <section ref={partnerRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
           <GridBackground />
-          <div className="container px-4 md:px-6 max-w-[1500px] mx-auto">
+          <div className="container px-4 md:px-6 max-w-[1000px] mx-auto">
             <div className="flex flex-col items-center text-center space-y-6">
               <div className="space-y-4">
                 <div className="overflow-hidden">
                   <h2 className="partner-title text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Our Knowledge Partners</h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-8">
                   {/* IIT Madras */}
                   <div className="partner-logo relative group h-[200px] w-full">
                     <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
@@ -1204,6 +1206,22 @@ export default function Training() {
                         decoding="async"
                         className="object-contain w-full h-full transition-transform duration-500 group-hover:scale-105"
                         src={ECCouncilLogo}
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* CompTIA */}
+                  <div className="partner-logo relative group h-[200px] w-full">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/50 to-orange-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                    <div className="relative z-10 flex items-center justify-center h-full w-full p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
+                      <img
+                        alt="CompTIA Logo"
+                        loading="lazy"
+                        width="300"
+                        height="100"
+                        decoding="async"
+                        className="object-contain w-full h-full transition-transform duration-500 group-hover:scale-105"
+                        src={CompTIALogo}
                       />
                     </div>
                   </div>
@@ -1259,68 +1277,123 @@ export default function Training() {
           </div>
         </section>
 
-        {/* Trainers Section - Based on sketch */}
+        {/* Trainers Section - Updated with aggregate statistics */}
         <section ref={trainersRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
           <GridBackground />
           
           <div className="container px-4 md:px-6 max-w-[1500px] mx-auto">
             <div className="text-center mb-12">
               <div className="overflow-hidden">
-                <h2 className="trainers-title text-3xl font-bold tracking-tighter mb-4 text-gray-100">Trainer Profiles & Availability</h2>
+                <h2 className="trainers-title text-3xl font-bold tracking-tighter mb-4 text-gray-100">Expert Training Team</h2>
               </div>
               <div className="overflow-hidden">
-                <p className="trainers-description text-gray-100 text-muted-foreground max-w-[600px] mx-auto">
-                  Learn from our team of experienced cybersecurity professionals
+                <p className="trainers-description text-gray-100 text-muted-foreground max-w-[700px] mx-auto">
+                  Learn from our experienced team of cybersecurity professionals
                 </p>
               </div>
             </div>
+            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {trainers.map((trainer, index) => (
-                <div
-                  key={trainer.name}
-                  ref={(el) => addToTrainerRefs(el, index)}
-                  className="relative bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 group"
-                >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/30 to-teal-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                  <div className="absolute inset-0 bg-gradient-to-b from-primary/30 to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-500 z-0"></div>
-                  <div className="relative z-10 p-6 flex flex-col items-center text-center">
-                    <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-gray-700 shadow-lg transform group-hover:scale-105 transition-transform duration-500">
-                      <img
-                        src={trainer.image}
-                        alt={trainer.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h3 className="text-xl font-bold mb-1 text-gray-100">{trainer.name}</h3>
-                    <p className="text-gray-100 font-medium mb-2">{trainer.title}</p>
-                    <p className="text-gray-100 mb-4">{trainer.experience}</p>
-                    
-                    <div className="mb-4">
-                      <div className="flex flex-wrap justify-center gap-2">
-                        {trainer.expertise.map((skill, i) => (
-                          <span 
-                            key={i} 
-                            className="px-3 py-1 bg-gray-100 dark:bg-gray-200 rounded-full text-xs font-medium"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
+              {/* Senior Experts */}
+              <div className="relative bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/30 to-teal-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-primary/30 to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-500 z-0"></div>
+                <div className="relative z-10 p-8 flex flex-col items-center text-center">
+                  <div className="w-20 h-20 rounded-full bg-gray-800 flex items-center justify-center mb-6 border-4 border-gray-700 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                    <GraduationCap className="h-10 w-10 text-gray-100" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2 text-gray-100">Senior Experts</h3>
+                  <div className="text-4xl font-bold text-gray-100 mb-3">10+</div>
+                  <p className="text-gray-100 text-lg mb-1">Individuals with</p>
+                  <p className="text-gray-100 text-lg font-semibold mb-4">18+ Years of Experience</p>
+                  
+                  <div className="mt-4 w-full">
+                    <div className="flex flex-wrap justify-center gap-2 mb-6">
+                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Malware Analysis</span>
+                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Digital Forensics</span>
+                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Incident Response</span>
                     </div>
                     
-                    <div className="w-full pt-4 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
-                      <div className="flex items-center gap-1 text-gray-100">
-                        <GraduationCap className="w-4 h-4 text-gray-100" />
-                        <span className="text-sm text-gray-100">{trainer.courses}+ Courses</span>
-                      </div>
-                      <Button variant="outline" size="sm" className="relative group group-hover:bg-gray-100 group-hover:text-white transition-colors duration-300">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-pink-500/50 to-rose-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                        <span className="relative z-10">View Profile</span>
-                      </Button>
+                    <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                      <div className="bg-primary h-full w-full scale-x-100 origin-left animate-pulse-slow rounded-full"></div>
                     </div>
                   </div>
                 </div>
-              ))}
+              </div>
+              
+              {/* Mid-Level Experts */}
+              <div className="relative bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 to-indigo-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-primary/30 to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-500 z-0"></div>
+                <div className="relative z-10 p-8 flex flex-col items-center text-center">
+                  <div className="w-20 h-20 rounded-full bg-gray-800 flex items-center justify-center mb-6 border-4 border-gray-700 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                    <Building className="h-10 w-10 text-gray-100" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2 text-gray-100">Mid-Level Experts</h3>
+                  <div className="text-4xl font-bold text-gray-100 mb-3">15+</div>
+                  <p className="text-gray-100 text-lg mb-1">Individuals with</p>
+                  <p className="text-gray-100 text-lg font-semibold mb-4">13+ Years of Experience</p>
+                  
+                  <div className="mt-4 w-full">
+                    <div className="flex flex-wrap justify-center gap-2 mb-6">
+                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Cloud Security</span>
+                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">DevSecOps</span>
+                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Secure Architecture</span>
+                    </div>
+                    
+                    <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                      <div className="bg-primary h-full w-full scale-x-100 origin-left animate-pulse-slow" style={{animationDelay: '0.3s'}}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Junior Experts */}
+              <div className="relative bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-primary/30 to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-500 z-0"></div>
+                <div className="relative z-10 p-8 flex flex-col items-center text-center">
+                  <div className="w-20 h-20 rounded-full bg-gray-800 flex items-center justify-center mb-6 border-4 border-gray-700 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                    <Users className="h-10 w-10 text-gray-100" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2 text-gray-100">Specialized Experts</h3>
+                  <div className="text-4xl font-bold text-gray-100 mb-3">20+</div>
+                  <p className="text-gray-100 text-lg mb-1">Individuals with</p>
+                  <p className="text-gray-100 text-lg font-semibold mb-4">7+ Years of Experience</p>
+                  
+                  <div className="mt-4 w-full">
+                    <div className="flex flex-wrap justify-center gap-2 mb-6">
+                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Web App Security</span>
+                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Network Penetration</span>
+                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Vulnerability Assessment</span>
+                    </div>
+                    
+                    <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                      <div className="bg-primary h-full w-full scale-x-100 origin-left animate-pulse-slow" style={{animationDelay: '0.6s'}}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Additional statistics row */}
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg flex flex-col items-center text-center group hover:bg-gray-800/70 transition-all duration-300">
+                <div className="text-2xl font-bold text-gray-100 mb-1 group-hover:scale-110 transition-transform duration-300">45+</div>
+                <div className="text-sm text-gray-100">Total Trainers</div>
+              </div>
+              <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg flex flex-col items-center text-center group hover:bg-gray-800/70 transition-all duration-300">
+                <div className="text-2xl font-bold text-gray-100 mb-1 group-hover:scale-110 transition-transform duration-300">12+</div>
+                <div className="text-sm text-gray-100">Industry Domains</div>
+              </div>
+              <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg flex flex-col items-center text-center group hover:bg-gray-800/70 transition-all duration-300">
+                <div className="text-2xl font-bold text-gray-100 mb-1 group-hover:scale-110 transition-transform duration-300">30+</div>
+                <div className="text-sm text-gray-100">Certifications</div>
+              </div>
+              <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg flex flex-col items-center text-center group hover:bg-gray-800/70 transition-all duration-300">
+                <div className="text-2xl font-bold text-gray-100 mb-1 group-hover:scale-110 transition-transform duration-300">20K+</div>
+                <div className="text-sm text-gray-100">Training Hours</div>
+              </div>
             </div>
           </div>
         </section>
@@ -1353,12 +1426,12 @@ export default function Training() {
                   ))}
                 </div>
                 <div className="pt-4 overflow-hidden">
-                  <Button className="benefits-button relative group">
+                  {/* <Button className="benefits-button relative group">
                     <div className="absolute -inset-1 bg-gradient-to-r from-teal-500/50 to-emerald-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                     <span className="relative z-10 flex items-center">
                       View All Benefits <ArrowRight className="ml-2 h-4 w-4 text-gray-100 transition-transform group-hover:translate-x-1" />
                     </span>
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
               <div className="benefits-image relative aspect-square rounded-2xl overflow-hidden shadow-xl group">
