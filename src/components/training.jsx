@@ -22,6 +22,9 @@ import IITPravartakLogo from '../IITM_Pravartak_Logo.jpeg'
 import IITMadrasLogo from '../IIT_Madras_Logo.png'
 import CyberSecurityTraining from '../CyberSecurityServices.jpeg'
 import CompTIALogo from '../CompTIA.png'
+import CyberGuardianLogo from '../cyber_guardian_logo.png'
+import CyberRangeLogo from "../Cyber-range-logo.png"
+import CyberLabsLogo from "../cyber-labs-logo.jpg"
 
 
 // Register GSAP plugins
@@ -1236,11 +1239,11 @@ export default function Training() {
           </div>
         </section>
 
-        {/* Technology Platforms Section - Based on sketch */}
+        {/* Technology Platforms Section - Updated with Logo */}
         <section ref={platformsRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
           <GridBackground />
           
-          <div className="container px-4 md:px-6 max-w-[1500px] mx-auto">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="text-center mb-12">
               <div className="overflow-hidden">
                 <h2 className="platforms-title text-3xl font-bold tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Technology Enabled Platform</h2>
@@ -1252,27 +1255,62 @@ export default function Training() {
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {platforms.map((platform, index) => (
-                <div
-                  key={platform.name}
-                  ref={(el) => addToPlatformRefs(el, index)}
-                  className="relative group bg-gray-900 p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-indigo-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                  <div className="relative z-10 flex flex-col items-center text-center space-y-4">
-                    <div className="w-16 h-16 mb-2">
-                      <img
-                        src={platform.logo}
-                        alt={platform.name}
-                        className="object-contain w-full h-full"
-                      />
-                    </div>
-                    <h3 className="font-bold text-lg text-gray-100">{platform.name}</h3>
-                    <p className="text-gray-100 text-sm">{platform.description}</p>
+              {/* Cyber Guardian Learning Experience Cloud - Updated with logo */}
+              <div
+                className="relative group bg-gray-900 p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-indigo-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                <div className="relative z-10 flex flex-col items-center text-center space-y-4">
+                  <div className="w-50 h-80 mb-2 flex items-center justify-center">
+                    <img
+                      src={CyberGuardianLogo}
+                      alt="Cyber Guardian Logo"
+                      className="object-contain w-full h-full transition-transform duration-500 group-hover:scale-110"
+                    />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <h3 className="font-bold text-lg text-gray-100">Cyber Guardian Learning Experience Cloud</h3>
+                  <p className="text-gray-100 text-sm">Our flagship training platform with hands-on labs and guided exercises</p>
                 </div>
-              ))}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              
+              {/* Cyber Range */}
+              <div
+                className="relative group bg-gray-900 p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-indigo-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                <div className="relative z-10 flex flex-col items-center text-center space-y-4">
+                  <div className="w-50 h-50 mb-2 flex items-center justify-center">
+                    <img
+                      src={CyberRangeLogo}
+                      alt="Cyber Range"
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+                  <h3 className="font-bold text-lg text-gray-100">Cyber Range</h3>
+                  <p className="text-gray-100 text-sm">Realistic training environment for simulating attacks and defenses</p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              
+              {/* Cyber Labs */}
+              <div
+                className="relative group bg-gray-900 p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-indigo-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                <div className="relative z-10 flex flex-col items-center text-center space-y-4">
+                  <div className="w-50 h-80 mb-2 flex items-center justify-center">
+                    <img
+                      src={CyberLabsLogo}
+                      alt="Cyber Labs"
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+                  <h3 className="font-bold text-lg text-gray-100">Cyber Labs</h3>
+                  <p className="text-gray-100 text-sm">Specialized lab environment for deep technical training and experimentation</p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
             </div>
           </div>
         </section>
