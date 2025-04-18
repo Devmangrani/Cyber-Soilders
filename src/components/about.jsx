@@ -37,22 +37,68 @@ const values = [
 const timeline = [
   {
     year: "2023",
-    title: "Global Expansion",
-    description: "Expanded operations to 10+ countries, serving over 2000 learners worldwide.",
+    title: "Founded",
+    description: "Founded in May 2023 with recognition from startup ecosystem.",
     stat: "2000+",
-    statLabel: "Learners"
+    statLabel: "Learners",
+    events: [
+      {
+        month: "May",
+        title: "Company Founded",
+        description: "Cyber.Soldiers was founded"
+      },
+      {
+        month: "Apr",
+        title: "Startup Recognition", 
+        description: "Recognition by Startup India and Govt. of India"
+      },
+      {
+        month: "Apr",
+        title: "Industry Collaborations",
+        description: "Partnerships with EC Council and CompTIA"
+      },
+      {
+        month: "Jun",
+        title: "Learning Platform",
+        description: "Launched Cyber Soldier Learning Experience Cloud"
+      },
+      {
+        month: "Jul",
+        title: "Mobile Apps",
+        description: "Released apps on Google Play and iOS App Store"
+      }
+    ]
   },
   {
     year: "2024",
-    title: "Innovation Award",
-    description: "Recognized for innovative cyber range technology and training methodologies.",
-    stat: "2",
-    statLabel: "New products"
+    title: "Growth Phase",
+    description: "Expanded client base and infrastructure development.",
+    stat: "1000+",
+    statLabel: "Clients",
+    events: [
+      {
+        month: "May",
+        title: "Client Milestone",
+        description: "Acquired over 1000 clients"
+      },
+      {
+        month: "Aug",
+        title: "Infrastructure Development",
+        description: "Started developing Cyber Range & Lab for skilling infrastructure"
+      }
+    ]
   },
   {
     year: "2025",
     title: "Future Vision",
     description: "Setting new standards in cyber security with cutting-edge products and services.",
+    events: [
+      {
+        month: "May",
+        title: "Academic Collaboration",
+        description: "Partnership with IIT Madras for research & knowledge sharing"
+      }
+    ]
   }
 ]
 
@@ -572,10 +618,10 @@ export default function About() {
           <div className="mb-16">
             <h3 className="text-2xl font-bold mb-10 flex items-center">
               <span className="mr-2">Founder's Journey</span>
-              <div className="h-px flex-1 bg-gradient-to-r from-gray-200 from-gray-800"></div>
+              <div className="h-px flex-1 bg-gradient-to-r from-gray-800"></div>
             </h3>
             <div className="relative">
-              <div className="absolute left-0 md:left-[50%] top-0 bottom-0 w-0.5 bg-gradient-to-b from-gray-200 via-blue-500 to-gray-800   transform md:translate-x-[-50%]"></div>
+              <div className="absolute left-0 md:left-[50%] top-0 bottom-0 w-0.5 bg-gradient-to-b from-gray-200 via-blue-500 to-gray-800 transform md:translate-x-[-50%]"></div>
               <div className="space-y-16">
                 {timeline.map((item, index) => (
                   <div
@@ -583,28 +629,43 @@ export default function About() {
                     ref={(el) => addToTimelineRefs(el, index)}
                     data-index={index}
                     className={`relative flex flex-col ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 group timeline-item`}
-                style={{opacity: 0, transform: index % 2 === 0 ? 'translateX(30px)' : 'translateX(-30px)'}}
+                    style={{opacity: 0, transform: index % 2 === 0 ? 'translateX(30px)' : 'translateX(-30px)'}}
                   >
                     <div className="absolute left-0 md:left-[50%] w-4 h-4 rounded-full bg-gray-800 transform translate-x-[-50%] z-10 group-hover:bg-blue-400 transition-all duration-300"></div>
                     <div className={`ml-8 md:ml-0 md:w-[45%] p-6 rounded-lg border border-gray-800 bg-black hover:border-blue-800 hover:shadow-xl transition-all duration-500 ${activeTimelineIndex === index ? 'ring-2 ring-blue-400 scale-105 shadow-lg' : ''} group-hover:translate-y-[-8px]`}>
-                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/0 to-blue-900/0  group-hover:from-blue-900/10  transition-all duration-500 rounded-lg"></div>
+                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/0 to-blue-900/0 group-hover:from-blue-900/10 transition-all duration-500 rounded-lg"></div>
                       
                       <div className="flex items-center gap-2 mb-4">
-                        <span className="text-sm font-medium bg-gray-800  text-gray-100  px-2.5 py-1 rounded-full">{item.year}</span>
-                        <div className="h-px flex-1 bg-gradient-to-r from-gray-700 to-transparent "></div>
+                        <span className="text-sm font-medium bg-gray-800 text-gray-100 px-2.5 py-1 rounded-full">{item.year}</span>
+                        <div className="h-px flex-1 bg-gradient-to-r from-gray-700 to-transparent"></div>
                       </div>
                       <div className="flex justify-between items-start mb-3">
-                        <h4 className="font-bold text-lg text-gray-100  group-hover:text-blue-600 transition-colors duration-300">{item.title}</h4>
+                        <h4 className="font-bold text-lg text-gray-100 group-hover:text-blue-400 transition-colors duration-300">{item.title}</h4>
                         {item.stat && (
                           <div className="flex flex-col items-end">
-                            <div className="text-2xl font-bold text-blue-400 ">
+                            <div className="text-2xl font-bold text-blue-400">
                               {counterValues[`timeline-${index}`] || item.stat}
                             </div>
-                            <div className="text-xs text-gray-400 ">{item.statLabel}</div>
+                            <div className="text-xs text-gray-400">{item.statLabel}</div>
                           </div>
                         )}
                       </div>
-                      <p className="text-gray-400  relative z-10">{item.description}</p>
+                      <p className="text-gray-400 relative z-10 mb-4">{item.description}</p>
+                      
+                      {/* Event sub-items */}
+                      {item.events && (
+                        <div className="space-y-3 mt-4 pt-4 border-t border-gray-800">
+                          {item.events.map((event, eventIndex) => (
+                            <div key={eventIndex} className="flex items-start gap-2">
+                              <div className="flex-shrink-0 w-8 text-xs text-gray-500 mt-0.5">{event.month}</div>
+                              <div className="flex-1">
+                                <h5 className="text-sm font-medium text-gray-200">{event.title}</h5>
+                                <p className="text-xs text-gray-400">{event.description}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                     <div className="hidden md:block md:w-[45%]"></div>
                   </div>
