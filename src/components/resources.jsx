@@ -11,7 +11,7 @@ import {
   Award,
   Zap,
   ArrowRight,
-} from "lucide-react";
+} from "lucide-react";;
 
 import CISPPLogo from "../CISSP.png";
 import CISALogo from "../CISA.png";
@@ -33,6 +33,105 @@ const cyberImages = [
   "https://images.unsplash.com/photo-1562813733-b31f71025d54?w=640&h=360&fit=crop", // Cybersecurity concept
   "https://images.unsplash.com/photo-1610986602538-431d65df4385?w=640&h=360&fit=crop", // Security dashboard
   "https://images.unsplash.com/photo-1643574772335-1a38bb0d8f5d?w=640&h=360&fit=crop", // Cybersecurity training
+];
+
+// Add this at the top of your resources.jsx file, near the other constants
+
+// Add this at the top of your resources.jsx file, replacing the previous cybersecurityPlaylist
+
+// Extract video IDs from the YouTube URLs
+function extractVideoId(url) {
+  const regExp = /(?:\?v=|\/embed\/|\/watch\?v=|\/watch\?.+&v=|youtu.be\/|\/v\/|(?:\?|&)si=.+)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[1]) ? match[1] : null;
+}
+
+// Cybersecurity webinar playlist data
+// Update the cybersecurityPlaylist with more reliable thumbnail information
+
+// Cybersecurity webinar playlist data with improved thumbnail handling
+const cybersecurityPlaylist = [
+  {
+    id: "96HQOcEl4oQ", // CISA Exam Made Easy
+    title: "Certified Information Systems Auditor (CISA) Exam Made Easy – Clear CISA in 60 Days | Free Webinar",
+    shortTitle: "CISA Exam Made Easy",
+    description: "Learn how to prepare for and pass the CISA certification exam in just 60 days with this comprehensive free webinar.",
+    icon: "Award",
+    // Use the mqdefault thumbnail format which is more reliable
+    thumbnailUrl: "https://i.ytimg.com/vi/96HQOcEl4oQ/hqdefault.jpg"
+  },
+  {
+    id: "RT-gcxx46FQ", // Careers in IS Governance
+    title: "Webinar on Careers in Information Security Governance, Risk & Compliance by Cyber Soldiers - 17Mar23",
+    shortTitle: "Careers in IS Governance & Compliance",
+    description: "Explore career opportunities in Information Security Governance, Risk Management, and Compliance fields with guidance from industry experts.",
+    icon: "Shield",
+    thumbnailUrl: "https://i.ytimg.com/vi/RT-gcxx46FQ/hqdefault.jpg"
+  },
+  {
+    id: "iqCkLDoc05o", // InfoSec Career and CISSP
+    title: "Webinar on Info Sec Career and CISSP Orientation by Cyber Soldiers - 15 Feb 23",
+    shortTitle: "InfoSec Career & CISSP Orientation",
+    description: "Get oriented with Information Security career paths and learn about the Certified Information Systems Security Professional (CISSP) certification.",
+    icon: "FileText",
+    thumbnailUrl: "https://i.ytimg.com/vi/iqCkLDoc05o/hqdefault.jpg"
+  },
+  {
+    id: "CafFbp-pBt4", // Mastering CISM
+    title: "Mastering CISM - Certified Information Security Manager",
+    shortTitle: "Mastering CISM",
+    description: "Comprehensive guide to mastering the Certified Information Security Manager (CISM) certification for advancing your security management career.",
+    icon: "Monitor",
+    thumbnailUrl: "https://i.ytimg.com/vi/CafFbp-pBt4/hqdefault.jpg"
+  },
+  {
+    id: "pyTuuye6Hbk", // Career in Cloud Security
+    title: "Webinar Career in Cloud Security & Relevance of CCSP",
+    shortTitle: "Career in Cloud Security & CCSP",
+    description: "Learn about career opportunities in cloud security and the importance of the Certified Cloud Security Professional (CCSP) certification.",
+    icon: "Zap",
+    thumbnailUrl: "https://i.ytimg.com/vi/pyTuuye6Hbk/hqdefault.jpg"
+  },
+  {
+    id: "BFMw-UL7Ic4", // IS GRC & Audit Career
+    title: "Online Master Class on How to Excel in IS GRC & Audit Career on Cyber Soldiers",
+    shortTitle: "Excel in IS GRC & Audit Career",
+    description: "Master class on building a successful career in Information Security Governance, Risk, Compliance, and Audit.",
+    icon: "FileText",
+    thumbnailUrl: "https://i.ytimg.com/vi/BFMw-UL7Ic4/hqdefault.jpg"
+  },
+  {
+    id: "Kz__eQ4GsRA", // InfoSec Management & CISM
+    title: "Information Security Management & Relevance of CISM by Saaz Rai",
+    shortTitle: "InfoSec Management & CISM",
+    description: "Industry expert Saaz Rai explains information security management concepts and the importance of the CISM certification.",
+    icon: "Shield",
+    thumbnailUrl: "https://i.ytimg.com/vi/Kz__eQ4GsRA/hqdefault.jpg"
+  },
+  {
+    id: "0yH1Agb_JEE", // Cybersecurity for Freshers
+    title: "Cyber Security Career for Freshers | Is CEH v12 Worth It?",
+    shortTitle: "Cybersecurity for Freshers & CEH v12",
+    description: "Guide for beginners entering the cybersecurity field and an analysis of whether the Certified Ethical Hacker (CEH) v12 certification is worthwhile.",
+    icon: "Zap",
+    thumbnailUrl: "https://i.ytimg.com/vi/0yH1Agb_JEE/hqdefault.jpg"
+  },
+  {
+    id: "ajQHc44FV54", // Guide to CISSP
+    title: "Guide to CISSP: The Ultimate Certification for Cybersecurity Professionals - By Ajit Pal Singh",
+    shortTitle: "Guide to CISSP",
+    description: "Comprehensive guide to the CISSP certification, considered the gold standard for cybersecurity professionals, presented by Ajit Pal Singh.",
+    icon: "Award",
+    thumbnailUrl: "https://i.ytimg.com/vi/ajQHc44FV54/hqdefault.jpg"
+  },
+  {
+    id: "ao31ByEECgE", // Master CISA Class
+    title: "Master CISA Class – Ultimate Guide to Becoming a Certified Information Systems Auditor (CISA)",
+    shortTitle: "Master CISA Class",
+    description: "In-depth class on preparing for and passing the CISA exam to become a Certified Information Systems Auditor.",
+    icon: "Monitor",
+    thumbnailUrl: "https://i.ytimg.com/vi/ao31ByEECgE/hqdefault.jpg"
+  }
 ];
 
 // Certification logos as shown in sketch
@@ -694,7 +793,7 @@ export default function Resources() {
         </section>
 
         {/* Video Gallery Section */}
-        {/*<section className="w-full py-12 md:py-24 bg-gray-950 relative">
+        <section className="w-full py-12 md:py-24 bg-gray-950 relative">
           <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="text-center mb-12">
@@ -702,54 +801,65 @@ export default function Resources() {
                 Video Library
               </div>
               <h2 className="text-4xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 mb-4">
-                Our Webinars
+                Cybersecurity Webinars
               </h2>
               <p className="text-lg text-gray-400 max-w-[600px] mx-auto">
-                Browse through our comprehensive collection of cyber security
-                tutorials and guides
+                Browse through our comprehensive collection of cybersecurity
+                certification and career development webinars
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {videos
-                .filter((video) => !video.featured)
-                .map((video, index) => (
-                  <div
-                    key={video.id}
-                    className="group bg-gray-800 rounded-lg border border-gray-700 hover:border-primary/40 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 relative"
-                    onMouseEnter={() => setHoveredVideo(video.title)}
-                    onMouseLeave={() => setHoveredVideo(null)}
-                  >
-                    {/* Button-like background animation */}
-                    {/* <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
 
-                    <div className="aspect-video relative">
-                      <img
-                        alt={video.title}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        src={
-                          video.coverImage ||
-                          `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`
-                        }
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <div className="rounded-full bg-white/90 p-3 transform scale-0 group-hover:scale-100 transition-transform duration-300">
-                          <Youtube className="h-8 w-8 text-red-600" />
-                        </div>
+            {/* Videos grid generated from playlist data */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {cybersecurityPlaylist.map((video) => (
+                <div
+                  key={video.id}
+                  className="group bg-gray-800 rounded-lg border border-gray-700 hover:border-primary/40 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 relative"
+                  onMouseEnter={() => setHoveredVideo(video.shortTitle)}
+                  onMouseLeave={() => setHoveredVideo(null)}
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
+
+                  <div className="aspect-video relative">
+                    <img
+                      alt={video.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      src={video.thumbnailUrl}
+                      // Fallback mechanism if the primary thumbnail fails
+                      onError={(e) => {
+                        e.target.onerror = null; // Prevent infinite loop
+                        e.target.src = `https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`; // Try medium quality
+                      }}
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="rounded-full bg-white/90 p-3 transform scale-0 group-hover:scale-100 transition-transform duration-300">
+                        <Youtube className="h-8 w-8 text-red-600" />
                       </div>
                     </div>
+                  </div>
 
-                    <div className="p-4 space-y-2 relative z-10">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-full bg-gray-700 text-gray-100">
-                          {video.icon}
-                        </div>
-                        <h3 className="text-lg font-bold text-gray-100 group-hover:text-gray-100 transition-colors duration-300">
-                          {video.title}
-                        </h3>
+                  <div className="p-4 space-y-2 relative z-10">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 rounded-full bg-gray-700 text-gray-100">
+                        {video.icon === 'Monitor' && <Monitor className="h-6 w-6" />}
+                        {video.icon === 'Shield' && <Shield className="h-6 w-6" />}
+                        {video.icon === 'Zap' && <Zap className="h-6 w-6" />}
+                        {video.icon === 'FileText' && <FileText className="h-6 w-6" />}
+                        {video.icon === 'Award' && <Award className="h-6 w-6" />}
                       </div>
-                      <p className="text-gray-400 text-sm">
-                        {video.description}
-                      </p>
+                      <h3 className="text-lg font-bold text-gray-100 group-hover:text-gray-100 transition-colors duration-300 line-clamp-1">
+                        {video.shortTitle}
+                      </h3>
+                    </div>
+                    <p className="text-gray-400 text-sm line-clamp-2">
+                      {video.description}
+                    </p>
+                    <a
+                      href={`https://www.youtube.com/watch?v=${video.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full"
+                    >
                       <Button
                         variant="ghost"
                         className="w-full mt-4 group overflow-hidden relative hover:bg-primary/10"
@@ -760,12 +870,33 @@ export default function Resources() {
                         </span>
                         <div className="absolute right-0 top-0 h-full aspect-square bg-primary/0 group-hover:bg-primary/20 rounded-full scale-0 group-hover:scale-150 transition-all duration-500 origin-center"></div>
                       </Button>
-                    </div>
+                    </a>
                   </div>
-                ))}
+                </div>
+              ))}
+            </div>
+            
+            {/* View All Videos Button */}
+            <div className="flex justify-center mt-12">
+              <a
+                href="https://www.youtube.com/watch?v=96HQOcEl4oQ&list=PLzecYhCbkDdGsSt731Q_tRlaDS7tfVvxS"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button 
+                  size="lg" 
+                  className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                  <span className="relative z-10 flex items-center">
+                    View All Webinars
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Button>
+              </a>
             </div>
           </div>
-        </section>} */}
+        </section>
 
         {/* CTA Section */}
         <section className="w-full py-12 md:py-24 bg-gray-950 relative overflow-hidden">
