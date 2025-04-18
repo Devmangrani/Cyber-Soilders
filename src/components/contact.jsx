@@ -335,7 +335,7 @@ export default function Contact() {
                 <form className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">First Name</label>
+                      <label className="text-sm text-gray-100 font-medium">First Name</label>
                       <Input 
                         placeholder="John" 
                         className="hover:border-primary/30 focus:border-primary transition-all duration-300"
@@ -344,7 +344,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Last Name</label>
+                      <label className="text-sm text-gray-100 font-medium">Last Name</label>
                       <Input 
                         placeholder="Doe" 
                         className="hover:border-primary/30 focus:border-primary transition-all duration-300"
@@ -354,7 +354,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Email</label>
+                    <label className="text-sm text-gray-100 font-medium">Email</label>
                     <Input 
                       type="email" 
                       placeholder="john@example.com" 
@@ -364,7 +364,7 @@ export default function Contact() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Subject</label>
+                    <label className="text-sm text-gray-100 font-medium">Subject</label>
                     <Input 
                       placeholder="How can we help?" 
                       className="hover:border-primary/30 focus:border-primary transition-all duration-300"
@@ -373,7 +373,7 @@ export default function Contact() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Message</label>
+                    <label className="text-sm text-gray-100 font-medium">Message</label>
                     <textarea
                       className="w-full min-h-[150px] p-3 rounded-md border bg-background hover:border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300"
                       placeholder="Your message..."
