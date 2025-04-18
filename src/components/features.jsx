@@ -217,7 +217,7 @@ export default function Features() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-600 dark:from-gray-100 dark:to-gray-600"
+            className="thero-title text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-600 dark:from-gray-100 dark:to-gray-600"
           >
             Why Cyber Soldiers?
           </motion.h2>
@@ -225,7 +225,7 @@ export default function Features() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto"
+            className="text-xl text-muted-foreground max-w-[800px] mx-auto"
           >
             Protect your digital assets with our advanced security features and cutting-edge technology
           </motion.p>

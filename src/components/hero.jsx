@@ -249,7 +249,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 w-full max-w-[1920px]"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter text-white leading-tight">
               Defending your Digital Frontiers
             </h1>
 
@@ -257,7 +257,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-base md:text-lg lg:text-xl text-gray-400 max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] xl:max-w-[900px] mx-auto leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mt-4 sm:mt-6 whitespace-pre-line"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-400 max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] xl:max-w-[900px] mx-auto leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mt-4 sm:mt-6 whitespace-pre-line"
             >
               Used by some of the reputed organisations, Cyber.soldiers{'\n'}empowers you with high-quality Cyber Services & Skilling with the power of ecosystem.
             </motion.p>
