@@ -71,6 +71,7 @@ const courses = [
   }
 ]
 
+
 const benefits = [
   "Industry-recognized certification",
   "Hands-on practical training",
@@ -241,7 +242,7 @@ const categoryFilters = [
 // Training platforms based on sketch
 const platforms = [
   {
-    name: "Cyber Guardian Learning Experience Cloud",
+    name: "LMS",
     description: "Our flagship training platform with hands-on labs and guided exercises",
     logo: "/placeholder.svg?height=60&width=60"
   },
@@ -363,6 +364,8 @@ export default function Training() {
   
   // Refs for intersection observer animations
   const sectionRefs = useRef([])
+  const [showAllCourses, setShowAllCourses] = useState(false)
+
   
   // Add to course refs
   const addToCourseRefs = (el, index) => {
@@ -1000,7 +1003,10 @@ export default function Training() {
                     key={filter.id}
                     variant={selectedCategory === filter.id ? "default" : "outline"}
                     className={`category-filter relative group flex items-center px-4 py-2 ${selectedCategory === filter.id ? 'bg-primary text-white' : ''}`}
-                    onClick={() => setSelectedCategory(filter.id)}
+                    onClick={() => {
+                      setSelectedCategory(filter.id)
+                      setShowAllCourses(false) // Reset when changing category
+                    }}
                   >
                     <div className={`absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 ${selectedCategory === filter.id ? 'opacity-75' : ''} group-hover:opacity-75 transition duration-700`}></div>
                     <span className="relative z-10 flex items-center">
@@ -1013,147 +1019,77 @@ export default function Training() {
               
               {/* Display courses for selected category */}
               {categoryFilters.find(f => f.id === selectedCategory)?.courses && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {categoryFilters.find(f => f.id === selectedCategory).courses.map((course, index) => (
-                    <div 
-                      key={`${selectedCategory}-${course.title}`}
-                      className="relative group bg-card p-6 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      
-                      {/* Border animation */}
-                      <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-blue-500/30 transition-all duration-700"></div>
-                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500/60 to-purple-500/60 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
-                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500/60 to-blue-500/60 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-right"></div>
-                      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/60 to-purple-500/60 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"></div>
-                      <div className="absolute right-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/60 to-blue-500/60 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-bottom"></div>
-                      
-                      <div className="relative z-10 flex flex-col h-full">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="text-gray-100 p-3 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center group-hover:bg-gray-100 dark:group-hover:bg-gray-600 group-hover:scale-110 transition-all duration-500">
-                            {course.icon}
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {/* Only display first 6 courses by default */}
+                    {(showAllCourses 
+                      ? categoryFilters.find(f => f.id === selectedCategory).courses 
+                      : categoryFilters.find(f => f.id === selectedCategory).courses.slice(0, 6)
+                    ).map((course, index) => (
+                      <div 
+                        key={`${selectedCategory}-${index}`}
+                        className="relative group bg-card p-6 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                      >
+                        {/* Card content remains the same */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        {/* Border animation */}
+                        <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-blue-500/30 transition-all duration-700"></div>
+                        <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500/60 to-purple-500/60 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
+                        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500/60 to-blue-500/60 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-right"></div>
+                        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/60 to-purple-500/60 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"></div>
+                        <div className="absolute right-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/60 to-blue-500/60 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-bottom"></div>
+                        
+                        <div className="relative z-10 flex flex-col h-full">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="text-gray-100 p-3 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center group-hover:bg-gray-100 dark:group-hover:bg-gray-600 group-hover:scale-110 transition-all duration-500">
+                              {course.icon}
+                            </div>
+                            <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">{course.title}</h3>
                           </div>
-                          <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">{course.title}</h3>
+                          
+                          <p className="text-muted-foreground text-sm mb-4">{course.description}</p>
+                          
+                          {course.duration && (
+                            <div className="text-sm text-muted-foreground mb-4">
+                              <span className="flex items-center gap-2">
+                                <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-slow" />
+                                Duration: {course.duration}
+                              </span>
+                            </div>
+                          )}
                         </div>
                         
-                        <p className="text-muted-foreground text-sm mb-4">{course.description}</p>
-                        
-                        {course.duration && (
-                          <div className="text-sm text-muted-foreground mb-4">
-                            <span className="flex items-center gap-2">
-                              <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-slow" />
-                              Duration: {course.duration}
-                            </span>
-                          </div>
-                        )}
-                        
-                        {/* <div className="mt-auto">
-                          <Button variant="outline" size="sm" className="relative group w-full">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-green-500/50 to-cyan-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                            <span className="relative z-10 flex items-center justify-center w-full">
-                              Learn More
-                              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                            </span>
-                          </Button>
-                        </div> */}
+                        {/* Animated corner decoration */}
+                        <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/10 rounded-full transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                        <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-primary/10 rounded-full transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
                       </div>
-                      
-                      {/* Animated corner decoration */}
-                      <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/10 rounded-full transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
-                      <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-primary/10 rounded-full transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                    ))}
+                  </div>
+                  
+                  {/* View All Courses button - only show if there are more than 6 courses */}
+                  {categoryFilters.find(f => f.id === selectedCategory).courses.length > 6 && (
+                    <div className="mt-10">
+                      <Button 
+                        variant="outline" 
+                        size="lg" 
+                        className="relative group"
+                        onClick={() => setShowAllCourses(!showAllCourses)}
+                      >
+                        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                        <span className="relative z-10 flex items-center">
+                          {showAllCourses ? "Show Less" : "View All Courses"}
+                          {!showAllCourses && <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />}
+                        </span>
+                      </Button>
                     </div>
-                  ))}
-                </div>
+                  )}
+                </>
               )}
             </div>
           </div>
         </section>
 
-        {/* Courses Section */}
-        <section 
-          ref={coursesRef}
-          id="courses-section"
-          className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden"
-        >
-          <GridBackground />
-
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
-            <div className="text-center mb-12">
-              <div className="overflow-hidden">
-                <h2 className="courses-title text-3xl font-bold tracking-tighter mb-4 text-gray-100">Available Courses</h2>
-              </div>
-              <div className="overflow-hidden">
-                <p className="courses-description text-gray-100 text-muted-foreground max-w-[600px] mx-auto">
-                  Choose from our comprehensive range of cyber security training programs
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {courses.map((course, index) => (
-                <div
-                  key={course.title}
-                  ref={(el) => addToCourseRefs(el, index)}
-                  className="course-card group relative overflow-hidden rounded-lg border bg-card hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
-                  onMouseEnter={() => setHoveredCourse(course.title)}
-                  onMouseLeave={() => setHoveredCourse(null)}
-                >
-                  <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-blue-500/30 transition-all duration-700"></div>
-                  <div className="absolute -inset-0.5 rounded-lg z-0"></div>
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500/60 to-purple-500/60 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500/60 to-blue-500/60 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-right"></div>
-                  <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/60 to-purple-500/60 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"></div>
-                  <div className="absolute right-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/60 to-blue-500/60 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-bottom"></div>
-                  <div className="relative z-10 p-6 space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="text-gray-100 p-3 rounded-full w-14 h-14 bg-gray-100 dark:bg-gray-700 flex items-center justify-center group-hover:bg-gray-100 dark:group-hover:bg-gray-600 group-hover:scale-110 transition-all duration-500">
-                        {course.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-300">{course.title}</h3>
-                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                          <div className="flex items-center gap-2">
-                            <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-slow" />
-                            {course.duration}
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-slow" style={{animationDelay: '0.5s'}} />
-                            {course.level}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-muted-foreground">{course.description}</p>
-                    
-                    {/* Stats */}
-                    <div className="flex justify-between items-center pt-2">
-                      <div className="flex flex-col">
-                        <div className="text-xl font-bold text-primary">
-                          {counterValues[`course-${index}`] || course.stat}
-                        </div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400">{course.statLabel}</div>
-                      </div>
-                      
-                      <Button className="relative group overflow-hidden">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-green-500/50 to-cyan-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                        <span className="relative z-10 flex items-center">
-                          Enroll Now
-                          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </span>
-                      </Button>
-                    </div>
-                  </div>
-                  <div 
-                    className={`absolute inset-0 bg-primary/5 transition-opacity duration-300 ${hoveredCourse === course.title ? 'opacity-100' : 'opacity-0'}`}
-                  />
-                  
-                  {/* Animated corner decoration */}
-                  <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/10 rounded-full transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
-                  <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-primary/10 rounded-full transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Partner Section */}
         <section ref={partnerRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
@@ -1164,9 +1100,9 @@ export default function Training() {
                 <div className="overflow-hidden">
                   <h2 className="partner-title text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Our Knowledge Partners</h2>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 mt-auto">
                   {/* IIT Madras */}
-                  <div className="partner-logo relative group h-[200px] w-full">
+                  {/* <div className="partner-logo relative group h-[200px] w-full">
                     <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                     <div className="relative z-10 flex items-center justify-center h-full w-full p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
                       <img
@@ -1179,10 +1115,10 @@ export default function Training() {
                         src={IITMadrasLogo}
                       />
                     </div>
-                  </div>
+                  </div> */}
                   
                   {/* IIT Pravartak */}
-                  <div className="partner-logo relative group h-[200px] w-full">
+                  {/* <div className="partner-logo relative group h-[200px] w-full">
                     <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-cyan-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                     <div className="relative z-10 flex items-center justify-center h-full w-full p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 transform hover:scale-[1.01] transition-all duration-500">
                       <img
@@ -1195,7 +1131,7 @@ export default function Training() {
                         src={IITPravartakLogo}
                       />
                     </div>
-                  </div>
+                  </div> */}
                   
                   {/* EC Council */}
                   <div className="partner-logo relative group h-[200px] w-full">
@@ -1268,8 +1204,8 @@ export default function Training() {
                       className="object-contain w-full h-full transition-transform duration-500 group-hover:scale-110"
                     />
                   </div>
-                  <h3 className="font-bold text-lg text-gray-100">Cyber Guardian Learning Experience Cloud</h3>
-                  <p className="text-gray-100 text-sm">Our flagship training platform with hands-on labs and guided exercises</p>
+                  <h3 className="font-bold text-lg text-gray-100">LMS</h3>
+                  <p className="text-gray-100 text-sm">Deploy scalable, cyber security modules via a secure LMS platform</p>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
@@ -1344,18 +1280,6 @@ export default function Training() {
                   <div className="text-4xl font-bold text-gray-100 mb-3">10+</div>
                   <p className="text-gray-100 text-lg mb-1">Individuals with</p>
                   <p className="text-gray-100 text-lg font-semibold mb-4">18+ Years of Experience</p>
-                  
-                  <div className="mt-4 w-full">
-                    <div className="flex flex-wrap justify-center gap-2 mb-6">
-                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Malware Analysis</span>
-                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Digital Forensics</span>
-                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Incident Response</span>
-                    </div>
-                    
-                    <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                      <div className="bg-primary h-full w-full scale-x-100 origin-left animate-pulse-slow rounded-full"></div>
-                    </div>
-                  </div>
                 </div>
               </div>
               
@@ -1370,19 +1294,7 @@ export default function Training() {
                   <h3 className="text-2xl font-bold mb-2 text-gray-100">Mid-Level Experts</h3>
                   <div className="text-4xl font-bold text-gray-100 mb-3">15+</div>
                   <p className="text-gray-100 text-lg mb-1">Individuals with</p>
-                  <p className="text-gray-100 text-lg font-semibold mb-4">13+ Years of Experience</p>
-                  
-                  <div className="mt-4 w-full">
-                    <div className="flex flex-wrap justify-center gap-2 mb-6">
-                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Cloud Security</span>
-                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">DevSecOps</span>
-                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Secure Architecture</span>
-                    </div>
-                    
-                    <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                      <div className="bg-primary h-full w-full scale-x-100 origin-left animate-pulse-slow" style={{animationDelay: '0.3s'}}></div>
-                    </div>
-                  </div>
+                  <p className="text-gray-100 text-lg font-semibold mb-4">13+ Years of Experience</p>          
                 </div>
               </div>
               
@@ -1398,18 +1310,6 @@ export default function Training() {
                   <div className="text-4xl font-bold text-gray-100 mb-3">20+</div>
                   <p className="text-gray-100 text-lg mb-1">Individuals with</p>
                   <p className="text-gray-100 text-lg font-semibold mb-4">7+ Years of Experience</p>
-                  
-                  <div className="mt-4 w-full">
-                    <div className="flex flex-wrap justify-center gap-2 mb-6">
-                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Web App Security</span>
-                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Network Penetration</span>
-                      <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-medium text-gray-100">Vulnerability Assessment</span>
-                    </div>
-                    
-                    <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                      <div className="bg-primary h-full w-full scale-x-100 origin-left animate-pulse-slow" style={{animationDelay: '0.6s'}}></div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1458,7 +1358,7 @@ export default function Training() {
                       ref={(el) => addToBenefitRefs(el, index)}
                       className="benefit-item flex items-start gap-2 text-gray-500 text-sm"
                     > 
-                      <CheckCircle className="h-5 w-5 text-gray-100 mt-0.5 animate-pulse-slow" style={{animationDelay: `${index * 0.2}s`}} />
+                      <CheckCircle className="h-5 w-5 text-gray-100 mt-0.5" style={{animationDelay: `${index * 0.2}s`}} />
                       <span>{benefit}</span>
                     </div>
                   ))}
@@ -1526,16 +1426,15 @@ export default function Training() {
                 </p>
               </div>
               <div className="cta-buttons flex flex-wrap gap-4 justify-center mt-6">
-                <Button size="lg" className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105">
+                <Button 
+                  size="lg" 
+                  className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105 bg-white text-gray-900 hover:bg-gray-100"
+                >
                   <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/50 to-blue-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <span className="relative z-10 flex items-center">
                     Enquire Now
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </span>
-                </Button>
-                <Button variant="outline" size="lg" className="relative group h-12 px-8 text-base transition-all duration-300 hover:bg-accent/50">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/50 to-blue-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                  <span className="relative z-10">Load More</span>
                 </Button>
               </div>
             </div>
