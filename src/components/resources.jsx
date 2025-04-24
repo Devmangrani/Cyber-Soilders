@@ -11,6 +11,7 @@ import {
   Award,
   Zap,
   ArrowRight,
+  ChevronDown,
 } from "lucide-react";;
 
 import CISPPLogo from "../CISSP.png";
@@ -57,7 +58,6 @@ const cybersecurityPlaylist = [
     shortTitle: "CISA Exam Made Easy",
     description: "Learn how to prepare for and pass the CISA certification exam in just 60 days with this comprehensive free webinar.",
     icon: "Award",
-    // Use the mqdefault thumbnail format which is more reliable
     thumbnailUrl: "https://i.ytimg.com/vi/96HQOcEl4oQ/hqdefault.jpg"
   },
   {
@@ -133,6 +133,7 @@ const cybersecurityPlaylist = [
     thumbnailUrl: "https://i.ytimg.com/vi/ao31ByEECgE/hqdefault.jpg"
   }
 ];
+
 
 // Certification logos as shown in sketch
 const certifications = [
@@ -336,13 +337,89 @@ const GridBackground = () => (
 export default function Resources() {
   const featuredVideo = videos.find((video) => video.featured);
   const [scrollY, setScrollY] = useState(0);
-  const [hoveredVideo, setHoveredVideo] = useState(null);
   const [counterValues, setCounterValues] = useState({
     videos: "250+",
     views: "10k+",
     satisfaction: "95%",
     certifications: "24+",
   });
+  const [showMoreWebinars, setShowMoreWebinars] = useState(false);
+  const [hoveredVideo, setHoveredVideo] = useState(null);
+
+  // Show only the first 6 webinars initially
+  const displayedWebinars = showMoreWebinars 
+    ? cybersecurityPlaylist 
+    : cybersecurityPlaylist.slice(0, 6);
+
+  // Handler to toggle showing more webinars
+  const handleViewMoreClick = () => {
+    setShowMoreWebinars(!showMoreWebinars);
+  };
+
+  // Render a video card
+  const renderVideoCard = (video) => (
+    <div
+      key={video.id}
+      className="group bg-gray-800 rounded-lg border border-gray-700 hover:border-primary/40 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 relative"
+      onMouseEnter={() => setHoveredVideo(video.shortTitle)}
+      onMouseLeave={() => setHoveredVideo(null)}
+    >
+      <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
+
+      <div className="aspect-video relative">
+        <img
+          alt={video.title}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          src={video.thumbnailUrl}
+          // Fallback mechanism if the primary thumbnail fails
+          onError={(e) => {
+            e.target.onerror = null; // Prevent infinite loop
+            e.target.src = `https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`; // Try medium quality
+          }}
+        />
+        <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className="rounded-full bg-white/90 p-3 transform scale-0 group-hover:scale-100 transition-transform duration-300">
+            <Youtube className="h-8 w-8 text-red-600" />
+          </div>
+        </div>
+      </div>
+
+      <div className="p-4 space-y-2 relative z-10">
+        <div className="flex items-center gap-3">
+          <div className="p-2 rounded-full bg-gray-700 text-gray-100">
+            {video.icon === 'Monitor' && <Monitor className="h-6 w-6" />}
+            {video.icon === 'Shield' && <Shield className="h-6 w-6" />}
+            {video.icon === 'Zap' && <Zap className="h-6 w-6" />}
+            {video.icon === 'FileText' && <FileText className="h-6 w-6" />}
+            {video.icon === 'Award' && <Award className="h-6 w-6" />}
+          </div>
+          <h3 className="text-lg font-bold text-gray-100 group-hover:text-gray-100 transition-colors duration-300 line-clamp-1">
+            {video.shortTitle}
+          </h3>
+        </div>
+        <p className="text-gray-400 text-sm line-clamp-2">
+          {video.description}
+        </p>
+        <a
+          href={`https://www.youtube.com/watch?v=${video.id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full"
+        >
+          <Button
+            variant="ghost"
+            className="w-full mt-4 group overflow-hidden relative hover:bg-primary/10"
+          >
+            <span className="relative z-10 text-gray-100 flex items-center">
+              Watch Now
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </span>
+            <div className="absolute right-0 top-0 h-full aspect-square bg-primary/0 group-hover:bg-primary/20 rounded-full scale-0 group-hover:scale-150 transition-all duration-500 origin-center"></div>
+          </Button>
+        </a>
+      </div>
+    </div>
+  );
 
   // Add gridRef for animations
   const gridRef = useRef(null);
@@ -645,112 +722,6 @@ export default function Resources() {
           </div>
         </section>
 
-        {/* Featured Video Section */}
-        <section className="w-full py-12 md:py-24 bg-gray-950 relative">
-          <GridBackground />
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="space-y-4 order-2 md:order-1">
-                <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-2">
-                  Featured Video
-                </div>
-                <h2 className="text-4xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400">
-                  {featuredVideo?.title}
-                </h2>
-                <p className="text-lg text-gray-400">
-                  {featuredVideo?.description}
-                </p>
-                <div className="pt-4">
-                  <Button
-                    variant="default"
-                    className="relative group h-11 px-6 overflow-hidden"
-                  >
-                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                    <span className="relative z-10 flex items-center">
-                      <Youtube className="h-5 w-5 mr-2" />
-                      Watch Now
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </span>
-                  </Button>
-                </div>
-              </div>
-              <div className="relative aspect-video rounded-lg overflow-hidden border-2 border-primary/20 transform hover:scale-105 hover:shadow-xl hover:border-primary/40 transition-all duration-300 order-1 md:order-2 group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                <iframe
-                  src={`https://www.youtube.com/embed/pbzkO2_NcLI?si=C7LleEjJQs3gGxVr`}
-                  title={featuredVideo?.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="h-full w-full rounded-lg relative z-10"
-                />
-
-                {/* Simple animated elements around the iframe */}
-                <div className="absolute top-0 right-0 size-12 -mr-6 -mt-6 rounded-full bg-blue-500/20 blur-xl animate-pulse-slow"></div>
-                <div
-                  className="absolute bottom-0 left-0 size-10 -ml-5 -mb-5 rounded-full bg-purple-500/20 blur-xl animate-pulse-slow"
-                  style={{ animationDelay: "1.5s" }}
-                ></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Resource Categories Section */}
-        {/* {/* 
-<section className="w-full py-12 md:py-24 bg-gray-950">
-  <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
-    <div className="text-center mb-12">
-      <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-6">
-        Resource Types
-      </div>
-      <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 mb-4">
-        Browse by Category
-      </h2>
-      <p className="text-xl text-gray-400 max-w-[600px] mx-auto">
-        Explore our diverse collection of educational materials in various formats
-      </p>
-    </div>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {resources.map((resource, index) => (
-        <div
-          key={resource.title}
-          className="group p-6 rounded-lg border border-gray-700 hover:border-primary/40 bg-gray-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden"
-        >
-          <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
-
-          <div className="relative z-10">
-            <div className="mb-6 p-3 size-14 rounded-full bg-gray-700 flex items-center justify-center text-gray-100 group-hover:bg-gray-600 group-hover:scale-110 transition-all duration-300">
-              {resource.icon}
-            </div>
-            <h3 className="text-xl font-bold mb-2 text-gray-100 group-hover:text-gray-100 transition-colors duration-300">
-              {resource.title}
-            </h3>
-            <p className="text-gray-400">{resource.description}</p>
-
-            <div className="flex justify-between items-center pt-4 border-t border-gray-700 mt-4">
-              <div className="flex flex-col">
-                <div className="text-xl font-bold text-gray-100">
-                  {resource.count}
-                </div>
-                <div className="text-xs text-gray-500">Resources</div>
-              </div>
-            </div>
-
-            <Button variant="ghost" className="w-full mt-4 group relative overflow-hidden">
-              <div className="absolute right-0 top-0 h-full aspect-square bg-primary/0 group-hover:bg-primary/20 rounded-full scale-0 group-hover:scale-150 transition-all duration-500 origin-center"></div>
-              <span className="relative z-10 text-gray-100 flex items-center">
-                Browse
-                <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-            </Button>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-*/}
-
         {/* Certifications Section - Based on sketch */}
         <section className="w-full py-12 md:py-24 bg-gray-950 relative">
           <GridBackground />
@@ -809,88 +780,46 @@ export default function Resources() {
               </p>
             </div>
 
-            {/* Videos grid generated from playlist data */}
+            {/* Videos grid with dynamic display */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {cybersecurityPlaylist.map((video) => (
-                <div
-                  key={video.id}
-                  className="group bg-gray-800 rounded-lg border border-gray-700 hover:border-primary/40 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 relative"
-                  onMouseEnter={() => setHoveredVideo(video.shortTitle)}
-                  onMouseLeave={() => setHoveredVideo(null)}
-                >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
-
-                  <div className="aspect-video relative">
-                    <img
-                      alt={video.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      src={video.thumbnailUrl}
-                      // Fallback mechanism if the primary thumbnail fails
-                      onError={(e) => {
-                        e.target.onerror = null; // Prevent infinite loop
-                        e.target.src = `https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`; // Try medium quality
-                      }}
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="rounded-full bg-white/90 p-3 transform scale-0 group-hover:scale-100 transition-transform duration-300">
-                        <Youtube className="h-8 w-8 text-red-600" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="p-4 space-y-2 relative z-10">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-full bg-gray-700 text-gray-100">
-                        {video.icon === 'Monitor' && <Monitor className="h-6 w-6" />}
-                        {video.icon === 'Shield' && <Shield className="h-6 w-6" />}
-                        {video.icon === 'Zap' && <Zap className="h-6 w-6" />}
-                        {video.icon === 'FileText' && <FileText className="h-6 w-6" />}
-                        {video.icon === 'Award' && <Award className="h-6 w-6" />}
-                      </div>
-                      <h3 className="text-lg font-bold text-gray-100 group-hover:text-gray-100 transition-colors duration-300 line-clamp-1">
-                        {video.shortTitle}
-                      </h3>
-                    </div>
-                    <p className="text-gray-400 text-sm line-clamp-2">
-                      {video.description}
-                    </p>
-                    <a
-                      href={`https://www.youtube.com/watch?v=${video.id}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full"
-                    >
-                      <Button
-                        variant="ghost"
-                        className="w-full mt-4 group overflow-hidden relative hover:bg-primary/10"
-                      >
-                        <span className="relative z-10 flex items-center">
-                          Watch Now
-                          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </span>
-                        <div className="absolute right-0 top-0 h-full aspect-square bg-primary/0 group-hover:bg-primary/20 rounded-full scale-0 group-hover:scale-150 transition-all duration-500 origin-center"></div>
-                      </Button>
-                    </a>
-                  </div>
-                </div>
-              ))}
+              {displayedWebinars.map(video => renderVideoCard(video))}
             </div>
             
-            {/* View All Videos Button */}
+            {/* View More/Less Button */}
             <div className="flex justify-center mt-12">
+              <Button 
+                onClick={handleViewMoreClick}
+                size="lg" 
+                className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105"
+              >
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                <span className="relative z-10 flex items-center">
+                  {showMoreWebinars ? 'View Less' : 'View More Webinars'}
+                  {showMoreWebinars ? (
+                    <ChevronDown className="ml-2 h-5 w-5 transform rotate-180 transition-transform" />
+                  ) : (
+                    <ChevronDown className="ml-2 h-5 w-5 transition-transform" />
+                  )}
+                </span>
+              </Button>
+            </div>
+            
+            {/* View All Webinars Button (always visible) */}
+            <div className="flex justify-center mt-6">
               <a
                 href="https://www.youtube.com/watch?v=96HQOcEl4oQ&list=PLzecYhCbkDdGsSt731Q_tRlaDS7tfVvxS"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button 
+                  variant="outline"
                   size="lg" 
                   className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105"
                 >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <span className="relative z-10 flex items-center">
-                    View All Webinars
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    View All on YouTube
+                    <ExternalLink className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </span>
                 </Button>
               </a>
@@ -912,27 +841,19 @@ export default function Resources() {
                 today.
               </p>
               <div className="flex flex-wrap gap-4 justify-center mt-6">
-                <Button
-                  size="lg"
-                  className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105"
-                >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                  <span className="relative z-10 flex items-center">
-                    <Youtube className="mr-2 h-5 w-5" />
-                    Subscribe to Our Channel
-                  </span>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="relative group h-12 px-8 text-base transition-all duration-300 hover:bg-accent/50"
-                >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/50 to-blue-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                  <span className="relative z-10 flex items-center">
-                    Request Custom Resources
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Button>
+                
+              <Button
+                size="lg"
+                variant="outline"
+                className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105 bg-white text-gray-900"
+                onClick={() => window.open('https://www.youtube.com/@cybersoldiersacademy', '_blank', 'noopener,noreferrer')}
+              >
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/50 to-blue-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                <span className="relative z-10 flex items-center">
+                  <Youtube className="mr-2 h-5 w-5 text-red-600" />
+                  Subscribe to Our Channel
+                </span>
+              </Button>
               </div>
             </div>
           </div>
