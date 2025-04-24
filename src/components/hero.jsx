@@ -259,7 +259,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-400 max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] xl:max-w-[900px] mx-auto leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mt-4 sm:mt-6 whitespace-pre-line"
             >
-              Used by some of the reputed organisations, Cyber.soldiers{'\n'}empowers you with high-quality Cyber Services & Skilling with the power of ecosystem.
+              Used by some of the reputed organisations,{'\n'}Cyber.soldiers empowers you with high-quality Cyber Services.
             </motion.p>
           </motion.div>
 
