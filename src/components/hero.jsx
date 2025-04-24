@@ -121,7 +121,7 @@ export default function Hero() {
       } else {
         clearInterval(typingInterval);
       }
-    }, 100); // Adjust the speed of typing here
+    }, 180); // Adjust the speed of typing here
 
     return () => clearInterval(typingInterval);
   }, []); // Empty dependency array to run only on mount
@@ -274,7 +274,7 @@ export default function Hero() {
               {
                 id: "clients",
                 label: "Global Clients",
-                value: counterValues.clients || "500+",
+                value: "10+",
               },
               {
                 id: "satisfaction",
@@ -284,12 +284,12 @@ export default function Hero() {
               {
                 id: "countries",
                 label: "Countries",
-                value: `${counterValues.countries || "25"}+`,
+                value: `${ "5"}+`,
               },
               {
                 id: "experts",
                 label: "Security Experts",
-                value: `${counterValues.experts || "100"}+`,
+                value: `${"50"}+`,
               },
             ].map((stat, index) => (
               <motion.div
@@ -320,17 +320,25 @@ export default function Hero() {
             className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-8 sm:mt-12 md:mt-16 lg:mt-20 w-full max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12"
           >
             {[
-              { to: "/product", label: "Product", icon: <Shield className="h-4 w-4 mr-1" /> },
-              { to: "/services", label: "Services", icon: <ArrowRight className="h-4 w-4 mr-1" /> },
-              { to: "/training", label: "Training", icon: <GraduationCap className="h-4 w-4 mr-1" /> },
+              { to: "/product", label: "Product", icon: <Shield className="h-4 w-4 mr-1 text-black" />, isWhite: true },
+              { to: "/services", label: "Services", icon: <ArrowRight className="h-4 w-4 mr-1" />, isWhite: false },
+              { to: "/training", label: "Training", icon: <GraduationCap className="h-4 w-4 mr-1 text-black" />, isWhite: true },
             ].map((button, index) => (
               <Link key={button.to} to={button.to}>
                 <Button
                   variant="outline"
-                  className={`category-filter relative group flex items-center px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 hover:bg-white/10 transition-all duration-300`}
+                  className={`category-filter relative group flex items-center px-4 py-2 ${
+                    button.isWhite 
+                      ? 'bg-white hover:bg-gray-100 text-black' 
+                      : 'bg-white/5 backdrop-blur-sm text-gray-100 hover:bg-white/10'
+                  } rounded-lg border border-gray-200/10 transition-all duration-300`}
                 >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                  <span className="relative z-10 flex items-center text-gray-100">
+                  <div className={`absolute -inset-1 bg-gradient-to-r ${
+                    button.isWhite 
+                      ? 'from-gray-200/50 to-gray-300/50' 
+                      : 'from-indigo-500/50 to-violet-500/50'
+                  } rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700`}></div>
+                  <span className="relative z-10 flex items-center">
                     {button.icon}
                     {button.label}
                   </span>

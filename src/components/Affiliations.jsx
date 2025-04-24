@@ -3,14 +3,17 @@ import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight, ArrowLeft, Circle, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import IIT_Madras_Logo from "../IIT_Madras_Logo.png"
-import IITM_Pravartak_Logo from "../IITM_Pravartak_Logo.jpeg"
-import BC_Court_Logo from "../Ec_Council_Logo.png"
+// Temporarily commenting out these logos until official confirmation
+// import IIT_Madras_Logo from "../IIT_Madras_Logo.png"
+// import IITM_Pravartak_Logo from "../IITM_Pravartak_Logo.jpeg"
+import EC_Council_Logo from "../Ec_Council_Logo.png"
 import Startup_India_Logo from "../Startup_India_Logo.png"
-import Startup_MP_Logo from "../Startup_MP_Logo.png"
+// Removing Startup MP Logo as requested
+// import Startup_MP_Logo from "../Startup_MP_Logo.png"
 import MSME_Logo from "../MSME_Logo.png"
 import MCA_Logo from "../MCA_Logo.jpeg"
 import DG_Trust_Logo from "../DG_Trust_Logo.webp"
+import Comptia_Logo from "../compita_logo.png"
 
 const GridBackground = () => (
   <div className="absolute inset-0">
@@ -67,7 +70,8 @@ const GridBackground = () => (
 );
 
 const affiliations = [
-  {
+  // Temporarily hiding IITM & Pravartak logos
+  /*{
     name: "IIT Madras",
     logo: IIT_Madras_Logo,
     description: "India's premier technical institute"
@@ -76,11 +80,11 @@ const affiliations = [
     name: "IITM Pravartak",
     logo: IITM_Pravartak_Logo,
     description: "Technology Innovation Hub"
-  },
+  },*/
   {
     name: "EC Council",
-    logo: BC_Court_Logo,
-    description: "Legal excellence and integrity"
+    logo: EC_Council_Logo,
+    description: "Global leader in cybersecurity certification"
   },
   {
     name: "Startup India",
@@ -88,9 +92,9 @@ const affiliations = [
     description: "Empowering Indian startups"
   },
   {
-    name: "Startup MP",
-    logo: Startup_MP_Logo,
-    description: "Madhya Pradesh's startup ecosystem"
+    name: "Comptia",
+    logo: Comptia_Logo,
+    description: "Compliance and regulatory solutions"
   },
   {
     name: "MSME",

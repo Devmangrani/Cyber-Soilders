@@ -4,22 +4,22 @@ import { Star } from "lucide-react"
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "CTO, TechCorp",
+    name: "Andy Johnson",
+    role: "CTO, Hexa SolutionLLP",
     content: "Cyber.Soldiers transformed our security infrastructure. Their expertise and proactive approach helped us prevent multiple potential breaches.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
   },
   {
-    name: "Michael Chen",
-    role: "Security Director, FinTech Solutions",
+    name: "Douglous Johnson",
+    role: "Security Director, HipTech Solutions",
     content: "The training programs are exceptional. Our team's security awareness and skills have improved significantly since partnering with Cyber.Soldiers.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
   },
   {
-    name: "Emily Rodriguez",
-    role: "IT Manager, HealthCare Plus",
+    name: "Sama Rod",
+    role: "IT Manager, Finecare Plus",
     content: "Their 24/7 monitoring service gives us peace of mind. The team is always responsive and professional in handling security incidents.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"

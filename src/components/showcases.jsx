@@ -17,6 +17,9 @@ import {
   UserCheck,
   Cloud,
   X,
+  Bug,
+  AlertCircle,
+  ClipboardCheck,
 } from "lucide-react"
 import asset1  from "../asset1.jpeg"
 import asset2 from "../asset2.jpeg"
@@ -101,48 +104,33 @@ export default function CyberFramework() {
     {
       title: "Cyber Security Training",
       icon: <GraduationCap className="h-6 w-6 text-blue-400" />,
-      description: "Comprehensive training programs for security professionals at all levels.",
+      description: "Stay ahead of cyber attacks with expert-led, up-to-date training programs.",
+    },
+    {
+      title: "Vulnerability Assessment and Penetration Testing",
+      icon: <Bug className="h-6 w-6 text-yellow-400" />,
+      description: "Stay secure with expert-driven Vulnerability Assessment & Penetration Testing.",
+    },
+    {
+      title: "Managed SOC",
+      icon: <Shield className="h-6 w-6 text-purple-400" />,
+      description: "Our SOC team detects, analyzes, and neutralise cyber threats - before they impact you.",
+    },
+    {
+      title: "Risk Assessment",
+      icon: <AlertCircle className="h-6 w-6 text-red-400" />,
+      description: "Comprehensive risk assessments to strengthen your defenses & ensure compliance.",
+    },
+    {
+      title: "Compliance Audit",
+      icon: <ClipboardCheck className="h-6 w-6 text-green-400" />,
+      description: "Stay audit-ready & avoid penalties with expert-driven cybersecurity assessment.",
     },
     {
       title: "Incident Response",
-      icon: <AlertTriangle className="h-6 w-6 text-yellow-400" />,
-      description: "Rapid response protocols to detect, contain and remediate security incidents.",
-    },
-    {
-      title: "SOC",
-      icon: <Eye className="h-6 w-6 text-purple-400" />,
-      description: "24/7 Security Operations Center monitoring and threat detection services.",
-    },
-    {
-      title: "Threat Modeling",
-      icon: <Shield className="h-6 w-6 text-red-400" />,
-      description: "Proactive identification and mitigation of potential security threats.",
-    },
-    {
-      title: "Network Security",
-      icon: <Network className="h-6 w-6 text-green-400" />,
-      description: "Protection of network infrastructure against unauthorized access and attacks.",
-    },
-    {
-      title: "Data Security",
-      icon: <Database className="h-6 w-6 text-cyan-400" />,
-      description: "Safeguarding sensitive data through encryption and access controls.",
-    },
-    {
-      title: "Endpoint Security",
-      icon: <Laptop className="h-6 w-6 text-orange-400" />,
-      description: "Protection for devices connecting to your network from external threats.",
-    },
-    {
-      title: "Identity & Access Management",
-      icon: <UserCheck className="h-6 w-6 text-indigo-400" />,
-      description: "Control and monitor user access to critical systems and information.",
-    },
-    {
-      title: "Cloud Security",
-      icon: <Cloud className="h-6 w-6 text-sky-400" />,
-      description: "Securing cloud environments and applications against emerging threats.",
-    },
+      icon: <AlertTriangle className="h-6 w-6 text-orange-400" />,
+      description: "Swift, expert-led response to contain & recover from cyber incidents.",
+    }
   ]
 
   // Testimonials data
@@ -289,13 +277,13 @@ export default function CyberFramework() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-400 max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] xl:max-w-[900px] mx-auto leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mt-4 sm:mt-6 whitespace-pre-line"
             >
-              Our comprehensive approach to cybersecurity covers all aspects of digital protection, from training to implementation and continuous monitoring.
+              Our comprehensive approach to cybersecurity covers all aspects of Capability Enhancement, Assessment and Compliances.
             </motion.p>
           </motion.div>
 
           {/* Framework Section */}
           <div ref={frameworkRef} className="w-full">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {frameworkCategories.map((category, index) => (
                 <motion.div
                   key={index}
@@ -306,12 +294,12 @@ export default function CyberFramework() {
                   whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                  <div className="relative z-10 flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-gray-700/50">{category.icon}</div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{category.title}</h3>
-                      <p className="text-gray-400 text-sm">{category.description}</p>
+                  <div className="relative z-10 flex flex-col gap-4">
+                    <div className="flex items-center gap-3">
+                      <div className="p-3 rounded-lg bg-gray-700/50">{category.icon}</div>
+                      <h3 className="text-lg font-semibold text-white">{category.title}</h3>
                     </div>
+                    <p className="text-gray-400 text-sm">{category.description}</p>
                   </div>
                 </motion.div>
               ))}

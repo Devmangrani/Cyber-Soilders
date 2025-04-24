@@ -17,6 +17,8 @@ import Hire from "@/components/hire"
 import ScrollToTop from "@/components/scroll-to-top"
 import Testimonials from "@/components/testimonials"
 import Affiliations from "@/components/Affiliations"
+import GetStarted from './components/GetStarted'
+
 export default function App() {
   return (
     <Router>
@@ -30,6 +32,7 @@ export default function App() {
                 <Hero />
                 <Showcases />
                 <Technology />
+                <GetStarted />
                 {/* <Features /> */}
                 <Affiliations />
                 <Testimonials />
