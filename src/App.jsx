@@ -17,7 +17,7 @@ import Hire from "@/components/hire"
 import ScrollToTop from "@/components/scroll-to-top"
 import Testimonials from "@/components/testimonials"
 import Affiliations from "@/components/Affiliations"
-import GetStarted from './components/GetStarted'
+import GetStarted from './components/getstarted'
 
 export default function App() {
   return (
