@@ -584,7 +584,7 @@ export default function Product() {
                   className="flex flex-wrap gap-4 mt-8"
                 >
                   <Link to="/get-started">
-                    <Button
+                    {/* <Button
                       variant="outline"
                       className="group relative flex items-center px-6 py-3 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 hover:bg-white/10 transition-all duration-300"
                     >
@@ -593,7 +593,7 @@ export default function Product() {
                         Get Started
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </span>
-                    </Button>
+                    </Button> */}
                   </Link>
                 </motion.div>
               </motion.div>
@@ -718,14 +718,27 @@ export default function Product() {
 
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10 py-12 md:py-20">
             <div className="text-center mb-12">
-              <motion.h2
+              
+            <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white"
+                transition={{ duration: 0.5 }}
+                className="space-y-4"
               >
-                How <span className="text-white">Cyber Range</span> Works
-              </motion.h2>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm text-white text-sm font-medium border border-gray-200/10"
+                >
+                  <Shield className="mr-2 h-4 w-4" />
+                  Know More
+                  
+                </motion.div>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
+                How Cyber Range Works 
+                </h2>
+              </motion.div>
             </div>
 
             {/* Image Grid */}
@@ -801,6 +814,7 @@ export default function Product() {
                 >
                   <Shield className="mr-2 h-4 w-4" />
                   Key Features
+                  
                 </motion.div>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
                   Important features of <span className="text-white">Cyber Range</span>

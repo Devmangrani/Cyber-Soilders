@@ -432,7 +432,7 @@ export default function Services() {
                 Tailored Solutions
               </div>
               <h2 className="text-3xl font-bold tracking-tighter mb-4 text-white">
-                Our Services
+                Select your Security needs
               </h2>
             </motion.div>
 
