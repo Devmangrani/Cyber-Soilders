@@ -234,10 +234,10 @@ export default function Technology() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
                     <span className="text-2xl font-bold text-white">
-                      {tech.stats.value}
+                      {/* {tech.stats.value} */}
                     </span>
                     <span className="text-sm text-gray-400">
-                      {tech.stats.label}
+                      {/* {tech.stats.label} */}
                     </span>
                   </div>
                 </div>
