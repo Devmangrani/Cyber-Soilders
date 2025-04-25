@@ -1344,10 +1344,10 @@ export default function Training() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="space-y-6">
                 <div className="overflow-hidden">
-                  <h2 className="benefits-title text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-600 dark:from-gray-100 dark:to-gray-400">Why Choose Our Training?</h2>
+                  <h2 className="benefits-title text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-600 dark:from-gray-100 dark:to-gray-400">Why Choose Our Training?</h2>
                 </div>
                 <div className="overflow-hidden">
-                  <p className="benefits-description text-xl text-muted-foreground">
+                  <p className="benefits-description text-2xl text-muted-foreground">
                     Our training programs are designed to provide you with the skills and knowledge you need to succeed in the cyber security industry.
                   </p>
                 </div>

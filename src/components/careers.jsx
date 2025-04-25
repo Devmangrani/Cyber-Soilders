@@ -635,13 +635,16 @@ export default function Careers() {
         </section>
 
         {/* Open Positions */}
-        {/* <section 
+        <section 
           ref={(el) => {
             addToRefs(el);
             positionsRef.current = el;
           }}
-          className="w-full py-12 md:py-24 bg-black opacity-0 translate-y-4 duration-700 ease-out"
+          className="w-full py-12 md:py-24 bg-gray-950 opacity-0 translate-y-4 duration-700 ease-out"
         >
+              <GridBackground />
+
+
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="text-center mb-12">
               <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm mb-6 animate-bounce-subtle">
@@ -661,7 +664,7 @@ export default function Careers() {
                   onMouseEnter={() => setHoveredPosition(position.title)}
                   onMouseLeave={() => setHoveredPosition(null)}
                 >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-green-500/30 to-teal-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-gray-500/30 to-gray-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <div className="relative z-10">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-2 rounded-full bg-gray-100  text-primary group-hover:bg-gray-300 group-hover:scale-110 transition-all duration-300">{position.icon}</div>
@@ -683,13 +686,13 @@ export default function Careers() {
                         ))}
                       </ul>
                     </div>
-                    <Button className="w-full mt-6 group relative overflow-hidden">
+                    {/* <Button className="w-full mt-6 group relative overflow-hidden">
                       <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-indigo-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                       <span className="relative z-10 flex items-center">
                         Apply Now
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </span>
-                    </Button>
+                    </Button> */}
                   </div>
                   <div 
                     className={`absolute inset-0 bg-primary/5 rounded-lg transition-opacity duration-300 ${hoveredPosition === position.title ? 'opacity-100' : 'opacity-0'}`}
@@ -701,7 +704,7 @@ export default function Careers() {
               ))}
             </div>
           </div>
-        </section> */}
+        </section>
 
   <section 
     ref={(el) => {
