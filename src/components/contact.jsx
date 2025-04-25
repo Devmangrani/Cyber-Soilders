@@ -271,7 +271,7 @@ export default function Contact() {
                     <p className="text-muted-foreground">+91-78143-21156</p>
                   </div>
                 </div>
-                <div 
+                {/* <div 
                   className="flex items-start gap-4 p-4 rounded-lg border border-gray-850 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/30 to-teal-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
@@ -282,7 +282,7 @@ export default function Contact() {
                     <h3 className="font-semibold text-blue-100 group-hover:text-blue-600 transition-colors duration-300">Location</h3>
                     <p className="text-muted-foreground">Bhopal , Madhya Pradesh , India</p>
                   </div>
-                </div>
+                </div> */}
                 </div>
                 {/* <div 
                   className="p-6 rounded-lg border border-red-200 dark:border-red-800 bg-gradient-to-br from-white to-red-50 dark:from-black dark:to-red-950 hover:shadow-lg transition-all duration-500 group hover:-translate-y-1 relative overflow-hidden"
