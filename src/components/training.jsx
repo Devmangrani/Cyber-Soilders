@@ -831,14 +831,14 @@ export default function Training() {
   }
 
   return (
-    <main className="flex-1" ref={containerRef}>
+    <main className="flex-1 overflow-x-hidden" ref={containerRef}>
       {/* NextJS-style background animation */}
       <NextjsBackground />
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen w-full">
         {/* Hero Section with Enhanced Visual Elements */}
         <section 
           ref={heroRef}
-          className="relative w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-black to-gray-900"
+          className="relative w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-black to-gray-900 overflow-hidden"
         >
           {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
           <div 
@@ -926,7 +926,7 @@ export default function Training() {
             <div className="scan-line w-full h-[2px] bg-blue-500/10 animate-scan-line"></div>
           </div>
           
-          <div className="container relative px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="container relative z-10 px-4 md:px-6 max-w-[1200px] mx-auto w-full">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div className="space-y-4 max-w-[600px]">
                 <div className="overflow-hidden">
@@ -993,7 +993,7 @@ export default function Training() {
         {/* Category Filters Based on Sketch */}
         <section className="w-full py-12 md:py-16 bg-gray-900 relative overflow-hidden">
           <GridBackground />
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
             <div className="text-center mb-8">
               <h3 className="text-2xl text-gray-100 font-semibold mb-6">Select Your Needs</h3>
               
@@ -1094,7 +1094,7 @@ export default function Training() {
         {/* Partner Section */}
         <section ref={partnerRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
           <GridBackground />
-          <div className="container px-4 md:px-6 max-w-[1000px] mx-auto">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
             <div className="flex flex-col items-center text-center space-y-6">
               <div className="space-y-4">
                 <div className="overflow-hidden">
@@ -1179,7 +1179,7 @@ export default function Training() {
         <section ref={platformsRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
           <GridBackground />
           
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
             <div className="text-center mb-12">
               <div className="overflow-hidden">
                 <h2 className="platforms-title text-3xl font-bold tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Technology Enabled Platform</h2>
@@ -1340,7 +1340,7 @@ export default function Training() {
         <section ref={benefitsRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
           <GridBackground />
           
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="space-y-6">
                 <div className="overflow-hidden">
@@ -1415,7 +1415,7 @@ export default function Training() {
         >
           <div className="absolute -z-10 top-1/2 left-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-primary/30 to-purple-500/30 blur-3xl cta-glow"></div>
           
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
             <div className="flex flex-col items-center text-center space-y-6">
               <div className="overflow-hidden">
                 <h2 className="cta-title text-3xl font-bold tracking-tighter text-gray-100">Ready to Start Your Journey?</h2>
