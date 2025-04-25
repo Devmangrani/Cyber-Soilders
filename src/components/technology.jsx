@@ -206,11 +206,11 @@ export default function Technology() {
               whileHover={{ scale: 1.02, translateY: -5 }}
               onHoverStart={() => setActiveTech(index)}
               onHoverEnd={() => setActiveTech(null)}
-              className="group relative p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:shadow-xl transition-all duration-300"
+              className="group relative p-8 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:shadow-xl transition-all duration-300"
             >
-              <div className="relative z-10">
+              <div className="relative z-10 flex flex-col gap-4">
                 <motion.div
-                  className={`flex items-center gap-2 mb-4 ${tech.color}`}
+                  className={`flex items-center gap-3 ${tech.color}`}
                   whileHover={{ scale: 1.05 }}
                 >
                   <motion.div
@@ -220,7 +220,7 @@ export default function Technology() {
                   >
                     {tech.icon}
                   </motion.div>
-                  <h3 className="text-xl font-semibold text-white">{tech.title}</h3>
+                  <h3 className="text-2xl font-semibold text-white">{tech.title}</h3>
                   <motion.div
                     animate={{
                       x: activeTech === index ? [0, 5, 0] : 0
@@ -230,35 +230,23 @@ export default function Technology() {
                     <ArrowRight className="w-4 h-4 ml-auto text-white/70" />
                   </motion.div>
                 </motion.div>
-                <p className="text-sm text-gray-300 mb-4">{tech.description}</p>
+                <p className="text-gray-400 text-xl">{tech.description}</p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
                     <span className="text-2xl font-bold text-white">
-                      {/* {tech.stats.value} */}
+                      {tech.stats.value}
                     </span>
                     <span className="text-sm text-gray-400">
-                      {/* {tech.stats.label} */}
+                      {tech.stats.label}
                     </span>
                   </div>
-                  <motion.div
-                    animate={{
-                      scale: activeTech === index ? [1, 1.2, 1] : 1
-                    }}
-                    transition={{ duration: 0.5 }}
-                    // className="h-2 w-2 rounded-full bg-white/50"
-                  />
                 </div>
               </div>
 
               {/* Hover Effect Background */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"
                 initial={false}
-                animate={{
-                  background: activeTech === index
-                    ? "linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.2))"
-                    : "linear-gradient(to bottom right, rgba(255,255,255,0.05), rgba(255,255,255,0.1))"
-                }}
               />
             </motion.div>
           ))}
