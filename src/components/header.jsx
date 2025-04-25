@@ -110,7 +110,7 @@ export default function Header() {
               className="block text-sm font-medium transition-colors hover:text-primary py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              Hire
+              {/* Hire */}
             </Link>
             <Link
               to="/contact"

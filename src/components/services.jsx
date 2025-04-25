@@ -417,9 +417,8 @@ export default function Services() {
         {/* Services Selection Section */}
         <section 
           ref={addToRefs}
-          className="w-full py-20 md:py-32 bg-gray-900 relative overflow-hidden opacity-0 translate-y-4 duration-700 ease-out"
+          className="w-full py-20 md:py-32 bg-gray-900 relative overflow-hidden"
         >
-          {/* Background gradient */}
           <GridBackground />
 
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
@@ -433,110 +432,119 @@ export default function Services() {
                 Tailored Solutions
               </div>
               <h2 className="text-3xl font-bold tracking-tighter mb-4 text-white">
-                Select Your Security Need
+                Our Services
               </h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
-              {services.map((service, index) => (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
-                  <Button
-                    variant={selectedService === service.id ? "default" : "outline"}
-                    className={`h-auto py-6 px-6 w-full text-base relative overflow-hidden ${
-                      selectedService === service.id 
-                        ? "bg-primary text-white" 
-                        : "bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10"
-                    }`}
-                    onClick={() => setSelectedService(service.id)}
-                  >
-                    <span className="relative z-10 flex flex-col items-center justify-center gap-4 text-white">
-                      <motion.div className={service.color}>
-                        {service.icon}
-                      </motion.div>
-                      <span className="text-gray-300">{service.title}</span>
-                    </span>
-                  </Button>
-                </motion.div>
-              ))}
-            </div>
-
-            <AnimatePresence mode="wait">
-              <motion.div 
-                key={selectedService}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-              >
-                <div className="space-y-8">
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="flex items-center gap-4"
-                  >
-                    <motion.div
-                      className={`p-3 rounded-full bg-gray-100 dark:bg-gray-800 ${
-                        services.find(s => s.id === selectedService)?.color
-                      }`}
-                    >
-                      {services.find(s => s.id === selectedService)?.icon}
-                    </motion.div>
-                    <h3 className="text-2xl font-bold text-gray-300">
-                      {services.find(s => s.id === selectedService)?.title}
-                    </h3>
-                  </motion.div>
-
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                    className="text-lg text-gray-400"
-                  >
-                    {services.find(s => s.id === selectedService)?.description}
-                  </motion.p>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                    className="grid grid-cols-2 gap-6"
-                  >
-                    {services.find(s => s.id === selectedService)?.features.map((feature, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center gap-3"
-                      >
-                        <div className="h-2 w-2 rounded-full bg-primary" />
-                        <span className="text-base text-white">
-                          {feature}
-                        </span>
+            <div className="space-y-24">
+              {/* Managed SOC Section */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6 order-2 lg:order-1">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 rounded-full bg-gray-800 text-blue-500">
+                      <Shield className="h-8 w-8" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white">Managed SOC</h3>
+                  </div>
+                  <p className="text-lg text-gray-400">
+                    Our 24/7 Security Operations Center provides continuous monitoring, threat detection, and incident response to protect your organization from evolving cyber threats. Staffed by experienced security analysts using cutting-edge technology.
+                  </p>
+                  <div className="grid grid-cols-2 gap-6">
+                    {["24/7 Monitoring", "Threat Detection", "Incident Response", "Real-time Alerts"].map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <div className="h-2 w-2 rounded-full bg-blue-500" />
+                        <span className="text-base text-white">{feature}</span>
                       </div>
                     ))}
-                  </motion.div>
+                  </div>
                 </div>
-
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.3 }}
-                  className="relative aspect-video rounded-xl overflow-hidden shadow-2xl"
-                >
-                  <img
-                    alt={services.find(s => s.id === selectedService)?.title}
-                    className="object-cover w-full h-full"
-                    src={services.find(s => s.id === selectedService)?.image}
-                  />
+                <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl order-1 lg:order-2">
+                  <img src={ManagedSOC} alt="Managed SOC" className="object-cover w-full h-full" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-                </motion.div>
-              </motion.div>
-            </AnimatePresence>
+                </div>
+              </div>
+
+              {/* VAPT Section */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6 order-2 lg:order-2">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 rounded-full bg-gray-800 text-red-500">
+                      <Bug className="h-8 w-8" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white">Vulnerability & Penetration Testing</h3>
+                  </div>
+                  <p className="text-lg text-gray-400">
+                    Comprehensive security assessment services that identify and address vulnerabilities in your systems, applications, and infrastructure. Our expert team conducts thorough penetration testing.
+                  </p>
+                  <div className="grid grid-cols-2 gap-6">
+                    {["System Assessment", "Application Testing", "Infrastructure Analysis", "Security Reports"].map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <div className="h-2 w-2 rounded-full bg-red-500" />
+                        <span className="text-base text-white">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl order-1 lg:order-1">
+                  <img src={Vulnerability} alt="Vulnerability Assessment" className="object-cover w-full h-full" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                </div>
+              </div>
+
+              {/* Risk Assessment Section */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6 order-2 lg:order-1">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 rounded-full bg-gray-800 text-green-500">
+                      <AlertTriangle className="h-8 w-8" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white">Risk Assessment</h3>
+                  </div>
+                  <p className="text-lg text-gray-400">
+                    Detailed risk analysis and assessment services to help your organization identify, evaluate, and mitigate potential security risks. We provide actionable insights and recommendations.
+                  </p>
+                  <div className="grid grid-cols-2 gap-6">
+                    {["Risk Analysis", "Security Evaluation", "Threat Modeling", "Mitigation Planning"].map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <div className="h-2 w-2 rounded-full bg-green-500" />
+                        <span className="text-base text-white">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl order-1 lg:order-2">
+                  <img src={RiskAssessment} alt="Risk Assessment" className="object-cover w-full h-full" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                </div>
+              </div>
+
+              {/* Audit Compliance Section */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6 order-2 lg:order-2">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 rounded-full bg-gray-800 text-yellow-500">
+                      <FileCheck className="h-8 w-8" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white">Audit & Compliance</h3>
+                  </div>
+                  <p className="text-lg text-gray-400">
+                    Comprehensive compliance auditing services to help your organization meet regulatory requirements and industry standards. We ensure your security framework aligns with compliance needs.
+                  </p>
+                  <div className="grid grid-cols-2 gap-6">
+                    {["Compliance Auditing", "Policy Review", "Standards Alignment", "Regulatory Support"].map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <div className="h-2 w-2 rounded-full bg-yellow-500" />
+                        <span className="text-base text-white">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl order-1 lg:order-1">
+                  <img src={AuditCompliance} alt="Audit Compliance" className="object-cover w-full h-full" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>

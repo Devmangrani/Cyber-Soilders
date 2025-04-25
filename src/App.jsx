@@ -13,7 +13,7 @@ import Training from "@/components/training"
 import About from "@/components/about"
 import Contact from "@/components/contact"
 import Careers from "@/components/careers"
-import Hire from "@/components/hire"
+// import Hire from "@/components/hire"
 import ScrollToTop from "@/components/scroll-to-top"
 import Testimonials from "@/components/testimonials"
 import Affiliations from "@/components/Affiliations"
@@ -46,7 +46,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/careers" element={<Careers />} />
-            <Route path="/hire" element={<Hire />} />
+            {/* <Route path="/hire" element={<Hire />} /> */}
           </Routes>
         </main>
         <Footer />
