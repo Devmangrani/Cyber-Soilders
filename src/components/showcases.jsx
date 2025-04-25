@@ -297,9 +297,9 @@ export default function CyberFramework() {
                   <div className="relative z-10 flex flex-col gap-4">
                     <div className="flex items-center gap-3">
                       <div className="p-3 rounded-lg bg-gray-700/50">{category.icon}</div>
-                      <h3 className="text-lg font-semibold text-white">{category.title}</h3>
+                      <h3 className="text-2xl font-semibold text-white">{category.title}</h3>
                     </div>
-                    <p className="text-gray-400 text-sm">{category.description}</p>
+                    <p className="text-gray-400 text-xl">{category.description}</p>
                   </div>
                 </motion.div>
               ))}
