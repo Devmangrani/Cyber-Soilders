@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { Award, Lightbulb, Shield, Users, ChevronRight, ArrowRight } from "lucide-react"
-import FounderImage from '../xw15xsaurabhwithlogo.png';
+import FounderImage from '../saurabh_agrawal.jpeg';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
@@ -684,7 +684,7 @@ export default function About() {
                 alt="Founder"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full rounded-full object-cover group-hover:scale-110 transition-transform duration-700"                     
+                className="w-60 h-50 rounded-full object-cover group-hover:scale-110 transition-transform duration-700"                     
                 src={FounderImage}
               />
               
