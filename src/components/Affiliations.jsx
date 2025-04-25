@@ -117,10 +117,24 @@ export default function Affiliations() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [autoplay, setAutoplay] = useState(true);
   const carouselRef = useRef(null);
-  const itemsPerView = { mobile: 1, tablet: 2, desktop: 3 };
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
   
-  // Calculate total number of pages
-  const totalPages = Math.ceil(affiliations.length / itemsPerView.desktop);
+  // Calculate items per view based on screen size
+  const getItemsPerView = () => {
+    if (windowWidth < 640) return 1; // Mobile
+    if (windowWidth < 1024) return 2; // Tablet
+    return 3; // Desktop
+  };
+  
+  // Update window width on resize
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  // Calculate total number of pages based on current items per view
+  const totalPages = Math.ceil(affiliations.length / getItemsPerView());
   
   // Handle autoplay
   useEffect(() => {
@@ -152,20 +166,20 @@ export default function Affiliations() {
   };
 
   return (
-    <section className="w-full py-20 md:py-32 bg-gray-900 overflow-hidden relative">
+    <section className="w-full py-12 md:py-20 lg:py-32 bg-gray-900 overflow-hidden relative">
       <GridBackground />
       <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-center text-center space-y-8 text-white"
+          className="flex flex-col items-center text-center space-y-6 md:space-y-8 text-white"
         >
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-3xl font-bold tracking-tighter"
+            className="text-2xl md:text-3xl font-bold tracking-tighter"
           >
             Our Affiliations
           </motion.h2>
@@ -174,7 +188,7 @@ export default function Affiliations() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-xl text-muted-foreground max-w-[600px]"
+            className="text-lg md:text-xl text-muted-foreground max-w-[600px]"
           >
             Partnering with leading organizations to deliver excellence
           </motion.p>
@@ -182,21 +196,21 @@ export default function Affiliations() {
           {/* Carousel Container */}
           <div className="w-full relative">
             {/* Navigation Buttons */}
-            <div className="absolute top-1/2 -left-4 transform -translate-y-1/2 z-20">
+            <div className="absolute top-1/2 -left-2 md:-left-4 transform -translate-y-1/2 z-20">
               <button 
                 onClick={handlePrev}
-                className="p-2 bg-black/30 backdrop-blur-sm rounded-full border border-gray-500/20 text-white hover:bg-white/10 transition-all"
+                className="p-1.5 md:p-2 bg-black/30 backdrop-blur-sm rounded-full border border-gray-500/20 text-white hover:bg-white/10 transition-all"
               >
-                <ArrowLeft className="h-6 w-6" />
+                <ArrowLeft className="h-4 w-4 md:h-6 md:w-6" />
               </button>
             </div>
             
-            <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 z-20">
+            <div className="absolute top-1/2 -right-2 md:-right-4 transform -translate-y-1/2 z-20">
               <button 
                 onClick={handleNext}
-                className="p-2 bg-black/30 backdrop-blur-sm rounded-full border border-gray-500/20 text-white hover:bg-white/10 transition-all"
+                className="p-1.5 md:p-2 bg-black/30 backdrop-blur-sm rounded-full border border-gray-500/20 text-white hover:bg-white/10 transition-all"
               >
-                <ArrowRight className="h-6 w-6" />
+                <ArrowRight className="h-4 w-4 md:h-6 md:w-6" />
               </button>
             </div>
             
@@ -206,7 +220,7 @@ export default function Affiliations() {
                 ref={carouselRef}
                 className="flex transition-all duration-500 ease-out"
                 animate={{
-                  x: `calc(-${activeIndex * 100}% / ${totalPages})`
+                  x: `-${activeIndex * 100}%`
                 }}
                 transition={{
                   type: "tween",
@@ -214,24 +228,24 @@ export default function Affiliations() {
                   duration: 0.5
                 }}
               >
-                <div className="flex gap-6 w-full">
+                <div className="flex gap-4 md:gap-6 w-full">
                   {affiliations.map((item, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.1 * index }}
-                      className="relative flex-shrink-0 p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300 group w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                      className="relative flex-shrink-0 p-4 md:p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300 group w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-16px)]"
                       whileHover={{ y: -5, transition: { duration: 0.2 } }}
                     >
                       <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                      <div className="relative z-10 flex flex-col items-center gap-4">
-                        <div className="relative z-10 flex items-center justify-center w-32 h-32 mx-auto rounded-full bg-gray-700">
-                          <img src={item.logo} alt={`${item.name} Logo`} className="w-32 h-32 object-contain" />
+                      <div className="relative z-10 flex flex-col items-center gap-3 md:gap-4">
+                        <div className="relative z-10 flex items-center justify-center w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full bg-gray-700">
+                          <img src={item.logo} alt={`${item.name} Logo`} className="w-20 h-20 md:w-32 md:h-32 object-contain" />
                         </div>
                         <div className="text-center">
-                          <h3 className="text-lg font-semibold text-white mb-2">{item.name}</h3>
-                          <p className="text-gray-400 text-sm">{item.description}</p>
+                          <h3 className="text-base md:text-lg font-semibold text-white mb-1 md:mb-2">{item.name}</h3>
+                          <p className="text-gray-400 text-xs md:text-sm">{item.description}</p>
                         </div>
                       </div>
                     </motion.div>
@@ -241,7 +255,7 @@ export default function Affiliations() {
             </div>
             
             {/* Pagination Dots */}
-            <div className="flex justify-center gap-2 mt-8">
+            <div className="flex justify-center gap-2 mt-6 md:mt-8">
               {Array.from({ length: totalPages }).map((_, index) => (
                 <button
                   key={index}
@@ -249,9 +263,9 @@ export default function Affiliations() {
                   className="transition-all duration-300"
                 >
                   {activeIndex === index ? (
-                    <CheckCircle2 className="h-5 w-5 text-indigo-500" />
+                    <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-indigo-500" />
                   ) : (
-                    <Circle className="h-5 w-5 text-gray-400 hover:text-indigo-400" />
+                    <Circle className="h-4 w-4 md:h-5 md:w-5 text-gray-400 hover:text-indigo-400" />
                   )}
                 </button>
               ))}
