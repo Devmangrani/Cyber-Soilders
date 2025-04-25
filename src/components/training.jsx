@@ -25,6 +25,7 @@ import CompTIALogo from '../CompTIA.png'
 import CyberGuardianLogo from '../LMS.png'
 import CyberRangeLogo from "../Cyber-range-logo.png"
 import CyberLabsLogo from "../cyber-labs-logo.jpg"
+import { Link } from "react-router-dom"
 
 
 // Register GSAP plugins
@@ -947,13 +948,15 @@ export default function Training() {
                 </div>
               </div>
               <div className="hero-button">
-                <Button size="lg" className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                  <span className="relative z-10 flex items-center">
-                    Contact Us
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Button>
+                <Link to="/contact">
+                  <Button size="lg" className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                    <span className="relative z-10 flex items-center">
+                      Contact Us
+                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -1426,16 +1429,18 @@ export default function Training() {
                 </p>
               </div>
               <div className="cta-buttons flex flex-wrap gap-4 justify-center mt-6">
-                <Button 
-                  size="lg" 
-                  className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105 bg-white text-gray-900 hover:bg-gray-100"
-                >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/50 to-blue-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                  <span className="relative z-10 flex items-center">
-                    Enquire Now
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Button>
+                <Link to="/contact">
+                  <Button 
+                    size="lg" 
+                    className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105 bg-white text-gray-900 hover:bg-gray-100"
+                  >
+                    <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/50 to-blue-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                    <span className="relative z-10 flex items-center">
+                      Enquire Now
+                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

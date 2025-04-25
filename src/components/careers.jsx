@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Shield, Target, Users, Zap, Briefcase, GraduationCap, Globe, Heart, ArrowRight, ChevronRight } from "lucide-react"
 import cyberTeamImage from '../istockphoto-1435605327-612x612.jpg';
+import { Link } from "react-router-dom"
 
 const positions = [
   {
@@ -731,11 +732,13 @@ export default function Careers() {
             </span>
           </Button> */}
           <Button variant="outline" size="lg" className="h-12 px-8 text-base group relative overflow-hidden">
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-            <span className="relative z-10 flex items-center">
-              Contact Recruiting
-              <ArrowRight className="ml-2 h-5 w-5 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1" />
-            </span>
+            <Link to="/contact">
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/50 to-purple-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+              <span className="relative z-10 flex items-center">
+                Contact Recruiting
+                <ArrowRight className="ml-2 h-5 w-5 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1" />
+              </span>
+            </Link>
           </Button>
         </div>
       </div>

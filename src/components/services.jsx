@@ -12,6 +12,7 @@ import ManagedSOC from "../soc.jpg"
 import Vulnerability from "../Vulnerability&PenetrationTesting.jpg"
 import RiskAssessment from "../risk.webp"
 import AuditCompliance from "../AuditCompliance.webp"
+import { Link } from "react-router-dom"
 
 import { ArrowRight, Shield, Zap, Users, Target, Lock, Cloud, Database, Key, Network, Bug, FileCheck, AlertTriangle, Star, ChevronRight } from "lucide-react"
 
@@ -311,13 +312,15 @@ export default function Services() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <Button size="lg" className="h-12 px-8 text-base group relative overflow-hidden bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 bg-white">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700 "></div>
-                    <span className="relative z-10 flex items-center text-black">
-                      Contact Us
-                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                    </span>
-                  </Button>
+                  <Link to="/contact">
+                    <Button size="lg" className="h-12 px-8 text-base group relative overflow-hidden bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 bg-white">
+                      <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700 "></div>
+                      <span className="relative z-10 flex items-center text-black">
+                        Contact Us
+                        <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </Button>
+                  </Link>
                 </motion.div>
               </div>
               <motion.div
