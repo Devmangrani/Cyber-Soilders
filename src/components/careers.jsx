@@ -612,9 +612,8 @@ export default function Careers() {
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-purple-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <div className="relative z-10">
-                    <div className="mb-6 p-3 size-12 rounded-full bg-gray-800  flex items-center justify-center text-primary group-hover:bg-primary/10 group-hover:scale-110 transition-all duration-500 relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-primary/0 group-hover:from-blue-400 group-hover:to-primary/30 transition-all duration-500"></div>
-                      <div className="relative z-10">{benefit.icon}</div>
+                    <div className="mb-6 p-3 size-12 rounded-full bg-gray-300 flex items-center justify-center text-primary">
+                      {benefit.icon}
                     </div>
                     <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">{benefit.title}</h3>
                     <p className="text-muted-foreground text-gray-800">{benefit.description}</p>
