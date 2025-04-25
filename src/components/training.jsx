@@ -22,7 +22,7 @@ import IITPravartakLogo from '../IITM_Pravartak_Logo.jpeg'
 import IITMadrasLogo from '../IIT_Madras_Logo.png'
 import CyberSecurityTraining from '../CyberSecurityServices.jpeg'
 import CompTIALogo from '../CompTIA.png'
-import CyberGuardianLogo from '../cyber_guardian_logo.png'
+import CyberGuardianLogo from '../LMS.png'
 import CyberRangeLogo from "../Cyber-range-logo.png"
 import CyberLabsLogo from "../cyber-labs-logo.jpg"
 

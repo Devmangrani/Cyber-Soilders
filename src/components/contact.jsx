@@ -257,10 +257,6 @@ export default function Contact() {
                   <div className="relative z-10">
                     <h3 className="font-semibold text-blue-100 group-hover:text-blue-600 transition-colors duration-300">Email</h3>
                     <p className="text-muted-foreground">info@cybersoldiers.in</p>
-                    <div className="mt-2 flex items-center text-primary opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                      <span className="mr-2 text-sm text-gray-100">Send email</span>
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </div>
                   </div>
                 </div>
                 <div 
@@ -271,16 +267,12 @@ export default function Contact() {
                     <Phone className="h-6 w-6" />
                   </div>
                   <div className="relative z-10">
-                    <h3 className="font-semibold text-blue-100 group-hover:text-blue-600 transition-colors duration-300">Phone</h3>
+                    <h3 className="font-semibold text-blue-100 group-hover:text-blue-600 transition-colors duration-300">Live Chat</h3>
                     <p className="text-muted-foreground">+91-78143-21156</p>
-                    <div className="mt-2 flex items-center text-primary opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                      <span className="mr-2 text-sm text-gray-100">Call now</span>
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </div>
                   </div>
                 </div>
                 <div 
-                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-800 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-850 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/30 to-teal-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <div className="p-3 rounded-lg bg-blue-100 text-primary group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 relative z-10">
@@ -289,10 +281,6 @@ export default function Contact() {
                   <div className="relative z-10">
                     <h3 className="font-semibold text-blue-100 group-hover:text-blue-600 transition-colors duration-300">Location</h3>
                     <p className="text-muted-foreground">Bhopal , Madhya Pradesh , India</p>
-                    <div className="mt-2 flex items-center text-gray-100 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                      <span className="mr-2 text-sm">Get directions</span>
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </div>
                   </div>
                 </div>
                 </div>
@@ -390,59 +378,6 @@ export default function Contact() {
                   </Button>
                 </form>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Map Section */}
-        <section 
-          ref={addToRefs} 
-          className="w-full py-12 md:py-24 bg-gray-900 opacity-0 translate-y-4 duration-700 ease-out relative overflow-hidden"
-        >
-          {/* Animated background gradient */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(var(--primary),0.05),transparent_50%)]"></div>
-          
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
-            <div className="space-y-8">
-              <div className="text-center">
-                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm mb-6 animate-bounce-subtle">
-                  Visit Us
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400">Command Center Location</h2>
-                <p className="text-muted-foreground mt-2">Visit our headquarters for face-to-face consultation</p>
-              </div>
-              <div 
-                className="aspect-video rounded-lg overflow-hidden border-2 border-gray-800 hover:border-primary/30 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group"
-                style={{transform: `perspective(2000px) rotateY(${scrollY * 0.005}deg) rotateX(${scrollY * -0.005}deg)`}}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"></div>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d147146.21818157658!2d77.32349062463804!3d23.199546032723227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c428f8fd68fbd%3A0x2155716d572d4f8!2sBhopal%2C%20Madhya%20Pradesh!5e1!3m2!1sen!2sin!4v1743536893149!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              
-              {/* Location benefits cards */}
-              {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
-                <div className="p-4 rounded-lg border border-gray-100 dark:border-gray-800 bg-white dark:bg-black hover:border-primary/30 hover:shadow-md transition-all duration-300 group hover:-translate-y-1 opacity-0 animate-fade-in" style={{animationDelay: '0ms', animationFillMode: 'forwards'}}>
-                  <h3 className="font-semibold group-hover:text-primary transition-colors duration-300">Secure Facility</h3>
-                  <p className="text-sm text-muted-foreground">State-of-the-art security measures to protect your information</p>
-                </div>
-                <div className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-black hover:border-primary/30 hover:shadow-md transition-all duration-300 group hover:-translate-y-1 opacity-0 animate-fade-in" style={{animationDelay: '200ms', animationFillMode: 'forwards'}}>
-                  <h3 className="font-semibold group-hover:text-primary transition-colors duration-300">Private Meeting Rooms</h3>
-                  <p className="text-sm text-muted-foreground">Confidential spaces for discussing sensitive security matters</p>
-                </div>
-                <div className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-black hover:border-primary/30 hover:shadow-md transition-all duration-300 group hover:-translate-y-1 opacity-0 animate-fade-in" style={{animationDelay: '400ms', animationFillMode: 'forwards'}}>
-                  <h3 className="font-semibold group-hover:text-primary transition-colors duration-300">Demonstration Lab</h3>
-                  <p className="text-sm text-muted-foreground">Interactive environment to showcase our security solutions</p>
-                </div>
-              </div> */}
             </div>
           </div>
         </section>
