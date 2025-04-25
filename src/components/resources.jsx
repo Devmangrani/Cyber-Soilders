@@ -461,12 +461,12 @@ export default function Resources() {
   }, []);
 
   return (
-    <main className="flex-1">
-      <div className="flex flex-col min-h-screen">
+    <main className="flex-1 overflow-x-hidden">
+      <div className="flex flex-col min-h-screen w-full">
         {/* Hero Section with Enhanced Visual Elements */}
         <section
           ref={heroRef}
-          className="relative w-full py-16 md:py-28 lg:py-32 bg-gray-950"
+          className="relative w-full py-16 md:py-28 lg:py-32 bg-gray-950 overflow-hidden"
         >
           {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
           <div
@@ -627,7 +627,7 @@ export default function Resources() {
             <div className="scan-line w-full h-[2px] bg-blue-500/10 animate-scan-line"></div>
           </div>
 
-          <div className="container relative z-10 px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="container relative z-10 px-4 md:px-6 max-w-[1200px] mx-auto w-full">
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="overflow-hidden">
                 <div className="hero-badge inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-gray-100 text-sm font-medium">
@@ -723,9 +723,9 @@ export default function Resources() {
         </section>
 
         {/* Certifications Section - Based on sketch */}
-        <section className="w-full py-12 md:py-24 bg-gray-950 relative">
+        <section className="w-full py-12 md:py-24 bg-gray-950 relative overflow-hidden">
           <GridBackground />
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
             <div className="text-center mb-12">
               <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-6">
                 Certification Resources
@@ -764,9 +764,9 @@ export default function Resources() {
         </section>
 
         {/* Video Gallery Section */}
-        <section className="w-full py-12 md:py-24 bg-gray-950 relative">
+        <section className="w-full py-12 md:py-24 bg-gray-950 relative overflow-hidden">
           <GridBackground />
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
             <div className="text-center mb-12">
               <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-6">
                 Video Library
@@ -830,7 +830,7 @@ export default function Resources() {
         {/* CTA Section */}
         <section className="w-full py-12 md:py-24 bg-gray-950 relative overflow-hidden">
           <GridBackground />
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
             <div className="flex flex-col items-center text-center space-y-6">
               <h2 className="text-4xl font-bold tracking-tighter text-gray-100">
                 Ready to Enhance Your Cyber Security Skills?

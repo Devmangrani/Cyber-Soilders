@@ -308,8 +308,8 @@ export default function Careers() {
   }, []);
 
   return (
-    <main className="flex-1" ref={containerRef}>
-      <div className="flex flex-col min-h-screen">
+    <main className="flex-1 overflow-x-hidden">
+      <div className="flex flex-col min-h-screen w-full">
         
     {/* Hero Section */}
     <section 
@@ -317,7 +317,7 @@ export default function Careers() {
         addToRefs(el);
         heroRef.current = el;
       }}
-      className="relative w-full py-16 md:py-28 lg:py-32 bg-gray-950 opacity-0 translate-y-4 duration-700 ease-out"
+      className="relative w-full py-16 md:py-28 lg:py-32 bg-gray-950 overflow-hidden"
       id="hero-section"
     >
       {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
@@ -375,7 +375,7 @@ export default function Careers() {
         }}
       />
       
-      <div className="container relative z-10 px-4 md:px-6 max-w-[1200px] mx-auto">
+      <div className="container relative z-10 px-4 md:px-6 max-w-[1200px] mx-auto w-full">
         <div className="flex flex-col items-center text-center space-y-4">
           <div className="hero-element inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-gray-100 text-sm font-medium animate-bounce-subtle group relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 animate-shimmer"></div>
