@@ -141,31 +141,37 @@ const certifications = [
     name: "CISSP",
     logo: CISPPLogo,
     altText: "CISSP - Certified Information Systems Security Professional",
+    link: "https://youtube.com/playlist?list=PLzecYhCbkDdHSQQ6VbyO6T0jZ1SSYDe0h&si=jYdpP2DAQ9Q570WH"
   },
   {
     name: "CISM",
     logo: CISMLogo,
     altText: "CISM - Certified Information Security Manager",
+    link: "https://youtube.com/playlist?list=PLzecYhCbkDdEhTOOkOln9i5G1qIrjmID3&si=uNdvikPbAFOQIciN"
   },
   {
     name: "CISA",
     logo: CISALogo,
     altText: "CISA - Certified Information Systems Auditor",
+    link: "https://youtube.com/playlist?list=PLzecYhCbkDdFoQNwmQpfwPrn4srYVJrcP&si=qNpUfCS0paKH-Cbb"
   },
   {
     name: "CRISC",
     logo: CRISCLogo,
     altText: "CRISC - Certified in Risk and Information Systems Control",
+    link: "https://youtube.com/playlist?list=PLzecYhCbkDdHz5dAph1nwPTRo5YCzuO-X&si=lBiE0GfztKuLUcVG"
   },
   {
     name: "CEH",
     logo: CEHLogo,
     altText: "CEH - Certified Ethical Hacker",
+    link: "https://youtu.be/CtSxNLQ2Ed4?si=FHrqLZUPT1hctFWr"
   },
   {
     name: "CompTIA Security+",
     logo: CompTIALogo,
     altText: "CompTIA Security+",
+    link: "https://youtube.com/playlist?list=PLzecYhCbkDdHB7kuKYRL4xgipgJbIxtPm&si=JWbxMevdX2jzDolz"
   },
 ];
 
@@ -740,9 +746,12 @@ export default function Resources() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {certifications.map((cert, index) => (
-                <div
+                <a
                   key={cert.name}
-                  className="group bg-gray-800 p-4 rounded-xl border border-gray-700 hover:border-primary/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 relative overflow-hidden"
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-gray-800 p-4 rounded-xl border border-gray-700 hover:border-primary/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 relative overflow-hidden cursor-pointer"
                 >
                   {/* Add gradient background effect like buttons */}
                   <div className="absolute -inset-1 bg-gradient-to-r from-cyan-300/10 to-blue-400/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
@@ -757,7 +766,7 @@ export default function Resources() {
                     </div>
                     <h3 className="font-bold text-gray-100">{cert.name}</h3>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
