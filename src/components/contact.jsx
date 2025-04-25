@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Shield, Mail, Phone, MapPin, Send, ArrowRight, MessageCircle, AlertCircle } from "lucide-react"
+import { Shield, Mail, MapPin, Send, ArrowRight, AlertCircle, MessageSquare, MessageCircle } from "lucide-react"
 
 export default function Contact() {
   // Refs for intersection observer animations
@@ -189,10 +189,10 @@ export default function Contact() {
               <div className="flex flex-col items-center group animate-fade-in relative overflow-hidden" style={{animationDelay: '200ms'}}>
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                 <div className="p-4 rounded-full bg-white-900 text-blue-100 mb-3 animate-bounce-subtle group-hover:scale-110 transition-all duration-300 relative z-10" style={{animationDelay: '0.5s'}}>
-                  <Phone className="h-6 w-6" />
+                  <MessageSquare className="h-6 w-6" />
                 </div>
                 <div className="relative z-10">
-                  <div className="text-lg font-medium text-blue-600 group-hover:text-blue-500 transition-colors duration-300">Call Us</div>
+                  <div className="text-lg font-medium text-blue-600 group-hover:text-blue-500 transition-colors duration-300">Message Us</div>
                   <div className="text-sm text-muted-foreground">24/7 support available</div>
                 </div>
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
@@ -264,7 +264,7 @@ export default function Contact() {
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <div className="p-3 rounded-lg bg-blue-100 text-primary group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 relative z-10">
-                    <Phone className="h-6 w-6" />
+                    <MessageSquare className="h-6 w-6" />
                   </div>
                   <div className="relative z-10">
                     <h3 className="font-semibold text-blue-100 group-hover:text-blue-600 transition-colors duration-300">Live Chat</h3>
