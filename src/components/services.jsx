@@ -288,7 +288,7 @@ export default function Services() {
                   className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium animate-bounce-subtle border border-gray-200/10 hover:bg-primary/10 text-white"
                 >
                   <Shield className="mr-2 h-4 w-4 text-white" />
-                  Enterprise-Grade Security
+                  Enterprise-Grade Security Services
                 </motion.div>
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
@@ -311,9 +311,9 @@ export default function Services() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <Button size="lg" className="h-12 px-8 text-base group relative overflow-hidden bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                    <span className="relative z-10 flex items-center text-white">
+                  <Button size="lg" className="h-12 px-8 text-base group relative overflow-hidden bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 bg-white">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700 "></div>
+                    <span className="relative z-10 flex items-center text-black">
                       Contact Us
                       <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                     </span>
@@ -414,111 +414,13 @@ export default function Services() {
           `}</style>
         </section>
 
-        {/* Security Cards Section */}
-        <section 
-          ref={addToRefs}
-          id="stats-section" 
-          className="w-full py-20 md:py-32 bg-gray-900 relative overflow-hidden opacity-0 translate-y-4 duration-700 ease-out"
-        >
-            <GridBackground />
-
-          
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-16"
-            >
-              <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm mb-6 animate-bounce-subtle text-white">
-                Our Services
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-primary to-gray-600 dark:from-gray-100 dark:via-primary dark:to-gray-400 text-white">
-                Maximum Security with Cyber Security Services
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-                Comprehensive security solutions designed to protect your organization's assets and data
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {securityCards.map((card, index) => (
-                <motion.div
-                  key={card.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                  className="group relative overflow-hidden rounded-xl border bg-card hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="aspect-video relative">
-                    <img
-                      alt={card.title}
-                      className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-                      src={card.image}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20 opacity-80 group-hover:opacity-90 transition-opacity" />
-                    
-                    <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-full bg-white/10 text-white backdrop-blur-sm">
-                          {card.icon}
-                        </div>
-                        <h3 className="text-xl font-bold text-white">{card.title}</h3>
-                      </div>
-                      
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="flex items-center justify-between text-white"
-                      >
-                        <div>
-                          <div className="text-2xl font-bold">
-                            {counterValues[`${card.title}-stats`] || card.stats.value}
-                          </div>
-                          <div className="text-sm opacity-80">{card.stats.label}</div>
-                        </div>
-                        
-                        <Button
-                          variant="ghost"
-                          className="text-white hover:text-primary hover:bg-white/10 transition-colors"
-                        >
-                          Learn More
-                          <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </Button>
-                      </motion.div>
-                    </div>
-
-                    {/* Hover overlay with gradient */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      initial={false}
-                      animate={{
-                        background: hoveredCard === card.title
-                          ? "linear-gradient(to bottom right, rgba(var(--primary), 0.1), rgba(var(--primary), 0.3))"
-                          : "linear-gradient(to bottom right, rgba(var(--primary), 0), rgba(var(--primary), 0.2))"
-                      }}
-                    />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Services Selection Section */}
         <section 
           ref={addToRefs}
           className="w-full py-20 md:py-32 bg-gray-900 relative overflow-hidden opacity-0 translate-y-4 duration-700 ease-out"
         >
-          {/* Background gradient and particles */}
+          {/* Background gradient */}
           <GridBackground />
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/5 size-2 rounded-full bg-blue-500/30 animate-pulse-slow"></div>
-            <div className="absolute top-3/4 left-2/3 size-3 rounded-full bg-purple-500/30 animate-pulse-slow" style={{animationDelay: '1s'}}></div>
-            <div className="absolute top-1/3 left-3/4 size-2 rounded-full bg-green-500/30 animate-pulse-slow" style={{animationDelay: '2s'}}></div>
-          </div>
 
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <motion.div
@@ -527,18 +429,15 @@ export default function Services() {
               transition={{ duration: 0.5 }}
               className="text-center mb-16"
             >
-              <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm mb-6 animate-bounce-subtle text-white">
+              <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm mb-6 text-white">
                 Tailored Solutions
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-primary to-gray-600 dark:from-gray-100 dark:via-primary dark:to-gray-400 text-white">
-                Select Your Security Needs
+              <h2 className="text-3xl font-bold tracking-tighter mb-4 text-white">
+                Select Your Security Need
               </h2>
-              <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-                Choose from our comprehensive range of security services tailored to your organization
-              </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
               {services.map((service, index) => (
                 <motion.div
                   key={service.id}
@@ -548,22 +447,18 @@ export default function Services() {
                 >
                   <Button
                     variant={selectedService === service.id ? "default" : "outline"}
-                    className={`h-auto py-3 px-3 sm:px-6 w-full text-base group relative overflow-hidden ${
+                    className={`h-auto py-6 px-6 w-full text-base relative overflow-hidden ${
                       selectedService === service.id 
                         ? "bg-primary text-white" 
                         : "bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10"
                     }`}
                     onClick={() => setSelectedService(service.id)}
                   >
-                    <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                    <span className="relative z-10 flex items-center justify-center text-white">
-                      <motion.div
-                        whileHover={{ rotate: 12 }}
-                        className={service.color}
-                      >
+                    <span className="relative z-10 flex flex-col items-center justify-center gap-4 text-white">
+                      <motion.div className={service.color}>
                         {service.icon}
                       </motion.div>
-                      <span className="sm:inline hidden ml-2 text-gray-300">{service.title}</span>
+                      <span className="text-gray-300">{service.title}</span>
                     </span>
                   </Button>
                 </motion.div>
@@ -587,14 +482,13 @@ export default function Services() {
                     className="flex items-center gap-4"
                   >
                     <motion.div
-                      whileHover={{ scale: 1.1, rotate: 12 }}
                       className={`p-3 rounded-full bg-gray-100 dark:bg-gray-800 ${
                         services.find(s => s.id === selectedService)?.color
                       }`}
                     >
                       {services.find(s => s.id === selectedService)?.icon}
                     </motion.div>
-                    <h3 className="text-2xl font-bold bg-clip-text  bg-gradient-to-r from-gray-900 via-primary to-gray-600 dark:from-gray-100 dark:via-primary dark:to-gray-400 text-gray-300">
+                    <h3 className="text-2xl font-bold text-gray-300">
                       {services.find(s => s.id === selectedService)?.title}
                     </h3>
                   </motion.div>
@@ -603,7 +497,7 @@ export default function Services() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3 }}
-                    className="text-lg text-muted-foreground"
+                    className="text-lg text-gray-400"
                   >
                     {services.find(s => s.id === selectedService)?.description}
                   </motion.p>
@@ -615,34 +509,16 @@ export default function Services() {
                     className="grid grid-cols-2 gap-6"
                   >
                     {services.find(s => s.id === selectedService)?.features.map((feature, index) => (
-                      <motion.div
+                      <div
                         key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.5 + index * 0.1 }}
-                        className="flex items-center gap-3 group"
+                        className="flex items-center gap-3"
                       >
-                        <div className="h-2 w-2 rounded-full bg-primary group-hover:scale-150 transition-transform" />
-                        <span className="text-base group-hover:text-primary transition-colors text-white">
+                        <div className="h-2 w-2 rounded-full bg-primary" />
+                        <span className="text-base text-white">
                           {feature}
                         </span>
-                      </motion.div>
+                      </div>
                     ))}
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                    className="pt-4"
-                  >
-                    <Button className="group relative overflow-hidden bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10">
-                      <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                      <span className="relative z-10 flex items-center text-white">
-                        Learn More
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </span>
-                    </Button>
                   </motion.div>
                 </div>
 
@@ -650,21 +526,14 @@ export default function Services() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="relative aspect-video rounded-xl overflow-hidden shadow-2xl group"
+                  className="relative aspect-video rounded-xl overflow-hidden shadow-2xl"
                 >
                   <img
                     alt={services.find(s => s.id === selectedService)?.title}
-                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                    className="object-cover w-full h-full"
                     src={services.find(s => s.id === selectedService)?.image}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                  
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    whileHover={{
-                      background: "linear-gradient(to bottom right, rgba(var(--primary), 0.1), rgba(var(--primary), 0.3))"
-                    }}
-                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
                 </motion.div>
               </motion.div>
             </AnimatePresence>
