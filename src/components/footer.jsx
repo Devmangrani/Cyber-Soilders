@@ -48,25 +48,7 @@ export default function Footer() {
           {/* First column with logo and tagline */}
           <div>
             <img src={logo} alt="CyberSoldiers Logo" className="w-[30%] mb-4" />
-            <p className="text-lg leading-relaxed font-medium mb-6">
-              {/* Defending your Digital Frontiers */}
-            </p>
-            <div className="flex gap-4">
-              {/* <a href="https://play.google.com/store/apps/details?id=in.cybersoldiers.learners&hl=en_US&gl=US" target="_blank" rel="noopener noreferrer">
-                <img 
-                  src="https://d502jbuhuh9wk.cloudfront.net/orgData/63a4480de4b0fa7eb0f4eb95/pages/assets/images/D5DcPplaystore.png" 
-                  alt="Play Store" 
-                  className="w-[130px]"
-                />
-              </a>
-              <a href="https://apps.apple.com/in/app/cyber-soldiers-academy/id1673428016" target="_blank" rel="noopener noreferrer">
-                <img 
-                  src="https://d502jbuhuh9wk.cloudfront.net/orgData/63a4480de4b0fa7eb0f4eb95/pages/assets/images/FLOijappleapp.png" 
-                  alt="App Store" 
-                  className="w-[130px]"
-                />
-              </a> */}
-            </div>
+
           </div>
 
           {/* Second column with navigation links */}
