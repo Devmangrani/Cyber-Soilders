@@ -10,14 +10,18 @@ import {
   Building, 
   Briefcase, 
   GraduationCap as AcademiaIcon, 
-  User
+  User,
+  Shield,
+  Code,
+  Server,
+  Database
 } from "lucide-react"
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import NextjsBackground from './NextjsBackground'
 // Import partner logos
-import ECCouncilLogo from '../Ec_Council_Logo.png'
+import ECCouncilLogo from '../EC_Council_Logo.jpg'
 import IITPravartakLogo from '../IITM_Pravartak_Logo.jpeg'
 import IITMadrasLogo from '../IIT_Madras_Logo.png'
 import CyberSecurityTraining from '../CyberSecurityServices.jpeg'
@@ -1270,7 +1274,10 @@ export default function Training() {
             <div className="flex flex-col items-center text-center space-y-6">
               <div className="space-y-4">
                 <div className="overflow-hidden">
-                  <h2 className="partner-title text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Our Knowledge Partners</h2>
+                <h2 className="partner-title text-3xl font-bold tracking-tighter text-gray-100">
+                  Our Knowledge Partners
+                  {/* <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-2"></div> */}
+                </h2>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 mt-auto">
                   {/* IIT Madras */}
@@ -1313,9 +1320,9 @@ export default function Training() {
                         alt="EC Council Logo"
                         loading="lazy"
                         width="300"
-                        height="100"
+                        height="150"
                         decoding="async"
-                        className="object-contain w-full h-full transition-transform duration-500 group-hover:scale-105"
+                        className="object-contain w-300 h-150 transition-transform duration-500 group-hover:scale-105"
                         src={ECCouncilLogo}
                       />
                     </div>
@@ -1347,78 +1354,91 @@ export default function Training() {
           </div>
         </section>
 
-        {/* Technology Platforms Section - Updated with Logo */}
+        {/* Technology Platforms Section - Updated from technology.jsx */}
         <section ref={platformsRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
-          <GridBackground />
-          
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
-            <div className="text-center mb-12">
-              <div className="overflow-hidden">
-                <h2 className="platforms-title text-3xl font-bold tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">Technology Enabled Platform</h2>
-              </div>
-              <div className="overflow-hidden">
-                <p className="platforms-description text-xl text-muted-foreground max-w-[800px] mx-auto">
-                  A powerful technology enabled platform for practical industry relevant training
-                </p>
-              </div>
+          <div className="absolute bg-gray-900 inset-0">
+            <div 
+              className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
+            >
+              {/* Grid node glow effects */}
+              <div className="grid-node absolute h-2 w-2 rounded-full bg-blue-500 blur-[3px] opacity-0 top-[20%] left-[40%] animate-grid-node-blink" style={{animationDelay: '0.5s'}}></div>
+              <div className="grid-node absolute h-2 w-2 rounded-full bg-purple-500 blur-[3px] opacity-0 top-[40%] left-[25%] animate-grid-node-blink" style={{animationDelay: '1.2s'}}></div>
+              <div className="grid-node absolute h-2 w-2 rounded-full bg-teal-500 blur-[3px] opacity-0 top-[70%] left-[60%] animate-grid-node-blink" style={{animationDelay: '2.7s'}}></div>
+              <div className="grid-node absolute h-2 w-2 rounded-full bg-cyan-500 blur-[3px] opacity-0 top-[30%] left-[80%] animate-grid-node-blink" style={{animationDelay: '1.8s'}}></div>
+              <div className="grid-node absolute h-2 w-2 rounded-full bg-indigo-500 blur-[3px] opacity-0 top-[60%] left-[35%] animate-grid-node-blink" style={{animationDelay: '3.5s'}}></div>
+              
+              {/* Grid line trace effects */}
+              <div className="grid-trace absolute h-[1px] w-[200px] bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-blue-500/0 top-[20%] left-[40%] animate-grid-trace-horizontal" style={{animationDelay: '0.5s'}}></div>
+              <div className="grid-trace absolute h-[200px] w-[1px] bg-gradient-to-b from-purple-500/0 via-purple-500/70 to-purple-500/0 top-[40%] left-[25%] animate-grid-trace-vertical" style={{animationDelay: '1.2s'}}></div>
+              <div className="grid-trace absolute h-[1px] w-[150px] bg-gradient-to-r from-teal-500/0 via-teal-500/70 to-teal-500/0 top-[70%] left-[60%] animate-grid-trace-horizontal" style={{animationDelay: '2.7s'}}></div>
+              <div className="grid-trace absolute h-[1px] w-[120px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/70 to-cyan-500/0 top-[30%] left-[80%] animate-grid-trace-horizontal" style={{animationDelay: '1.8s'}}></div>
+              <div className="grid-trace absolute h-[120px] w-[1px] bg-gradient-to-b from-indigo-500/0 via-indigo-500/70 to-indigo-500/0 top-[60%] left-[35%] animate-grid-trace-vertical" style={{animationDelay: '3.5s'}}></div>
+              
+              {/* Neon intersection highlights */}
+              <div className="grid-intersection absolute h-3 w-3 rounded-full bg-blue-500/20 blur-[5px] top-[24%] left-[48%] animate-grid-intersection-pulse" style={{animationDelay: '4.5s'}}></div>
+              <div className="grid-intersection absolute h-3 w-3 rounded-full bg-purple-500/20 blur-[5px] top-[36%] left-[60%] animate-grid-intersection-pulse" style={{animationDelay: '2.3s'}}></div>
+              <div className="grid-intersection absolute h-3 w-3 rounded-full bg-teal-500/20 blur-[5px] top-[56%] left-[32%] animate-grid-intersection-pulse" style={{animationDelay: '6.2s'}}></div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Cyber Guardian Learning Experience Cloud - Updated with logo */}
-              <div
-                className="relative group bg-gray-900 p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-indigo-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                <div className="relative z-10 flex flex-col items-center text-center space-y-4">
-                  <div className="w-50 h-80 mb-2 flex items-center justify-center">
-                    <img
-                      src={CyberGuardianLogo}
-                      alt="Cyber Guardian Logo"
-                      className="object-contain w-full h-full transition-transform duration-500 group-hover:scale-110"
-                    />
-                  </div>
-                  <h3 className="font-bold text-lg text-gray-100">LMS</h3>
-                  <p className="text-gray-100 text-sm">Deploy scalable, cyber security modules via a secure LMS platform</p>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+            {/* Radial gradient overlay */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
+          </div>
+          
+          {/* Enhanced animated background elements */}
+          <div
+            className="absolute -z-10 top-1/4 right-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-3xl animate-pulse-slow"
+          />
+          <div
+            className="absolute -z-10 bottom-1/4 left-1/4 w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500/10 to-green-500/10 blur-3xl animate-pulse-slow"
+            style={{animationDelay: '1s'}}
+          />
+          <div
+            className="absolute -z-10 top-1/4 right-1/3 w-80 h-80 rounded-full bg-gradient-to-tr from-pink-500/10 to-violet-500/10 blur-3xl animate-pulse-slow"
+            style={{animationDelay: '0.5s'}}
+          />
+          
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10">
+            {/* Header Section */}
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium mb-6 platforms-title">
+                <Shield className="mr-2 h-4 w-4" />
+                Powered By Advanced Technology
               </div>
-              
-              {/* Cyber Range */}
-              <div
-                className="relative group bg-gray-900 p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-indigo-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                <div className="relative z-10 flex flex-col items-center text-center space-y-4">
-                  <div className="w-50 h-50 mb-2 flex items-center justify-center">
-                    <img
-                      src={CyberRangeLogo}
-                      alt="Cyber Range"
-                      className="object-contain w-full h-full"
-                    />
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white platforms-description">
+                Technology Enabled Platform
+              </h2>
+              <p className="text-xl text-gray-400 max-w-[800px] mx-auto platforms-description">
+                A powerful technology enabled platform for practical industry relevant training
+              </p>
+            </div>
+
+            {/* Technologies Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+              {platforms.map((platform, index) => (
+                <div
+                  key={platform.name}
+                  ref={(el) => addToPlatformRefs(el, index)}
+                  className="group relative p-8 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="relative z-10 flex flex-col gap-4">
+                    <div className="flex items-center gap-3 text-blue-500">
+                      <div>
+                        {index === 0 ? <Code className="w-6 h-6" /> : 
+                        index === 1 ? <Server className="w-6 h-6" /> : 
+                        <Database className="w-6 h-6" />}
+                      </div>
+                      <h3 className="text-2xl font-semibold text-white">{platform.name}</h3>
+                      <div className="ml-auto">
+                        <ArrowRight className="w-4 h-4 text-white/70 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                    <p className="text-gray-400 text-lg">{platform.description}</p>
                   </div>
-                  <h3 className="font-bold text-lg text-gray-100">Cyber Range</h3>
-                  <p className="text-gray-100 text-sm">Realistic training environment for simulating attacks and defenses</p>
+
+                  {/* Hover Effect Background */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              
-              {/* Cyber Labs */}
-              <div
-                className="relative group bg-gray-900 p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-indigo-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                <div className="relative z-10 flex flex-col items-center text-center space-y-4">
-                  <div className="w-50 h-80 mb-2 flex items-center justify-center">
-                    <img
-                      src={CyberLabsLogo}
-                      alt="Cyber Labs"
-                      className="object-contain w-full h-full"
-                    />
-                  </div>
-                  <h3 className="font-bold text-lg text-gray-100">Cyber Labs</h3>
-                  <p className="text-gray-100 text-sm">Specialized lab environment for deep technical training and experimentation</p>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
