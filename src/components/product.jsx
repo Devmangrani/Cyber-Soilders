@@ -27,10 +27,10 @@ import {
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import CyberSecurityTraining from "../endpointsecurity.webp";
+import CyberSecurityTraining from "../endpointsecurity.jpeg";
 import AdvancedTrainingEnvironment from "../AdvancedTrainingEnvironment.jpg";
 import RealTimeAttackSimulation from "../istockphoto-1435605327-612x612.jpg";
-import ComprehensiveAnalytics from "../ComprehensiveAnalytics.png";
+import ComprehensiveAnalytics from "../ComprehensiveAnalytics.webp";
 import TeamFormation from "../TeamFormation.jpeg";
 import CustomChallenges from "../CustomChallenges.webp";
 import PerformanceTracking from "../PerformanceTracking.jpg";
@@ -359,7 +359,7 @@ export default function Product() {
                 className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-primary text-sm font-medium"
               >
                 <Shield className="mr-2 h-4 w-4" />
-                Enterprise-Grade Security Platform
+                Enterprise-Grade Skilling Platform
               </motion.div>
 
               <motion.h1
@@ -822,7 +822,7 @@ export default function Product() {
               </motion.div>
 
               {/* Features Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl text-left">
                 {/* Integrated LMS Platform */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
