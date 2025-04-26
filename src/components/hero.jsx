@@ -91,10 +91,10 @@ export default function Hero() {
         if (entry.isIntersecting && !isCounterStarted) {
           setIsVisible(true);
           setIsCounterStarted(true);
-          animateCounter("500", "clients");
+          animateCounter("10", "clients");
           animateCounter("98", "satisfaction");
-          animateCounter("25", "countries");
-          animateCounter("100", "experts");
+          animateCounter("5", "countries");
+          animateCounter("50", "experts");
         }
       },
       { threshold: 0.1 }
@@ -274,22 +274,22 @@ export default function Hero() {
               {
                 id: "clients",
                 label: "Global Clients",
-                value: "10+",
+                value: counterValues.clients || "0",
               },
               {
                 id: "satisfaction",
                 label: "Client Satisfaction",
-                value: `${counterValues.satisfaction || "98"}%`,
+                value: counterValues.satisfaction || "0",
               },
               {
                 id: "countries",
                 label: "Countries",
-                value: `${ "5"}+`,
+                value: counterValues.countries || "0",
               },
               {
                 id: "experts",
                 label: "Security Experts",
-                value: `${"50"}+`,
+                value: counterValues.experts || "0",
               },
             ].map((stat, index) => (
               <motion.div
@@ -302,7 +302,7 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent group-hover:animate-slide-right-infinite"></div>
                 <div className="text-4xl font-bold text-gray-100 mb-1 relative animate-pulse-slow">
-                  {stat.value}
+                  {stat.id === "satisfaction" ? `${stat.value}%` : `${stat.value}+`}
                   <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                 </div>
                 <div className="text-gray-500 dark:text-gray-400">

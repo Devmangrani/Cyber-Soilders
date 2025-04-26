@@ -257,7 +257,7 @@ export default function CyberFramework() {
             className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-primary text-sm font-medium"
           >
             <Shield className="mr-2 h-4 w-4" />
-            Cyber Security Excellence
+            Comprehensive Approach
           </motion.div>
 
           {/* Main Title */}
@@ -299,7 +299,7 @@ export default function CyberFramework() {
                       <div className="p-3 rounded-lg bg-gray-700/50">{category.icon}</div>
                       <h3 className="text-2xl font-semibold text-white">{category.title}</h3>
                     </div>
-                    <p className="text-gray-400 text-xl">{category.description}</p>
+                    <p className="text-gray-400 text-xl text-left">{category.description}</p>
                   </div>
                 </motion.div>
               ))}

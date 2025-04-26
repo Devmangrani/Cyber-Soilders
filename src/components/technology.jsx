@@ -227,7 +227,7 @@ export default function Technology() {
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    <ArrowRight className="w-4 h-4 ml-auto text-white/70" />
+                    {/* <ArrowRight className="w-4 h-4 ml-auto text-white/70" /> */}
                   </motion.div>
                 </motion.div>
                 <p className="text-gray-400 text-xl">{tech.description}</p>

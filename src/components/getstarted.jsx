@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion"
 import { Shield } from "lucide-react"
-import assessment from "../asset2.jpeg"
-import compliance from "../risk.webp"
+import assessment from "../asset2.webp"
+import compliance from "../risk.png"
 import threat from "../asset1.jpeg" 
 
 const GridBackground = () => (
@@ -84,7 +84,7 @@ export default function GetStarted() {
                 className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium mb-4"
               >
                 <Shield className="mr-2 h-4 w-4" />
-                Cyber Security Excellence
+                Start your Journey
               </motion.div>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -132,36 +132,36 @@ export default function GetStarted() {
 
             {/* Cards Section - Right */}
             <div className="lg:w-[55%] mt-8 lg:mt-0">
-              <div className="relative w-full flex flex-col md:flex-row justify-center items-center gap-6 md:gap-4 py-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
                 {[
                   {
                     title: "Cyber Skilling",
-                    description: "Comprehensive security evaluation and risk analysis for your digital infrastructure.",
+                    description: "From Learners to Defenders Build your Cyber Empowerd Team",
                     gradient: "from-blue-500/20 to-purple-500/20",
                     image: assessment
                   },
                   {
                     title: "Assessment Services",
-                    description: "Real-time threat monitoring and proactive security measures.",
+                    description: "Expose the Gaps Strengthen the Sheild Stay one Step Ahead",
                     gradient: "from-green-500/20 to-teal-500/20",
                     image: threat
                   },
                   {
                     title: "Compliance Audits",
-                    description: "Ensure regulatory compliance with our comprehensive security frameworks.",
+                    description: "Ensure Compliance Auid Penalties Build Trust with confidence",
                     gradient: "from-purple-500/20 to-pink-500/20",
                     image: compliance
                   }
                 ].map((card, index) => (
                   <div
                     key={card.title}
-                    className="w-full md:w-[220px] lg:w-[240px] group transition-all duration-500 ease-in-out hover:z-[999]"
+                    className="w-full group transition-all duration-500 ease-in-out hover:z-[999]"
                     style={{
                       transformStyle: 'preserve-3d',
                       zIndex: 1
                     }}
                   >
-                    <div className="relative w-full rounded-xl overflow-hidden bg-black/40 backdrop-blur-sm border border-white/10 shadow-2xl transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:translate-y-[-10px] hover:shadow-2xl">
+                    <div className="relative w-full h-full rounded-xl overflow-hidden bg-black/40 backdrop-blur-sm border border-white/10 shadow-2xl transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:translate-y-[-10px] hover:shadow-2xl">
                       <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient} opacity-50 group-hover:opacity-70 transition-opacity duration-300`} />
                       <div className="relative aspect-[4/3] w-full overflow-hidden">
                         <img
