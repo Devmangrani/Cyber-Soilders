@@ -1566,7 +1566,7 @@ export default function Training() {
           className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden"
         >
           <div className="absolute -z-10 top-1/2 left-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-primary/30 to-purple-500/30 blur-3xl cta-glow"></div>
-          
+          <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
             <div className="flex flex-col items-center text-center space-y-6">
               <div className="overflow-hidden">
