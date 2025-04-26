@@ -343,12 +343,6 @@ const GridBackground = () => (
 export default function Resources() {
   const featuredVideo = videos.find((video) => video.featured);
   const [scrollY, setScrollY] = useState(0);
-  const [counterValues, setCounterValues] = useState({
-    videos: "250+",
-    views: "10k+",
-    satisfaction: "95%",
-    certifications: "24+",
-  });
   const [showMoreWebinars, setShowMoreWebinars] = useState(false);
   const [hoveredVideo, setHoveredVideo] = useState(null);
 
@@ -426,6 +420,64 @@ export default function Resources() {
       </div>
     </div>
   );
+
+  const [counterValues, setCounterValues] = useState({
+    videos: "0",
+    views: "0",
+    satisfaction: "0%",
+    certifications: "0",
+  });
+  
+  // Add this hook after your other useEffect hooks
+  useEffect(() => {
+    // Target values
+    const targetValues = {
+      videos: 250,
+      views: 10000,
+      satisfaction: 95,
+      certifications: 24,
+    };
+    
+    // Animation duration in ms
+    const duration = 2000;
+    // Start time
+    const startTime = Date.now();
+    
+    const interval = setInterval(() => {
+      const currentTime = Date.now();
+      const elapsed = currentTime - startTime;
+      
+      // Calculate progress (0 to 1)
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Use easeOutExpo for a more natural animation
+      // t: current time, b: beginning value, c: change in value, d: duration
+      const easeOutExpo = (t, b, c, d) => {
+        return t === d ? b + c : c * (-Math.pow(2, -10 * t / d) + 1) + b;
+      };
+      
+      // Apply easing to progress
+      const easedProgress = easeOutExpo(progress, 0, 1, 1);
+      
+      // Update values based on progress
+      setCounterValues({
+        videos: `${Math.floor(easedProgress * targetValues.videos)}+`,
+        views: `${Math.floor(easedProgress * targetValues.views) >= 1000 ? 
+          `${Math.floor(easedProgress * targetValues.views / 1000)}k` : 
+          Math.floor(easedProgress * targetValues.views)}+`,
+        satisfaction: `${Math.floor(easedProgress * targetValues.satisfaction)}%`,
+        certifications: `${Math.floor(easedProgress * targetValues.certifications)}+`,
+      });
+      
+      // Clear interval when animation is complete
+      if (progress >= 1) {
+        clearInterval(interval);
+      }
+    }, 16); // ~60fps
+    
+    // Clean up interval on component unmount
+    return () => clearInterval(interval);
+  }, []); // Empty dependency array means this runs once on mount
 
   // Add gridRef for animations
   const gridRef = useRef(null);
@@ -659,69 +711,48 @@ export default function Resources() {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent group-hover:animate-slide-right-infinite"></div>
                   <div className="text-4xl font-bold text-gray-100 mb-1 relative">
-                    <span className="animate-pulse-slow inline-block">
+                    <span className="animate-counter inline-block">
                       {counterValues.videos}
                     </span>
                     <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                   </div>
                   <div className="text-gray-500 dark:text-gray-400">Videos</div>
                 </div>
+                
                 <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div
-                    className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent group-hover:animate-slide-right-infinite"
-                    style={{ animationDelay: "0.2s" }}
-                  ></div>
+                  <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent group-hover:animate-slide-right-infinite" style={{ animationDelay: "0.2s" }}></div>
                   <div className="text-4xl font-bold text-gray-100 mb-1 relative">
-                    <span
-                      className="animate-pulse-slow inline-block"
-                      style={{ animationDelay: "0.3s" }}
-                    >
+                    <span className="animate-counter inline-block" style={{ animationDelay: "0.3s" }}>
                       {counterValues.views}
                     </span>
                     <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                   </div>
-                  <div className="text-gray-500 dark:text-gray-400">
-                    Total Views
-                  </div>
+                  <div className="text-gray-500 dark:text-gray-400">Total Views</div>
                 </div>
+                
                 <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div
-                    className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-teal-500/50 to-transparent group-hover:animate-slide-right-infinite"
-                    style={{ animationDelay: "0.4s" }}
-                  ></div>
+                  <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-teal-500/50 to-transparent group-hover:animate-slide-right-infinite" style={{ animationDelay: "0.4s" }}></div>
                   <div className="text-4xl font-bold text-gray-100 mb-1 relative">
-                    <span
-                      className="animate-pulse-slow inline-block"
-                      style={{ animationDelay: "0.6s" }}
-                    >
+                    <span className="animate-counter inline-block" style={{ animationDelay: "0.6s" }}>
                       {counterValues.satisfaction}
                     </span>
                     <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-teal-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                   </div>
-                  <div className="text-gray-500 dark:text-gray-400">
-                    Satisfaction
-                  </div>
+                  <div className="text-gray-500 dark:text-gray-400">Satisfaction</div>
                 </div>
+                
                 <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div
-                    className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent group-hover:animate-slide-right-infinite"
-                    style={{ animationDelay: "0.6s" }}
-                  ></div>
+                  <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent group-hover:animate-slide-right-infinite" style={{ animationDelay: "0.6s" }}></div>
                   <div className="text-4xl font-bold text-gray-100 mb-1 relative">
-                    <span
-                      className="animate-pulse-slow inline-block"
-                      style={{ animationDelay: "0.9s" }}
-                    >
+                    <span className="animate-counter inline-block" style={{ animationDelay: "0.9s" }}>
                       {counterValues.certifications}
                     </span>
                     <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-indigo-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                   </div>
-                  <div className="text-gray-500 dark:text-gray-400">
-                    Topics Covered
-                  </div>
+                  <div className="text-gray-500 dark:text-gray-400">Topics Covered</div>
                 </div>
               </div>
             </div>
@@ -778,7 +809,7 @@ export default function Resources() {
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
             <div className="text-center mb-12">
               <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-100 px-3 py-1 text-sm mb-6">
-                Video Library
+                Our Events
               </div>
               <h2 className="text-4xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 mb-4">
                 Cybersecurity Webinars
@@ -854,7 +885,7 @@ export default function Resources() {
               <Button
                 size="lg"
                 variant="outline"
-                className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105 bg-white text-gray-900"
+                className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105 bg-white text-gray-950"
                 onClick={() => window.open('https://www.youtube.com/@cybersoldiersacademy', '_blank', 'noopener,noreferrer')}
               >
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/50 to-blue-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
