@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 // Temporarily commenting out these logos until official confirmation
 // import IIT_Madras_Logo from "../IIT_Madras_Logo.png"
 // import IITM_Pravartak_Logo from "../IITM_Pravartak_Logo.jpeg"
-import EC_Council_Logo from "../EC_Council_Logo.jpg"
+import EC_Council_Logo from "../EC_Council.webp"
 import Startup_India_Logo from "../Startup_India_Logo.png"
 // Removing Startup MP Logo as requested
 // import Startup_MP_Logo from "../Startup_MP_Logo.png"
@@ -229,27 +229,37 @@ export default function Affiliations() {
                 }}
               >
                 <div className="flex gap-4 md:gap-6 w-full">
-                  {affiliations.map((item, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.1 * index }}
-                      className="relative flex-shrink-0 p-4 md:p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300 group w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-16px)]"
-                      whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                    >
-                      <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                      <div className="relative z-10 flex flex-col items-center gap-3 md:gap-4">
-                        <div className="relative z-10 flex items-center justify-center w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full bg-gray-700">
-                          <img src={item.logo} alt={`${item.name} Logo`} className="w-20 h-20 md:w-32 md:h-32 object-contain" />
-                        </div>
-                        <div className="text-center">
-                          <h3 className="text-base md:text-lg font-semibold text-white mb-1 md:mb-2">{item.name}</h3>
-                          <p className="text-gray-400 text-xs md:text-sm">{item.description}</p>
-                        </div>
+                {affiliations.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 * index }}
+                    className="relative flex-shrink-0 p-4 md:p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gray-200/10 hover:bg-white/10 transition-all duration-300 group w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-16px)]"
+                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  >
+                    <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                    <div className="relative z-10 flex flex-col items-center gap-3 md:gap-4">
+                      <div className="relative z-10 flex items-center justify-center w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full bg-gray-700 overflow-hidden">
+                        <img 
+                          src={item.logo} 
+                          alt={`${item.name} Logo`} 
+                          className="w-full h-full object-cover" 
+                          style={{
+                            objectFit: item.name === "EC Council" ? "contain" : "cover",
+                            padding: item.name === "EC Council" ? "0" : "",
+                            width: "100%",
+                            height: "100%"
+                          }}
+                        />
                       </div>
-                    </motion.div>
-                  ))}
+                      <div className="text-center">
+                        <h3 className="text-base md:text-lg font-semibold text-white mb-1 md:mb-2">{item.name}</h3>
+                        <p className="text-gray-400 text-xs md:text-sm">{item.description}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
                 </div>
               </motion.div>
             </div>
