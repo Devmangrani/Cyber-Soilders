@@ -53,61 +53,61 @@ function extractVideoId(url) {
 // Cybersecurity webinar playlist data with improved thumbnail handling
 const cybersecurityPlaylist = [
   {
-    id: "96HQOcEl4oQ", // CISA Exam Made Easy
-    title: "Certified Information Systems Auditor (CISA) Exam Made Easy – Clear CISA in 60 Days | Free Webinar",
-    shortTitle: "CISA Exam Made Easy",
+    id: "1kPv-3jfJ1c", // https://youtu.be/1kPv-3jfJ1c?si=MACZczbJoShh2DcF
+    title: "30 Days CISSP Study Plan",
+    shortTitle: "How to Prepare 30 Days Study Plan for CISSP - By Ajit Pal Singh",
+    description: "Learn how to create and follow an effective 30-day study plan for the CISSP certification with guidance from expert Ajit Pal Singh.",
+    icon: "Award",
+    thumbnailUrl: "https://i.ytimg.com/vi/1kPv-3jfJ1c/hqdefault.jpg"
+  },
+  {
+    id: "ajQHc44FV54", // https://youtu.be/ajQHc44FV54?si=sLbjMXt8xXjKoirk
+    title: "Guide to CISSP",
+    shortTitle: "Guide to CISSP: The Ultimate Certification for Cybersecurity Professionals - By Ajit Pal Singh",
+    description: "Comprehensive guide to the CISSP certification, considered the gold standard for cybersecurity professionals, presented by Ajit Pal Singh.",
+    icon: "Shield",
+    thumbnailUrl: "https://i.ytimg.com/vi/ajQHc44FV54/hqdefault.jpg"
+  },
+  {
+    id: "0yH1Agb_JEE", // https://youtu.be/0yH1Agb_JEE?si=h5fYIjrEhrb1d2-W
+    title: "Cybersecurity for Freshers & CEH v12",
+    shortTitle: "Cyber Security Career for Freshers | Is CEH v12 Worth It?",
+    description: "Guide for beginners entering the cybersecurity field and an analysis of whether the Certified Ethical Hacker (CEH) v12 certification is worthwhile.",
+    icon: "Zap",
+    thumbnailUrl: "https://i.ytimg.com/vi/0yH1Agb_JEE/hqdefault.jpg"
+  },
+  {
+    id: "Kz__eQ4GsRA", // https://youtu.be/Kz__eQ4GsRA?si=cJtb5wur5JetYI-l
+    title: "InfoSec Management & CISM",
+    shortTitle: "Information Security Management & Relevance of CISM by Saaz Rai",
+    description: "Industry expert Saaz Rai explains information security management concepts and the importance of the CISM certification.",
+    icon: "FileText",
+    thumbnailUrl: "https://i.ytimg.com/vi/Kz__eQ4GsRA/hqdefault.jpg"
+  },
+  {
+    id: "BFMw-UL7Ic4", // https://youtu.be/BFMw-UL7Ic4?si=Zk5FCuLOvUmG-yYy
+    title: "Excel in IS GRC & Audit Career",
+    shortTitle: "Online Master Class on How to Excel in IS GRC & Audit Career on Cyber Soldiers",
+    description: "Master class on building a successful career in Information Security Governance, Risk, Compliance, and Audit.",
+    icon: "Monitor",
+    thumbnailUrl: "https://i.ytimg.com/vi/BFMw-UL7Ic4/hqdefault.jpg"
+  },
+  {
+    id: "96HQOcEl4oQ", // https://youtu.be/96HQOcEl4oQ?si=g5G6-Fz3ZQ4ME9Ko
+    title: "CISA Exam Made Easy",
+    shortTitle: "Certified Information Systems Auditor (CISA) Exam Made Easy – Clear CISA in 60 Days | Free Webinar",
     description: "Learn how to prepare for and pass the CISA certification exam in just 60 days with this comprehensive free webinar.",
     icon: "Award",
     thumbnailUrl: "https://i.ytimg.com/vi/96HQOcEl4oQ/hqdefault.jpg"
   },
-  {
-    id: "RT-gcxx46FQ", // Careers in IS Governance
-    title: "Webinar on Careers in Information Security Governance, Risk & Compliance by Cyber Soldiers - 17Mar23",
-    shortTitle: "Careers in IS Governance & Compliance",
-    description: "Explore career opportunities in Information Security Governance, Risk Management, and Compliance fields with guidance from industry experts.",
-    icon: "Shield",
-    thumbnailUrl: "https://i.ytimg.com/vi/RT-gcxx46FQ/hqdefault.jpg"
-  },
-  {
-    id: "iqCkLDoc05o", // InfoSec Career and CISSP
-    title: "Webinar on Info Sec Career and CISSP Orientation by Cyber Soldiers - 15 Feb 23",
-    shortTitle: "InfoSec Career & CISSP Orientation",
-    description: "Get oriented with Information Security career paths and learn about the Certified Information Systems Security Professional (CISSP) certification.",
-    icon: "FileText",
-    thumbnailUrl: "https://i.ytimg.com/vi/iqCkLDoc05o/hqdefault.jpg"
-  },
-  {
-    id: "CafFbp-pBt4", // Mastering CISM
-    title: "Mastering CISM - Certified Information Security Manager",
-    shortTitle: "Mastering CISM",
-    description: "Comprehensive guide to mastering the Certified Information Security Manager (CISM) certification for advancing your security management career.",
-    icon: "Monitor",
-    thumbnailUrl: "https://i.ytimg.com/vi/CafFbp-pBt4/hqdefault.jpg"
-  },
-  {
-    id: "pyTuuye6Hbk", // Career in Cloud Security
-    title: "Webinar Career in Cloud Security & Relevance of CCSP",
-    shortTitle: "Career in Cloud Security & CCSP",
-    description: "Learn about career opportunities in cloud security and the importance of the Certified Cloud Security Professional (CCSP) certification.",
-    icon: "Zap",
-    thumbnailUrl: "https://i.ytimg.com/vi/pyTuuye6Hbk/hqdefault.jpg"
-  },
-  {
-    id: "BFMw-UL7Ic4", // IS GRC & Audit Career
-    title: "Online Master Class on How to Excel in IS GRC & Audit Career on Cyber Soldiers",
-    shortTitle: "Excel in IS GRC & Audit Career",
-    description: "Master class on building a successful career in Information Security Governance, Risk, Compliance, and Audit.",
-    icon: "FileText",
-    thumbnailUrl: "https://i.ytimg.com/vi/BFMw-UL7Ic4/hqdefault.jpg"
-  },
-  {
-    id: "Kz__eQ4GsRA", // InfoSec Management & CISM
-    title: "Information Security Management & Relevance of CISM by Saaz Rai",
-    shortTitle: "InfoSec Management & CISM",
-    description: "Industry expert Saaz Rai explains information security management concepts and the importance of the CISM certification.",
-    icon: "Shield",
-    thumbnailUrl: "https://i.ytimg.com/vi/Kz__eQ4GsRA/hqdefault.jpg"
-  },
+  // {
+  //   id: "Kz__eQ4GsRA", // InfoSec Management & CISM
+  //   title: "Information Security Management & Relevance of CISM by Saaz Rai",
+  //   shortTitle: "InfoSec Management & CISM",
+  //   description: "Industry expert Saaz Rai explains information security management concepts and the importance of the CISM certification.",
+  //   icon: "Shield",
+  //   thumbnailUrl: "https://i.ytimg.com/vi/Kz__eQ4GsRA/hqdefault.jpg"
+  // },
   {
     id: "0yH1Agb_JEE", // Cybersecurity for Freshers
     title: "Cyber Security Career for Freshers | Is CEH v12 Worth It?",
@@ -116,14 +116,14 @@ const cybersecurityPlaylist = [
     icon: "Zap",
     thumbnailUrl: "https://i.ytimg.com/vi/0yH1Agb_JEE/hqdefault.jpg"
   },
-  {
-    id: "ajQHc44FV54", // Guide to CISSP
-    title: "Guide to CISSP: The Ultimate Certification for Cybersecurity Professionals - By Ajit Pal Singh",
-    shortTitle: "Guide to CISSP",
-    description: "Comprehensive guide to the CISSP certification, considered the gold standard for cybersecurity professionals, presented by Ajit Pal Singh.",
-    icon: "Award",
-    thumbnailUrl: "https://i.ytimg.com/vi/ajQHc44FV54/hqdefault.jpg"
-  },
+  // {
+  //   id: "ajQHc44FV54", // Guide to CISSP
+  //   title: "Guide to CISSP: The Ultimate Certification for Cybersecurity Professionals - By Ajit Pal Singh",
+  //   shortTitle: "Guide to CISSP",
+  //   description: "Comprehensive guide to the CISSP certification, considered the gold standard for cybersecurity professionals, presented by Ajit Pal Singh.",
+  //   icon: "Award",
+  //   thumbnailUrl: "https://i.ytimg.com/vi/ajQHc44FV54/hqdefault.jpg"
+  // },
   {
     id: "ao31ByEECgE", // Master CISA Class
     title: "Master CISA Class – Ultimate Guide to Becoming a Certified Information Systems Auditor (CISA)",
