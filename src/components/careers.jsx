@@ -386,7 +386,7 @@ export default function Careers() {
           </div>
           
           <div className="overflow-hidden">
-            <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 animate-gradient">
+            <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-600 dark:from-gray-100 dark:to-gray-600 pb-2">
               Become a Cyber.Soldier
             </h1>
           </div>

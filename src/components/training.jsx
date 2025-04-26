@@ -1124,9 +1124,9 @@ export default function Training() {
                   </div>
                 </div>
                 <div className="overflow-hidden">
-                  <h1 className="hero-title text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-600 dark:from-gray-100 dark:to-gray-600">
-                    Cyber Security Training
-                  </h1>
+                <h1 className="hero-title text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-600 dark:from-gray-100 dark:to-gray-600 pb-2">
+                  Cyber Security Training
+                </h1>
                 </div>
                 <div className="overflow-hidden">
                   <p className="hero-description text-xl text-muted-foreground">
