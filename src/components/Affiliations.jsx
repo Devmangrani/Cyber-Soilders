@@ -11,7 +11,7 @@ import Startup_India_Logo from "../Startup_India_Logo.png"
 // Removing Startup MP Logo as requested
 // import Startup_MP_Logo from "../Startup_MP_Logo.png"
 import MSME_Logo from "../MSME_Logo.png"
-import MCA_Logo from "../MCA_Logo.jpeg"
+import MCA_Logo from "../MCA_Logo.png"
 import DG_Trust_Logo from "../DG_Trust_Logo.webp"
 import Comptia_Logo from "../compita_logo.png"
 
