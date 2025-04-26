@@ -439,6 +439,189 @@ export default function Training() {
     requestAnimationFrame(updateCounter)
   }
 
+  const heroMetrics = [
+    { id: "learners", value: "2000+", label: "Learners" },
+    { id: "countries", value: "10+", label: "Countries" },
+    { id: "organizations", value: "10+", label: "Organizations" }
+  ];
+  
+  // State to track current animation values
+  const [heroCounterValues, setHeroCounterValues] = useState({});
+  
+  // Add this useEffect to handle the animation when the component mounts
+  useEffect(() => {
+    // Animation duration in milliseconds
+    const duration = 2000;
+    const startTime = Date.now();
+    
+    // Parse target values from the heroMetrics
+    const targetValues = {};
+    heroMetrics.forEach(metric => {
+      // Parse numeric value from strings like "2000+"
+      const numericValue = parseInt(metric.value.replace(/[^0-9]/g, ''), 10);
+      targetValues[metric.id] = numericValue;
+      
+      // Initialize with zero
+      setHeroCounterValues(prev => ({
+        ...prev,
+        [metric.id]: 0
+      }));
+    });
+  
+    const animateHeroCounters = () => {
+      const currentTime = Date.now();
+      const elapsedTime = currentTime - startTime;
+      
+      if (elapsedTime < duration) {
+        // Calculate progress (0 to 1)
+        const progress = elapsedTime / duration;
+        
+        // Update all counters
+        const newValues = {};
+        Object.keys(targetValues).forEach(key => {
+          newValues[key] = Math.floor(progress * targetValues[key]);
+        });
+        
+        setHeroCounterValues(newValues);
+        
+        // Continue animation
+        requestAnimationFrame(animateHeroCounters);
+      } else {
+        // Animation complete, set final values
+        setHeroCounterValues(targetValues);
+      }
+    };
+    
+    // Start the animation
+    requestAnimationFrame(animateHeroCounters);
+  }, []); // Empty dependency array ensures this runs once on mount
+
+
+  const trainerMetrics = [
+    { id: "seniorExperts", value: "10+", label: "Senior Experts", subLabel: "18+ Years of Experience" },
+    { id: "midLevelExperts", value: "15+", label: "Mid-Level Experts", subLabel: "13+ Years of Experience" },
+    { id: "specializedExperts", value: "20+", label: "Specialized Experts", subLabel: "7+ Years of Experience" }
+  ];
+  
+  const additionalMetrics = [
+    { id: "totalTrainers", value: "45+", label: "Total Trainers" },
+    { id: "industryDomains", value: "12+", label: "Industry Domains" },
+    { id: "certifications", value: "30+", label: "Certifications" },
+    { id: "trainingHours", value: "20K+", label: "Training Hours" }
+  ];
+  
+  // State to track current animation values
+  const [trainerCounterValues, setTrainerCounterValues] = useState({});
+  const [additionalCounterValues, setAdditionalCounterValues] = useState({});
+  
+  // Add this useEffect to handle the animation when the trainers section is visible
+  useEffect(() => {
+    const animateTrainerCounters = () => {
+      // Animation duration in milliseconds
+      const duration = 2000;
+      const startTime = Date.now();
+      
+      // Parse target values from the trainerMetrics
+      const targetTrainerValues = {};
+      trainerMetrics.forEach(metric => {
+        // Parse numeric value from strings like "10+"
+        const numericValue = parseInt(metric.value.replace(/[^0-9]/g, ''), 10);
+        targetTrainerValues[metric.id] = numericValue;
+        
+        // Initialize with zero
+        setTrainerCounterValues(prev => ({
+          ...prev,
+          [metric.id]: 0
+        }));
+      });
+      
+      // Parse target values from the additionalMetrics
+      const targetAdditionalValues = {};
+      additionalMetrics.forEach(metric => {
+        // Handle K format (thousands)
+        let value = metric.value;
+        let multiplier = 1;
+        
+        if (value.includes('K')) {
+          multiplier = 1000;
+          value = value.replace('K', '');
+        }
+        
+        // Parse numeric value
+        const numericValue = parseInt(value.replace(/[^0-9]/g, ''), 10) * multiplier;
+        targetAdditionalValues[metric.id] = numericValue;
+        
+        // Initialize with zero
+        setAdditionalCounterValues(prev => ({
+          ...prev,
+          [metric.id]: 0
+        }));
+      });
+      
+      const updateCounters = () => {
+        const currentTime = Date.now();
+        const elapsedTime = currentTime - startTime;
+        
+        if (elapsedTime < duration) {
+          // Calculate progress (0 to 1)
+          const progress = elapsedTime / duration;
+          
+          // Update trainer counters
+          const newTrainerValues = {};
+          Object.keys(targetTrainerValues).forEach(key => {
+            newTrainerValues[key] = Math.floor(progress * targetTrainerValues[key]);
+          });
+          setTrainerCounterValues(newTrainerValues);
+          
+          // Update additional counters
+          const newAdditionalValues = {};
+          Object.keys(targetAdditionalValues).forEach(key => {
+            newAdditionalValues[key] = Math.floor(progress * targetAdditionalValues[key]);
+          });
+          setAdditionalCounterValues(newAdditionalValues);
+          
+          // Continue animation
+          requestAnimationFrame(updateCounters);
+        } else {
+          // Animation complete, set final values
+          setTrainerCounterValues(targetTrainerValues);
+          setAdditionalCounterValues(targetAdditionalValues);
+        }
+      };
+      
+      // Start the animation
+      requestAnimationFrame(updateCounters);
+    };
+    
+    // Create intersection observer to trigger animation when section is visible
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateTrainerCounters();
+          observer.disconnect(); // Only animate once
+        }
+      });
+    }, { threshold: 0.1 }); // Trigger when at least 10% of the section is visible
+    
+    // Observe the trainers section
+    if (trainersRef.current) {
+      observer.observe(trainersRef.current);
+    }
+    
+    return () => {
+      observer.disconnect(); // Clean up
+    };
+  }, []);
+  
+  // Format a number with K suffix for thousands
+  const formatNumber = (number) => {
+    if (number >= 1000) {
+      return `${Math.floor(number/1000)}K`;
+    }
+    return number;
+  };
+
+
   // Initialize GSAP animations
   useEffect(() => {
     // Skip on server-side rendering
@@ -962,33 +1145,19 @@ export default function Training() {
 
             {/* Key metrics with enhanced animations */}
             <div className="mt-16 grid grid-cols-3 gap-8">
-              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent group-hover:animate-slide-right-infinite"></div>
-                <div className="text-4xl font-bold text-gray-100 mb-1 relative">
-                  <span className="animate-pulse-slow inline-block">2000+</span>
-                  <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+              {heroMetrics.map((metric, index) => (
+                <div key={metric.id} className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent group-hover:animate-slide-right-infinite" style={{animationDelay: `${index * 0.2}s`}}></div>
+                  <div className="text-4xl font-bold text-gray-100 mb-1 relative">
+                    <span className="animate-pulse-slow inline-block" style={{animationDelay: `${index * 0.3}s`}}>
+                      {heroCounterValues[metric.id] !== undefined ? heroCounterValues[metric.id] : 0}+
+                    </span>
+                    <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+                  </div>
+                  <div className="text-gray-500 dark:text-gray-400">{metric.label}</div>
                 </div>
-                <div className="text-gray-500 dark:text-gray-400">Learners</div>
-              </div>
-              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent group-hover:animate-slide-right-infinite" style={{animationDelay: '0.2s'}}></div>
-                <div className="text-4xl font-bold text-gray-100 mb-1 relative">
-                  <span className="animate-pulse-slow inline-block" style={{animationDelay: '0.3s'}}>10+</span>
-                  <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
-                </div>
-                <div className="text-gray-500 dark:text-gray-400">Countries</div>
-              </div>
-              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-200/10 relative group overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-teal-500/50 to-transparent group-hover:animate-slide-right-infinite" style={{animationDelay: '0.4s'}}></div>
-                <div className="text-4xl font-bold text-gray-100 mb-1 relative">
-                  <span className="animate-pulse-slow inline-block" style={{animationDelay: '0.6s'}}>10+</span>
-                  <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-teal-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
-                </div>
-                <div className="text-gray-500 dark:text-gray-400">Organizations</div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -1271,71 +1440,31 @@ export default function Training() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Senior Experts */}
-              <div className="relative bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/30 to-teal-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-primary/30 to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-500 z-0"></div>
-                <div className="relative z-10 p-8 flex flex-col items-center text-center">
-                  <div className="w-20 h-20 rounded-full bg-gray-800 flex items-center justify-center mb-6 border-4 border-gray-700 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                    <GraduationCap className="h-10 w-10 text-gray-100" />
+              {trainerMetrics.map((metric, index) => (
+                <div key={metric.id} className="relative bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/30 to-teal-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-primary/30 to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-500 z-0"></div>
+                  <div className="relative z-10 p-8 flex flex-col items-center text-center">
+                    <div className="w-20 h-20 rounded-full bg-gray-800 flex items-center justify-center mb-6 border-4 border-gray-700 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                      {index === 0 ? (
+                        <GraduationCap className="h-10 w-10 text-gray-100" />
+                      ) : index === 1 ? (
+                        <Building className="h-10 w-10 text-gray-100" />
+                      ) : (
+                        <Users className="h-10 w-10 text-gray-100" />
+                      )}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2 text-gray-100">{metric.label}</h3>
+                    <div className="text-4xl font-bold text-gray-100 mb-3">
+                      {trainerCounterValues[metric.id] !== undefined ? trainerCounterValues[metric.id] : 0}+
+                    </div>
+                    <p className="text-gray-100 text-lg mb-1">Individuals with</p>
+                    <p className="text-gray-100 text-lg font-semibold mb-4">{metric.subLabel}</p>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 text-gray-100">Senior Experts</h3>
-                  <div className="text-4xl font-bold text-gray-100 mb-3">10+</div>
-                  <p className="text-gray-100 text-lg mb-1">Individuals with</p>
-                  <p className="text-gray-100 text-lg font-semibold mb-4">18+ Years of Experience</p>
                 </div>
-              </div>
-              
-              {/* Mid-Level Experts */}
-              <div className="relative bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 to-indigo-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-primary/30 to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-500 z-0"></div>
-                <div className="relative z-10 p-8 flex flex-col items-center text-center">
-                  <div className="w-20 h-20 rounded-full bg-gray-800 flex items-center justify-center mb-6 border-4 border-gray-700 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                    <Building className="h-10 w-10 text-gray-100" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2 text-gray-100">Mid-Level Experts</h3>
-                  <div className="text-4xl font-bold text-gray-100 mb-3">15+</div>
-                  <p className="text-gray-100 text-lg mb-1">Individuals with</p>
-                  <p className="text-gray-100 text-lg font-semibold mb-4">13+ Years of Experience</p>          
-                </div>
-              </div>
-              
-              {/* Junior Experts */}
-              <div className="relative bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-primary/30 to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-500 z-0"></div>
-                <div className="relative z-10 p-8 flex flex-col items-center text-center">
-                  <div className="w-20 h-20 rounded-full bg-gray-800 flex items-center justify-center mb-6 border-4 border-gray-700 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                    <Users className="h-10 w-10 text-gray-100" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2 text-gray-100">Specialized Experts</h3>
-                  <div className="text-4xl font-bold text-gray-100 mb-3">20+</div>
-                  <p className="text-gray-100 text-lg mb-1">Individuals with</p>
-                  <p className="text-gray-100 text-lg font-semibold mb-4">7+ Years of Experience</p>
-                </div>
-              </div>
+              ))}
             </div>
-            
-            {/* Additional statistics row */}
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg flex flex-col items-center text-center group hover:bg-gray-800/70 transition-all duration-300">
-                <div className="text-2xl font-bold text-gray-100 mb-1 group-hover:scale-110 transition-transform duration-300">45+</div>
-                <div className="text-sm text-gray-100">Total Trainers</div>
-              </div>
-              <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg flex flex-col items-center text-center group hover:bg-gray-800/70 transition-all duration-300">
-                <div className="text-2xl font-bold text-gray-100 mb-1 group-hover:scale-110 transition-transform duration-300">12+</div>
-                <div className="text-sm text-gray-100">Industry Domains</div>
-              </div>
-              <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg flex flex-col items-center text-center group hover:bg-gray-800/70 transition-all duration-300">
-                <div className="text-2xl font-bold text-gray-100 mb-1 group-hover:scale-110 transition-transform duration-300">30+</div>
-                <div className="text-sm text-gray-100">Certifications</div>
-              </div>
-              <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg flex flex-col items-center text-center group hover:bg-gray-800/70 transition-all duration-300">
-                <div className="text-2xl font-bold text-gray-100 mb-1 group-hover:scale-110 transition-transform duration-300">20K+</div>
-                <div className="text-sm text-gray-100">Training Hours</div>
-              </div>
-            </div>
+
           </div>
         </section>
 
