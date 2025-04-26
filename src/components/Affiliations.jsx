@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 // Temporarily commenting out these logos until official confirmation
 // import IIT_Madras_Logo from "../IIT_Madras_Logo.png"
 // import IITM_Pravartak_Logo from "../IITM_Pravartak_Logo.jpeg"
-import EC_Council_Logo from "../EC_Council_Logo.jpg"
+import EC_Council_Logo from "../EC_Council_Logo1.png"
 import Startup_India_Logo from "../Startup_India_Logo.png"
 // Removing Startup MP Logo as requested
 // import Startup_MP_Logo from "../Startup_MP_Logo.png"
