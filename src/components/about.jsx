@@ -522,7 +522,7 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute -inset-x-full bottom-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent group-hover:animate-slide-right-infinite"></div>
                 <div className="text-4xl font-bold text-gray-100 mb-1 relative">
-                  <span className="counter-value" data-target="15" data-suffix="+">0</span>
+                  <span className="counter-value" data-target="20" data-suffix="+">0</span>
                   <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                 </div>
                 <div className="text-gray-400">Years Experience</div>
