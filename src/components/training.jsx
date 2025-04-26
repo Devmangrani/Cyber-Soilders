@@ -24,7 +24,7 @@ import NextjsBackground from './NextjsBackground'
 import ECCouncilLogo from '../EC_Council_Logo.jpg'
 import IITPravartakLogo from '../IITM_Pravartak_Logo.jpeg'
 import IITMadrasLogo from '../IIT_Madras_Logo.png'
-import CyberSecurityTraining from '../CyberSecurityServices.jpeg'
+import CyberSecurityTraining from '../why_choose_training.png'
 import CompTIALogo from '../CompTIA.png'
 import CyberGuardianLogo from '../LMS.png'
 import CyberRangeLogo from "../Cyber-range-logo.png"
@@ -1530,7 +1530,7 @@ export default function Training() {
                   alt="Cyber Security Training"
                   loading="lazy"
                   decoding="async"
-                  className="relative z-10 object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                  className="relative z-10 object-cover w-full h-full max-w-full max-h-full transition-transform duration-500 group-hover:scale-110"
                   src={CyberSecurityTraining}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-transparent">

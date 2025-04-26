@@ -187,7 +187,7 @@ export default function Contact() {
             </div>
 
             {/* Animated contact options */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 pt-8 w-full max-w-3xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 pt-8 w-full max-w-3xl">
               <div className="flex flex-col items-center group animate-fade-in relative overflow-hidden">
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 to-indigo-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                 <div className="p-4 rounded-full bg-white-900 text-blue-100 mb-3 animate-bounce-subtle group-hover:scale-110 transition-all duration-300 relative z-10">
@@ -212,13 +212,13 @@ export default function Contact() {
               </div>
               <div className="flex flex-col items-center group animate-fade-in relative overflow-hidden" style={{animationDelay: '400ms'}}>
                 <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                <div className="p-4 rounded-full bg-white-900 text-blue-100 mb-3 animate-bounce-subtle group-hover:scale-110 transition-all duration-300 relative z-10" style={{animationDelay: '1s'}}>
+                {/* <div className="p-4 rounded-full bg-white-900 text-blue-100 mb-3 animate-bounce-subtle group-hover:scale-110 transition-all duration-300 relative z-10" style={{animationDelay: '1s'}}>
                   <MessageCircle className="h-6 w-6" />
-                </div>
-                <div className="relative z-10">
+                </div> */}
+                {/* <div className="relative z-10">
                   <div className="text-lg font-medium text-blue-600 group-hover:text-blue-500 transition-colors duration-300">Live Chat</div>
                   <div className="text-sm text-muted-foreground">Instant assistance</div>
-                </div>
+                </div> */}
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
               </div>
             </div>
@@ -280,7 +280,7 @@ export default function Contact() {
                     <WhatsAppLogo className="h-6 w-6 text-[#25D366]" />
                   </div>
                   <div className="relative z-10">
-                    <h3 className="font-semibold text-blue-100 group-hover:text-blue-600 transition-colors duration-300">Live Chat</h3>
+                    <h3 className="font-semibold text-blue-100 group-hover:text-blue-600 transition-colors duration-300">Message Us</h3>
                     <p className="text-muted-foreground">+91-78143-21156</p>
                   </div>
                 </div>

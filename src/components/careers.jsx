@@ -409,7 +409,7 @@ export default function Careers() {
             </div>
             
             <div className="flex flex-col items-center hero-element group relative">
-              <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 animate-pulse-slow">
+              <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-100">
                 {counterValues['positions-filled'] || "100+"}
               </div>
               <div className="text-sm text-muted-foreground">Positions Filled</div>
@@ -417,7 +417,7 @@ export default function Careers() {
             </div>
             
             <div className="flex flex-col items-center hero-element group relative">
-              <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 animate-pulse-slow">
+              <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-100">
                 {counterValues['applications'] || "500+"}
               </div>
               <div className="text-sm text-muted-foreground">Applications</div>
@@ -425,7 +425,7 @@ export default function Careers() {
             </div>
             
             <div className="flex flex-col items-center hero-element group relative">
-              <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 animate-pulse-slow">
+              <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-100">
                 {counterValues['satisfaction'] || "98%"}
               </div>
               <div className="text-sm text-muted-foreground">Team Satisfaction</div>
@@ -433,7 +433,7 @@ export default function Careers() {
             </div>
             
             <div className="flex flex-col items-center hero-element group relative">
-              <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 animate-pulse-slow">
+              <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-100">
                 {counterValues['countries'] || "25+"}
               </div>
               <div className="text-sm text-muted-foreground">Countries</div>
