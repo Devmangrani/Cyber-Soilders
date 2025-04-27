@@ -410,7 +410,7 @@ export default function Careers() {
             
             <div className="flex flex-col items-center hero-element group relative">
               <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-100">
-                {counterValues['positions-filled'] || "100+"}
+                {counterValues['positions-filled' ] || "25+"}+
               </div>
               <div className="text-sm text-muted-foreground">Positions Filled</div>
               <div className="absolute -inset-4 border border-primary/0 group-hover:border-primary/20 rounded-lg transition-colors duration-300"></div>
@@ -418,7 +418,7 @@ export default function Careers() {
             
             <div className="flex flex-col items-center hero-element group relative">
               <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-100">
-                {counterValues['applications'] || "500+"}
+                {counterValues['applications'] || "500+"}+
               </div>
               <div className="text-sm text-muted-foreground">Applications</div>
               <div className="absolute -inset-4 border border-primary/0 group-hover:border-primary/20 rounded-lg transition-colors duration-300"></div>
@@ -426,7 +426,7 @@ export default function Careers() {
             
             <div className="flex flex-col items-center hero-element group relative">
               <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-100">
-                {counterValues['satisfaction'] || "98%"}
+                {counterValues['satisfaction'] || "98%"}%
               </div>
               <div className="text-sm text-muted-foreground">Team Satisfaction</div>
               <div className="absolute -inset-4 border border-primary/0 group-hover:border-primary/20 rounded-lg transition-colors duration-300"></div>
@@ -434,7 +434,7 @@ export default function Careers() {
             
             <div className="flex flex-col items-center hero-element group relative">
               <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-100">
-                {counterValues['countries'] || "25+"}
+                {counterValues['countries'] || "5"}+
               </div>
               <div className="text-sm text-muted-foreground">Countries</div>
               <div className="absolute -inset-4 border border-primary/0 group-hover:border-primary/20 rounded-lg transition-colors duration-300"></div>
