@@ -24,7 +24,7 @@ import NextjsBackground from './NextjsBackground'
 import ECCouncilLogo from '../EC_Council_Logo.jpg'
 import IITPravartakLogo from '../IITM_Pravartak_Logo.jpeg'
 import IITMadrasLogo from '../IIT_Madras_Logo.png'
-import CyberSecurityTraining from '../why_choose_training.webp'
+import CyberSecurityTraining from '../why_choose_training.png'
 import CompTIALogo from '../CompTIA.png'
 import CyberGuardianLogo from '../LMS.png'
 import CyberRangeLogo from "../Cyber-range-logo.png"

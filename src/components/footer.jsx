@@ -6,6 +6,7 @@ import {
   Youtube,
   MessageCircle,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import logo from "../logo.png";
 const WhatsAppLogo = ({ className = "" }) => (
   <svg
@@ -40,19 +41,30 @@ const YouTubeLogo = ({ className = "" }) => (
 );
 
 const GridBackground = () => (
-  <div className="absolute inset-0">
-    <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden">
-      {/* Removed grid node and trace animations */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute inset-0 w-full h-full">
+      {/* Base grid - dark gray lines */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:24px_24px]" />
+      
+      {/* Radial gradient overlay - subtle purple tint */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_100%_200px,rgba(120,119,198,0.05),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_-100%_-100px,rgba(120,119,198,0.05),transparent)]" />
+      
+      {/* Grid nodes - matching dark gray */}
+      <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000000_70%,transparent_100%)]">
+        <div className="absolute inset-0 bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:16px_16px] [animation:pulse_4s_cubic-bezier(0.4,0,0.6,1)_infinite]" />
+      </div>
     </div>
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
   </div>
 );
 
 export default function Footer() {
+  const navigate = useNavigate();
+
   return (
     <footer className="bg-black text-white border-t border-gray-700 relative overflow-hidden">
       <GridBackground />
-      <div className="container mx-auto max-w-[1400px] px-4 py-12">
+      <div className="container mx-auto max-w-[1400px] px-4 py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* First column with logo and tagline */}
           <div>
@@ -61,72 +73,56 @@ export default function Footer() {
 
           {/* Second column with navigation links */}
           <div className="md:pl-20">
-            <div className="space-y-3">
-              <p>
-                <a
-                  href="/"
-                  className="text-base font-medium hover:text-gray-300"
-                >
-                  Home
-                </a>
-              </p>
-              <p>
-                <a
-                  href="/product"
-                  className="text-base font-medium hover:text-gray-300"
-                >
-                  Product
-                </a>
-              </p>
-              <p>
-                <a
-                  href="/services"
-                  className="text-base font-medium hover:text-gray-300"
-                >
-                  Services
-                </a>
-              </p>
-              <p>
-                <a
-                  href="/training"
-                  className="text-base font-medium hover:text-gray-300"
-                >
-                  Training
-                </a>
-              </p>
-              <p>
-                <a
-                  href="/resources"
-                  className="text-base font-medium hover:text-gray-300"
-                >
-                  Resources
-                </a>
-              </p>
-              <p>
-                <a
-                  href="/about"
-                  className="text-base font-medium hover:text-gray-300"
-                >
-                  About Us
-                </a>
-              </p>
-              <p>
-                <a
-                  href="/careers"
-                  className="text-base font-medium hover:text-gray-300"
-                >
-                  Career
-                </a>
-              </p>
-              <p>
-                <a
-                  href="/contact"
-                  className="text-base font-medium hover:text-gray-300"
-                >
-                  Contact Us
-                </a>
-              </p>
-            </div>
+            <nav className="space-y-3">
+              <button
+                onClick={() => navigate("/")}
+                className="text-base font-medium hover:text-gray-300 cursor-pointer w-full text-left py-1 transition-colors duration-200"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => navigate("/product")}
+                className="text-base font-medium hover:text-gray-300 cursor-pointer w-full text-left py-1 transition-colors duration-200"
+              >
+                Product
+              </button>
+              <button
+                onClick={() => navigate("/services")}
+                className="text-base font-medium hover:text-gray-300 cursor-pointer w-full text-left py-1 transition-colors duration-200"
+              >
+                Services
+              </button>
+              <button
+                onClick={() => navigate("/training")}
+                className="text-base font-medium hover:text-gray-300 cursor-pointer w-full text-left py-1 transition-colors duration-200"
+              >
+                Training
+              </button>
+              <button
+                onClick={() => navigate("/resources")}
+                className="text-base font-medium hover:text-gray-300 cursor-pointer w-full text-left py-1 transition-colors duration-200"
+              >
+                Resources
+              </button>
+              <button
+                onClick={() => navigate("/about")}
+                className="text-base font-medium hover:text-gray-300 cursor-pointer w-full text-left py-1 transition-colors duration-200"
+              >
+                About Us
+              </button>
+              <button
+                onClick={() => navigate("/careers")}
+                className="text-base font-medium hover:text-gray-300 cursor-pointer w-full text-left py-1 transition-colors duration-200"
+              >
+                Career
+              </button>
+              <button
+                onClick={() => navigate("/contact")}
+                className="text-base font-medium hover:text-gray-300 cursor-pointer w-full text-left py-1 transition-colors duration-200"
+              >
+                Contact Us
+              </button>
+            </nav>
           </div>
 
           {/* Third column with contact info */}
@@ -146,7 +142,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/company/cybersoldiersacademy/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:opacity-80"
+                  className="hover:opacity-80 transition-opacity duration-200"
                 >
                   <LinkedInLogo className="h-6 w-6 text-[#0077B5]" />
                 </a>
@@ -155,7 +151,7 @@ export default function Footer() {
                   href="https://www.youtube.com/@CyberSoldiersAcademy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:opacity-80"
+                  className="hover:opacity-80 transition-opacity duration-200"
                 >
                   <YouTubeLogo className="h-6 w-6 text-[#FF0000]" />
                 </a>
@@ -176,4 +172,23 @@ export default function Footer() {
       </div>
     </footer>
   );
+}
+
+// Update the pulse animation for better visibility
+const pulseAnimation = `
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+`;
+
+// Add style tag to head
+if (typeof document !== 'undefined') {
+  const style = document.createElement('style');
+  style.textContent = pulseAnimation;
+  document.head.appendChild(style);
 }
