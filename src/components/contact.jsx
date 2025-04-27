@@ -130,7 +130,7 @@ export default function Contact() {
       {/* Hero Section with Enhanced Visual Elements */}
       <section 
         ref={heroRef}
-        className="relative w-full py-16 md:py-28 lg:py-32 bg-gradient-to-b from-black to-gray-900"
+        className="relative w-full py-16 md:py-28 lg:py-32 bg-gradient-to-b from-black to-gray-950"
       >
         {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
         <div 
