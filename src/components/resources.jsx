@@ -22,6 +22,7 @@ import CEHLogo from "../CEH.png";
 import CompTIALogo from "../CompTIA.png";
 import FutureOfCyberSecurity from "../soc.jpg";
 import Certified from "../Certified.jpeg"
+import Cyberlogo from "../cyberlogo.png"
 
 // Array of cybersecurity-related image URLs
 const cyberImages = [
@@ -94,12 +95,12 @@ const cybersecurityPlaylist = [
     thumbnailUrl: "https://i.ytimg.com/vi/BFMw-UL7Ic4/hqdefault.jpg"
   },
   {
-    id: "96HQOcEl4oQ", // https://youtu.be/96HQOcEl4oQ?si=g5G6-Fz3ZQ4ME9Ko
+    id: "pyTuuye6Hbk", // https://youtu.be/pyTuuye6Hbk?si=g5G6-Fz3ZQ4ME9Ko
     title: "CISA Exam Made Easy",
-    shortTitle: "Certified Information Systems Auditor (CISA) Exam Made Easy – Clear CISA in 60 Days | Free Webinar",
-    description: "Learn how to prepare for and pass the CISA certification exam in just 60 days with this comprehensive free webinar.",
+    shortTitle: "Career in Cloud Security & Relevance of CCSP",
+    description: "Prepare for the CCSP exam with our comprehensive CCSP Certification Training Course. Gain the knowledge and skills needed to excel in cloud security and enhance your professional profile in the fast-growing field of cloud computing.",
     icon: "Award",
-    thumbnailUrl: "https://i.ytimg.com/vi/96HQOcEl4oQ/hqdefault.jpg"
+    thumbnailUrl: "https://i.ytimg.com/vi/pyTuuye6Hbk/hqdefault.jpg"
   },
   // {
   //   id: "Kz__eQ4GsRA", // InfoSec Management & CISM
@@ -137,42 +138,73 @@ const cybersecurityPlaylist = [
 
 
 // Certification logos as shown in sketch
+// First, update your certifications array with these additional properties
 const certifications = [
   {
+    id: "cissp-cert",
     name: "CISSP",
     logo: CISPPLogo,
     altText: "CISSP - Certified Information Systems Security Professional",
-    link: "https://youtube.com/playlist?list=PLzecYhCbkDdHSQQ6VbyO6T0jZ1SSYDe0h&si=jYdpP2DAQ9Q570WH"
+    link: "https://youtube.com/playlist?list=PLzecYhCbkDdHSQQ6VbyO6T0jZ1SSYDe0h&si=jYdpP2DAQ9Q570WH",
+    thumbnailUrl: "https://i.ytimg.com/vi/1kPv-3jfJ1c/hqdefault.jpg",
+    shortTitle: "CISSP",
+    description: "The gold standard for cybersecurity professionals. Covers security and risk management, asset security, and more.",
+    icon: "Shield"
   },
   {
+    id: "cism-cert",
     name: "CISM",
     logo: CISMLogo,
     altText: "CISM - Certified Information Security Manager",
-    link: "https://youtube.com/playlist?list=PLzecYhCbkDdEhTOOkOln9i5G1qIrjmID3&si=uNdvikPbAFOQIciN"
+    link: "https://youtube.com/playlist?list=PLzecYhCbkDdEhTOOkOln9i5G1qIrjmID3&si=uNdvikPbAFOQIciN",
+    thumbnailUrl: "https://i.ytimg.com/vi/Kz__eQ4GsRA/hqdefault.jpg",
+    shortTitle: "CISM",
+    description: "Focused on information security management. Perfect for IT professionals looking to step into management roles.",
+    icon: "FileText"
   },
   {
+    id: "cisa-cert",
     name: "CISA",
     logo: CISALogo,
     altText: "CISA - Certified Information Systems Auditor",
-    link: "https://youtube.com/playlist?list=PLzecYhCbkDdFoQNwmQpfwPrn4srYVJrcP&si=qNpUfCS0paKH-Cbb"
+    link: "https://youtube.com/playlist?list=PLzecYhCbkDdFoQNwmQpfwPrn4srYVJrcP&si=qNpUfCS0paKH-Cbb",
+    thumbnailUrl: "https://i.ytimg.com/vi/ao31ByEECgE/hqdefault.jpg",
+    shortTitle: "CISA",
+    description: "The standard for IT auditing. Focuses on auditing, control, and security of information systems.",
+    icon: "Monitor"
   },
   {
+    id: "crisc-cert",
     name: "CRISC",
     logo: CRISCLogo,
     altText: "CRISC - Certified in Risk and Information Systems Control",
-    link: "https://youtube.com/playlist?list=PLzecYhCbkDdHz5dAph1nwPTRo5YCzuO-X&si=lBiE0GfztKuLUcVG"
+    link: "https://youtube.com/playlist?list=PLzecYhCbkDdHz5dAph1nwPTRo5YCzuO-X&si=lBiE0GfztKuLUcVG",
+    thumbnailUrl: "https://i.ytimg.com/vi/BFMw-UL7Ic4/hqdefault.jpg",
+    shortTitle: "CRISC",
+    description: "Specializes in enterprise IT risk management and information systems control design and implementation.",
+    icon: "Award"
   },
   {
+    id: "ceh-cert",
     name: "CEH",
     logo: CEHLogo,
     altText: "CEH - Certified Ethical Hacker",
-    link: "https://youtu.be/CtSxNLQ2Ed4?si=FHrqLZUPT1hctFWr"
+    link: "https://youtu.be/CtSxNLQ2Ed4?si=FHrqLZUPT1hctFWr",
+    thumbnailUrl: "https://i.ytimg.com/vi/0yH1Agb_JEE/hqdefault.jpg",
+    shortTitle: "CEH",
+    description: "Learn to think like a hacker to better defend against security threats and vulnerabilities.",
+    icon: "Zap"
   },
   {
+    id: "comptia-cert",
     name: "CompTIA Security+",
     logo: CompTIALogo,
     altText: "CompTIA Security+",
-    link: "https://youtube.com/playlist?list=PLzecYhCbkDdHB7kuKYRL4xgipgJbIxtPm&si=JWbxMevdX2jzDolz"
+    link: "https://youtube.com/playlist?list=PLzecYhCbkDdHB7kuKYRL4xgipgJbIxtPm&si=JWbxMevdX2jzDolz",
+    thumbnailUrl: "https://i.ytimg.com/vi/1kPv-3jfJ1c/hqdefault.jpg",
+    shortTitle: "CompTIA Security+",
+    description: "Entry-level certification covering network security, compliance, operational security, and more.",
+    icon: "Shield"
   },
 ];
 
@@ -357,7 +389,7 @@ export default function Resources() {
     setShowMoreWebinars(!showMoreWebinars);
   };
 
-  // Render a video card
+  // Render a video card with Cyberlogo instead of icons
   const renderVideoCard = (video) => (
     <div
       key={video.id}
@@ -386,22 +418,20 @@ export default function Resources() {
       </div>
 
       <div className="p-4 space-y-2 relative z-10">
-        <div className="flex items-center gap-3">
-          <div className="p-2 rounded-full bg-gray-700 text-gray-100">
-            {video.icon === 'Monitor' && <Monitor className="h-6 w-6" />}
-            {video.icon === 'Shield' && <Shield className="h-6 w-6" />}
-            {video.icon === 'Zap' && <Zap className="h-6 w-6" />}
-            {video.icon === 'FileText' && <FileText className="h-6 w-6" />}
-            {video.icon === 'Award' && <Award className="h-6 w-6" />}
-          </div>
-          <h3 className="text-lg font-bold text-gray-100 group-hover:text-gray-100 transition-colors duration-300 line-clamp-1">
-            {video.shortTitle}
-          </h3>
-        </div>
+      <div className="flex items-center gap-3">
+        <img 
+          src={Cyberlogo} 
+          alt="Cyber Logo" 
+          className="w-8 h-8 object-contain"
+        />
+        <h3 className="text-lg font-bold text-gray-100 group-hover:text-gray-100 transition-colors duration-300 line-clamp-1">
+          {video.shortTitle}
+        </h3>
+      </div>
         <p className="text-gray-400 text-sm line-clamp-2">
           {video.description}
         </p>
-        <a
+        <a 
           href={`https://www.youtube.com/watch?v=${video.id}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -760,7 +790,7 @@ export default function Resources() {
           </div>
         </section>
 
-        {/* Certifications Section - Based on sketch */}
+        {/* Certifications Section with Cyberlogo instead of icons */}
         <section className="w-full py-12 md:py-24 bg-gray-950 relative overflow-hidden">
           <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
@@ -772,33 +802,71 @@ export default function Resources() {
                 Industry-Standard Certifications
               </h2>
               <p className="text-lg text-gray-400 max-w-[600px] mx-auto">
-                Resources to help you prepare for top cybersecurity
-                certifications
+                Resources to help you prepare for top cybersecurity certifications
               </p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {certifications.map((cert, index) => (
-                <a
-                  key={cert.name}
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-gray-800 p-4 rounded-xl border border-gray-700 hover:border-primary/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 relative overflow-hidden cursor-pointer"
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {certifications.map(cert => (
+                <div
+                  key={cert.id}
+                  className="group bg-gray-800 rounded-lg border border-gray-700 hover:border-primary/40 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 relative"
+                  onMouseEnter={() => setHoveredVideo(cert.shortTitle)}
+                  onMouseLeave={() => setHoveredVideo(null)}
                 >
-                  {/* Add gradient background effect like buttons */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-300/10 to-blue-400/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
 
-                  <div className="flex flex-col items-center text-center space-y-3 relative z-10">
-                    <div className="w-20 h-20 mb-2">
-                      <img
-                        src={cert.logo}
-                        alt={cert.name}
-                        className="object-contain w-full h-full"
-                      />
+                  <div className="aspect-video relative">
+                    <img
+                      alt={cert.name}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      src={cert.thumbnailUrl}
+                      onError={(e) => {
+                        e.target.onerror = null; // Prevent infinite loop
+                        e.target.src = cert.logo; // Fallback to logo if thumbnail fails
+                      }}
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="rounded-full bg-white/90 p-3 transform scale-0 group-hover:scale-100 transition-transform duration-300">
+                        <Youtube className="h-8 w-8 text-red-600" />
+                      </div>
                     </div>
-                    <h3 className="font-bold text-gray-100">{cert.name}</h3>
                   </div>
-                </a>
+
+                  <div className="p-4 space-y-2 relative z-10">
+                  <div className="flex items-center gap-3">
+                    <img 
+                      src={Cyberlogo} 
+                      alt="Cyber Logo" 
+                      className="w-8 h-8 object-contain"
+                    />
+                    <h3 className="text-lg font-bold text-gray-100 group-hover:text-gray-100 transition-colors duration-300 line-clamp-1">
+                      {cert.shortTitle}
+                    </h3>
+                  </div>
+                    <p className="text-gray-400 text-sm line-clamp-2">
+                      {cert.description}
+                    </p>
+
+                    {/* Correctly wrap the Button inside <a> */}
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full"
+                    >
+                      <Button
+                        variant="ghost"
+                        className="w-full mt-4 group overflow-hidden relative hover:bg-primary/10"
+                      >
+                        <span className="relative z-10 text-gray-100 flex items-center">
+                          View Resources
+                          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </span>
+                        <div className="absolute right-0 top-0 h-full aspect-square bg-primary/0 group-hover:bg-primary/20 rounded-full scale-0 group-hover:scale-150 transition-all duration-500 origin-center"></div>
+                      </Button>
+                    </a>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -848,9 +916,10 @@ export default function Resources() {
             {/* View All Webinars Button (always visible) */}
             <div className="flex justify-center mt-6">
               <a
-                href="https://www.youtube.com/watch?v=96HQOcEl4oQ&list=PLzecYhCbkDdGsSt731Q_tRlaDS7tfVvxS"
+                href="https://www.youtube.com/watch?v=pyTuuye6Hbk&list=PLzecYhCbkDdGsSt731Q_tRlaDS7tfVvxS"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="block"
               >
                 <Button 
                   variant="outline"

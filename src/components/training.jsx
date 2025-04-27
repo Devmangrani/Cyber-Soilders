@@ -25,7 +25,7 @@ import ECCouncilLogo from '../EC_Council_Logo.jpg'
 import IITPravartakLogo from '../IITM_Pravartak_Logo.jpeg'
 import IITMadrasLogo from '../IIT_Madras_Logo.png'
 import CyberSecurityTraining from '../why_choose_training.webp'
-import CompTIALogo from '../CompTIA.png'
+import CompTIALogo from '../compita_logo.jpeg'
 import CyberGuardianLogo from '../LMS.png'
 import CyberRangeLogo from "../Cyber-range-logo.png"
 import CyberLabsLogo from "../cyber-labs-logo.jpg"
