@@ -314,7 +314,7 @@ export default function Product() {
     <main className="flex-1" ref={containerRef}>
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
-        <section className="relative w-full min-h-[80vh] bg-gradient-to-b from-black to-gray-900 overflow-hidden">
+        <section className="relative w-full min-h-[80vh] bg-gradient-to-b from-black to-gray-950 overflow-hidden">
           {/* Grid Background */}
           <GridBackground />
 
@@ -476,7 +476,7 @@ export default function Product() {
         </section>
 
         {/* Build Team, Fight & Learn Together Section */}
-        <section className="relative w-full min-h-[80vh] bg-gray-900 overflow-hidden">
+        <section className="relative w-full min-h-[80vh] bg-gray-950 overflow-hidden">
           {/* Static Grid Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
@@ -602,7 +602,7 @@ export default function Product() {
         </section>
 
         {/* Gallery Section */}
-        <section className="relative w-full py-20 md:py-32 bg-gray-900 overflow-hidden">
+        <section className="relative w-full py-20 md:py-32 bg-gray-950 overflow-hidden">
           {/* Static Grid Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
@@ -707,7 +707,7 @@ export default function Product() {
         </section>
 
         {/* How Cyber Range Works Section */}
-        <section className="relative w-full min-h-[80vh] bg-gray-900 overflow-hidden">
+        <section className="relative w-full min-h-[80vh] bg-gray-950 overflow-hidden">
           {/* Static Grid Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
@@ -788,7 +788,7 @@ export default function Product() {
         </section>
 
         {/* Key Features Section */}
-        <section className="relative w-full min-h-[80vh] bg-gray-900 overflow-hidden">
+        <section className="relative w-full min-h-[80vh] bg-gray-950 overflow-hidden">
           {/* Static Grid Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
@@ -912,7 +912,7 @@ export default function Product() {
         </section>
 
         {/* Case Study Section */}
-        <section className="relative w-full min-h-[80vh] bg-gray-900 overflow-hidden">
+        <section className="relative w-full min-h-[80vh] bg-gray-950 overflow-hidden">
           {/* Static Grid Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">

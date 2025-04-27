@@ -157,11 +157,11 @@ export default function CyberFramework() {
       logo: "/placeholder.svg?height=80&width=80",
     },
   ]
-  // w-full py-8 bg-gray-900
+  // w-full py-8 bg-gray-950
   return (
     <section
       ref={sectionRef}
-      className="w-full min-h-screen relative overflow-hidden bg-gray-900 from-black to-gray-900"
+      className="w-full min-h-screen relative overflow-hidden bg-gray-950 from-black to-gray-950"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
@@ -358,7 +358,7 @@ export default function CyberFramework() {
       {isDialogOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setIsDialogOpen(false)}></div>
-          <div className="relative bg-gray-900 border border-gray-800 rounded-lg p-6 w-full max-w-md">
+          <div className="relative bg-gray-950 border border-gray-800 rounded-lg p-6 w-full max-w-md">
             <button
               onClick={() => setIsDialogOpen(false)}
               className="absolute right-4 top-4 text-gray-400 hover:text-white"

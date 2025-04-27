@@ -166,7 +166,7 @@ export default function Affiliations() {
   };
 
   return (
-    <section className="w-full py-12 md:py-20 lg:py-32 bg-gray-900 overflow-hidden relative">
+    <section className="w-full py-12 md:py-20 lg:py-32 bg-gray-950 overflow-hidden relative">
       <GridBackground />
       <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10">
         <motion.div
