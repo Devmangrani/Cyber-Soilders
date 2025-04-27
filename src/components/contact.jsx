@@ -228,7 +228,7 @@ export default function Contact() {
               Start Your Journey
             </div>
             <div className="overflow-hidden">
-              <h1 className="hero-title text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-600 dark:from-gray-100 dark:to-gray-600 pb-2">
+              <h1 className="hero-title text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-600 dark:from-gray-100 dark:to-gray-100 pb-2">
                 Contact Cyber.Soldiers
               </h1>
             </div>
