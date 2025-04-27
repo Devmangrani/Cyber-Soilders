@@ -1026,7 +1026,7 @@ export default function Training() {
         {/* Hero Section with Enhanced Visual Elements */}
         <section 
           ref={heroRef}
-          className="relative w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-black to-gray-900 overflow-hidden"
+          className="relative w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-black to-gray-950 overflow-hidden"
         >
           {/* Enhanced grid background with finer lines, glow nodes and subtle animation */}
           <div 
@@ -1167,7 +1167,7 @@ export default function Training() {
         </section>
 
         {/* Category Filters Based on Sketch */}
-        <section className="w-full py-12 md:py-16 bg-gray-900 relative overflow-hidden">
+        <section className="w-full py-12 md:py-16 bg-gray-950 relative overflow-hidden">
           <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
             <div className="text-center mb-8">
@@ -1221,7 +1221,7 @@ export default function Training() {
                             <div className="text-gray-100 p-3 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center group-hover:bg-gray-100 dark:group-hover:bg-gray-600 group-hover:scale-110 transition-all duration-500">
                               {course.icon}
                             </div>
-                            <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">{course.title}</h3>
+                            <h3 className="text-lg font-bold text-gray-950 group-hover:text-primary transition-colors duration-300">{course.title}</h3>
                           </div>
                           
                           <p className="text-muted-foreground text-sm mb-4">{course.description}</p>
@@ -1268,7 +1268,7 @@ export default function Training() {
 
 
         {/* Partner Section */}
-        <section ref={partnerRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
+        <section ref={partnerRef} className="w-full py-12 md:py-24 bg-gray-950 relative overflow-hidden">
           <GridBackground />
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
             <div className="flex flex-col items-center text-center space-y-6">
@@ -1355,8 +1355,8 @@ export default function Training() {
         </section>
 
         {/* Technology Platforms Section - Updated from technology.jsx */}
-        <section ref={platformsRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
-          <div className="absolute bg-gray-900 inset-0">
+        <section ref={platformsRef} className="w-full py-12 md:py-24 bg-gray-950 relative overflow-hidden">
+          <div className="absolute bg-gray-950 inset-0">
             <div 
               className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden"
             >
@@ -1444,7 +1444,7 @@ export default function Training() {
         </section>
 
         {/* Trainers Section - Updated with aggregate statistics */}
-        <section ref={trainersRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
+        <section ref={trainersRef} className="w-full py-12 md:py-24 bg-gray-950 relative overflow-hidden">
           <GridBackground />
           
           <div className="container px-4 md:px-6 max-w-[1500px] mx-auto">
@@ -1461,7 +1461,7 @@ export default function Training() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {trainerMetrics.map((metric, index) => (
-                <div key={metric.id} className="relative bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 group">
+                <div key={metric.id} className="relative bg-gray-950 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/30 to-teal-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <div className="absolute inset-0 bg-gradient-to-b from-primary/30 to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-500 z-0"></div>
                   <div className="relative z-10 p-8 flex flex-col items-center text-center">
@@ -1489,7 +1489,7 @@ export default function Training() {
         </section>
 
         {/* Benefits Section */}
-        <section ref={benefitsRef} className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden">
+        <section ref={benefitsRef} className="w-full py-12 md:py-24 bg-gray-950 relative overflow-hidden">
           <GridBackground />
           
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto w-full">
@@ -1563,7 +1563,7 @@ export default function Training() {
         {/* CTA Section */}
         <section 
           ref={ctaRef}
-          className="w-full py-12 md:py-24 bg-gray-900 relative overflow-hidden"
+          className="w-full py-12 md:py-24 bg-gray-950 relative overflow-hidden"
         >
           <div className="absolute -z-10 top-1/2 left-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-primary/30 to-purple-500/30 blur-3xl cta-glow"></div>
           <GridBackground />
@@ -1581,7 +1581,7 @@ export default function Training() {
                 <Link to="/contact">
                   <Button 
                     size="lg" 
-                    className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105 bg-white text-gray-900 hover:bg-gray-100"
+                    className="relative group h-12 px-8 text-base transition-all duration-300 hover:scale-105 bg-white text-gray-950 hover:bg-gray-100"
                   >
                     <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/50 to-blue-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                     <span className="relative z-10 flex items-center">

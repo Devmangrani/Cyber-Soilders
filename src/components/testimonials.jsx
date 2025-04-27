@@ -81,7 +81,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="w-full py-12 md:py-20 lg:py-32 bg-gray-900 overflow-hidden relative">
+    <section className="w-full py-12 md:py-20 lg:py-32 bg-gray-950 overflow-hidden relative">
        <GridBackground />
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-[1200px]">
         

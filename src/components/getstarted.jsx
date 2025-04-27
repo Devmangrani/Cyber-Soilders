@@ -62,7 +62,7 @@ const GridBackground = () => (
 
 export default function GetStarted() {
   return (
-    <section className="relative w-full overflow-hidden bg-gray-900 from-black to-gray-900">
+    <section className="relative w-full overflow-hidden bg-gray-950 from-black to-gray-950">
       {/* Background Elements */}
       <div className="absolute inset-0">
         {/* Grid background with finer lines and glow nodes */}

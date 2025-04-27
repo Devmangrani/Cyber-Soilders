@@ -129,7 +129,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="w-full min-h-screen relative overflow-hidden bg-gradient-to-b from-black to-gray-900 px-4 sm:px-6 md:px-8 lg:px-12"
+      className="w-full min-h-screen relative overflow-hidden bg-gradient-to-b from-black to-gray-950 px-4 sm:px-6 md:px-8 lg:px-12"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
