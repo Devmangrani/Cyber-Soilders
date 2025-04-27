@@ -39,16 +39,24 @@ const YouTubeLogo = ({ className = "" }) => (
   </svg>
 );
 
+const GridBackground = () => (
+  <div className="absolute inset-0">
+    <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] overflow-hidden">
+      {/* Removed grid node and trace animations */}
+    </div>
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
+  </div>
+);
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white border-t border-gray-700">
+    <footer className="bg-black text-white border-t border-gray-700 relative overflow-hidden">
+      <GridBackground />
       <div className="container mx-auto max-w-[1400px] px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* First column with logo and tagline */}
           <div>
             <img src={logo} alt="CyberSoldiers Logo" className="w-[30%] mb-4" />
-
           </div>
 
           {/* Second column with navigation links */}
@@ -134,21 +142,6 @@ export default function Footer() {
               </p>
 
               <div className="flex space-x-4 mt-6">
-                {/* <a href="https://www.facebook.com/MakeIndiaCyberSafe" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-                  <Facebook size={24} />
-                  </a>
-                  <a href="https://www.instagram.com/cybersoldiers9/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-                  <Instagram size={24} />
-                  </a> */}
-                {/* <a href="https://www.linkedin.com/company/cybersoldiersacademy/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-                    <Linkedin size={24} />
-                  </a>
-                <a href="https://www.youtube.com/@CyberSoldiersAcademy" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-                  <Youtube size={24} />
-                </a>
-                <a href="https://twitter.com/CyberSoldiers7" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-                  <Twitter size={24} />
-                </a> */}
                 <a
                   href="https://www.linkedin.com/company/cybersoldiersacademy/"
                   target="_blank"
