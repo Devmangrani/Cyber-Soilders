@@ -27,7 +27,7 @@ import {
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import buildteam from "../buildteam.jpeg";
+import buildteam from "../buildteam.jpg";
 import AdvancedTrainingEnvironment from "../AdvancedTrainingEnvironment.jpg";
 import RealTimeAttackSimulation from "../istockphoto-1435605327-612x612.jpg";
 import ComprehensiveAnalytics from "../ComprehensiveAnalytics.webp";

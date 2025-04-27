@@ -287,19 +287,23 @@ export default function Contact() {
           ref={addToRefs} 
           className="w-full py-16 md:py-24 bg-black opacity-0 translate-y-4 duration-700 ease-out relative overflow-hidden"
         >
-          <GridBackground/>
-          {/* Animated background elements */}
+          {/* Move GridBackground below and adjust its z-index */}
+          <div className="absolute inset-0 -z-20">
+            <GridBackground/>
+          </div>
+          
+          {/* Adjust z-indices for background elements */}
           <div className="absolute right-0 top-1/4 -z-10 h-96 w-96 rounded-full bg-gradient-to-b from-blue-500/10 to-purple-500/10 blur-3xl animate-float"></div>
           <div className="absolute left-1/4 bottom-1/4 -z-10 h-64 w-64 rounded-full bg-gradient-to-tr from-purple-500/10 to-blue-500/10 blur-3xl animate-float-reverse"></div>
           
-          {/* Animated particles */}
-          <div className="absolute inset-0 -z-10">
+          {/* Adjust z-indices for particles */}
+          <div className="absolute inset-0 -z-10 pointer-events-none">
             <div className="absolute top-1/4 left-1/5 size-2 rounded-full bg-blue-500/30 animate-pulse-slow"></div>
             <div className="absolute top-3/4 left-2/3 size-3 rounded-full bg-purple-500/30 animate-pulse-slow" style={{animationDelay: '1s'}}></div>
             <div className="absolute top-1/3 left-3/4 size-2 rounded-full bg-green-500/30 animate-pulse-slow" style={{animationDelay: '2s'}}></div>
           </div>
           
-          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               {/* Contact Information */}
               <div className="space-y-8">
@@ -373,9 +377,9 @@ export default function Contact() {
                 </div> */}
               </div>
 
-              {/* Contact Form */}
+              {/* Contact Form - Update the form inputs to ensure they're interactive */}
               <div 
-                className={`space-y-6 p-6 rounded-lg border border-gray-800 ${isFormFocused ? 'ring-2 ring-primary/50 border-primary/30 shadow-lg' : 'hover:border-primary/30 hover:shadow-md'} transition-all duration-500`}
+                className={`space-y-6 p-6 rounded-lg border border-gray-800 relative z-20 bg-black/50 backdrop-blur-sm ${isFormFocused ? 'ring-2 ring-primary/50 border-primary/30 shadow-lg' : 'hover:border-primary/30 hover:shadow-md'} transition-all duration-500`}
               >
                 <div className="space-y-4">
                   <div className="inline-block rounded-lg bg-gray-100  px-3 py-1 text-sm mb-2 animate-bounce-subtle">
@@ -386,13 +390,13 @@ export default function Contact() {
                     Fill out the form below and we'll get back to you as soon as possible.
                   </p>
                 </div>
-                <form className="space-y-4">
+                <form className="space-y-4 relative z-30">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-sm text-gray-100 font-medium">First Name</label>
                       <Input 
                         placeholder="John" 
-                        className="hover:border-primary/30 focus:border-primary transition-all duration-300"
+                        className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
                         onFocus={() => setIsFormFocused(true)}
                         onBlur={() => setIsFormFocused(false)}
                       />
@@ -401,7 +405,7 @@ export default function Contact() {
                       <label className="text-sm text-gray-100 font-medium">Last Name</label>
                       <Input 
                         placeholder="Doe" 
-                        className="hover:border-primary/30 focus:border-primary transition-all duration-300"
+                        className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
                         onFocus={() => setIsFormFocused(true)}
                         onBlur={() => setIsFormFocused(false)}
                       />
@@ -412,7 +416,7 @@ export default function Contact() {
                     <Input 
                       type="email" 
                       placeholder="john@example.com" 
-                      className="hover:border-primary/30 focus:border-primary transition-all duration-300"
+                      className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
                       onFocus={() => setIsFormFocused(true)}
                       onBlur={() => setIsFormFocused(false)}
                     />
@@ -421,7 +425,7 @@ export default function Contact() {
                     <label className="text-sm text-gray-100 font-medium">Subject</label>
                     <Input 
                       placeholder="How can we help?" 
-                      className="hover:border-primary/30 focus:border-primary transition-all duration-300"
+                      className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
                       onFocus={() => setIsFormFocused(true)}
                       onBlur={() => setIsFormFocused(false)}
                     />
@@ -429,7 +433,7 @@ export default function Contact() {
                   <div className="space-y-2">
                     <label className="text-sm text-gray-100 font-medium">Message</label>
                     <textarea
-                      className="w-full min-h-[150px] p-3 rounded-md border bg-background hover:border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300"
+                      className="w-full min-h-[150px] p-3 rounded-md border bg-black/50 hover:border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300"
                       placeholder="Your message..."
                       onFocus={() => setIsFormFocused(true)}
                       onBlur={() => setIsFormFocused(false)}
