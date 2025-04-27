@@ -146,7 +146,7 @@ const certifications = [
     logo: CISPPLogo,
     altText: "CISSP - Certified Information Systems Security Professional",
     link: "https://youtube.com/playlist?list=PLzecYhCbkDdHSQQ6VbyO6T0jZ1SSYDe0h&si=jYdpP2DAQ9Q570WH",
-    thumbnailUrl: "https://i.ytimg.com/vi/1kPv-3jfJ1c/hqdefault.jpg",
+    thumbnailUrl: "https://i.ytimg.com/vi/S243Um3oNII/hqdefault.jpg",
     shortTitle: "CISSP",
     description: "The gold standard for cybersecurity professionals. Covers security and risk management, asset security, and more.",
     icon: "Shield"
@@ -157,7 +157,7 @@ const certifications = [
     logo: CISMLogo,
     altText: "CISM - Certified Information Security Manager",
     link: "https://youtube.com/playlist?list=PLzecYhCbkDdEhTOOkOln9i5G1qIrjmID3&si=uNdvikPbAFOQIciN",
-    thumbnailUrl: "https://i.ytimg.com/vi/Kz__eQ4GsRA/hqdefault.jpg",
+    thumbnailUrl: "https://i.ytimg.com/vi/bLSLMk794d8/hqdefault.jpg",
     shortTitle: "CISM",
     description: "Focused on information security management. Perfect for IT professionals looking to step into management roles.",
     icon: "FileText"
@@ -168,7 +168,7 @@ const certifications = [
     logo: CISALogo,
     altText: "CISA - Certified Information Systems Auditor",
     link: "https://youtube.com/playlist?list=PLzecYhCbkDdFoQNwmQpfwPrn4srYVJrcP&si=qNpUfCS0paKH-Cbb",
-    thumbnailUrl: "https://i.ytimg.com/vi/ao31ByEECgE/hqdefault.jpg",
+    thumbnailUrl: "https://i.ytimg.com/vi/SPWgCbLcipM/hqdefault.jpg",
     shortTitle: "CISA",
     description: "The standard for IT auditing. Focuses on auditing, control, and security of information systems.",
     icon: "Monitor"
@@ -179,7 +179,7 @@ const certifications = [
     logo: CRISCLogo,
     altText: "CRISC - Certified in Risk and Information Systems Control",
     link: "https://youtube.com/playlist?list=PLzecYhCbkDdHz5dAph1nwPTRo5YCzuO-X&si=lBiE0GfztKuLUcVG",
-    thumbnailUrl: "https://i.ytimg.com/vi/BFMw-UL7Ic4/hqdefault.jpg",
+    thumbnailUrl: "https://i.ytimg.com/vi/23gYANJufj4/hqdefault.jpg",
     shortTitle: "CRISC",
     description: "Specializes in enterprise IT risk management and information systems control design and implementation.",
     icon: "Award"
@@ -190,7 +190,7 @@ const certifications = [
     logo: CEHLogo,
     altText: "CEH - Certified Ethical Hacker",
     link: "https://youtu.be/CtSxNLQ2Ed4?si=FHrqLZUPT1hctFWr",
-    thumbnailUrl: "https://i.ytimg.com/vi/0yH1Agb_JEE/hqdefault.jpg",
+    thumbnailUrl: "https://i.ytimg.com/vi/CtSxNLQ2Ed4/hqdefault.jpg",
     shortTitle: "CEH",
     description: "Learn to think like a hacker to better defend against security threats and vulnerabilities.",
     icon: "Zap"
@@ -201,7 +201,7 @@ const certifications = [
     logo: CompTIALogo,
     altText: "CompTIA Security+",
     link: "https://youtube.com/playlist?list=PLzecYhCbkDdHB7kuKYRL4xgipgJbIxtPm&si=JWbxMevdX2jzDolz",
-    thumbnailUrl: "https://i.ytimg.com/vi/1kPv-3jfJ1c/hqdefault.jpg",
+    thumbnailUrl: "https://i.ytimg.com/vi/QR-UR-Tty5o/hqdefault.jpg",
     shortTitle: "CompTIA Security+",
     description: "Entry-level certification covering network security, compliance, operational security, and more.",
     icon: "Shield"
