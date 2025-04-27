@@ -30,6 +30,7 @@ import CyberGuardianLogo from '../LMS.png'
 import CyberRangeLogo from "../Cyber-range-logo.png"
 import CyberLabsLogo from "../cyber-labs-logo.jpg"
 import { Link } from "react-router-dom"
+import Cyberlogo from "../cyberlogo.png"
 
 
 // Register GSAP plugins
@@ -1186,7 +1187,14 @@ export default function Training() {
                   >
                     <div className={`absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 ${selectedCategory === filter.id ? 'opacity-75' : ''} group-hover:opacity-75 transition duration-700`}></div>
                     <span className="relative z-10 flex items-center">
-                      {filter.icon}
+                      {/* Replace icons with Cyberlogo */}
+                      {filter.id !== "all" && (
+                        <img 
+                          src={Cyberlogo} 
+                          alt="Cyber Logo" 
+                          className="h-4 w-4 mr-1 object-contain"
+                        />
+                      )}
                       {filter.label}
                     </span>
                   </Button>
@@ -1218,9 +1226,12 @@ export default function Training() {
                         
                         <div className="relative z-10 flex flex-col h-full">
                           <div className="flex items-center gap-3 mb-4">
-                            <div className="text-gray-100 p-3 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center group-hover:bg-gray-100 dark:group-hover:bg-gray-600 group-hover:scale-110 transition-all duration-500">
-                              {course.icon}
-                            </div>
+                            {/* Removed circular background, keeping only the logo */}
+                              <img 
+                                src={Cyberlogo} 
+                                alt="Cyber Logo" 
+                                className="h-8 w-8 object-contain group-hover:scale-110 transition-all duration-500"
+                              />
                             <h3 className="text-lg font-bold text-gray-950 group-hover:text-primary transition-colors duration-300">{course.title}</h3>
                           </div>
                           
@@ -1265,7 +1276,6 @@ export default function Training() {
             </div>
           </div>
         </section>
-
 
         {/* Partner Section */}
         <section ref={partnerRef} className="w-full py-12 md:py-24 bg-gray-950 relative overflow-hidden">
