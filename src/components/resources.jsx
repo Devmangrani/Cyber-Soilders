@@ -21,6 +21,7 @@ import CRISCLogo from "../CRISC.png";
 import CEHLogo from "../CEH.png";
 import CompTIALogo from "../CompTIA.png";
 import FutureOfCyberSecurity from "../soc.jpg";
+import Certified from "../Certified.jpeg"
 
 // Array of cybersecurity-related image URLs
 const cyberImages = [

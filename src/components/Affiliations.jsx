@@ -10,10 +10,10 @@ import EC_Council_Logo from "../EC_Council.webp"
 import Startup_India_Logo from "../Startup_India_Logo.png"
 // Removing Startup MP Logo as requested
 // import Startup_MP_Logo from "../Startup_MP_Logo.png"
-import MSME_Logo from "../MSME_Logo.png"
+import MSME_Logo from "../MSME_Logo.jpeg"
 import MCA_Logo from "../MCA_Logo.png"
 import DG_Trust_Logo from "../DG_Trust_Logo.webp"
-import Comptia_Logo from "../compita_logo.jpg"
+import Comptia_Logo from "../compita_logo.jpeg"
 
 const GridBackground = () => (
   <div className="absolute inset-0">
