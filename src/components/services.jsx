@@ -241,7 +241,7 @@ export default function Services() {
     <main className="flex-1" ref={containerRef}>
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
-        <section className="relative w-full py-20 md:py-32 overflow-hidden bg-gradient-to-b from-black to-gray-900">
+        <section className="relative w-full py-20 md:py-32 overflow-hidden bg-gradient-to-b from-black to-gray-950">
           {/* Animated Background Elements */}
           <div className="absolute inset-0">
             <GridBackground />
@@ -420,7 +420,7 @@ export default function Services() {
         {/* Services Selection Section */}
         <section 
           ref={addToRefs}
-          className="w-full py-20 md:py-32 bg-gray-900 relative overflow-hidden"
+          className="w-full py-20 md:py-32 bg-gray-950 relative overflow-hidden"
         >
           <GridBackground />
 
