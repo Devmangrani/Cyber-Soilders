@@ -27,15 +27,15 @@ import {
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import CyberSecurityTraining from "../endpointsecurity.jpeg";
+import buildteam from "../buildteam.jpeg";
 import AdvancedTrainingEnvironment from "../AdvancedTrainingEnvironment.jpg";
 import RealTimeAttackSimulation from "../istockphoto-1435605327-612x612.jpg";
 import ComprehensiveAnalytics from "../ComprehensiveAnalytics.webp";
-import TeamFormation from "../TeamFormation.jpeg";
+import TeamFormation from "../TeamFormation.webp";
 import CustomChallenges from "../CustomChallenges.webp";
-import PerformanceTracking from "../PerformanceTracking.jpg";
+import PerformanceTracking from "../PerformanceTracking.webp";
 import RealtimeAnalysis from "../Real-timeAnalysis.jpg";
-import ComprehensiveReports from "../ComprehensiveReports.jpeg";
+import ComprehensiveReports from "../ComprehensiveReports.jpg";
 // import CustomizableThreatIntelligence from "../CustomizableThreatIntelligence.webp";
 
 // Register ScrollTrigger plugin
@@ -497,7 +497,7 @@ export default function Product() {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full blur-3xl"></div>
                 <div className="relative z-10 h-full w-full rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src={CyberSecurityTraining}
+                    src={buildteam}
                     alt="Cyber Security Training"
                     className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
                   />
@@ -838,7 +838,7 @@ export default function Product() {
                     <div>
                       <h3 className="text-xl font-semibold text-white mb-2">Integrated LMS Platform</h3>
                       <p className="text-gray-400">
-                        Our CyberSoldier® has built in learning management system which provide advantage to students to learn and practice directly in a real world. It helps the instructor to know the candidates progress and see if the candidates is working enough to showcase significant growth.
+                        Our Cyber Range has built in learning management system which provide advantage to students to learn and practice directly in a real world. It helps the instructor to know the candidates progress and see if the candidates is working enough to showcase significant growth.
                       </p>
                     </div>
                   </div>

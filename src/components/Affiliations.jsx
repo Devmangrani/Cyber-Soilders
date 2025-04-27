@@ -13,7 +13,7 @@ import Startup_India_Logo from "../Startup_India_Logo.png"
 import MSME_Logo from "../MSME_Logo.png"
 import MCA_Logo from "../MCA_Logo.png"
 import DG_Trust_Logo from "../DG_Trust_Logo.webp"
-import Comptia_Logo from "../compita_logo.png"
+import Comptia_Logo from "../compita_logo.jpg"
 
 const GridBackground = () => (
   <div className="absolute inset-0">
