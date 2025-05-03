@@ -69,6 +69,25 @@ const WhatsAppLogo = ({ className = "" }) => (
   </svg>
 )
 
+const handleSubmit = (e) => {
+  e.preventDefault();
+  
+  // Get form values
+  const firstName = e.target.elements.firstName.value;
+  const lastName = e.target.elements.lastName.value;
+  const email = e.target.elements.email.value;
+  const subject = e.target.elements.subject.value;
+  const message = e.target.elements.message.value;
+  
+  // Create mailto link with form data
+  const mailtoLink = `mailto:info@cybersoldiers.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+    `Name: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`
+  )}`;
+  
+  // Open default email client
+  window.location.href = mailtoLink;
+};
+
 export default function Contact() {
   // Refs for intersection observer animations
   const sectionRefs = useRef([]);
@@ -390,56 +409,66 @@ export default function Contact() {
                     Fill out the form below and we'll get back to you as soon as possible.
                   </p>
                 </div>
-                <form className="space-y-4 relative z-30">
+                <form className="space-y-4 relative z-30" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-sm text-gray-100 font-medium">First Name</label>
                       <Input 
+                        name="firstName"
                         placeholder="John" 
                         className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
                         onFocus={() => setIsFormFocused(true)}
                         onBlur={() => setIsFormFocused(false)}
+                        required
                       />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm text-gray-100 font-medium">Last Name</label>
                       <Input 
+                        name="lastName"
                         placeholder="Doe" 
                         className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
                         onFocus={() => setIsFormFocused(true)}
                         onBlur={() => setIsFormFocused(false)}
+                        required
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm text-gray-100 font-medium">Email</label>
                     <Input 
+                      name="email"
                       type="email" 
                       placeholder="john@example.com" 
                       className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
                       onFocus={() => setIsFormFocused(true)}
                       onBlur={() => setIsFormFocused(false)}
+                      required
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm text-gray-100 font-medium">Subject</label>
                     <Input 
+                      name="subject"
                       placeholder="How can we help?" 
                       className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
                       onFocus={() => setIsFormFocused(true)}
                       onBlur={() => setIsFormFocused(false)}
+                      required
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm text-gray-100 font-medium">Message</label>
                     <textarea
+                      name="message"
                       className="w-full min-h-[150px] p-3 rounded-md border bg-black/50 hover:border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300"
                       placeholder="Your message..."
                       onFocus={() => setIsFormFocused(true)}
                       onBlur={() => setIsFormFocused(false)}
+                      required
                     />
                   </div>
-                  <Button className="w-full group relative overflow-hidden">
+                  <Button type="submit" className="w-full group relative overflow-hidden">
                     <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-indigo-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                     <span className="relative z-10 flex items-center">
                       Send Message
