@@ -409,7 +409,7 @@ export default function Contact() {
                     Fill out the form below and we'll get back to you as soon as possible.
                   </p>
                 </div>
-                <form className="space-y-4 relative z-30" onSubmit={handleSubmit}>
+                <form className="space-y-4 relative z-30 text-gray-100" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-sm text-gray-100 font-medium">First Name</label>
