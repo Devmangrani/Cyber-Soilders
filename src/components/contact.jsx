@@ -461,7 +461,7 @@ export default function Contact() {
                     <label className="text-sm text-gray-100 font-medium">Message</label>
                     <textarea
                       name="message"
-                      className="w-full min-h-[150px] p-3 rounded-md border bg-black/50 hover:border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300"
+                      className="w-full min-h-[150px] p-3 rounded-md border bg-black/50 hover:border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300 text-gray-100"
                       placeholder="Your message..."
                       onFocus={() => setIsFormFocused(true)}
                       onBlur={() => setIsFormFocused(false)}
