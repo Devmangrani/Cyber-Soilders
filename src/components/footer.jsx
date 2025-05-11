@@ -116,12 +116,12 @@ export default function Footer() {
               >
                 Home
               </button>
-              <button
+              {/* <button
                 onClick={() => navigate("/product")}
                 className="text-base font-medium hover:text-gray-300 cursor-pointer w-full text-left py-1 transition-colors duration-200"
               >
                 Product
-              </button>
+              </button> */}
               <button
                 onClick={() => navigate("/services")}
                 className="text-base font-medium hover:text-gray-300 cursor-pointer w-full text-left py-1 transition-colors duration-200"
@@ -166,11 +166,23 @@ export default function Footer() {
             <h2 className="text-2xl font-semibold mb-6">Contact Us</h2>
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <WhatsAppLogo className="h-6 w-6 text-[#25D366]" />
-                <span>+91-78143-21156</span>
+                <a 
+                  href="https://wa.me/917814321156" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-200"
+                >
+                  <WhatsAppLogo className="h-6 w-6 text-[#25D366]" />
+                  <span>+91-78143-21156</span>
+                </a>
               </div>
               <p className="flex items-center text-base font-medium">
-                <span className="mr-2">✉️</span>info@cybersoldiers.in
+                <a 
+                  href="mailto:info@cybersoldiers.in"
+                  className="flex items-center hover:opacity-80 transition-opacity duration-200"
+                >
+                  <span className="mr-2">✉️</span>info@cybersoldiers.in
+                </a>
               </p>
 
               <div className="flex space-x-4 mt-6">

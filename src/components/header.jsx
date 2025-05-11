@@ -20,7 +20,7 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-4 md:space-x-6">
           <Link to="/product" className="text-sm font-medium transition-colors hover:text-primary px-2 py-1">
-            Product
+            {/* Product */}
           </Link>
           <Link to="/services" className="text-sm font-medium transition-colors hover:text-primary px-2 py-1">
             Services

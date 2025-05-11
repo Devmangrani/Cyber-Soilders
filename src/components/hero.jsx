@@ -320,8 +320,8 @@ export default function Hero() {
             className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-8 sm:mt-12 md:mt-16 lg:mt-20 w-full max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12"
           >
             {[
-              { to: "/product", label: "Product", icon: <Shield className="h-4 w-4 mr-1 text-black" />, isWhite: true },
-              { to: "/services", label: "Services", icon: <ArrowRight className="h-4 w-4 mr-1" />, isWhite: false },
+              // { to: "/product", label: "Product", icon: <Shield className="h-4 w-4 mr-1 text-black" />, isWhite: true },
+              { to: "/services", label: "Services", icon: <Shield className="h-4 w-4 mr-1" />, isWhite: true },
               { to: "/training", label: "Training", icon: <GraduationCap className="h-4 w-4 mr-1 text-black" />, isWhite: true },
             ].map((button, index) => (
               <Link key={button.to} to={button.to}>
