@@ -76,12 +76,13 @@ const handleSubmit = (e) => {
   const firstName = e.target.elements.firstName.value;
   const lastName = e.target.elements.lastName.value;
   const email = e.target.elements.email.value;
+  const phone = e.target.elements.phone.value;
   const subject = e.target.elements.subject.value;
   const message = e.target.elements.message.value;
   
   // Create mailto link with form data
   const mailtoLink = `mailto:info@cybersoldiers.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-    `Name: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`
+    `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`
   )}`;
   
   // Open default email client
@@ -259,18 +260,33 @@ export default function Contact() {
 
             {/* Animated contact options */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 pt-8 w-full max-w-3xl">
-              <div className="flex flex-col items-center group animate-fade-in relative overflow-hidden">
+              <div 
+                className="flex flex-col items-center group animate-fade-in relative overflow-hidden cursor-pointer"
+                onClick={() => window.location.href = 'mailto:info@cybersoldiers.in'}
+              >
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 to-indigo-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                 <div className="p-4 rounded-full bg-white-900 text-blue-100 mb-3 animate-bounce-subtle group-hover:scale-110 transition-all duration-300 relative z-10">
                   <Mail className="h-6 w-6" />
                 </div>
                 <div className="relative z-10">
                   <div className="text-lg font-medium text-blue-600 group-hover:text-blue-500 transition-colors duration-300">Email Us</div>
-                  <div className="text-sm text-muted-foreground">Fast response within 24h</div>
+                  <div 
+                    className="text-sm text-muted-foreground cursor-pointer hover:text-blue-400 transition-colors duration-300"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.open('https://wa.me/917814321156', '_blank');
+                    }}
+                  >
+                    Fast response within 24h (or message us on WhatsApp)
+                  </div>
                 </div>
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
               </div>
-              <div className="flex flex-col items-center group animate-fade-in relative overflow-hidden" style={{animationDelay: '200ms'}}>
+              <div 
+                className="flex flex-col items-center group animate-fade-in relative overflow-hidden cursor-pointer"
+                onClick={() => window.open('https://wa.me/917814321156', '_blank')}
+                style={{animationDelay: '200ms'}}
+              >
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                 <div className="p-4 rounded-full bg-white-900 text-blue-100 mb-3 animate-bounce-subtle group-hover:scale-110 transition-all duration-300 relative z-10" style={{animationDelay: '0.5s'}}>
                   <WhatsAppLogo className="h-6 w-6 text-[#25D366]" />
@@ -337,7 +353,8 @@ export default function Contact() {
                 </div>
                 <div className="space-y-6">
                 <div 
-                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-100 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-100 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                  onClick={() => window.location.href = 'mailto:info@cybersoldiers.in'}
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 to-indigo-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <div className="p-3 rounded-lg bg-blue-100 text-primary group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 relative z-10">
@@ -349,7 +366,8 @@ export default function Contact() {
                   </div>
                 </div>
                 <div 
-                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-850 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                  className="flex items-start gap-4 p-4 rounded-lg border border-gray-850 relative group overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                  onClick={() => window.open('https://wa.me/917814321156', '_blank')}
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
                   <div className="p-3 rounded-lg bg-blue-100 text-primary group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 relative z-10">
@@ -444,6 +462,19 @@ export default function Contact() {
                       onFocus={() => setIsFormFocused(true)}
                       onBlur={() => setIsFormFocused(false)}
                       required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm text-gray-100 font-medium">Phone Number</label>
+                    <Input 
+                      name="phone"
+                      type="tel" 
+                      placeholder="+91 78143 21156" 
+                      className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
+                      onFocus={() => setIsFormFocused(true)}
+                      onBlur={() => setIsFormFocused(false)}
+                      pattern="[0-9]{10}"
+                      title="Please enter a valid 10-digit phone number"
                     />
                   </div>
                   <div className="space-y-2">
