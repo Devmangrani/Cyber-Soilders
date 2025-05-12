@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { useForm, ValidationError } from '@formspree/react'
 
 import { Shield, Mail, MapPin, Send, ArrowRight, AlertCircle,MessageSquare, MessageCircle } from "lucide-react"
 const GridBackground = () => (
@@ -95,6 +96,7 @@ export default function Contact() {
   const heroRef = useRef(null); // Added missing heroRef
   const gridRef = useRef(null); // Added missing gridRef
   const [isFormFocused, setIsFormFocused] = useState(false);
+  const [state, handleSubmit] = useForm("xbloayea");
 
   useEffect(() => {
     // Intersection Observer for section animations
@@ -418,95 +420,170 @@ export default function Contact() {
               <div 
                 className={`space-y-6 p-6 rounded-lg border border-gray-800 relative z-20 bg-black/50 backdrop-blur-sm ${isFormFocused ? 'ring-2 ring-primary/50 border-primary/30 shadow-lg' : 'hover:border-primary/30 hover:shadow-md'} transition-all duration-500`}
               >
-                <div className="space-y-4">
-                  <div className="inline-block rounded-lg bg-gray-100  px-3 py-1 text-sm mb-2 animate-bounce-subtle">
-                    Message Us
-                  </div>
-                  <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 ">Send Message</h2>
-                  <p className="text-muted-foreground">
-                    Fill out the form below and we'll get back to you as soon as possible.
-                  </p>
-                </div>
-                <form className="space-y-4 relative z-30 text-gray-100" onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="text-sm text-gray-100 font-medium">First Name</label>
-                      <Input 
-                        name="firstName"
-                        placeholder="John" 
-                        className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
-                        onFocus={() => setIsFormFocused(true)}
-                        onBlur={() => setIsFormFocused(false)}
-                        required
-                      />
+                {state.succeeded ? (
+                  <div className="text-center py-8 space-y-4">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mb-4">
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-sm text-gray-100 font-medium">Last Name</label>
-                      <Input 
-                        name="lastName"
-                        placeholder="Doe" 
-                        className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
-                        onFocus={() => setIsFormFocused(true)}
-                        onBlur={() => setIsFormFocused(false)}
-                        required
-                      />
+                    <h3 className="text-2xl font-semibold text-gray-100">Thank You!</h3>
+                    <p className="text-muted-foreground">
+                      Your message has been successfully sent. We'll get back to you as soon as possible.
+                    </p>
+                    <Button 
+                      onClick={() => window.location.reload()}
+                      className="mt-4 group relative overflow-hidden"
+                    >
+                      <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-indigo-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                      <span className="relative z-10 flex items-center">
+                        Send Another Message
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 duration-300" />
+                      </span>
+                    </Button>
+                  </div>
+                ) : (
+                  <>
+                    <div className="space-y-4">
+                      <div className="inline-block rounded-lg bg-gray-100  px-3 py-1 text-sm mb-2 animate-bounce-subtle">
+                        Message Us
+                      </div>
+                      <h2 className="text-3xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 ">Send Message</h2>
+                      <p className="text-muted-foreground">
+                        Fill out the form below and we'll get back to you as soon as possible.
+                      </p>
                     </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm text-gray-100 font-medium">Email</label>
-                    <Input 
-                      name="email"
-                      type="email" 
-                      placeholder="john@example.com" 
-                      className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
-                      onFocus={() => setIsFormFocused(true)}
-                      onBlur={() => setIsFormFocused(false)}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm text-gray-100 font-medium">Phone Number</label>
-                    <Input 
-                      name="phone"
-                      type="tel" 
-                      placeholder="+91 78143 21156" 
-                      className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
-                      onFocus={() => setIsFormFocused(true)}
-                      onBlur={() => setIsFormFocused(false)}
-                      pattern="[0-9]{10}"
-                      title="Please enter a valid 10-digit phone number"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm text-gray-100 font-medium">Subject</label>
-                    <Input 
-                      name="subject"
-                      placeholder="How can we help?" 
-                      className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
-                      onFocus={() => setIsFormFocused(true)}
-                      onBlur={() => setIsFormFocused(false)}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm text-gray-100 font-medium">Message</label>
-                    <textarea
-                      name="message"
-                      className="w-full min-h-[150px] p-3 rounded-md border bg-black/50 hover:border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300 text-gray-100"
-                      placeholder="Your message..."
-                      onFocus={() => setIsFormFocused(true)}
-                      onBlur={() => setIsFormFocused(false)}
-                      required
-                    />
-                  </div>
-                  <Button type="submit" className="w-full group relative overflow-hidden">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-indigo-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                    <span className="relative z-10 flex items-center">
-                      Send Message
-                      <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 duration-300" />
-                    </span>
-                  </Button>
-                </form>
+                    <form 
+                      className="space-y-4 relative z-30 text-gray-100" 
+                      onSubmit={handleSubmit}
+                    >
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <label className="text-sm text-gray-100 font-medium">First Name</label>
+                          <Input 
+                            id="firstName"
+                            name="firstName"
+                            placeholder="John" 
+                            className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
+                            onFocus={() => setIsFormFocused(true)}
+                            onBlur={() => setIsFormFocused(false)}
+                            required
+                          />
+                          <ValidationError 
+                            prefix="First Name" 
+                            field="firstName"
+                            errors={state.errors}
+                            className="text-red-500 text-sm mt-1"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-sm text-gray-100 font-medium">Last Name</label>
+                          <Input 
+                            id="lastName"
+                            name="lastName"
+                            placeholder="Doe" 
+                            className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
+                            onFocus={() => setIsFormFocused(true)}
+                            onBlur={() => setIsFormFocused(false)}
+                            required
+                          />
+                          <ValidationError 
+                            prefix="Last Name" 
+                            field="lastName"
+                            errors={state.errors}
+                            className="text-red-500 text-sm mt-1"
+                          />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm text-gray-100 font-medium">Email</label>
+                        <Input 
+                          id="email"
+                          name="email"
+                          type="email" 
+                          placeholder="john@example.com" 
+                          className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
+                          onFocus={() => setIsFormFocused(true)}
+                          onBlur={() => setIsFormFocused(false)}
+                          required
+                        />
+                        <ValidationError 
+                          prefix="Email" 
+                          field="email"
+                          errors={state.errors}
+                          className="text-red-500 text-sm mt-1"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm text-gray-100 font-medium">Phone Number</label>
+                        <Input 
+                          id="phone"
+                          name="phone"
+                          type="tel" 
+                          placeholder="+91 78143 21156" 
+                          className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
+                          onFocus={() => setIsFormFocused(true)}
+                          onBlur={() => setIsFormFocused(false)}
+                          pattern="[0-9]{10}"
+                          title="Please enter a valid 10-digit phone number"
+                        />
+                        <ValidationError 
+                          prefix="Phone" 
+                          field="phone"
+                          errors={state.errors}
+                          className="text-red-500 text-sm mt-1"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm text-gray-100 font-medium">Subject</label>
+                        <Input 
+                          id="subject"
+                          name="subject"
+                          placeholder="How can we help?" 
+                          className="hover:border-primary/30 focus:border-primary transition-all duration-300 bg-black/50"
+                          onFocus={() => setIsFormFocused(true)}
+                          onBlur={() => setIsFormFocused(false)}
+                          required
+                        />
+                        <ValidationError 
+                          prefix="Subject" 
+                          field="subject"
+                          errors={state.errors}
+                          className="text-red-500 text-sm mt-1"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm text-gray-100 font-medium">Message</label>
+                        <textarea
+                          id="message"
+                          name="message"
+                          className="w-full min-h-[150px] p-3 rounded-md border bg-black/50 hover:border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300 text-gray-100"
+                          placeholder="Your message..."
+                          onFocus={() => setIsFormFocused(true)}
+                          onBlur={() => setIsFormFocused(false)}
+                          required
+                        />
+                        <ValidationError 
+                          prefix="Message" 
+                          field="message"
+                          errors={state.errors}
+                          className="text-red-500 text-sm mt-1"
+                        />
+                      </div>
+                      <Button 
+                        type="submit" 
+                        disabled={state.submitting}
+                        className="w-full group relative overflow-hidden"
+                      >
+                        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/50 to-indigo-500/50 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
+                        <span className="relative z-10 flex items-center">
+                          {state.submitting ? 'Sending...' : 'Send Message'}
+                          <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 duration-300" />
+                        </span>
+                      </Button>
+                    </form>
+                  </>
+                )}
               </div>
             </div>
           </div>
