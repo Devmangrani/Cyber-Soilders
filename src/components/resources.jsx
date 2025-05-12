@@ -56,23 +56,23 @@ function extractVideoId(url) {
 const cybersecurityPlaylist = [
   {
     id: "1kPv-3jfJ1c", // https://youtu.be/1kPv-3jfJ1c?si=MACZczbJoShh2DcF
-    title: "30 Days CISSP Study Plan",
+    title: "Cloud Security",
     shortTitle: "How to Prepare 30 Days Study Plan for CISSP - By Ajit Pal Singh",
-    description: "Learn how to create and follow an effective 30-day study plan for the CISSP certification with guidance from expert Ajit Pal Singh.",
+    description: "Learn about Cloud Security with trained and certified Cyber professionals.",
     icon: "Award",
     thumbnailUrl: "https://i.ytimg.com/vi/1kPv-3jfJ1c/hqdefault.jpg"
   },
   {
     id: "ajQHc44FV54", // https://youtu.be/ajQHc44FV54?si=sLbjMXt8xXjKoirk
-    title: "Guide to CISSP",
+    title: "Maneuver your Cyber Security Career",
     shortTitle: "Guide to CISSP: The Ultimate Certification for Cybersecurity Professionals - By Ajit Pal Singh",
-    description: "Comprehensive guide to the CISSP certification, considered the gold standard for cybersecurity professionals, presented by Ajit Pal Singh.",
+    description: "Comprehensive guide to the building your carrer towards Cyber Security.",
     icon: "Shield",
     thumbnailUrl: "https://i.ytimg.com/vi/ajQHc44FV54/hqdefault.jpg"
   },
   {
     id: "0yH1Agb_JEE", // https://youtu.be/0yH1Agb_JEE?si=h5fYIjrEhrb1d2-W
-    title: "Cybersecurity for Freshers & CEH v12",
+    title: "Career in Cyber Security for Freshers",
     shortTitle: "Cyber Security Career for Freshers | Is CEH v12 Worth It?",
     description: "Guide for beginners entering the cybersecurity field and an analysis of whether the Certified Ethical Hacker (CEH) v12 certification is worthwhile.",
     icon: "Zap",
@@ -80,15 +80,15 @@ const cybersecurityPlaylist = [
   },
   {
     id: "Kz__eQ4GsRA", // https://youtu.be/Kz__eQ4GsRA?si=cJtb5wur5JetYI-l
-    title: "InfoSec Management & CISM",
+    title: "Relevance of Information Security Management in Present Context",
     shortTitle: "Information Security Management & Relevance of CISM by Saaz Rai",
-    description: "Industry expert Saaz Rai explains information security management concepts and the importance of the CISM certification.",
+    description: "Industry expert explains information security management concepts and the importance of the CISM certification.",
     icon: "FileText",
     thumbnailUrl: "https://i.ytimg.com/vi/Kz__eQ4GsRA/hqdefault.jpg"
   },
   {
     id: "BFMw-UL7Ic4", // https://youtu.be/BFMw-UL7Ic4?si=Zk5FCuLOvUmG-yYy
-    title: "Excel in IS GRC & Audit Career",
+    title: "How to excel in IS and GRC Audit Career?",
     shortTitle: "Online Master Class on How to Excel in IS GRC & Audit Career on Cyber Soldiers",
     description: "Master class on building a successful career in Information Security Governance, Risk, Compliance, and Audit.",
     icon: "Monitor",
@@ -96,9 +96,9 @@ const cybersecurityPlaylist = [
   },
   {
     id: "pyTuuye6Hbk", // https://youtu.be/pyTuuye6Hbk?si=g5G6-Fz3ZQ4ME9Ko
-    title: "CISA Exam Made Easy",
+    title: "Career in Cloud Security",
     shortTitle: "Career in Cloud Security & Relevance of CCSP",
-    description: "Prepare for the CCSP exam with our comprehensive CCSP Certification Training Course. Gain the knowledge and skills needed to excel in cloud security and enhance your professional profile in the fast-growing field of cloud computing.",
+    description: "Learn about CCSP certification and its importance building a career towards Cloud Security Professoinal",
     icon: "Award",
     thumbnailUrl: "https://i.ytimg.com/vi/pyTuuye6Hbk/hqdefault.jpg"
   },
