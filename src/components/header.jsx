@@ -14,7 +14,9 @@ export default function Header() {
       <div className="flex h-16 items-center justify-between px-4 md:px-6 w-full">
         <Link to="/" className="flex items-center space-x-2">
           <img src={logo} alt="Cyber.Soldiers" className="h-6 w-6" />
-          <span className="font-bold text-sm sm:text-base">Cyber.Soldiers</span>
+          <span className="font-sans font-extrabold text-lg sm:text-xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-blue-700 to-gray-900">
+            Cyber.Soldiers
+          </span>
         </Link>
 
         {/* Desktop Navigation */}

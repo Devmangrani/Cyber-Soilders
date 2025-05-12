@@ -817,14 +817,20 @@ export default function Resources() {
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
 
-                  <div className="aspect-video relative">
+                  {/* Wrap the image with the anchor tag */}
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block aspect-video relative"
+                  >
                     <img
                       alt={cert.name}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       src={cert.thumbnailUrl}
                       onError={(e) => {
-                        e.target.onerror = null; // Prevent infinite loop
-                        e.target.src = cert.logo; // Fallback to logo if thumbnail fails
+                        e.target.onerror = null;
+                        e.target.src = cert.logo;
                       }}
                     />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -832,41 +838,16 @@ export default function Resources() {
                         <Youtube className="h-8 w-8 text-red-600" />
                       </div>
                     </div>
-                  </div>
-
+                  </a>
                   <div className="p-4 space-y-2 relative z-10">
-                  <div className="flex items-center gap-3">
-                    <img 
-                      // src={Cyberlogo} 
-                      // alt="Cyber Logo" 
-                      // className="w-8 h-8 object-contain"
-                    />
-                    <h3 className="text-lg font-bold text-gray-100 group-hover:text-gray-100 transition-colors duration-300 line-clamp-1">
-                      {cert.shortTitle}
-                    </h3>
-                  </div>
+                    <div className="flex items-center gap-3">
+                      <h3 className="text-lg font-bold text-gray-100 group-hover:text-gray-100 transition-colors duration-300 line-clamp-1">
+                        {cert.shortTitle}
+                      </h3>
+                    </div>
                     <p className="text-gray-400 text-sm line-clamp-2">
                       {cert.description}
                     </p>
-
-                    {/* Correctly wrap the Button inside <a> */}
-                    <a
-                      href={cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full"
-                    >
-                      <Button
-                        variant="ghost"
-                        className="w-full mt-4 group overflow-hidden relative hover:bg-primary/10"
-                      >
-                        <span className="relative z-10 text-gray-100 flex items-center">
-                          View Resources
-                          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </span>
-                        <div className="absolute right-0 top-0 h-full aspect-square bg-primary/0 group-hover:bg-primary/20 rounded-full scale-0 group-hover:scale-150 transition-all duration-500 origin-center"></div>
-                      </Button>
-                    </a>
                   </div>
                 </div>
               ))}

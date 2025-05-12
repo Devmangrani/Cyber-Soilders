@@ -21,7 +21,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import NextjsBackground from './NextjsBackground'
 // Import partner logos
-import ECCouncilLogo from '../EC_Council_Logo.jpg'
+import ECCouncilLogo from '../EC_Council.webp'
 import IITPravartakLogo from '../IITM_Pravartak_Logo.jpeg'
 import IITMadrasLogo from '../IIT_Madras_Logo.png'
 import CyberSecurityTraining from '../why_choose_training.webp'
@@ -129,25 +129,25 @@ const categoryFilters = [
       { title: "CompTIA Security+", description: "Foundation level security certification", duration: "48 hours", icon: <Award className="h-6 w-6" /> },
       // Add PDF courses
       { 
-        title: "Cyber Security Training Level 1 (CS-101)",
+        title: "Cyber Security Training Level 1",
         description: "One Day Workshop providing an insight into cyberspace, digital networks, and emerging cybersecurity threats.",
         duration: "1 day",
         icon: <GraduationCap className="h-6 w-6" />
       },
       { 
-        title: "Cyber Security Training Level 2 (CS-102)",
+        title: "Cyber Security Training Level 2",
         description: "One Week program providing solid understanding of cybersecurity fundamentals, including GRC, OS security, and network basics.",
         duration: "1 week",
         icon: <BookOpen className="h-6 w-6" />
       },
       { 
-        title: "Cyber Security Training Level 3 (CS-103)",
+        title: "Cyber Security Training Level 3",
         description: "One Month program that equips participants with essential ethical hacking skills and hands-on experience.",
         duration: "1 month",
         icon: <Users className="h-6 w-6" />
       },
       { 
-        title: "Advanced Cyber Security Certification (CS-104)",
+        title: "Advanced Cyber Security Certification",
         description: "Comprehensive six-month course designed for professionals looking to master advanced cybersecurity techniques.",
         duration: "6 months",
         icon: <Award className="h-6 w-6" />
@@ -1187,14 +1187,6 @@ export default function Training() {
                   >
                     <div className={`absolute -inset-1 bg-gradient-to-r from-indigo-500/50 to-violet-500/50 rounded-lg blur opacity-0 ${selectedCategory === filter.id ? 'opacity-75' : ''} group-hover:opacity-75 transition duration-700`}></div>
                     <span className="relative z-10 flex items-center">
-                      {/* Replace icons with Cyberlogo */}
-                      {filter.id !== "all" && (
-                        <img 
-                          src={Cyberlogo} 
-                          alt="Cyber Logo" 
-                          className="h-4 w-4 mr-1 object-contain"
-                        />
-                      )}
                       {filter.label}
                     </span>
                   </Button>
@@ -1332,7 +1324,7 @@ export default function Training() {
                         width="300"
                         height="150"
                         decoding="async"
-                        className="object-contain w-300 h-150 transition-transform duration-500 group-hover:scale-105"
+                        className="object-contain w-full h-full transition-transform duration-500 group-hover:scale-105"
                         src={ECCouncilLogo}
                       />
                     </div>
@@ -1506,10 +1498,10 @@ export default function Training() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="space-y-6">
                 <div className="overflow-hidden">
-                  <h2 className="benefits-title text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-600 dark:from-gray-100 dark:to-gray-400">Why Choose Our Training?</h2>
+                  <h2 className="benefits-title text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-600 dark:from-gray-100 dark:to-gray-100">Why Choose Our Training?</h2>
                 </div>
                 <div className="overflow-hidden">
-                  <p className="benefits-description text-2xl text-muted-foreground">
+                  <p className="benefits-description text-2xl text-gray-100">
                     Our training programs are designed to provide you with the skills and knowledge you need to succeed in the cyber security industry.
                   </p>
                 </div>
@@ -1518,7 +1510,7 @@ export default function Training() {
                     <div 
                       key={index} 
                       ref={(el) => addToBenefitRefs(el, index)}
-                      className="benefit-item flex items-start gap-2 text-gray-500 text-sm"
+                      className="benefit-item flex items-start gap-2 text-gray-100 text-sm"
                     > 
                       <CheckCircle className="h-5 w-5 text-gray-100 mt-0.5" style={{animationDelay: `${index * 0.2}s`}} />
                       <span>{benefit}</span>
