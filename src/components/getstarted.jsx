@@ -136,19 +136,19 @@ export default function GetStarted() {
                 {[
                   {
                     title: "Cyber Skilling",
-                    description: "From Learners to Defenders Build your Cyber Empowerd Team",
+                    description: "From Learners to Defenders . Build your Cyber Empowerd Team",
                     gradient: "from-blue-500/20 to-purple-500/20",
                     image: assessment
                   },
                   {
                     title: "Assessment Services",
-                    description: "Expose the Gaps Strengthen the Sheild Stay one Step Ahead",
+                    description: "Expose the Gaps . Strengthen the Sheild Stay one Step Ahead",
                     gradient: "from-green-500/20 to-teal-500/20",
                     image: threat
                   },
                   {
                     title: "Compliance Audits",
-                    description: "Ensure Compliance Auid Penalties Build Trust with confidence",
+                    description: "Ensure Compliance . Avoid Penalties . Build Trust with confidence",
                     gradient: "from-purple-500/20 to-pink-500/20",
                     image: compliance
                   }
