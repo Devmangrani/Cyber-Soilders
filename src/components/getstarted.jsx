@@ -142,7 +142,7 @@ export default function GetStarted() {
                   },
                   {
                     title: "Assessment Services",
-                    description: "Expose the Gaps . Strengthen the Sheild Stay one Step Ahead",
+                    description: "Expose the Gaps . Strengthen the Shield Stay one Step Ahead",
                     gradient: "from-green-500/20 to-teal-500/20",
                     image: threat
                   },
