@@ -174,14 +174,14 @@ const certifications = [
     icon: "Monitor"
   },
   {
-    id: "crisc-cert",
-    name: "CRISC",
+    id: "ccsp-cert",
+    name: "CCSP",
     logo: CRISCLogo,
-    altText: "CRISC - Certified in Risk and Information Systems Control",
-    link: "https://youtube.com/playlist?list=PLzecYhCbkDdHz5dAph1nwPTRo5YCzuO-X&si=lBiE0GfztKuLUcVG",
-    thumbnailUrl: "https://i.ytimg.com/vi/23gYANJufj4/hqdefault.jpg",
-    shortTitle: "CRISC",
-    description: "Specializes in enterprise IT risk management and information systems control design and implementation.",
+    altText: "CCSP - Certified Cloud Security Professional",
+    link: "https://youtu.be/pysgRn5WXF4?si=KX7zzcyyNfOjxnWf",
+    thumbnailUrl: "https://i.ytimg.com/vi/pysgRn5WXF4/hqdefault.jpg",
+    shortTitle: "CCSP",
+    description: "Prepare for the CCSP exam with our comprehensive CCSP Certification Training Course. Gain the knowledge and skills needed to excel in cloud security and enhance your professional profile in the fast-growing field of cloud computing.",
     icon: "Award"
   },
   {
@@ -399,35 +399,37 @@ export default function Resources() {
     >
       <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
 
-      <div className="aspect-video relative">
-        <img
-          alt={video.title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-          src={video.thumbnailUrl}
-          // Fallback mechanism if the primary thumbnail fails
-          onError={(e) => {
-            e.target.onerror = null; // Prevent infinite loop
-            e.target.src = `https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`; // Try medium quality
-          }}
-        />
-        <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-          <div className="rounded-full bg-white/90 p-3 transform scale-0 group-hover:scale-100 transition-transform duration-300">
-            <Youtube className="h-8 w-8 text-red-600" />
+      <a 
+        href={`https://www.youtube.com/watch?v=${video.id}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
+        <div className="aspect-video relative cursor-pointer">
+          <img
+            alt={video.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            src={video.thumbnailUrl}
+            // Fallback mechanism if the primary thumbnail fails
+            onError={(e) => {
+              e.target.onerror = null; // Prevent infinite loop
+              e.target.src = `https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`; // Try medium quality
+            }}
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="rounded-full bg-white/90 p-3 transform scale-0 group-hover:scale-100 transition-transform duration-300">
+              <Youtube className="h-8 w-8 text-red-600" />
+            </div>
           </div>
         </div>
-      </div>
+      </a>
 
       <div className="p-4 space-y-2 relative z-10">
-      <div className="flex items-center gap-3">
-        <img 
-          src={Cyberlogo} 
-          alt="Cyber Logo" 
-          className="w-8 h-8 object-contain"
-        />
-        <h3 className="text-lg font-bold text-gray-100 group-hover:text-gray-100 transition-colors duration-300 line-clamp-1">
-          {video.shortTitle}
-        </h3>
-      </div>
+        <div className="flex items-center gap-3">
+          <h3 className="text-lg font-bold text-gray-100 group-hover:text-gray-100 transition-colors duration-300">
+            {video.title}
+          </h3>
+        </div>
         <p className="text-gray-400 text-sm line-clamp-2">
           {video.description}
         </p>
@@ -464,7 +466,7 @@ export default function Resources() {
     // Target values
     const targetValues = {
       videos: 250,
-      views: 10000,
+      views: 50000,
       satisfaction: 95,
       certifications: 24,
     };
@@ -835,9 +837,9 @@ export default function Resources() {
                   <div className="p-4 space-y-2 relative z-10">
                   <div className="flex items-center gap-3">
                     <img 
-                      src={Cyberlogo} 
-                      alt="Cyber Logo" 
-                      className="w-8 h-8 object-contain"
+                      // src={Cyberlogo} 
+                      // alt="Cyber Logo" 
+                      // className="w-8 h-8 object-contain"
                     />
                     <h3 className="text-lg font-bold text-gray-100 group-hover:text-gray-100 transition-colors duration-300 line-clamp-1">
                       {cert.shortTitle}
@@ -895,7 +897,7 @@ export default function Resources() {
             </div>
             
             {/* View More/Less Button */}
-            <div className="flex justify-center mt-12">
+            {/* <div className="flex justify-center mt-12">
               <Button 
                 onClick={handleViewMoreClick}
                 size="lg" 
@@ -911,7 +913,7 @@ export default function Resources() {
                   )}
                 </span>
               </Button>
-            </div>
+            </div> */}
             
             {/* View All Webinars Button (always visible) */}
             <div className="flex justify-center mt-6">

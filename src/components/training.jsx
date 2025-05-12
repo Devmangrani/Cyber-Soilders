@@ -121,12 +121,12 @@ const categoryFilters = [
         icon: <Award className="h-6 w-6" />
       },
       // Add certification courses
-      { title: "CISSP", description: "Certified Information Systems Security Professional", icon: <Award className="h-6 w-6" /> },
-      { title: "CISM", description: "Certified Information Security Manager", icon: <Award className="h-6 w-6" /> },
-      { title: "CISA", description: "Certified Information Systems Auditor", icon: <Award className="h-6 w-6" /> },
-      { title: "CRISC", description: "Certified in Risk and Information Systems Control", icon: <Award className="h-6 w-6" /> },
-      { title: "CEH", description: "Certified Ethical Hacker", icon: <Award className="h-6 w-6" /> },
-      { title: "CompTIA Security+", description: "Foundation level security certification", icon: <Award className="h-6 w-6" /> },
+      { title: "CISSP", description: "Certified Information Systems Security Professional", duration: "48 hours", icon: <Award className="h-6 w-6" /> },
+      { title: "CISM", description: "Certified Information Security Manager", duration: "48 hours", icon: <Award className="h-6 w-6" /> },
+      { title: "CISA", description: "Certified Information Systems Auditor", duration: "48 hours", icon: <Award className="h-6 w-6" /> },
+      { title: "CRISC", description: "Certified in Risk and Information Systems Control", duration: "48 hours", icon: <Award className="h-6 w-6" /> },
+      { title: "CEH", description: "Certified Ethical Hacker", duration: "48 hours", icon: <Award className="h-6 w-6" /> },
+      { title: "CompTIA Security+", description: "Foundation level security certification", duration: "48 hours", icon: <Award className="h-6 w-6" /> },
       // Add PDF courses
       { 
         title: "Cyber Security Training Level 1 (CS-101)",

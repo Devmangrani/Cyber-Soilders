@@ -38,33 +38,28 @@ const timeline = [
   {
     year: "2023",
     title: "Founded",
-    description: "Founded in May 2023 with recognition from startup ecosystem.",
-    stat: "2000+",
+    // description: "Founded in May 2023 with recognition from startup ecosystem.",
+    stat: "500+",
     statLabel: "Learners",
     events: [
       {
         month: "May",
-        title: "Company Founded",
-        description: "Cyber.Soldiers was founded"
-      },
-      {
-        month: "Apr",
         title: "Startup Recognition", 
-        description: "Recognition by Startup India and Govt. of India"
+        description: "Recognition by DPIIT , Govt. of India"
       },
       {
-        month: "Apr",
+        month: "Jun",
         title: "Industry Collaborations",
         description: "Partnerships with EC Council and CompTIA"
       },
       {
-        month: "Jun",
-        title: "Learning Platform",
+        month: "Jul",
+        title: "Launch of Cyber Soldier Learning Management System",
         description: "Launched Cyber Soldier Learning Experience Cloud"
       },
       {
-        month: "Jul",
-        title: "Mobile Apps",
+        month: "Aug",
+        title: "Launch of Mobile Apps",
         description: "Released apps on Google Play and iOS App Store"
       }
     ]
@@ -96,7 +91,7 @@ const timeline = [
       {
         month: "May",
         title: "Academic Collaboration",
-        description: "Partnership with IIT Madras for research & knowledge sharing"
+        // description: "Partnership with IIT Madras for research & knowledge sharing"
       }
     ]
   }
@@ -668,7 +663,7 @@ export default function About() {
         <div className="container px-4 md:px-6 mx-auto max-w-5xl">
           <div className="flex flex-col items-center text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-gray-200">Leadership</h2>
-            <p className="text-xl text-gray-400 max-w-[600px]">The visionary behind Cyber.Soldiers.</p>
+            {/* <p className="text-xl text-gray-400 max-w-[600px]">The visionary behind Cyber.Soldiers.</p> */}
           </div>
           
           {/* Founder Image with enhanced animation */}
