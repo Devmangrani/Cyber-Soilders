@@ -205,17 +205,17 @@ export default function Footer() {
                 </a>
               </div>
 
-              <div className="mt-8">
+              {/* <div className="mt-8">
                 <p className="font-bold">Shlokcent Technologies Pvt Ltd</p>
                 <p className="text-sm mt-2">CIN: U58202MP2023PTC064946</p>
                 <p className="text-sm">GST: 23ABKCS4015P1Z2</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
 
         <div className="mt-12 text-center text-sm">
-          <p>© Copyright 2023 Shlokcent Technologies Pvt Ltd</p>
+          <p>© Copyright 2023 CyberSoldiers Technologies Pvt Ltd</p>
         </div>
       </div>
     </footer>
